@@ -1,6 +1,9 @@
 <?php
   require_once "libraries/dbconfig.php";
-  session_start();
+  // if(isset($SESSION(''))){
+  //   session_start();
+  // }
+  
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +42,7 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+  <header id="header" class="fixed-top d-flex align-items-center ">
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
@@ -50,8 +53,8 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#courses">Courses</a></li>
+          <li><a class="nav-link scrollto active" href="/capstone/#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="/capstone/#courses">Courses</a></li>
           <li><a class="nav-link scrollto" href="#resources">Resources</a></li>
           <li><a class="nav-link scrollto" href="#about">About Us</a></li>
           <li><a class="nav-link scrollto" href="video/video.html">Lesson</a></li>
@@ -74,6 +77,7 @@
               <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li> -->
+          
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
 
           <!-- <li><a href=""><i class="bi bi-search "></i></a></li> -->

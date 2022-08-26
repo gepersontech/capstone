@@ -4,9 +4,8 @@
 ?>
 
   <main id="main">
-    <br><br><br>
     <!-- ======= Login Section ======= -->
-    <section id="contact" class="contact">
+    <section id="login" class="login">
       <div class="container">
         <div class="section-title" data-aos="fade-up">
           <h2>Login</h2>
