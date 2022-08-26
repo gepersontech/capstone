@@ -1,5 +1,5 @@
 <?php
-    $dbhost = "localhost:3307";
+    $dbhost = "localhost:3306";
     $dbuser = "root";
     $dbpass = "";
     $dbname = "geometry";
