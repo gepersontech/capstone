@@ -1,13 +1,13 @@
 
 <?php
-  include "../header.php";
+  include "header.php";
 ?>
 
   <main id="main">
     <!-- ======= Contact Section ======= -->
     <section id="register" class="register">
       <div class="container">
-<br><br><br>
+      <br><br><br>
         <div class="section-title" data-aos="fade-up">
           <h2>Register</h2>
           <p>Contact Us</p>
