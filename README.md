@@ -18,37 +18,38 @@ This capstone was developed with the following:
 Features
 
 **Admin Side**
+
 Lesson
 
-List of Lessons
-  Upload Lesson
-  Edit Lesson
-  Change the File
-  View Lesson
-  Delete Lesson
+List of Lessons - 
+  Upload Lesson,
+  Edit Lesson,
+  Change the File,
+  View Lesson,
+  Delete Lesson,
   Exercises
 
-List of Question
-  Add Question
-  Edit Question
-  Delete Question
+List of Question - 
+  Add Question,
+  Edit Question,
+  Delete Question,
   Student
-
-List of Students
+  
+List of Students - 
   Manage Users
 
-List of Users
-  Add User
-  Edit User
-  Delete User
+List of Users - 
+  Add User,
+  Edit User,
+  Delete User,
   
 **Student side**
-  Create Account
-  Login and Logout
-  View Lesson
-  Take Quizzes
-  Generate Score
-  Download Lessons
+  Create Account,
+  Login and Logout,
+  View Lesson,
+  Take Quizzes,
+  Generate Score,
+  Download Lessons,
 
 
 How to set up the E-Learning System in PHP with Source Code
