@@ -1,3 +1,8 @@
+<?php
+  require_once "libraries/dbconfig.php";
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

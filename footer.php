@@ -1,8 +1,5 @@
 <!-- ======= Footer ======= -->
-<?php
-  require_once "libraries/dbconfig.php";
-  session_start();
-?>
+
 <footer id="footer">
     <div class="footer-top">
       <div class="container">
