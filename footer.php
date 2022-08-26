@@ -58,7 +58,8 @@
             </form>
 
           </div>
-          
+
+          <!-- db status check -->
           <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-exclamation-circle mr-2"></i>
