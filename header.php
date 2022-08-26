@@ -49,7 +49,7 @@
           <li><a class="nav-link scrollto" href="#courses">Courses</a></li>
           <li><a class="nav-link scrollto" href="#resources">Resources</a></li>
           <li><a class="nav-link scrollto" href="#about">About Us</a></li>
-          <li><a class="nav-link scrollto" href="video">Lesson</a></li>
+          <li><a class="nav-link scrollto" href="video/video.html">Lesson</a></li>
           <!-- <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
           <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
@@ -74,7 +74,7 @@
           <!-- <li><a href=""><i class="bi bi-search "></i></a></li> -->
           <!-- <li><a href=""><i class="bi bi-person-fill"></i></a></li> -->
           <!-- <li><a class="nav-link scrollto" href="includes/auth/login.php">Register</a></li> -->
-          <a href="includes/auth/login.php"><button class="btn btn-primary scrollto">Register</button></a>
+          <a href="login.php"><button class="btn btn-primary scrollto">Register</button></a>
           
         </ul>
 
