@@ -1,3 +1,11 @@
+<?php
+  require_once "libraries/dbconfig.php";
+  // if(isset($SESSION(''))){
+  //   session_start();
+  // }
+  
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +42,7 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+  <header id="header" class="fixed-top d-flex align-items-center ">
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
@@ -45,11 +53,15 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#courses">Courses</a></li>
+          <li><a class="nav-link scrollto active" href="/capstone/#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="/capstone/#courses">Courses</a></li>
           <li><a class="nav-link scrollto" href="#resources">Resources</a></li>
           <li><a class="nav-link scrollto" href="#about">About Us</a></li>
+<<<<<<< HEAD
           <li><a class="nav-link scrollto" href="#about">Lesson</a></li>
+=======
+          <li><a class="nav-link scrollto" href="video/video.html">Lesson</a></li>
+>>>>>>> 83ca2543621d53d5869db3a197af4f750458809f
           <!-- <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
           <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
@@ -69,12 +81,13 @@
               <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li> -->
+          
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
 
           <!-- <li><a href=""><i class="bi bi-search "></i></a></li> -->
           <!-- <li><a href=""><i class="bi bi-person-fill"></i></a></li> -->
           <!-- <li><a class="nav-link scrollto" href="includes/auth/login.php">Register</a></li> -->
-          <a href="includes/auth/login.php"><button class="btn btn-primary scrollto">Register</button></a>
+          <a href="login.php"><button class="btn btn-primary scrollto">Register</button></a>
           
         </ul>
 
