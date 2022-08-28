@@ -56,19 +56,19 @@
 
           </div>
 
-          <!-- db status check -->
+          <!-- db status check
           <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-exclamation-circle mr-2"></i>
             <?php
-            echo "Database Status: ";
-            if ($GLOBALS["dbaseStatusValue"] == 1) {
-              echo "<b style='color:green'>online</b>";
-            } else {
-              echo "<b style='color:red'>offline</b>";
-            }
+            //echo "Database Status: ";
+            // if ($GLOBALS["dbaseStatusValue"] == 1) {
+            //   echo "<b style='color:green'>online</b>";
+            // } else {
+            //   echo "<b style='color:red'>offline</b>";
+            // }
             ?>
-          </div>
+          </div> -->
 
         </div>
       </div>
