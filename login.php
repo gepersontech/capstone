@@ -37,8 +37,7 @@
     border-radius: 4px;
     padding: 10px 15px;
     width: 400px;
-    margin-left: auto;
-    margin-right: 50px;
+    margin: auto;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2)
   }
   .text-center{
@@ -46,9 +45,12 @@
   }
   #email, #pass{
     border-radius: 2px;
-    box-shadow: 0 1px 2px rgb(0 0 0 / 0.2) inset
+    border: none;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.2) inset;
   }
-
+  #email:focus, #pass:focus{
+    border: 1px solid lightslategrey;
+  }
   .btn-section{
     text-align: center;
   }
@@ -57,13 +59,23 @@
     margin-top: 5px;
     width: 100%;
   }
+  .container .section-title{
+    margin-left: 370px;
+  }
 
+  #particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 </style>
+<body id=particle-js> 
+
 <main id="main">
   <!-- ======= Login Section ======= -->
   <section id="contact" class="contact">
     <div class="container">
-      <div class="section-title" data-aos="fade-up">
+      <div class="section-title" data-aos="fade-down">
         <h2>Login</h2>
         <p>Login Now</p>
       </div>
@@ -72,7 +84,7 @@
           <form action="forms/contact.php" method="post" role="form" class="php-email-form">
             <div class="row-1">
               <div class="form-group mt-3">
-                <input type="email" name="name" class="form-control" id="email" placeholder="Your Email" required autofocus>
+                <input type="email" name="name" class="form-control" id="email" placeholder="Your Email" required>
               </div>
             </div>
             <div class="form-group mt-3">
@@ -92,6 +104,7 @@
   </section><!-- End Contact Section -->
 
 </main><!-- End #main -->
+ </body> <!-- body end -->
 
 <!-- ======= Footer ======= -->
 <footer id="footer">
@@ -179,8 +192,10 @@
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 <script src="assets/vendor/php-email-form/validate.js"></script>
 
+<a href="https://www.google.de/maps/place/Augsburger+Puppenkiste/@48.360357,10.903245,17z/data=!3m1!4b1!4m2!3m1!1s0x479e98006610a511:0x73ac6b9f80c4048f">
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
+<script src="assets/js/logins.js"></script>
 </body>
 
 </html>
