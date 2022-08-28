@@ -37,7 +37,9 @@
     border-radius: 4px;
     padding: 10px 15px;
     width: 400px;
-    margin: auto;
+    margin-left: 60%;
+    margin-top: -20px;
+    margin-bottom: 30px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2)
   }
   .text-center{
@@ -46,10 +48,10 @@
   #email, #pass{
     border-radius: 2px;
     border: none;
-    box-shadow: 0 1px 2px rgb(0 0 0 / 0.2) inset;
+    box-shadow: 0 0.5px 2px rgb(0 0 0 / 0.2) inset;
   }
   #email:focus, #pass:focus{
-    border: 1px solid lightslategrey;
+    border: 1px solid lightslategray;
   }
   .btn-section{
     text-align: center;
@@ -60,27 +62,30 @@
     width: 100%;
   }
   .container .section-title{
-    margin-left: 370px;
+    margin-left: 40px;
+    margin-top: -30px;
+  }
+  .background{
+    position: absolute;
+    margin-left: -30px;  
+    margin-top: 64px;
   }
 
-  #particles-js {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
 </style>
-<body id=particle-js> 
 
-<main id="main">
+<body id="main">
   <!-- ======= Login Section ======= -->
   <section id="contact" class="contact">
     <div class="container">
+    <div class="background" data-aos="fade-right">
+        <img src="assets/img/about.png" alt="">
+      </div>
       <div class="section-title" data-aos="fade-down">
         <h2>Login</h2>
         <p>Login Now</p>
       </div>
       <div class="row-form" data-aos="fade-left" data-aos-delay="200">
-        <div class="col-lg-30 mt-5 mt-lg-0 " data-aos="fade-left" data-aos-delay="200">
+        <div class="col-lg-30 mt-5 mt-lg-0 " data-aos="fade-left" data-aos-delay="90">
           <form action="forms/contact.php" method="post" role="form" class="php-email-form">
             <div class="row-1">
               <div class="form-group mt-3">
@@ -103,8 +108,7 @@
     <br>
   </section><!-- End Contact Section -->
 
-</main><!-- End #main -->
- </body> <!-- body end -->
+</body><!-- End #main -->
 
 <!-- ======= Footer ======= -->
 <footer id="footer">
@@ -191,13 +195,8 @@
 <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 <script src="assets/vendor/php-email-form/validate.js"></script>
-
-<a href="https://www.google.de/maps/place/Augsburger+Puppenkiste/@48.360357,10.903245,17z/data=!3m1!4b1!4m2!3m1!1s0x479e98006610a511:0x73ac6b9f80c4048f">
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
-<script src="assets/js/logins.js"></script>
-</body>
-
 </html>
 
 
