@@ -1,9 +1,5 @@
 <?php
   require_once "libraries/dbconfig.php";
-  // if(isset($SESSION(''))){
-  //   session_start();
-  // }
-  
 ?>
 
 <!DOCTYPE html>
