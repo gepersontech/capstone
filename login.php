@@ -86,7 +86,7 @@
       </div>
       <div class="row-form" data-aos="fade-left" data-aos-delay="200">
         <div class="col-lg-30 mt-5 mt-lg-0 " data-aos="fade-left" data-aos-delay="90">
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <form action="functions/loginFunction.php" method="post" role="form" class="php-email-form">
             <div class="row-1">
               <div class="form-group mt-3">
                 <input type="email" name="name" class="form-control" id="email" placeholder="Your Email" required>
@@ -115,10 +115,9 @@
   <div class="footer-top">
     <div class="container">
       <div class="row">
-
         <div class="col-lg-4 col-md-6">
           <div class="footer-info">
-            <h3>Bootslander</h3>
+            <h3>Intelligent Tutor</h3>
             <p class="pb-3"><em>Qui repudiandae et eum dolores alias sed ea. Qui suscipit veniam excepturi quod.</em></p>
             <p>
               A108 Adam Street <br>

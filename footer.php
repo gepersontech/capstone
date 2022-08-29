@@ -86,7 +86,7 @@
         Designed by <a href="#">Intelligent Tutor</a>
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </footer>End Footer
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <div id="preloader"></div>
