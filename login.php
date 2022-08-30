@@ -1,3 +1,6 @@
+
+
+
 <html>
 
 <head>
@@ -86,17 +89,17 @@
       </div>
       <div class="row-form" data-aos="fade-left" data-aos-delay="200">
         <div class="col-lg-30 mt-5 mt-lg-0 " data-aos="fade-left" data-aos-delay="90">
-          <form action="functions/loginFunction.php" method="post" role="form" class="php-email-form">
+          <form action="functions/loginVerifier.php" method="POST" class="php-email-form">
             <div class="row-1">
               <div class="form-group mt-3">
-                <input type="email" name="name" class="form-control" id="email" placeholder="Your Email" required>
+                <input type="email" name="email" class="form-control" id="email" placeholder="Your Email" required>
               </div>
             </div>
             <div class="form-group mt-3">
-              <input type="password" class="form-control" name="subject" id="pass" placeholder="Password" required>
+              <input type="password" class="form-control" name="pass" id="pass" placeholder="Password" required>
             </div>
             <div class="btn-section">
-              <button class="btn btn-primary" type="submit">Login</button>
+              <button class="btn btn-primary" type="submit" name="submit">Login</button>
             </div>
             <hr style="width: 3.4in;margin: auto;height: 0.5px;" class="my-3" />
             <div class="text-center"><a href="">Forgot password?</a></div>
