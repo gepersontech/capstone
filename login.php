@@ -30,6 +30,7 @@
   <!-- Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
+
 <style>
   #main{
     background-color: ghostwhite;
@@ -77,6 +78,62 @@
 </style>
 
 <body id="main">
+
+<header id="header" class="fixed-top d-flex align-items-center ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+        <h1><a href="index.php"><span>Intelligent Tutor</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="/capstone/#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="/capstone/#courses">Courses</a></li>
+          <li><a class="nav-link scrollto" href="#resources">Resources</a></li>
+          <li><a class="nav-link scrollto" href="#about">About Us</a></li>
+
+          <li><a class="nav-link scrollto" href="#about">Lesson</a></li>
+
+          <li><a class="nav-link scrollto" href="video/video.html">Lesson</a></li>
+
+          <!-- <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
+          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li> -->
+          
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+
+          <!-- <li><a href=""><i class="bi bi-search "></i></a></li> -->
+          <!-- <li><a href=""><i class="bi bi-person-fill"></i></a></li> -->
+          <!-- <li><a class="nav-link scrollto" href="includes/auth/login.php">Register</a></li> -->
+          <a href="admin/register.html"><button class="btn btn-primary scrollto">Register</button></a>
+          
+        </ul>
+
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+  <br><br><br>
   <!-- ======= Login Section ======= -->
   <section id="contact" class="contact">
     <div class="container">
