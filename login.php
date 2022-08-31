@@ -1,6 +1,3 @@
-
-
-
 <html>
 
 <head>
@@ -88,7 +85,7 @@
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
       </div>
 
-      <nav id="navbar" class="navbar">
+      <!-- <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="/capstone/#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="/capstone/#courses">Courses</a></li>
@@ -119,17 +116,18 @@
             </ul>
           </li> -->
           
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
 
           <!-- <li><a href=""><i class="bi bi-search "></i></a></li> -->
           <!-- <li><a href=""><i class="bi bi-person-fill"></i></a></li> -->
           <!-- <li><a class="nav-link scrollto" href="includes/auth/login.php">Register</a></li> -->
-          <a href="admin/register.html"><button class="btn btn-primary scrollto">Register</button></a>
+          <!-- <a href="admin/register.html"><button class="btn btn-primary scrollto">Register</button></a> -->
           
         </ul>
 
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      </nav> -->
+      <!-- .navbar -->
 
     </div>
   </header><!-- End Header -->
@@ -146,6 +144,7 @@
       </div>
       <div class="row-form" data-aos="fade-left" data-aos-delay="200">
         <div class="col-lg-30 mt-5 mt-lg-0 " data-aos="fade-left" data-aos-delay="90">
+          <b>You can now login.</b>
           <form action="functions/loginVerifier.php" method="POST" class="php-email-form">
             <div class="row-1">
               <div class="form-group mt-3">
