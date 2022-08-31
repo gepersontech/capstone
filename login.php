@@ -142,7 +142,7 @@
       </div>
       <div class="section-title" data-aos="fade-down">
         <h2>Login</h2>
-        <p>Login Now</p>
+        <p>Intelligent Tutor</p>
       </div>
       <div class="row-form" data-aos="fade-left" data-aos-delay="200">
         <div class="col-lg-30 mt-5 mt-lg-0 " data-aos="fade-left" data-aos-delay="90">
