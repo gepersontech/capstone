@@ -378,7 +378,9 @@
         </div>
 
       </div>
-    </section> End Counts Section -->
+    </section> -->
+    
+    <!-- End Counts Section  -->
 
     <!-- ======= Details Section ======= -->
     <!-- <section id="details" class="details">
@@ -472,7 +474,7 @@
         </div>
 
       </div>
-    </section> --> -->
+    </section> --> 
     <!-- End Details Section -->
 
     <!-- ======= Gallery Section ======= -->
@@ -553,7 +555,9 @@
         </div>
 
       </div>
-    </section><!-- End Gallery Section -->
+    </section>-->
+
+     <!-- End Gallery Section  -->
 
     <!-- ======= Testimonials Section ======= -->
     <!-- <section id="testimonials" class="testimonials">
