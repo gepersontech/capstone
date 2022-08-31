@@ -46,14 +46,14 @@
   .text-center{
     font-size: small;
   }
-  #email, #pass{
+  /* #email, #pass{
     border-radius: 2px;
     border: none;
     box-shadow: 0 0.5px 2px rgb(0 0 0 / 0.2) inset;
   }
   #email:focus, #pass:focus{
     border: 1px solid lightslategray;
-  }
+  } */
   .btn-section{
     text-align: center;
   }
@@ -133,7 +133,7 @@
   </header><!-- End Header -->
   <br><br><br>
   <!-- ======= Login Section ======= -->
-  <section id="contact" class="contact">
+  <section id="register" class="contact">
     <div class="container">
     <div class="background" data-aos="fade-right">
         <img src="assets/img/about.png" alt="">
