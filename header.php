@@ -1,5 +1,5 @@
 <?php
-  require_once "libraries/dbconfig.php";
+  require_once "functions/dbconfig.php";
 ?>
 
 <!DOCTYPE html>

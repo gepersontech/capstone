@@ -1,5 +1,5 @@
 <?php
-    require_once "libraries/dbconfig.php";
+    require_once "functions/dbconfig.php";
     
     if(isset($_POST["submit"])){
         $email = $_POST['email'];
