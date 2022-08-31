@@ -84,7 +84,6 @@
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
       </div>
-
       <!-- <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="/capstone/#hero">Home</a></li>
@@ -126,14 +125,13 @@
         </ul>
 
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav> -->
+      </nav>
       <!-- .navbar -->
-
     </div>
   </header><!-- End Header -->
   <br><br><br>
   <!-- ======= Login Section ======= -->
-  <section id="register" class="contact">
+  <section id="login" class="contact">
     <div class="container">
     <div class="background" data-aos="fade-right">
         <img src="assets/img/about.png" alt="">
@@ -159,15 +157,16 @@
             </div>
             <hr style="width: 3.4in;margin: auto;height: 0.5px;" class="my-3" />
             <div class="text-center"><a href="">Forgot password?</a></div>
-            <div class="text-center">Don't have account yet?<a href=""> click here</a></div>   
+            <div class="text-center">Don't have account yet?<a href="./register.php"> click here</a></div>   
           </form>
         </div>
       </div>
     </div>
     <br>
-  </section><!-- End Contact Section -->
-
-</body><!-- End #main -->
+  </section>
+  <!-- End Contact Section -->
+</body>
+<!-- End #main -->
 
 <!-- ======= Footer ======= -->
 <footer id="footer">
