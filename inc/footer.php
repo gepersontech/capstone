@@ -8,7 +8,7 @@
           <div class="col-lg-4 col-md-6">
             <div class="footer-info">
               <h3>Intelligent Tutor </h3>
-              <p class="pb-3"><em>Qui repudiandae et eum dolores alias sed ea. Qui suscipit veniam excepturi quod.</em></p>
+              <p class="pb-3"><em>Highly Adaptive, Interactive, and Learner-Paced Learning Environments.</em></p>
               <p>
                 Cor Jesu College, Davao del Sur,  <br>
                 PH 8002<br><br>
@@ -83,10 +83,10 @@
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/ -->
-        Designed by <a href="#">Intelligent Tutor</a>
+        Designed by <a href="index.php">Intelligent Tutor</a>
       </div>
     </div>
-  </footer>End Footer
+  </footer>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <div id="preloader"></div>
