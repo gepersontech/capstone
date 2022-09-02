@@ -885,12 +885,12 @@
               </div>
 
               <div class="email">
-                <i class="bi bi-0</p>
+                  <i class="bi bi-0</p>
+                </div>
+
               </div>
 
             </div>
-
-          </div>
 envelope"></i>
                 <h4>Email:</h4>
                 <p>info@thesis.com</p>

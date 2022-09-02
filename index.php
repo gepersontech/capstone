@@ -1,5 +1,5 @@
 <?php require_once 'inc/header.php'; ?>
-<?php //require_once 'inc/sidebar.php'; ?>
+
 
   <!-- Content Wrapper. Contains page content -->
 
@@ -16,6 +16,5 @@
           require_once 'pages/error_page.php';
         }
  ?>
-
 
  <?php require_once 'inc/footer.php'; ?>

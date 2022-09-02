@@ -51,10 +51,10 @@
         <ul>
           <li><a class="nav-link scrollto active" href="/capstone/#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="/capstone/#courses">Courses</a></li>
-          <li><a class="nav-link scrollto" href="#resources">Resources</a></li>
-          <li><a class="nav-link scrollto" href="#about">About Us</a></li>
+          <li><a class="nav-link scrollto" href="/capstone/#resources">Resources</a></li>
+          <li><a class="nav-link scrollto" href="/capstone/#about">About Us</a></li>
           <li><a class="nav-link scrollto" href="index.php?page=video">Lesson</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="/capstone/#contact">Contact</a></li>
 
           <!-- <li><a href=""><i class="bi bi-search "></i></a></li> -->
           <!-- <li><a href=""><i class="bi bi-person-fill"></i></a></li> -->
