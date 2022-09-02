@@ -53,8 +53,7 @@
           <li><a class="nav-link scrollto" href="/capstone/#courses">Courses</a></li>
           <li><a class="nav-link scrollto" href="#resources">Resources</a></li>
           <li><a class="nav-link scrollto" href="#about">About Us</a></li>
-          <li><a class="nav-link scrollto" href="#about">Lesson</a></li>
-          <li><a class="nav-link scrollto" href="video/video.html">Lesson</a></li>
+          <li><a class="nav-link scrollto" href="index.php?pages=video">Lesson</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
 
           <!-- <li><a href=""><i class="bi bi-search "></i></a></li> -->

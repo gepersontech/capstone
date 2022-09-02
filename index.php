@@ -8,7 +8,7 @@
           $page ='pages/' .$_GET['page'].'.php';
 
         }else{
-          $page = 'pages/dashboard.php';
+          $page = 'pages/home.php';
         }
         if (file_exists($page)) {
           require_once $page; 
