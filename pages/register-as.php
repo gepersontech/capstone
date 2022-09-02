@@ -1,13 +1,7 @@
 <?php
-  require_once "functions/dbconfig.php";
-  include ("header.php");
-
-?>
-
-<?php
   if (isset($_GET['submit'])) {
     if($_GET['register-as'] === "teacher"){
-        header("Location: register.php" );
+        header("Location: index.php?page=register" );
     }
     
   };
@@ -57,7 +51,7 @@
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="hidden" name="register-as" id="" value="teacher">
-                  <div class="text-center"><a href="./register.php" target="_blank"><button type="submit" name="submit" class="w-50">As Teacher</button></a></div>
+                  <div class="text-center"><a href="index.php?page=register" ><button type="submit" name="submit" class="w-50">As Teacher</button></a></div>
                   
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
@@ -65,7 +59,7 @@
                 </div>
               </div>
               <!-- <div class="text-center"><button type="submit">Send Message</button></div> -->
-</div>
+          </div>
             <br> <br> <br> <br>
           </div>
 
@@ -75,7 +69,3 @@
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
-
-  <?php
-  include "footer.php";
-  ?>

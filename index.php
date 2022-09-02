@@ -13,7 +13,7 @@
         if (file_exists($page)) {
           require_once $page; 
         }else{
-          //require_once 'pages/error_page.php';
+          require_once 'pages/error_page.php';
         }
  ?>
 

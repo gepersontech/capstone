@@ -59,7 +59,7 @@
           <!-- <li><a href=""><i class="bi bi-search "></i></a></li> -->
           <!-- <li><a href=""><i class="bi bi-person-fill"></i></a></li> -->
           <!-- <li><a class="nav-link scrollto" href="includes/auth/login.php">Register</a></li> -->
-          <a href="./register-as.php"><button class="btn btn-primary scrollto">Register</button></a>
+          <a href="index.php?page=register-as"><button class="btn btn-primary scrollt o">Register</button></a>
           
         </ul>
 

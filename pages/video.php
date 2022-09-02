@@ -6,8 +6,8 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Geometry Video Playlist</title>
 
-   <link rel="stylesheet" href="css/style.css">
-   <link rel="stylesheet" href="../assets/css/style.css">
+   <link rel="stylesheet" href="video/css/style.css">
+   <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 <body>
@@ -15,14 +15,14 @@
 <div class="container">
 
    <div class="main-video-container">
-      <video src="images/vid-1.mp4" loop controls class="main-video"></video>
+      <video src="video/images/vid-1.mp4" loop controls class="main-video"></video>
       <h3 class="main-vid-title">Introduction of Geometry</h3>
    </div>
 
    <div class="video-list-container">
 
       <div class="list active">
-         <video src="images/vid-1.mp4" class="list-video"></video>
+         <video src="video/images/vid-1.mp4" class="list-video"></video>
          <h3 class="list-title">Introduction on Geometry</h3>
       </div>
 
@@ -32,12 +32,12 @@
       </div> -->
 
       <div class="list">
-         <video src="images/vid-3.mp4" class="list-video"></video>
+         <video src="video/images/vid-3.mp4" class="list-video"></video>
          <h3 class="list-title">Circle</h3>
       </div>
 
       <div class="list">
-         <video src="images/vid-4.mp4" class="list-video"></video>
+         <video src="video/images/vid-4.mp4" class="list-video"></video>
          <h3 class="list-title">Triangle</h3>
       </div>
 
@@ -47,12 +47,12 @@
       </div> -->
 
       <div class="list">
-         <video src="images/vid-6.mp4" class="list-video"></video>
+         <video src="video/images/vid-6.mp4" class="list-video"></video>
          <h3 class="list-title">Rectangle</h3>
       </div>
 
       <div class="list">
-         <video src="images/vid-7.mp4" class="list-video"></video>
+         <video src="video/images/vid-7.mp4" class="list-video"></video>
          <h3 class="list-title">Pentagon</h3>
       </div>
 
@@ -71,7 +71,7 @@
 </div>
 
 
-<script src="js/script.js"></script>
+<script src="video/js/script.js"></script>
 <!-- ======= Footer ======= -->
 <!-- <?php
   require_once "libraries/dbconfig.php";
@@ -169,15 +169,15 @@
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="../assets/vendor/aos/aos.js"></script>
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="../assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="../assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 
 </body>
 
