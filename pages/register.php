@@ -142,7 +142,7 @@
               <button class="btn btn-primary" type="submit" name="submit">Login</button>
             </div>
             <hr style="width: 3.4in;margin: auto;height: 0.5px;" class="my-3" />
-            <div class="text-center">Already have account?<a href="login.php"> login now</a></div>   
+            <div class="text-center">Already have account?<a href="index.php?page=login"> login now</a></div>   
           </form>
         </div>
       </div>
