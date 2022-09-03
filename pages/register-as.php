@@ -61,7 +61,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0 text-center " style=" margin: auto;" data-aos="fade-left" data-aos-delay="200">
             <h2 style=" margin: auto; ">Choose</h2>
-            <p>Please choose what you want.</p><br> <br>
+            <p>You want to register as?</p><br> <br>
 
             
             <div  class="php-email-form">
