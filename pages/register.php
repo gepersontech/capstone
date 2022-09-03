@@ -43,19 +43,20 @@
     margin-left: -30px;  
     margin-top: 64px;
   }
+ 
 
 </style>
 
-<body id="main">
+<!-- <body id="main">
 
 <header id="header" class="fixed-top d-flex align-items-center ">
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
         <h1><a href="index.php"><span>Intelligent Tutor</span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
+         Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
-      </div>
+      <!-- </div> -->
 
       <!-- <nav id="navbar" class="navbar">
         <ul>
@@ -102,7 +103,8 @@
       <!-- .navbar -->
 
     </div>
-  </header><!-- End Header -->
+  </header> -->
+  <!-- End Header -->
   <br><br><br>
   <!-- ======= Register Section ======= -->
   <section id="register" class="contact">

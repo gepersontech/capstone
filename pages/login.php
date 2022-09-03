@@ -39,13 +39,18 @@
   }
   .background{
     position: absolute;
-    margin-left: -30px;  
-    margin-top: 64px;
+    margin-left: -40px;  
+    margin-top: 0px;
+   
+  }
+  .background img{
+    height: 486px;
+    width: 600px;
   }
 
 </style>
 
-<body id="main">
+<!-- <body id="main">
 
 <header id="header" class="fixed-top d-flex align-items-center ">
     <div class="container d-flex align-items-center justify-content-between">
@@ -99,13 +104,14 @@
       </nav>
       <!-- .navbar -->
     </div>
-  </header><!-- End Header -->
+  </header> -->
+  <!-- End Header -->
   <br><br><br>
   <!-- ======= Login Section ======= -->
   <section id="login" class="contact">
     <div class="container">
     <div class="background" data-aos="fade-right">
-        <img src="assets/img/about.png" alt="">
+        <img src="assets/img/about2.png" alt="" >
       </div>
       <div class="section-title" data-aos="fade-down">
         <h2>Login</h2>
@@ -128,7 +134,7 @@
             </div>
             <hr style="width: 3.4in;margin: auto;height: 0.5px;" class="my-3" />
             <div class="text-center"><a href="">Forgot password?</a></div>
-            <div class="text-center">Don't have account yet?<a href="./register.php"> click here</a></div>   
+            <div class="text-center">Don't have account yet?<a href="index.php?page=register"> click here</a></div>   
           </form>
         </div>
       </div>

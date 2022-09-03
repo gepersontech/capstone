@@ -212,13 +212,13 @@
         <div class="row g-0" data-aos="fade-left">
         <!-- <div class="row"> -->
           <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch" data-aos="fade-right">
-            <a href="https://www.youtube.com/KUYAGEP" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+            <a href="#" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
           </div>
 
           <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-left">
             <h3>Enim quis est voluptatibus aliquid consequatur fugiat</h3>
             <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi. Libero laboriosam sint et id nulla tenetur. Suscipit aut voluptate.</p>
-
+              
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
               <div class="icon"><i class="bx bx-fingerprint"></i></div>
               <h4 class="title"><a href="">Lorem Ipsum</a></h4>
@@ -572,7 +572,7 @@
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
-            </div><!-- End testimonial item -->
+            </div> End testimonial item -->
 
             <!-- <div class="swiper-slide">
               <div class="testimonial-item">
@@ -885,13 +885,7 @@
               </div>
 
               <div class="email">
-                  <i class="bi bi-0</p>
-                </div>
-
-              </div>
-
-            </div>
-envelope"></i>
+                <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
                 <p>info@thesis.com</p>
               </div>
@@ -899,7 +893,9 @@ envelope"></i>
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <p>+63 931 756 274
+                <p>+63 931 756 2740</p>
+              </div>
+            </div>
           <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
 
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
@@ -913,16 +909,17 @@ envelope"></i>
               </div>
               <div class="form-group mt-3">
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
+              </dv class="form-group mt-3">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
+              <diiv>
               <div class="my-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+                <div class="text-center"><button type="submit">Send Message</button></div>
+              </div>
             </form>
 
           </div>
