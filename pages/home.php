@@ -865,10 +865,10 @@
       </div>
     </section> --> 
     <!-- End F.A.Q Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
       <div class="container">
+
         <div class="section-title" data-aos="fade-up">
           <h2>Contact</h2>
           <p>Contact Us</p>
@@ -881,21 +881,25 @@
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Location:</h4>
-                <p>Cor Jesu College, Davao del Sur, PH 8002</p>
+                <p>Cor Jesu College, Digos City, PH 8002</p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>info@thesis.com</p>
+                <p>info@capstone.com</p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <p>+63 931 756 2740</p>
+                <p>+1 5589 55488 554</p>
               </div>
+
             </div>
+
+          </div>
+
           <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
 
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
@@ -909,17 +913,16 @@
               </div>
               <div class="form-group mt-3">
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </dv class="form-group mt-3">
+              </div>
+              <div class="form-group mt-3">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
-              <diiv>
               <div class="my-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-                <div class="text-center"><button type="submit">Send Message</button></div>
-              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
 
           </div>
