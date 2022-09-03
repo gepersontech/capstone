@@ -134,7 +134,7 @@
             </div>
             <hr style="width: 3.4in;margin: auto;height: 0.5px;" class="my-3" />
             <div class="text-center"><a href="">Forgot password?</a></div>
-            <div class="text-center">Don't have account yet?<a href="index.php?page=register"> click here</a></div>   
+            <div class="text-center">Don't have account yet?<a href="index.php?page=register-as"> click here</a></div>   
           </form>
         </div>
       </div>

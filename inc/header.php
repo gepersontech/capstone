@@ -8,7 +8,6 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
   <title>Home | Learning Geometry</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
@@ -32,6 +31,9 @@
   <!-- Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <!-- Custom fonts for this template-->
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
   
 </head>
 
@@ -42,7 +44,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1><a href="index.php"><span>Intelligent Tutor</span></a></h1>
+        <h1><a href="index.php"><span>ITS Geometry and Learning App </span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
       </div>
@@ -59,7 +61,7 @@
           <!-- <li><a href=""><i class="bi bi-search "></i></a></li> -->
           <!-- <li><a href=""><i class="bi bi-person-fill"></i></a></li> -->
           <!-- <li><a class="nav-link scrollto" href="includes/auth/login.php">Register</a></li> -->
-          <a href="index.php?page=register-as"><button class="btn btn-primary scrollt o">Register</button></a>
+          <a href="index.php?page=register-as"><button class="btn btn-primary scrollt o">Join us</button></a>
           
         </ul>
 

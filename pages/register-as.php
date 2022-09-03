@@ -5,8 +5,25 @@
     }
     
   };
-  
+
+
 ?>
+
+<style>
+  .innerBox{
+    background-color: white;
+    border-radius: 15px;
+    height: 200px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2)
+  }
+  .innerBox span{
+    margin-top: 80px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 25px;
+    color: midnightblue;
+  }
+</style>
+
  <br> <br> <br> <br>
     <!-- ======= Contact Section ======= -->
     <section id="" class="contact">
@@ -51,11 +68,20 @@
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="hidden" name="register-as" id="" value="teacher">
-                  <div class="text-center"><a href="index.php?page=register" ><button type="submit" name="submit" class="w-50">As Teacher</button></a></div>
+                  <div class="text-center"><a href="index.php?page=register" >
+                    <div class="innerBox">           
+                      <span type="submit" name="submit" class="w-50">Teacher</span>
+                    </div>      
+                  </a></div>
                   
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <div class="text-center"><button type="submit" class="w-50">As Student</button></div>
+                  <div class="text-center"> <a href="index.php?page=register"> 
+                    <div class="innerBox">
+                      <span type="submit" class="w-50">Student</span>
+                    </div>
+                    
+                  </a></div>
                 </div>
               </div>
               <!-- <div class="text-center"><button type="submit">Send Message</button></div> -->

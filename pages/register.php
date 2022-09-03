@@ -155,7 +155,7 @@
 </body><!-- End #main -->
 
 <!-- ======= Footer ======= -->
-<footer id="footer">
+<!-- <footer id="footer">
   <div class="footer-top">
     <div class="container">
       <div class="row">
@@ -212,4 +212,4 @@
 
       </div>
     </div>
-  </div>
+  </div> -->
