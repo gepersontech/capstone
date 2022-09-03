@@ -45,7 +45,7 @@
   }
   .background img{
     height: 486px;
-    width: 600px;
+    width: 700px;
   }
 
 </style>
