@@ -914,7 +914,11 @@
               <div class="form-group mt-3">
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
               </div>
+<<<<<<< Updated upstream
               <div class="form-group mt-3">
+=======
+                <div class="form-group mt-3">
+>>>>>>> Stashed changes
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
               <div class="my-3">
@@ -924,7 +928,7 @@
               </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
-
+            </
           </div>
 
         </div>
