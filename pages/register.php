@@ -110,7 +110,7 @@
   <section id="register" class="contact">
     <div class="container">
     <div class="background" data-aos="fade-right">
-        <img src="assets/img/about.png" alt="">
+        <img src="assets/img/about1.png" alt="">
       </div>
       <div class="section-title" data-aos="fade-down">
         <h2>Register</h2>
@@ -141,7 +141,7 @@
                 </div>
               </div>
             <div class="btn-section">
-              <button class="btn btn-primary" type="submit" name="submit">Login</button>
+              <button class="btn btn-primary" type="submit" name="submit">Register</button>
             </div>
             <hr style="width: 3.4in;margin: auto;height: 0.5px;" class="my-3" />
             <div class="text-center">Already have account?<a href="index.php?page=login"> login now</a></div>   
