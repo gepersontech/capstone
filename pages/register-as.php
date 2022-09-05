@@ -23,21 +23,21 @@
     font-weight: bold;
     font-size: 30px;
     color: #1acc8d;
-    margin-top: -130px;
+    margin-top: -138px;
     margin-left: -240px;
   }
   .iconBox{
     position: relative;
-    color: gray;
-    opacity: 15%;
+    color: black;
+    opacity: 7%;
     transform: rotate(-10deg);
     margin-top: 48px;
-    margin-left: 2.6in;
+    margin-left: 2.5in;
   }
   .iconBox1{
     position: relative;
-    color: gray;
-    opacity: 15%;
+    color: black;
+    opacity: 7%;
     transform: rotate(-10deg);
     margin-top: 48px;
     margin-left: 2.7in;
@@ -90,7 +90,7 @@
                     <div class="innerBox">
                       <div class="iconBox"><i class="fas fa-chalkboard-teacher fa-10x"></i></div>       
                       <span type="submit" name="submit" class="w-50">Teacher</span>
-                    </div>      
+                    </div>   
                   </a></div>
                   
                 </div>
@@ -99,8 +99,7 @@
                     <div class="innerBox">
                       <div class="iconBox1"><i class="fas fa-solid fa-user fa-10x"></i></div>
                       <span type="submit" class="w-50">Student</span>
-                    </div>
-                    
+                    </div>                   
                   </a></div>
                 </div>
               </div>
