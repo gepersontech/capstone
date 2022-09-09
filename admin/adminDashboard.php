@@ -89,7 +89,7 @@
                 <div class="col-12 col-sm-6 col-xxl-3">
                     <div class="card h-100">
                         <div class="card-header justify-content-between align-items-center d-flex border-0 pb-0">
-                            <h6 class="card-title m-0 text-muted fs-xs text-uppercase fw-bolder tracking-wide">Student</h6>
+                            <h6 class="card-title m-0 text-muted fs-xs text-uppercase fw-bolder tracking-wide">Student Section</h6>
                         </div>
                         <div class="card-body">
                             <div class="row gx-4 mb-3 mb-md-1">
@@ -120,7 +120,7 @@
                 <div class="col-12 col-sm-6 col-xxl-3">
                     <div class="card h-100">
                         <div class="card-header justify-content-between align-items-center d-flex border-0 pb-0">
-                            <h6 class="card-title m-0 text-muted fs-xs text-uppercase fw-bolder tracking-wide">Daily Pageviews</h6>
+                            <h6 class="card-title m-0 text-muted fs-xs text-uppercase fw-bolder tracking-wide">Lessons section</h6>
                         </div>
                         <div class="card-body">
                             <div class="row gx-4 mb-3 mb-md-1">
@@ -151,7 +151,7 @@
                 <div class="col-12 col-sm-6 col-xxl-3">
                     <div class="card h-100">
                         <div class="card-header justify-content-between align-items-center d-flex border-0 pb-0">
-                            <h6 class="card-title m-0 text-muted fs-xs text-uppercase fw-bolder tracking-wide">Refund Issued</h6>
+                            <h6 class="card-title m-0 text-muted fs-xs text-uppercase fw-bolder tracking-wide">Activities section</h6>
                         </div>
                         <div class="card-body">
                             <div class="row gx-4 mb-3 mb-md-1">
