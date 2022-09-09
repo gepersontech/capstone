@@ -1,12 +1,10 @@
 <?php require_once 'inc/header.php'; ?>
 
-
   <!-- Content Wrapper. Contains page content -->
 
   <?php 
         if (isset($_GET['page'])) {
           $page ='pages/' .$_GET['page'].'.php';
-
         }else{
           $page = 'pages/home.php';
         }

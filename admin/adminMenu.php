@@ -16,6 +16,7 @@
         font-weight: bold;
         color: #0f172a;
     }
+    
 </style>
 
 <aside class="aside bg-white">
@@ -26,7 +27,7 @@
                         <!-- Dashboard Menu Section-->
                         <li class="menu-section mt-2">Menu</li>
                         <li class="menu-item">
-                            <a class="d-flex align-items-center" href="adminDashboard.php">
+                            <a class="d-flex align-items-center" href="index.php">
                                 <span class="menu-icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" class="w-100">
                                         <rect fill-opacity=".5" fill="currentColor" x="3" y="3" width="7" height="7"></rect>
@@ -52,13 +53,10 @@
                                 <span class="menu-link">Pages</span></a>
                             <div class="collapse" id="collapseMenuItemPages">
                                 <ul class="submenu">
-                                    <li><a href="./charts.html">Charts</a></li>
-                                    <li><a href="./user-listing.html">User Listing</a></li>
-                                    <li><a href="./login.html">Login</a></li>
-                                    <li><a href="./register.html">Register</a></li>
-                                    <li><a href="./forgot-password.html">Forgot Password</a></li>
-                                    <li><a href="./404.html">404 Page</a></li>
-                                    <li><a href="./blank.html">Blank Page</a></li>
+                                    <li><a href="index.php?page=modules">Modules</a></li>
+                                    <li><a href="index.php?page=lesson">Lessons</a></li>                           
+                                    <li><a href="index.php?page=activity">Activities</a></li>
+                                    <li><a href="index.php?page=video">Videos</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -92,7 +90,8 @@
                                     class="menu-link">Users</span></a>
                             <div class="collapse" id="collapseMenuItemUsers">
                                 <ul class="submenu">
-                                    <li><a href="./user-listing.html">User Listing</a></li>
+                                    <li><a href="index.php?page=adminList">Admin list</a></li>
+                                    <li><a href="index.php?page=studentList">Student list</a></li>                                
                                 </ul>
                             </div>
                         </li>

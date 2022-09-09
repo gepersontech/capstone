@@ -52,7 +52,7 @@
  <nav class="navbar navbar-expand-lg navbar-light border-bottom py-0 fixed-top bg-white">
       <div class="container-fluid">
         <a class="navbar-brand d-flex justify-content-start align-items-center border-end"
-          href="./index.html">
+          href="index.php">
           <div class="d-flex align-items-center">
               <svg class="f-w-5 me-2 text-primary d-flex align-self-center lh-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 203.58 182"><path d="M101.66,41.34C94.54,58.53,88.89,72.13,84,83.78A21.2,21.2,0,0,1,69.76,96.41,94.86,94.86,0,0,0,26.61,122.3L81.12,0h41.6l55.07,123.15c-12-12.59-26.38-21.88-44.25-26.81a21.22,21.22,0,0,1-14.35-12.69c-4.71-11.35-10.3-24.86-17.53-42.31Z" fill="currentColor" fill-rule="evenodd" fill-opacity="0.5"/><path d="M0,182H29.76a21.3,21.3,0,0,0,18.56-10.33,63.27,63.27,0,0,1,106.94,0A21.3,21.3,0,0,0,173.82,182h29.76c-22.66-50.84-49.5-80.34-101.79-80.34S22.66,131.16,0,182Z" fill="currentColor" fill-rule="evenodd"/></svg>
               <span class="fw-black text-uppercase tracking-wide fs-6 lh-1">IntelTutor</span>
@@ -164,12 +164,6 @@
             </div>        <!-- / Notifications-->
     
             <!-- Activity -->
-             <button class="btn-action mx-1" data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasActivity" aria-controls="offcanvasActivity">
-                <span class="f-w-4 text-muted">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-                </span>
-            </button>
             <!-- Activity end -->
             <!-- Messages-->
             <button class="btn-action mx-1" type="button" data-bs-toggle="offcanvas"
@@ -177,7 +171,8 @@
                 <span class="f-w-4 text-muted">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
                 </span>
-            </button>        <!-- / Messages -->
+            </button>
+            <!-- / Messages -->
     
             <!-- Profile Menu-->
             <div class="dropdown ms-1">
@@ -226,3 +221,4 @@
       </div>
     </nav>
  </header>
+ 
