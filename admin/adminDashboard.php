@@ -20,7 +20,8 @@
             <a class="btn btn-sm btn-secondary-faded ms-2 text-body" href="#"><i class="ri-question-line align-bottom"></i> Help</a>
           </div>
           </div>
-        </div>        <!-- / Breadcrumbs-->
+        </div>
+        <!-- / Breadcrumbs-->
 
         <!-- Content-->
         <section class="container-fluid">
