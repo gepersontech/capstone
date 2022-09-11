@@ -1,284 +1,289 @@
--- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost    Database: geometry
--- ------------------------------------------------------
--- Server version	8.0.28
+-- Host: 127.0.0.1
+-- Generation Time: Sep 11, 2022 at 03:23 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `geometry`
+--
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `account`
 --
 
-DROP TABLE IF EXISTS `account`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `account` (
-  `accountID` int NOT NULL,
+  `accountID` int(11) NOT NULL,
   `email` varchar(100) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
-  `date-registered` date DEFAULT NULL,
-  PRIMARY KEY (`accountID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `date-registered` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `account`
---
-
-LOCK TABLES `account` WRITE;
-/*!40000 ALTER TABLE `account` DISABLE KEYS */;
-/*!40000 ALTER TABLE `account` ENABLE KEYS */;
-UNLOCK TABLES;
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `admin`
 --
 
-DROP TABLE IF EXISTS `admin`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `admin` (
-  `adminId` int NOT NULL,
+  `adminId` int(11) NOT NULL,
   `firstname` varchar(45) DEFAULT NULL,
   `lastname` varchar(45) DEFAULT NULL,
-  `Age` int DEFAULT NULL,
+  `Age` int(11) DEFAULT NULL,
   `Gender` varchar(45) DEFAULT NULL,
   `Birthdate` date DEFAULT NULL,
-  `accountID` int NOT NULL,
-  PRIMARY KEY (`adminId`,`accountID`),
-  KEY `fk_admin_account1_idx` (`accountID`),
-  CONSTRAINT `fk_admin_account1` FOREIGN KEY (`accountID`) REFERENCES `account` (`accountID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `accountID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `admin`
---
-
-LOCK TABLES `admin` WRITE;
-/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
-/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
-UNLOCK TABLES;
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `assignment`
 --
 
-DROP TABLE IF EXISTS `assignment`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `assignment` (
-  `assignmentID` int NOT NULL,
+  `assignmentID` int(11) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
-  `totalQuestion` int DEFAULT NULL,
-  `status` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`assignmentID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `totalQuestion` int(11) DEFAULT NULL,
+  `status` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `assignment`
---
-
-LOCK TABLES `assignment` WRITE;
-/*!40000 ALTER TABLE `assignment` DISABLE KEYS */;
-/*!40000 ALTER TABLE `assignment` ENABLE KEYS */;
-UNLOCK TABLES;
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `items`
 --
 
-DROP TABLE IF EXISTS `items`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `items` (
-  `itemId` int NOT NULL,
+  `itemId` int(11) NOT NULL,
   `questions` varchar(45) DEFAULT NULL,
   `answerKey` varchar(45) DEFAULT NULL,
-  `moduleID` int NOT NULL,
-  `assignmentID` int NOT NULL,
-  PRIMARY KEY (`itemId`,`moduleID`,`assignmentID`),
-  KEY `fk_items_modules1_idx` (`moduleID`),
-  KEY `fk_items_assignment1_idx` (`assignmentID`),
-  CONSTRAINT `fk_items_assignment1` FOREIGN KEY (`assignmentID`) REFERENCES `assignment` (`assignmentID`),
-  CONSTRAINT `fk_items_modules1` FOREIGN KEY (`moduleID`) REFERENCES `modules` (`moduleID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `moduleID` int(11) NOT NULL,
+  `assignmentID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `items`
---
-
-LOCK TABLES `items` WRITE;
-/*!40000 ALTER TABLE `items` DISABLE KEYS */;
-/*!40000 ALTER TABLE `items` ENABLE KEYS */;
-UNLOCK TABLES;
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `lessons`
 --
 
-DROP TABLE IF EXISTS `lessons`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `lessons` (
-  `lessonID` int NOT NULL,
+  `lessonID` int(11) NOT NULL,
   `lessonName` varchar(45) DEFAULT NULL,
-  `lessonvideo` blob,
+  `lessonvideo` blob DEFAULT NULL,
   `status` varchar(45) DEFAULT NULL,
-  `moduleID` int NOT NULL,
-  PRIMARY KEY (`lessonID`,`moduleID`),
-  KEY `fk_lessons_modules1_idx` (`moduleID`),
-  CONSTRAINT `fk_lessons_modules1` FOREIGN KEY (`moduleID`) REFERENCES `modules` (`moduleID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `moduleID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `lessons`
+-- Table structure for table `logs`
 --
 
-LOCK TABLES `lessons` WRITE;
-/*!40000 ALTER TABLE `lessons` DISABLE KEYS */;
-/*!40000 ALTER TABLE `lessons` ENABLE KEYS */;
-UNLOCK TABLES;
+CREATE TABLE `logs` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `datetime` datetime NOT NULL,
+  `type` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `modules`
 --
 
-DROP TABLE IF EXISTS `modules`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `modules` (
-  `moduleID` int NOT NULL,
+  `moduleID` int(11) NOT NULL,
   `name` varchar(45) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL,
-  `progressID` int NOT NULL,
-  PRIMARY KEY (`moduleID`,`progressID`),
-  KEY `fk_modules_progress1_idx` (`progressID`),
-  CONSTRAINT `fk_modules_progress1` FOREIGN KEY (`progressID`) REFERENCES `progress` (`progressID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `progressID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `modules`
---
-
-LOCK TABLES `modules` WRITE;
-/*!40000 ALTER TABLE `modules` DISABLE KEYS */;
-/*!40000 ALTER TABLE `modules` ENABLE KEYS */;
-UNLOCK TABLES;
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `progress`
 --
 
-DROP TABLE IF EXISTS `progress`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `progress` (
-  `progressID` int NOT NULL,
-  `Description` int DEFAULT NULL,
-  `scoreInfo` int DEFAULT NULL,
-  PRIMARY KEY (`progressID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `progressID` int(11) NOT NULL,
+  `Description` int(11) DEFAULT NULL,
+  `scoreInfo` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `progress`
---
-
-LOCK TABLES `progress` WRITE;
-/*!40000 ALTER TABLE `progress` DISABLE KEYS */;
-/*!40000 ALTER TABLE `progress` ENABLE KEYS */;
-UNLOCK TABLES;
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `student`
 --
 
-DROP TABLE IF EXISTS `student`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `student` (
-  `studentID` int NOT NULL,
+  `studentID` int(11) NOT NULL,
   `firstname` varchar(45) DEFAULT NULL,
   `lastname` varchar(45) DEFAULT NULL,
   `middlename` varchar(45) DEFAULT NULL,
-  `age` int DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
   `gender` varchar(45) DEFAULT NULL,
   `birthdate` date DEFAULT NULL,
-  `accountID` int NOT NULL,
-  PRIMARY KEY (`studentID`,`accountID`),
-  KEY `fk_student_account1_idx` (`accountID`),
-  CONSTRAINT `fk_student_account1` FOREIGN KEY (`accountID`) REFERENCES `account` (`accountID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `accountID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `student`
---
-
-LOCK TABLES `student` WRITE;
-/*!40000 ALTER TABLE `student` DISABLE KEYS */;
-/*!40000 ALTER TABLE `student` ENABLE KEYS */;
-UNLOCK TABLES;
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `transaction`
 --
 
-DROP TABLE IF EXISTS `transaction`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `transaction` (
-  `transactionID` int NOT NULL,
+  `transactionID` int(11) NOT NULL,
   `startdate` date DEFAULT NULL,
-  `studentID` int NOT NULL,
-  `moduleID` int NOT NULL,
-  PRIMARY KEY (`transactionID`,`studentID`,`moduleID`),
-  KEY `fk_transaction_student_idx` (`studentID`),
-  KEY `fk_transaction_modules1_idx` (`moduleID`),
-  CONSTRAINT `fk_transaction_modules1` FOREIGN KEY (`moduleID`) REFERENCES `modules` (`moduleID`),
-  CONSTRAINT `fk_transaction_student` FOREIGN KEY (`studentID`) REFERENCES `student` (`studentID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `studentID` int(11) NOT NULL,
+  `moduleID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `transaction`
---
-
-LOCK TABLES `transaction` WRITE;
-/*!40000 ALTER TABLE `transaction` DISABLE KEYS */;
-/*!40000 ALTER TABLE `transaction` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Dumping events for database 'geometry'
+-- Indexes for dumped tables
 --
 
 --
--- Dumping routines for database 'geometry'
+-- Indexes for table `account`
 --
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+ALTER TABLE `account`
+  ADD PRIMARY KEY (`accountID`);
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`adminId`,`accountID`),
+  ADD KEY `fk_admin_account1_idx` (`accountID`);
+
+--
+-- Indexes for table `assignment`
+--
+ALTER TABLE `assignment`
+  ADD PRIMARY KEY (`assignmentID`);
+
+--
+-- Indexes for table `items`
+--
+ALTER TABLE `items`
+  ADD PRIMARY KEY (`itemId`,`moduleID`,`assignmentID`),
+  ADD KEY `fk_items_modules1_idx` (`moduleID`),
+  ADD KEY `fk_items_assignment1_idx` (`assignmentID`);
+
+--
+-- Indexes for table `lessons`
+--
+ALTER TABLE `lessons`
+  ADD PRIMARY KEY (`lessonID`,`moduleID`),
+  ADD KEY `fk_lessons_modules1_idx` (`moduleID`);
+
+--
+-- Indexes for table `logs`
+--
+ALTER TABLE `logs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `modules`
+--
+ALTER TABLE `modules`
+  ADD PRIMARY KEY (`moduleID`,`progressID`),
+  ADD KEY `fk_modules_progress1_idx` (`progressID`);
+
+--
+-- Indexes for table `progress`
+--
+ALTER TABLE `progress`
+  ADD PRIMARY KEY (`progressID`);
+
+--
+-- Indexes for table `student`
+--
+ALTER TABLE `student`
+  ADD PRIMARY KEY (`studentID`,`accountID`),
+  ADD KEY `fk_student_account1_idx` (`accountID`);
+
+--
+-- Indexes for table `transaction`
+--
+ALTER TABLE `transaction`
+  ADD PRIMARY KEY (`transactionID`,`studentID`,`moduleID`),
+  ADD KEY `fk_transaction_student_idx` (`studentID`),
+  ADD KEY `fk_transaction_modules1_idx` (`moduleID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `logs`
+--
+ALTER TABLE `logs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `admin`
+--
+ALTER TABLE `admin`
+  ADD CONSTRAINT `fk_admin_account1` FOREIGN KEY (`accountID`) REFERENCES `account` (`accountID`);
+
+--
+-- Constraints for table `items`
+--
+ALTER TABLE `items`
+  ADD CONSTRAINT `fk_items_assignment1` FOREIGN KEY (`assignmentID`) REFERENCES `assignment` (`assignmentID`),
+  ADD CONSTRAINT `fk_items_modules1` FOREIGN KEY (`moduleID`) REFERENCES `modules` (`moduleID`);
+
+--
+-- Constraints for table `lessons`
+--
+ALTER TABLE `lessons`
+  ADD CONSTRAINT `fk_lessons_modules1` FOREIGN KEY (`moduleID`) REFERENCES `modules` (`moduleID`);
+
+--
+-- Constraints for table `modules`
+--
+ALTER TABLE `modules`
+  ADD CONSTRAINT `fk_modules_progress1` FOREIGN KEY (`progressID`) REFERENCES `progress` (`progressID`);
+
+--
+-- Constraints for table `student`
+--
+ALTER TABLE `student`
+  ADD CONSTRAINT `fk_student_account1` FOREIGN KEY (`accountID`) REFERENCES `account` (`accountID`);
+
+--
+-- Constraints for table `transaction`
+--
+ALTER TABLE `transaction`
+  ADD CONSTRAINT `fk_transaction_modules1` FOREIGN KEY (`moduleID`) REFERENCES `modules` (`moduleID`),
+  ADD CONSTRAINT `fk_transaction_student` FOREIGN KEY (`studentID`) REFERENCES `student` (`studentID`);
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2022-08-31 23:33:52
