@@ -203,9 +203,6 @@
                       <small class="badge bg-success-faded text-success rounded-pill">Admin</small>
                     </div>
                   </li>  
-                  <li><a class="dropdown-item d-flex align-items-center" href="#">Set Visibility</a></li>
-                  <li><a class="dropdown-item d-flex align-items-center" href="#">Edit Profile</a></li>
-                  <li><a class="dropdown-item d-flex align-items-center" href="#">Edit Settings</a></li>
                   <li>
                     <hr class="dropdown-divider">
                   </li>
