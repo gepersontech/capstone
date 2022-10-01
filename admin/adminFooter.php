@@ -12,7 +12,7 @@
 
 <footer class="footer">
     <div class="content">
-        <span class="text">All rights reserved | © IntelTutor 2022</span>
+        <span class="text">All rights reserved | © GITS 2022</span>
     </div>
 </footer>
 </main>
