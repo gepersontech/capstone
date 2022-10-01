@@ -75,7 +75,9 @@
                             </div>
                             <div class="card-body">
                                 <div class="col-12 col-md-10">
-                                    <h6 class="card-title m-0 text-muted fs-m text-uppercase fw-bold tracking-wide">Circle Topics</h6>
+                                    <a href="#">
+                                        <h6 class="card-title m-0 text-muted fs-m text-uppercase fw-bold tracking-wide">Circle Topics</h6>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -89,8 +91,17 @@
                                 <img src="assets/images/reserve.png" alt="background">
                             </div>
                             <div class="card-body">
-                                <div class="col-12 col-md-10">
-                                    <h6 class="card-title m-0 text-muted fs-m text-uppercase fw-bold tracking-wide">Ellipse Topics</h6>
+                                <div class="row gx-4 mb-3 mb-md-1">
+                                    <div class="col-12 col-md-10">
+                                        <a href="#">
+                                            <h6 class="card-title m-0 text-muted fs-m text-uppercase fw-bold tracking-wide">Ellipse Topics</h6>
+                                        </a>
+                                    </div>
+                                    <div class="col-3 col-md-2">
+                                        <span>
+                                            <i class="fas fa-angle-right"></i>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                             <!-- <div class="card-body">
@@ -121,28 +132,12 @@
                     <!-- Pageviews Widget-->
                     <div class="col-12 col-sm-6 col-xxl-3">
                         <div class="card h-100">
-                            <div class="card-header justify-content-between align-items-center d-flex border-0 pb-0">
-                                <h6 class="card-title m-0 text-muted fs-xs text-uppercase fw-bolder tracking-wide">Lessons section</h6>
+                            <div class="card-header">
+                                <img src="assets/images/hyperbola.png" alt="background">
                             </div>
                             <div class="card-body">
-                                <div class="row gx-4 mb-3 mb-md-1">
-                                    <div class="col-12 col-md-6">
-                                        <p class="fs-3 fw-bold">95,456</p>
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="chart chart-sm">
-                                            <canvas id="chartPageviews"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <span class="f-w-7 f-h-7 p-2 bg-success-faded text-success rounded-circle d-flex align-items-center justify-content-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-100">
-                                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-                                            <polyline points="17 6 23 6 23 12"></polyline>
-                                        </svg>
-                                    </span>
-                                    <span class="fw-bold text-success fs-9 ms-2">+ 1.1%</span>
+                                <div class="col-12 col-md-10">
+                                    <h6 class="card-title m-0 text-muted fs-m text-uppercase fw-bold tracking-wide">Hyberbola Topics</h6>
                                 </div>
                             </div>
                         </div>
@@ -152,28 +147,12 @@
                     <!-- Number Refunds Widget-->
                     <div class="col-12 col-sm-6 col-xxl-3">
                         <div class="card h-100">
-                            <div class="card-header justify-content-between align-items-center d-flex border-0 pb-0">
-                                <h6 class="card-title m-0 text-muted fs-xs text-uppercase fw-bolder tracking-wide">Activities section</h6>
+                            <div class="card-header">
+                                <img src="assets/images/parabola.png" alt="background">
                             </div>
                             <div class="card-body">
-                                <div class="row gx-4 mb-3 mb-md-1">
-                                    <div class="col-12 col-md-6">
-                                        <p class="fs-3 fw-bold d-flex align-items-center"><span class="fs-9 me-1">$</span> 12,340</p>
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="chart chart-sm">
-                                            <canvas id="chartNumRefunds"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <span class="f-w-7 f-h-7 p-2 bg-success-faded text-success rounded-circle d-flex align-items-center justify-content-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-100">
-                                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-                                            <polyline points="17 6 23 6 23 12"></polyline>
-                                        </svg>
-                                    </span>
-                                    <span class="fw-bold text-success fs-9 ms-2">+ 7.5%</span>
+                                <div class="col-12 col-md-10">
+                                    <h6 class="card-title m-0 text-muted fs-m text-uppercase fw-bold tracking-wide">Parabola Topics</h6>
                                 </div>
                             </div>
                         </div>
