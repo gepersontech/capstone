@@ -21,6 +21,9 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+
     <!-- Google Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +34,7 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="./assets/css/theme.bundle.css" />
-
+    
     <!-- Fix for custom scrollbar if JS is disabled-->
     <noscript>
         <style>

@@ -43,8 +43,8 @@
                         <!-- / Dashboard Menu Section-->
     
                         <!-- Pages Menu Section-->
-                        <li class="menu-section mt-4">Pages</li>
-                        <li class="menu-item"><a class="d-flex align-items-center collapsed" href="#"
+                        <li  class="menu-section mt-4">Pages</li>
+                        <li class="menu-item"><a style="cursor: pointer;" class="d-flex align-items-center collapsed"
                                 data-bs-toggle="collapse" data-bs-target="#collapseMenuItemPages" aria-expanded="false"
                                 aria-controls="collapseMenuItemPages">
                                 <span class="menu-icon">
@@ -64,7 +64,7 @@
     
                         <!-- Pages Menu Section-->
                         <li class="menu-section mt-4">User Management</li>
-                        <li class="menu-item"><a class="d-flex align-items-center collapsed" href="#"
+                        <li class="menu-item"><a style="cursor: pointer;" class="d-flex align-items-center collapsed"
                                 data-bs-toggle="collapse" data-bs-target="#collapseMenuItemUsers" aria-expanded="false"
                                 aria-controls="collapseMenuItemUsers">
                                 <span class="menu-icon">

@@ -74,10 +74,19 @@
                                 <img src="assets/images/circle.png" alt="background">
                             </div>
                             <div class="card-body">
-                                <div class="col-12 col-md-10">
-                                    <a href="#">
-                                        <h6 class="card-title m-0 text-muted fs-m text-uppercase fw-bold tracking-wide">Circle Topics</h6>
-                                    </a>
+                                <div class="row gx-4 mb-3 mb-md-1">
+                                    <div class="col-12 col-md-10">
+                                        <a href="#">
+                                            <h6 class="card-title m-0 text-muted fs-m text-uppercase fw-bold tracking-wide">Circle Topics</h6>
+                                        </a>
+                                    </div>
+                                    <div class="col-3 col-md-2">
+                                        <a href="#">
+                                            <h6 class="card-title m-0 text-muted fs-m text-uppercase fw-bold tracking-wide">
+                                            <i class="fas fa-angle-right"></i>
+                                            </h6>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -98,9 +107,11 @@
                                         </a>
                                     </div>
                                     <div class="col-3 col-md-2">
-                                        <span>
+                                        <a href="#">
+                                            <h6 class="card-title m-0 text-muted fs-m text-uppercase fw-bold tracking-wide">
                                             <i class="fas fa-angle-right"></i>
-                                        </span>
+                                            </h6>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -136,8 +147,19 @@
                                 <img src="assets/images/hyperbola.png" alt="background">
                             </div>
                             <div class="card-body">
-                                <div class="col-12 col-md-10">
-                                    <h6 class="card-title m-0 text-muted fs-m text-uppercase fw-bold tracking-wide">Hyberbola Topics</h6>
+                                <div class="row gx-4 mb-3 mb-md-1">
+                                    <div class="col-12 col-md-10">
+                                        <a href="#">
+                                            <h6 class="card-title m-0 text-muted fs-m text-uppercase fw-bold tracking-wide">Hyperbola Topics</h6>
+                                        </a>
+                                    </div>
+                                    <div class="col-3 col-md-2">
+                                        <a href="#">
+                                            <h6 class="card-title m-0 text-muted fs-m text-uppercase fw-bold tracking-wide">
+                                            <i class="fas fa-angle-right"></i>
+                                            </h6>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -151,8 +173,19 @@
                                 <img src="assets/images/parabola.png" alt="background">
                             </div>
                             <div class="card-body">
-                                <div class="col-12 col-md-10">
-                                    <h6 class="card-title m-0 text-muted fs-m text-uppercase fw-bold tracking-wide">Parabola Topics</h6>
+                                <div class="row gx-4 mb-3 mb-md-1">
+                                    <div class="col-12 col-md-10">
+                                        <a href="#">
+                                            <h6 class="card-title m-0 text-muted fs-m text-uppercase fw-bold tracking-wide">Parabola Topics</h6>
+                                        </a>
+                                    </div>
+                                    <div class="col-3 col-md-2">
+                                        <a href="#">
+                                            <h6 class="card-title m-0 text-muted fs-m text-uppercase fw-bold tracking-wide">
+                                            <i class="fas fa-angle-right"></i>
+                                            </h6>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
