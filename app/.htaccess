@@ -1,0 +1,21 @@
+RewriteEngine On # Turn on the rewriting engine
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+#RewriteRule ^index/?$ index.php [NC,L]
+#admin
+RewriteRule ^dashboard/?$ index.php?page=dashboard [NC,L]
+RewriteRule ^400/?$ index.php?page=400 [NC,L]
+RewriteRule ^403/?$ index.php?page=403 [NC,L]
+RewriteRule ^404/?$ index.php?page=404 [NC,L]
+RewriteRule ^500/?$ index.php?page=500 [NC,L]
+RewriteRule ^503/?$ index.php?page=503 [NC,L]
+#users
+RewriteRule ^user-dashboard/?$ index.php?page=user-dashboard [NC,L]
+RewriteRule ^profile/?$ index.php?page=profile [NC,L]
+RewriteRule ^user-dashboard/?$ index.php?page=user-dashboard [NC,L]
+RewriteRule ^user-dashboard/?$ index.php?page=user-dashboard [NC,L]
+RewriteRule ^user-dashboard/?$ index.php?page=user-dashboard [NC,L]
+#RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+#RewriteRule ^index/([0-9]+)/([0-9a-zA-Z_-]+) index.php?page=$1 [NC]
+RewriteRule ^index/([0-9a-zA-Z_-]+) index.php?page=$1 [NC]

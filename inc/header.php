@@ -56,13 +56,14 @@ require_once "functions/dbconfig.php";
                     <li><a class="nav-link scrollto" href="/capstone/#courses">Courses</a></li>
                     <li><a class="nav-link scrollto" href="/capstone/#resources">Resources</a></li>
                     <li><a class="nav-link scrollto" href="/capstone/#about">About Us</a></li>
-                    <li><a class="nav-link scrollto" href="index.php?page=video">Lesson</a></li>
+                    <!-- <li><a class="nav-link scrollto" href="index.php?page=video">Lesson</a></li> -->
                     <li><a class="nav-link scrollto" href="/capstone/#contact">Contact</a></li>
 
                     <!-- <li><a href=""><i class="bi bi-search "></i></a></li> -->
                     <!-- <li><a href=""><i class="bi bi-person-fill"></i></a></li> -->
                     <!-- <li><a class="nav-link scrollto" href="includes/auth/login.php">Register</a></li> -->
-                    <a href="index.php?page=register-as"><button class="btn btn-primary scrollt o">Join us</button></a>
+                    <a href="index.php?page=login"><button class="btn btn-success scrollto">Login</button></a>
+                    <a href="index.php?page=register-as"><button class="btn btn-primary scrollto">Join us</button></a>
 
                 </ul>
 
