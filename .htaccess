@@ -1,0 +1,8 @@
+RewriteEngine On # Turn on the rewriting engine
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+#RewriteRule ^index/?$ index.php [NC,L]
+#admin
+RewriteRule ^login/?$ login.php [NC,L]
+#users
+#RewriteRule ^([^\.]+)$ $1.php [NC,L]
