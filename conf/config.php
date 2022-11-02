@@ -6,7 +6,7 @@
     date_default_timezone_set("Asia/Manila");
 
     // define the site root
-    define('SITE_ROOT', 'http://localhost/property/');
+    define('SITE_ROOT', 'http://localhost/capstone/');
 
     /* Database credentials. Assuming you are running MySQL
     server with default setting (user 'root' with no password) */

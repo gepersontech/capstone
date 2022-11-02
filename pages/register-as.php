@@ -20,7 +20,7 @@ div.innerBox {
 
 .innerBox span {
     position: absolute;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 30px;
     color: #1acc8d;
@@ -51,36 +51,8 @@ div.innerBox {
 <!-- ======= Contact Section ======= -->
 <section id="" class="contact">
     <div class="container">
-        <!-- <div class="section-title" data-aos="fade-up">
-          <h2>Contact</h2>
-          <p>Contact Us</p>
-        </div> -->
 
         <div class="row">
-
-            <!-- <div class="col-lg-4" data-aos="fade-right" data-aos-delay="100">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>Cor Jesu College, Davao del Sur, PH 8002</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>info@thesis.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+63 931 756 2740</p>
-              </div>
-
-            </div>
-
-          </div> -->
 
             <div class="col-lg-8 mt-5 mt-lg-0 text-center " style=" margin: auto;" data-aos="fade-left"
                 data-aos-delay="200">
@@ -90,7 +62,7 @@ div.innerBox {
                     <div class="row">
                         <div class="col-md-6 form-group">
                             <input type="hidden" name="register-as" id="" value="teacher">
-                            <div class="text-center"><a href="student/adminpanel">
+                            <div class="text-center"><a href="register.php">
                                     <div class="innerBox">
                                         <div class="iconBox"><i class="fas fa-chalkboard-teacher fa-10x"></i></div>
                                         <span type="submit" name="submit" class="w-50">Teacher</span>
@@ -109,6 +81,14 @@ div.innerBox {
                     </div>
                     <!-- <div class="text-center"><button type="submit">Send Message</button></div> -->
                 </div>
+                <br><br><br>
+                <h2 style=" margin: auto; ">Already have an account?</h2>
+                <a href="login">
+                    <button class="btn btn-success mt-2"
+                        style="border-radius: 50px; min-width: 140px; height: 50px;">Login</button>
+                </a>
+
+
                 <br> <br> <br> <br>
             </div>
 
