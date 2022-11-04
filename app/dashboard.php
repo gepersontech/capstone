@@ -13,7 +13,7 @@
                 </ol>
             </nav>
         </div>
-        <div class="col-md-6 col-sm-12 text-right">
+        <!-- <div class="col-md-6 col-sm-12 text-right">
             <div class="dropdown">
                 <a class="btn btn-primary dropdown-toggle" href="#" role="button" data-toggle="dropdown">
                     January 2018
@@ -24,7 +24,7 @@
                     <a class="dropdown-item" href="#">View Assets</a>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 <div class="row pb-10">
@@ -32,14 +32,15 @@
         <div class="card-box height-100-p widget-style3">
             <div class="d-flex flex-wrap">
                 <div class="widget-data">
-                    <div class="weight-700 font-24 text-dark">75</div>
+                    <div class="weight-700 font-24 text-dark">1</div>
                     <div class="font-14 text-secondary weight-500">
-                        Appointment
+                        Courses
                     </div>
                 </div>
                 <div class="widget-icon">
                     <div class="icon" data-color="#00eccf">
-                        <i class="icon-copy dw dw-calendar1"></i>
+                        <!-- <i class="icon-copy dw dw-calendar1"></i> -->
+                        <span class="micon icon-copy ti-blackboard"></span>
                     </div>
                 </div>
             </div>
@@ -49,14 +50,14 @@
         <div class="card-box height-100-p widget-style3">
             <div class="d-flex flex-wrap">
                 <div class="widget-data">
-                    <div class="weight-700 font-24 text-dark">124,551</div>
+                    <div class="weight-700 font-24 text-dark">1</div>
                     <div class="font-14 text-secondary weight-500">
-                        Total Patient
+                        Modules
                     </div>
                 </div>
                 <div class="widget-icon">
                     <div class="icon" data-color="#ff5b5b">
-                        <span class="icon-copy ti-heart"></span>
+                        <span class="micon icon-copy ti-files"></span>
                     </div>
                 </div>
             </div>
@@ -66,14 +67,14 @@
         <div class="card-box height-100-p widget-style3">
             <div class="d-flex flex-wrap">
                 <div class="widget-data">
-                    <div class="weight-700 font-24 text-dark">400+</div>
+                    <div class="weight-700 font-24 text-dark">10</div>
                     <div class="font-14 text-secondary weight-500">
-                        Total Doctor
+                        Exam
                     </div>
                 </div>
                 <div class="widget-icon">
                     <div class="icon">
-                        <i class="icon-copy fa fa-stethoscope" aria-hidden="true"></i>
+                        <span class="micon icon-copy ti-view-list-alt"></span>
                     </div>
                 </div>
             </div>
@@ -83,19 +84,19 @@
         <div class="card-box height-100-p widget-style3">
             <div class="d-flex flex-wrap">
                 <div class="widget-data">
-                    <div class="weight-700 font-24 text-dark">$50,000</div>
-                    <div class="font-14 text-secondary weight-500">Earning</div>
+                    <div class="weight-700 font-24 text-dark">23</div>
+                    <div class="font-14 text-secondary weight-500">Students</div>
                 </div>
                 <div class="widget-icon">
                     <div class="icon" data-color="#09cc06">
-                        <i class="icon-copy fa fa-money" aria-hidden="true"></i>
+                        <span class="micon icon-copy ti-user"></span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="row clearfix progress-box">
+<!-- <div class="row clearfix progress-box">
     <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
         <div class="card-box pd-30 height-100-p">
             <div class="progress-box text-center">
@@ -218,4 +219,4 @@
             <div id="browservisit" style="width: 100% !important; height: 380px"></div>
         </div>
     </div>
-</div>
+</div> -->

@@ -63,10 +63,9 @@ require_once "functions/dbconfig.php";
                     <!-- <li><a href=""><i class="bi bi-person-fill"></i></a></li> -->
                     <!-- <li><a class="nav-link scrollto" href="includes/auth/login.php">Register</a></li> -->
 
-                    <a href="index.php?page=register-as"><button class="btn btn-primary scrollto"
-                            style="border-radius: 50px; min-width: 80px; height: 40px; background-color: #57b846;">Join
-                            us</button></a>
-
+                    <a href="login"><button class="btn btn-primary scrollto"
+                            style="border-radius: 50px; min-width: 80px; height: 40px; background-color: #57b846;">
+                            Join us</button></a>
                 </ul>
 
                 <i class="bi bi-list mobile-nav-toggle"></i>

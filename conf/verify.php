@@ -43,7 +43,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Validate credentials
         if(empty($username_err) && empty($password_err)){
             // Prepare a select statement
-            $sql = "SELECT employee_id , picture, username, password, role_id, firstname, middlename, lastname, position_id, office_id, emp_contact_no, emp_email_add FROM employee WHERE username = ?";
+            $sql = "SELECT user_id, profile_pic, username, password, firstname, lastname, email_add, role_id FROM users WHERE username = ?";
             
             if($stmt = mysqli_prepare($con,$sql)){
                 // Bind variables to the prepared statement as parameters
@@ -59,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     // Check if username exists, if yes then verify password
                     if(mysqli_stmt_num_rows($stmt) == 1){                    
                         // Bind result variables
-                        mysqli_stmt_bind_result($stmt, $employee_id,$picture, $username, $hashed_password, $role_id, $firstname, $middlename, $lastname, $position_id, $office_id, $emp_contact_no, $emp_email_add);
+                        mysqli_stmt_bind_result($stmt, $user_id,$profile_pic, $username, $hashed_password, $firstname, $lastname, $email, $role_id);
                         if(mysqli_stmt_fetch($stmt)){
                             if(password_verify($password, $hashed_password)){
                                 
@@ -70,13 +70,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                     //session_start();
                                     //Store data in session variables
                                     $_SESSION["loggedin"] = true;
-                                    $_SESSION["id"] = $employee_id;
-                                    $_SESSION["session_picture"] = $picture;
+                                    $_SESSION["id"] = $user_id;
+                                    $_SESSION["session_picture"] = $profile_pic;
                                     $_SESSION["username"] = $username; 
                                     $_SESSION["firstname"] = $firstname; 
                                     $_SESSION["lastname"] = $lastname; 
                                     $_SESSION["role_id"] = $role_id; 
-                                    $_SESSION["emp_email_add"] = $emp_email_add; 
+                                    $_SESSION["email"] = $email; 
                                     header("location: ../app/");
                                     // if( $_SESSION["role_id"] ==  "3"){
                                     //     header("location: ../app/");

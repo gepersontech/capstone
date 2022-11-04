@@ -4,6 +4,12 @@ RewriteCond %{REQUEST_FILENAME}\.php -f
 #RewriteRule ^index/?$ index.php [NC,L]
 #admin
 RewriteRule ^dashboard/?$ index.php?page=dashboard [NC,L]
+RewriteRule ^course/?$ index.php?page=course [NC,L]
+RewriteRule ^module/?$ index.php?page=module [NC,L]
+RewriteRule ^exam/?$ index.php?page=exam [NC,L]
+RewriteRule ^student/?$ index.php?page=student [NC,L]
+RewriteRule ^ranking/?$ index.php?page=ranking [NC,L]
+RewriteRule ^result/?$ index.php?page=result [NC,L]
 RewriteRule ^400/?$ index.php?page=400 [NC,L]
 RewriteRule ^403/?$ index.php?page=403 [NC,L]
 RewriteRule ^404/?$ index.php?page=404 [NC,L]
