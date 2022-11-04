@@ -1,4 +1,9 @@
 <?php
+session_start();
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+        header('Location: ../index.php?session=expired');
+    }
+    include('../conf/config.php');
 	include('header.php');
 	include('pre-loader.php');
 	include('navbar.php');
@@ -29,7 +34,7 @@
 					require_once $page; 
 				   }else{
 						require_once $page; 
-						include('footer.php');
+						//include('footer.php');
 				   }
                     
                 }else{

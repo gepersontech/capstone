@@ -1,6 +1,3 @@
-<?php
-    include('../conf/config.php');
-?>
 <!DOCTYPE html>
 <html>
 

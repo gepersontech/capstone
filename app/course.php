@@ -47,39 +47,35 @@
                 </tr> -->
 
                 <?php
-                                $result = mysqli_query($con,"SELECT * FROM `course`");
-                                $count=1;
-                                $rowCount = mysqli_num_rows($result);
-                                if($rowCount > 0){
-                                    while($row = mysqli_fetch_assoc($result)){
-                                         $id=$row['course_id'];
-                                                            ?>
+                $result = mysqli_query($con,"SELECT * FROM `course`");
+                $count=1;
+                $rowCount = mysqli_num_rows($result);
+                if($rowCount > 0){
+                    while($row = mysqli_fetch_assoc($result)){
+                            $id=$row['course_id'];
+                                            ?>
                 <tr>
                     <td><?php echo $row['course_name']; ?></td>
-                    <td>
-                        <div class="dropdown">
-                            <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#"
-                                role="button" data-toggle="dropdown">
-                                <i class="dw dw-more"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                                <a class="dropdown-item" href="index.php?page=course-edit&& id=<?php echo $id; ?>"><i
-                                        class="dw dw-eye"></i> Update</a>
-                                <a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>
-                            </div>
-                        </div>
+                    <td style="width: 400px;">
+                        <a href="index.php?page=course-edit&& id=<?php echo $id; ?>" class=" btn btn-sm btn-primary">
+                            <span class="icon-copy ti-pencil-alt"></span> Update
+                        </a>
+
+                        <a onclick="delete_course('<?php echo $id; ?>')" class=" btn btn-sm btn-danger text-white">
+                            <span class="icon-copy ti-trash"></span>
+                            Delete</a>
                     </td>
 
                 </tr>
                 <?php
-                                    $count++;
-                                }
-                                    
-                                }else{
-                                    echo "No Records Found";
-                                }
-                                
-                            ?>
+                    $count++;
+                }
+                    
+                }else{
+                    echo "No Records Found";
+                }
+                
+            ?>
             </tbody>
         </table>
     </div>
