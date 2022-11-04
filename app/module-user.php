@@ -49,13 +49,13 @@
                     <td><?php echo $row['module_desc']; ?></td>
                     <td style="width: 400px;">
                         <a href="index.php?page=module-edit&& id=<?php echo $id; ?>" class=" btn btn-sm btn-primary">
-                            <span class="icon-copy ti-pencil-alt"></span> Update
+                            <span class="icon-copy ti-pencil-alt"></span> View
                         </a>
 
 
-                        <a onclick="delete_module('<?php echo $id; ?>')" class=" btn btn-sm btn-danger text-white">
+                        <!-- <a onclick="delete_module('<?php// echo $id; ?>')" class=" btn btn-sm btn-danger text-white">
                             <span class="icon-copy ti-trash"></span>
-                            Delete</a>
+                            Delete</a> -->
                     </td>
 
                 </tr>
@@ -108,13 +108,13 @@
                     <td style="width: 400px;">
                         <a href="index.php?page=module-edit&& lesson_id=<?php echo $id; ?>"
                             class=" btn btn-sm btn-primary">
-                            <span class="icon-copy ti-pencil-alt"></span> Update
+                            <span class="icon-copy ti-pencil-alt"></span> View
                         </a>
 
-
+                        <!-- 
                         <a onclick="delete_module('<?php echo $id; ?>')" class=" btn btn-sm btn-danger text-white">
                             <span class="icon-copy ti-trash"></span>
-                            Delete</a>
+                            Delete</a> -->
                     </td>
 
                 </tr>

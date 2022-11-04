@@ -101,7 +101,11 @@
                     <span class="user-icon">
                         <img src="vendors/images/photo2.jpg" alt="" />
                     </span>
-                    <span class="user-name">User Account</span>
+                    <span class="user-name">
+                        <?php 
+                    echo $_SESSION['firstname'];
+             ?>
+                    </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
                     <a class="dropdown-item" href="#"><i class="dw dw-user1"></i> Profile</a>
