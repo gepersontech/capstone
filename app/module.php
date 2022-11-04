@@ -52,7 +52,67 @@
                             <span class="icon-copy ti-pencil-alt"></span> Update
                         </a>
 
-                        <a onclick="delete_course('<?php echo $id; ?>')" class=" btn btn-sm btn-danger text-white">
+
+                        <a onclick="delete_module('<?php echo $id; ?>')" class=" btn btn-sm btn-danger text-white">
+                            <span class="icon-copy ti-trash"></span>
+                            Delete</a>
+                    </td>
+
+                </tr>
+                <?php
+                    $count++;
+                }
+                    
+                }else{
+                }
+            ?>
+
+            </tbody>
+
+        </table>
+    </div>
+</div>
+<!-- Simple Datatable End -->
+
+<!-- Simple Datatable start -->
+<div class="card-box mb-30">
+    <div class="pd-20">
+        <h4 class="text-blue h4">LESSON</h4>
+        <button type="button" class="btn btn-primary float-right mb-10" data-toggle="modal" data-target="#addModal">
+            <span class="icon-copy ti-plus"></span>
+            Add Lesson
+        </button>
+    </div>
+    <div class="pb-20">
+        <table class="data-table table stripe hover nowrap">
+            <thead>
+                <tr>
+                    <th class="table-plus datatable-nosort">Lesson No.</th>
+                    <th class="table-plus datatable-nosort">Description</th>
+                    <th class="datatable-nosort">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <?php
+                $result = mysqli_query($con,"SELECT * FROM `lesson`");
+                $count=1;
+                $rowCount = mysqli_num_rows($result);
+                if($rowCount > 0){
+                    while($row = mysqli_fetch_assoc($result)){
+                            $id=$row['lesson_id'];
+                                            ?>
+                <tr>
+                    <td><?php echo $row['lesson_name']; ?></td>
+                    <td><?php echo $row['lesson_desc']; ?></td>
+                    <td style="width: 400px;">
+                        <a href="index.php?page=module-edit&& lesson_id=<?php echo $id; ?>"
+                            class=" btn btn-sm btn-primary">
+                            <span class="icon-copy ti-pencil-alt"></span> Update
+                        </a>
+
+
+                        <a onclick="delete_module('<?php echo $id; ?>')" class=" btn btn-sm btn-danger text-white">
                             <span class="icon-copy ti-trash"></span>
                             Delete</a>
                     </td>
@@ -90,8 +150,16 @@
                         <label for="course" class="col-sm-3 col-form-label">Course <span class="text-danger">
                                 *</span> </label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="module" name="module" placeholder="Module"
-                                required>
+                            <input type="text" class="form-control" id="module_name" name="module_name"
+                                placeholder="Module" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="module_desc" class="col-sm-3 col-form-label">Description <span class="text-danger">
+                                *</span> </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="module_desc" name="module_desc"
+                                placeholder="Description" required>
                         </div>
                     </div>
 
@@ -108,10 +176,9 @@
     </div>
     <!-- /.modal-dialog -->
 </div>
+
 <script>
-function delete_course(data_id) {
-    // alert('ok');
-    //window.location = ("action/admin/delete-employee.php?id=" + data_id);
+function delete_module(data_id) {
     Swal.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this Data!",
@@ -123,12 +190,10 @@ function delete_course(data_id) {
         closeOnConfirm: false,
         closeOnCancel: false
     }).then((result) => {
+
         if (result.isConfirmed) {
-            window.location = ("action/admin/delete-course.php?id=" + data_id);
+            window.location = ("action/admin/delete-module.php?id=" + data_id);
         }
-
     })
-
-
 }
 </script>
