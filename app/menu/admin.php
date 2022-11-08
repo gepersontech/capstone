@@ -17,7 +17,7 @@
             </a>
         </li>
         <li>
-            <a href="module" class="dropdown-toggle no-arrow">
+            <a href="index.php?page=module" class="dropdown-toggle no-arrow">
                 <span class="micon icon-copy ti-files"></span><span class="mtext">Manage Module</span>
             </a>
         </li>

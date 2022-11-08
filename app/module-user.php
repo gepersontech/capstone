@@ -20,10 +20,10 @@
 <div class="card-box mb-30">
     <div class="pd-20">
         <h4 class="text-blue h4">MODULE LIST</h4>
-        <button type="button" class="btn btn-primary float-right mb-10" data-toggle="modal" data-target="#addModal">
+        <!-- <button type="button" class="btn btn-primary float-right mb-10" data-toggle="modal" data-target="#addModal">
             <span class="icon-copy ti-plus"></span>
             Add Module
-        </button>
+        </button> -->
     </div>
     <div class="pb-20">
         <table class="data-table table stripe hover nowrap">
@@ -48,6 +48,9 @@
                     <td><?php echo $row['module_name']; ?></td>
                     <td><?php echo $row['module_desc']; ?></td>
                     <td style="width: 400px;">
+                        <!-- <a href="/uploads/media/default/0001/01/540cb75550adf33f281f29132dddd14fded85bfc.pdf" class=" btn btn-sm btn-primary">
+                            <span class="icon-copy ti-pencil-alt"></span> View
+                        </a> -->
                         <a href="index.php?page=module-edit&& id=<?php echo $id; ?>" class=" btn btn-sm btn-primary">
                             <span class="icon-copy ti-pencil-alt"></span> View
                         </a>
@@ -78,10 +81,10 @@
 <div class="card-box mb-30">
     <div class="pd-20">
         <h4 class="text-blue h4">LESSON</h4>
-        <button type="button" class="btn btn-primary float-right mb-10" data-toggle="modal" data-target="#addLesson">
+        <!-- <button type="button" class="btn btn-primary float-right mb-10" data-toggle="modal" data-target="#addLesson">
             <span class="icon-copy ti-plus"></span>
             Add Lesson
-        </button>
+        </button> -->
     </div>
     <div class="pb-20">
         <table class="data-table table stripe hover nowrap">
@@ -106,13 +109,12 @@
                     <td><?php echo $row['lesson_name']; ?></td>
                     <td><?php echo $row['lesson_desc']; ?></td>
                     <td style="width: 400px;">
-                        <a href="index.php?page=module-edit&& lesson_id=<?php echo $id; ?>"
-                            class=" btn btn-sm btn-primary">
+                        <a href="module/Lesson1.pdf#toolbar=0" class=" btn btn-sm btn-primary">
                             <span class="icon-copy ti-pencil-alt"></span> View
                         </a>
 
                         <!-- 
-                        <a onclick="delete_module('<?php echo $id; ?>')" class=" btn btn-sm btn-danger text-white">
+                        <a onclick="delete_module('<?php //echo $id; ?>')" class=" btn btn-sm btn-danger text-white">
                             <span class="icon-copy ti-trash"></span>
                             Delete</a> -->
                     </td>
