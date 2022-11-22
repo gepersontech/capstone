@@ -67,3 +67,6 @@ $view = mysqli_fetch_array($query);
     </form>
     </div>
 </section>
+
+
+<?php include("topic.php") ?>
