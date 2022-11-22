@@ -51,7 +51,7 @@ $view = mysqli_fetch_array($query);
                     <div class="card-footer">
                         <button type="submit" name="updateLesson" class="btn btn-primary float-right ml-3 ">
                             <i class="fa-regular fa-floppy-disk mr-1"></i> Update </button>
-                        <a href="module">
+                        <a href="modules">
                             <button type="button" class="btn btn-warning float-right ml-3 "> <i
                                     class="fa-solid fa-arrows-rotate mr-1"></i>
                                 Back
