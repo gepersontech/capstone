@@ -108,7 +108,7 @@
                     <td style="width: 400px;">
                         <a href="index.php?page=module-edit&& lesson_id=<?php echo $id; ?>"
                             class=" btn btn-sm btn-primary">
-                            <span class="icon-copy ti-pencil-alt"></span> Update
+                            <span class="icon-copy ti-pencil-alt"></span> Manage
                         </a>
 
 
