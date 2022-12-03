@@ -105,7 +105,7 @@
                                         OR
                                     </div>
                                     <div class="input-group mb-0">
-                                        <a class="btn btn-outline-primary btn-lg btn-block" href="register.html">CREATE
+                                        <a class="btn btn-outline-primary btn-lg btn-block" href="register.php">CREATE
                                             ACCOUNT</a>
                                     </div>
                                 </div>
