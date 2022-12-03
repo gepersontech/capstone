@@ -12,12 +12,12 @@ require_once "conf/config.php";
     $firstname = 
     $lastname = 
     $gender =
-    $address =  
-    $birthdate = "";
+    $address = 
+    $bdate = "";
     $date = date('Y-m-d H:i:s');
 
 $created_at = date('Y-m-d H:i:s');
-$email_err = $firstname_err = $lastname_err = $username_err = $password_err = $confirm_password_err = $usertype_error= $register_err  = $created_at_err = $update_at_err = "";
+$email_err = $firstname_err = $lastname_err = $username_err = $password_err = $confirm_password_err = $role_error= $register_err  = "";
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -28,7 +28,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }else{
         $usertype = trim($_POST["usertype"]);
     }
-
 
     // Email
     if(empty(trim($_POST["email"]))){
@@ -120,6 +119,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         } else{
             $gender = ucwords(trim($_POST["gender"]));
         }
+        // Birtdate
+        if(empty(trim($_POST["birthdate"]))){
+        $bdate_err = "Please choose your birthdate";
+        } else{
+            $bdate = ucwords(trim($_POST["birthdate"]));
+        }
         
         // Address
         if(empty(trim($_POST["address"]))){
@@ -129,10 +134,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
   
   // Check input errors before inserting in database
-  if(empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($firstname_err) && empty($lastname_err) && empty($usertype_err) ){
+  if(
+    empty($email_err) && 
+    empty($role_err) && 
+    empty($username_err) && 
+    empty($password_err) && 
+    empty($confirm_password_err) && 
+    empty($firstname_err) && 
+    empty($lastname_err) && 
+    empty($birthdate_err) && 
+    empty($address_err) && 
+    empty($gender_err) ){
       
       // Prepare an insert statement
-      $sql = "INSERT INTO users (username, password, firstname, lastname, usertype, status,  created_at, updated_at, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+      $sql = "INSERT INTO users (`firstname`, `lastname`, `birthdate`, `age`,`gender`,`address`,`email_add`, 
+            `username`, `password`, `role_id`, `added_at`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
        
 
       $stmt=mysqli_prepare($link, $sql);
@@ -140,7 +156,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       die('Error with prepare: ') . htmlspecialchars($mysqli->error);
       }
 
-      $bp =  mysqli_stmt_bind_param($stmt, "sssssssss", $param_username, $param_password, $firstname, $lastname, $usertype, $status, $created_at, $updated_at, $email );
+      $bp =  mysqli_stmt_bind_param($stmt, "sssssssssss",$email, $param_username, $param_password, $firstname, $lastname, $gender, $bdate, $address,  $role, $created_at, );
           // Set parameters
             $param_username = $username;
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
@@ -152,7 +168,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           if ( false===$bp ) {
               die('Error with execute: ' . htmlspecialchars($stmt->error));
           }else{
-            header("location: login.php?success=registered");
+            header("location: login");
           }
 
       $stmt->close();
@@ -214,9 +230,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <div class=" register-box bg-white box-shadow border-radius-10">
                         <div class="container">
                             <div class="wizard-content">
-                                <form class="tab-wizard2 wizard-circle wizard" action="app/action/admin/add-student.php"
-                                    method="POST"> <br>
+                                <form class="tab-wizard2 wizard-circle wizard"
+                                    action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST"> <br>
                                     <h5>Basic Account Credentials</h5> <br>
+
+
+                                    <?php
+                                        $error="ss";
+                                        if($error!=null){
+                                            echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <strong>Holy guacamole!</strong> You should check in on some of those fields
+                                        below.
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>';
+                                        }
+
+                                    ?>
                                     <section>
                                         <div class="form-wrap max-width-500 mx-auto">
                                             <div class="select-role">
