@@ -11,7 +11,8 @@ require_once "conf/config.php";
     $password =
     $firstname = 
     $lastname = 
-    $gender = 
+    $gender =
+    $address =  
     $birthdate = "";
     $date = date('Y-m-d H:i:s');
 
@@ -21,120 +22,111 @@ $email_err = $firstname_err = $lastname_err = $username_err = $password_err = $c
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
-// Email
-if(empty(trim($_POST["email"]))){
-  $email_err = "Please enter your Email Address.";
-} elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["email"]))){
-  $email_err = "Email can only contain letters, numbers, and underscores.";
-} else{
-      $email = trim($_POST["email"]);
-}
+    // role
+    if(empty(trim($_POST["options"]))){
+        $usertype_err = "Please choose usertype.";
+    }else{
+        $usertype = trim($_POST["usertype"]);
+    }
 
-// Validate username
-if(empty(trim($_POST["username"]))){
-  $username_err = "Please enter a username.";
-} elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))){
-  $username_err = "Username can only contain letters, numbers, and underscores.";
-} else{
-  // Prepare a select statement
-  $sql = "SELECT id FROM users WHERE username = ?";
-  
-  if($stmt = mysqli_prepare($link, $sql)){
-      // Bind variables to the prepared statement as parameters
-      mysqli_stmt_bind_param($stmt, "s", $param_username);
-      
-      // Set parameters
-      $param_username = trim($_POST["username"]);
-      
-      // Attempt to execute the prepared statement
-      if(mysqli_stmt_execute($stmt)){
-          /* store result */
-          mysqli_stmt_store_result($stmt);
-          
-          if(mysqli_stmt_num_rows($stmt) == 1){
-              $username_err = "This username is already taken.";
-          } else{
-              $username = trim($_POST["username"]);
 
-              // Default Email Address
-              $email = trim($username);
-          }
-      } else{
-          echo "Oops! Something went wrong. Please try again later.";
-      }
+    // Email
+    if(empty(trim($_POST["email"]))){
+    $email_err = "Please enter your Email Address.";
+    } elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["email"]))){
+    $email_err = "Email can only contain letters, numbers, and underscores.";
+    } else{
+        $email = trim($_POST["email"]);
+    }
 
-      // Close statement
-      mysqli_stmt_close($stmt);
-  }
-}
+    // Validate username
+    if(empty(trim($_POST["username"]))){
+    $username_err = "Please enter a username.";
+    } elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["username"]))){
+    $username_err = "Username can only contain letters, numbers, and underscores.";
+    } else{
+    // Prepare a select statement
+    $sql = "SELECT id FROM users WHERE username = ?";
+    
+    if($stmt = mysqli_prepare($link, $sql)){
+            // Bind variables to the prepared statement as parameters
+            mysqli_stmt_bind_param($stmt, "s", $param_username);
+            
+            // Set parameters
+            $param_username = trim($_POST["username"]);
+            
+            // Attempt to execute the prepared statement
+            if(mysqli_stmt_execute($stmt)){
+                /* store result */
+                mysqli_stmt_store_result($stmt);
+                
+                if(mysqli_stmt_num_rows($stmt) == 1){
+                    $username_err = "This username is already taken.";
+                } else{
+                    $username = trim($_POST["username"]);
 
-  // Validate password
-    if(empty(trim($_POST["password"]))){
-      $password_err = "Please enter a password.";     
-      } elseif(strlen(trim($_POST["password"])) < 6){
-          $password_err = "Password must have atleast 6 characters.";
-      } else{
-          $password = trim($_POST["password"]);
-      }
-  
-  // Validate confirm password
-  if(empty(trim($_POST["confirmpassword"]))){
-      $confirm_password_err = "Please confirm password.";     
-  } else{
-      $confirm_password = trim($_POST["confirmpassword"]);
-      if(empty($password_err) && ($password != $confirm_password)){
-          $confirm_password_err = "Password did not match.";
-      }
-  }
+                    // Default Email Address
+                    $email = trim($username);
+                }
+            } else{
+                echo "Oops! Something went wrong. Please try again later.";
+            }
 
-// Firstname
-if(empty(trim($_POST["firstname"]))){
-  $firstname_err = "Please enter a firstname.";
-} elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["firstname"]))){
-  $ufirstname_err = "Firstname can only contain letters, numbers, and underscores.";
-} else{
-      $firstname = ucwords(trim($_POST["firstname"]));
-}
-
-// Lastname
-if(empty(trim($_POST["lastname"]))){
-  $lastname_err = "Please enter a lastname.";
-} elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["lastname"]))){
-  $ulastname_err = "Lastname can only contain letters, numbers, and underscores.";
-} else{
-      $lastname = ucwords(trim($_POST["lastname"]));
-}
-
-  // role
-  if(empty(trim($_POST["options"]))){
-    $usertype_err = "Please choose usertype.";
-  }else{
-    $usertype = trim($_POST["usertype"]);
-  }
-
+            // Close statement
+            mysqli_stmt_close($stmt);
+        }
+    }
 
     // Validate password
-    if(empty(trim($_POST["password"]))){
-      $password_err = "Please enter a password.";     
-      } elseif(strlen(trim($_POST["password"])) < 6){
-          $password_err = "Password must have atleast 6 characters.";
-      } else{
-          $password = trim($_POST["password"]);
-      }
-  
-  // Validate confirm password
-  if(empty(trim($_POST["confirmpassword"]))){
-      $confirm_password_err = "Please confirm password.";     
-  } else{
-      $password = trim($_POST["confirmpassword"]);
-      if(empty($password_err) && ($password != $confirm_password)){
-          $confirm_password_err = "Password did not match.";
-      }
-  }
+        if(empty(trim($_POST["password"]))){
+        $password_err = "Please enter a password.";     
+        } elseif(strlen(trim($_POST["password"])) < 6){
+            $password_err = "Password must have atleast 6 characters.";
+        } else{
+            $password = trim($_POST["password"]);
+        }
+    
+    // Validate confirm password
+    if(empty(trim($_POST["confirmpassword"]))){
+        $confirm_password_err = "Please confirm password.";     
+    } else{
+        $confirm_password = trim($_POST["confirmpassword"]);
+        if(empty($password_err) && ($password != $confirm_password)){
+            $confirm_password_err = "Password did not match.";
+        }
+    }
 
+    // Firstname
+    if(empty(trim($_POST["firstname"]))){
+    $firstname_err = "Please enter a firstname.";
+    } elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["firstname"]))){
+    $ufirstname_err = "Firstname can only contain letters, numbers, and underscores.";
+    } else{
+        $firstname = ucwords(trim($_POST["firstname"]));
+    }
 
+        // Lastname
+        if(empty(trim($_POST["lastname"]))){
+        $lastname_err = "Please enter a lastname.";
+        } elseif(!preg_match('/^[a-zA-Z0-9_]+$/', trim($_POST["lastname"]))){
+        $ulastname_err = "Lastname can only contain letters, numbers, and underscores.";
+        } else{
+            $lastname = ucwords(trim($_POST["lastname"]));
+        }
 
-  
+        // Gender
+        if(empty(trim($_POST["gender"]))){
+        $gender_err = "Please choose your gender";
+        } else{
+            $gender = ucwords(trim($_POST["gender"]));
+        }
+        
+        // Address
+        if(empty(trim($_POST["address"]))){
+        $address_err = "Enter your address";
+        } else{
+            $address = ucwords(trim($_POST["address"]));
+        }
   
   // Check input errors before inserting in database
   if(empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($firstname_err) && empty($lastname_err) && empty($usertype_err) ){
@@ -165,7 +157,6 @@ if(empty(trim($_POST["lastname"]))){
 
       $stmt->close();
 
-      
   }
   
   // Close connection
