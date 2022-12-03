@@ -19,5 +19,5 @@
     $query=mysqli_query($con,"INSERT INTO `users`(`firstname`, `lastname`, `birthdate`, `age`,`gender`,`address`,`email_add`, `username`, `password`, `role_id`, `added_at`) 
                                           VALUES ('".$firstname."','".$middlename."','".$lastname."','".$contact."','".$email."','".$position."','".$office."','".$username."','".$password."','".$role."','".$date."')" );
     
-    header("location: ../../login");
+    header("location: ../../../login");
 ?>

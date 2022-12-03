@@ -109,15 +109,16 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="input-group mb-0">
-
                                         <button name="login" type="submit"
-                                            class="btn btn-primary btn-lg btn-block text-white">SIGN IN</button>
+                                            class="btn btn-primary btn-lg btn-block text-white"
+                                            style="border-radius: 50px;">SIGN IN</button>
                                     </div>
-                                    <div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">
+                                    <div class=" font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">
                                         OR
                                     </div>
                                     <div class="input-group mb-0">
-                                        <a class="btn btn-outline-primary btn-lg btn-block" href="register.php">CREATE
+                                        <a class="btn btn-outline-primary btn-lg btn-block" href="register.php"
+                                            style="border-radius: 50px;">CREATE
                                             ACCOUNT</a>
                                     </div>
                                 </div>
