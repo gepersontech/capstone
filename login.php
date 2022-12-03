@@ -23,6 +23,18 @@
     <link rel="stylesheet" type="text/css" href="app/vendors/styles/style.css" />
 
 </head>
+<!-- <div class="pre-loader">
+    <div class="pre-loader-box">
+        <div class="loader-logo">
+            <img src="vendors/images/deskapp-logo.svg" alt="" />
+        </div>
+        <div class="loader-progress" id="progress_div">
+            <div class="bar" id="bar1"></div>
+        </div>
+        <div class="percent" id="percent1">0%</div>
+        <div class="loading-text">Loading...</div>
+    </div>
+</div> -->
 
 <body class="login-page">
     <div class="login-header box-shadow">
@@ -50,7 +62,7 @@
                             <div class="select-role">
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                     <label class="btn active">
-                                        <input type="radio" name="options" id="admin" />
+                                        <input type="radio" name="options" id="admin" disabled />
                                         <div class="icon">
                                             <img src="app/vendors/images/briefcase.svg" class="svg" alt="" />
                                         </div>
@@ -69,14 +81,14 @@
                             </div>
                             <div class="input-group custom">
                                 <input type="text" name="username" class="form-control form-control-lg"
-                                    placeholder="Username" />
+                                    placeholder="Enter username" />
                                 <div class="input-group-append custom">
                                     <span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
                                 </div>
                             </div>
                             <div class="input-group custom">
                                 <input type="password" name="password" class="form-control form-control-lg"
-                                    placeholder="**********" />
+                                    placeholder="Enter password" />
                                 <div class="input-group-append custom">
                                     <span class="input-group-text"><i class="dw dw-padlock1"></i></span>
                                 </div>
@@ -116,6 +128,8 @@
             </div>
         </div>
     </div>
+
+
 
     <!-- js -->
     <script src="app/vendors/scripts/core.js"></script>
