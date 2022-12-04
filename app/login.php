@@ -1,3 +1,16 @@
+<?php
+       if(isset($_GET['l'])){
+        $x = $_GET['l'];
+        if($x==1){
+            echo "<script>alert('Invalid Username')</script>";
+        }elseif($x==5){
+        echo    "<script>
+                    alert('Invalid Recaptcha!');
+                </script>";
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -46,8 +59,9 @@
                         <div class="login-title">
                             <h2 class="text-center text-primary">Login To GITS</h2>
                         </div>
+
                         <form>
-                            <div class="select-role">
+                            < <div class="select-role">
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                     <label class="btn active">
                                         <input type="radio" name="options" id="admin" />
@@ -66,55 +80,55 @@
                                         Student
                                     </label>
                                 </div>
+                    </div>
+                    <div class="input-group custom">
+                        <input type="text" class="form-control form-control-lg" placeholder="Username" />
+                        <div class="input-group-append custom">
+                            <span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
+                        </div>
+                    </div>
+                    <div class="input-group custom">
+                        <input type="password" class="form-control form-control-lg" placeholder="**********" />
+                        <div class="input-group-append custom">
+                            <span class="input-group-text"><i class="dw dw-padlock1"></i></span>
+                        </div>
+                    </div>
+                    <div class="row pb-30">
+                        <div class="col-6">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1" />
+                                <label class="custom-control-label" for="customCheck1">Remember</label>
                             </div>
-                            <div class="input-group custom">
-                                <input type="text" class="form-control form-control-lg" placeholder="Username" />
-                                <div class="input-group-append custom">
-                                    <span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
-                                </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="forgot-password">
+                                <a href="forgot-password.html">Forgot Password</a>
                             </div>
-                            <div class="input-group custom">
-                                <input type="password" class="form-control form-control-lg" placeholder="**********" />
-                                <div class="input-group-append custom">
-                                    <span class="input-group-text"><i class="dw dw-padlock1"></i></span>
-                                </div>
-                            </div>
-                            <div class="row pb-30">
-                                <div class="col-6">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck1" />
-                                        <label class="custom-control-label" for="customCheck1">Remember</label>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="forgot-password">
-                                        <a href="forgot-password.html">Forgot Password</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="input-group mb-0">
-                                        <!--
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="input-group mb-0">
+                                <!--
 											use code for form submit
 											<input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
 										-->
-                                        <a class="btn btn-primary btn-lg btn-block" href="index.html">Sign In</a>
-                                    </div>
-                                    <div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">
-                                        OR
-                                    </div>
-                                    <div class="input-group mb-0">
-                                        <a class="btn btn-outline-primary btn-lg btn-block"
-                                            href="register.html">Register To Create Account</a>
-                                    </div>
-                                </div>
+                                <a class="btn btn-primary btn-lg btn-block" href="index.html">Sign In</a>
                             </div>
-                        </form>
+                            <div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">
+                                OR
+                            </div>
+                            <div class="input-group mb-0">
+                                <a class="btn btn-outline-primary btn-lg btn-block" href="register.html">Register To
+                                    Create Account</a>
+                            </div>
+                        </div>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- welcome modal start -->
     <!-- <div class="welcome-modal">

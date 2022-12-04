@@ -35,153 +35,149 @@
                 </a>
             </div>
         </div>
-
     </div>
-    <div class="register-page-wrap d-flex align-items-center flex-wrap justify-content-center">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-4 col-lg-5">
-                    <img src="app/vendors/images/register-page-img.png" alt="" />
-                </div>
-                <div class="col-md-7 col-lg-7">
-                    <div class=" register-box bg-white box-shadow border-radius-10">
-                        <div class="container">
-                            <div class="wizard-content">
-                                <form class="tab-wizard2 wizard-circle wizard" action="action/admin/add-student.php"
-                                    method="POST"> <br>
-                                    <h5>Basic Account Credentials</h5> <br>
-                                    <section>
-                                        <div class="form-wrap max-width-500 mx-auto">
-                                            <div class="select-role">
-                                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                                    <label class="btn active">
-                                                        <input type="radio" name="options" id="admin" value="4"
-                                                            disabled />
-                                                        <div class="icon">
-                                                            <img src="app/vendors/images/briefcase.svg" class="svg"
-                                                                alt="" />
-                                                        </div>
-                                                        <span>I'm</span>
-                                                        Teacher
-                                                    </label>
-                                                    <label class="btn">
-                                                        <input type="radio" name="options" id="user" value="3" />
-                                                        <div class="icon">
-                                                            <img src="app/vendors/images/person.svg" class="svg"
-                                                                alt="" />
-                                                        </div>
-                                                        <span>I'm</span>
-                                                        Student
-                                                    </label>
-                                                </div>
-                                            </div>
 
-                                            <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label">Email Address*</label>
-                                                <div class="col-sm-8">
-                                                    <input type="email" class="form-control"
-                                                        placeholder="Enter your email address" name="email" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label">Username*</label>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Enter your username" name="username" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label">Password*</label>
-                                                <div class="col-sm-8">
-                                                    <input type="password" class="form-control"
-                                                        placeholder="Create password" name="password" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label">Confirm Password*</label>
-                                                <div class="col-sm-8">
-                                                    <input type="password" class="form-control"
-                                                        placeholder="Confirm password" name="confirmpassword" />
-                                                </div>
-                                            </div>
+    <div class="row ">
+        <div class="col-lg-7 align-items-center">
+            <img src="app/vendors/images/register-page-img.png" alt="" />
+        </div>
+        <div class="col-lg-5 ">
+            <div class=" container register-box bg-white box-shadow border-radius-10">
+                <form class="tab-wizard2 wizard-circle wizard"
+                    action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST"> <br>
+                    <h5>Basic Account Credentials</h5> <br>
+
+
+                    <?php
+                                        $error="ss";
+                                        if($error!=null){
+                                            echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <strong>Holy guacamole!</strong> You should check in on some of those fields
+                                        below.
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>';
+                                        }
+
+                                    ?>
+                    <section>
+                        <div class="form-wrap max-width-500 mx-auto">
+                            <div class="select-role">
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <label class="btn active">
+                                        <input type="radio" name="options" id="admin" value="4" disabled />
+                                        <div class="icon">
+                                            <img src="app/vendors/images/briefcase.svg" class="svg" alt="" />
                                         </div>
-                                    </section>
-                                    <!-- Step 2 -->
-                                    <h5>Personal Information</h5> <br>
-                                    <section>
-                                        <div class="form-wrap max-width-600 mx-auto">
-                                            <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label">First Name*</label>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control" name="firstname"
-                                                        placeholder="Enter your firstname" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label">Last Name*</label>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control" name="lastname"
-                                                        placeholder="Enter your lastname" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group row align-items-center">
-                                                <label class="col-sm-4 col-form-label">Gender*</label>
-                                                <div class="col-sm-8">
-                                                    <div class="custom-control custom-radio custom-control-inline pb-0">
-                                                        <input type="radio" id="male" name="gender"
-                                                            class="custom-control-input" />
-                                                        <label class="custom-control-label" for="male">Male</label>
-                                                    </div>
-                                                    <div class="custom-control custom-radio custom-control-inline pb-0">
-                                                        <input type="radio" id="female" name="gender"
-                                                            class="custom-control-input" />
-                                                        <label class="custom-control-label" for="female">Female</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label">Birthdate*</label>
-                                                <div class="col-sm-8">
-                                                    <input type="date" class="form-control" name="birthdate" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label">Address*</label>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control" name="address"
-                                                        placeholder="Enter your address" />
-                                                </div>
-                                            </div>
-                                            <div class="custom-control custom-checkbox mt-4">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck1" />
-                                                <label class="custom-control-label" for="customCheck1">I have read and
-                                                    agreed to the terms of services and
-                                                    privacy policy</label>
-                                            </div>
-
+                                        <span>I'm</span>
+                                        Teacher
+                                    </label>
+                                    <label class="btn">
+                                        <input type="radio" name="options" id="user" value="3" />
+                                        <div class="icon">
+                                            <img src="app/vendors/images/person.svg" class="svg" alt="" />
                                         </div>
-
-                                    </section> <br>
-                                    <div class="container">
-                                        <button name=" register" type="submit"
-                                            class=" btn btn-primary btn-lg  text-white"
-                                            style="border-radius: 50px; min-width: 100%;">SUBMIT</button>
-                                    </div> <br>
-                                </form>
+                                        <span>I'm</span>
+                                        Student
+                                    </label>
+                                </div>
                             </div>
-                        </div> <br>
-                        <div class="text-center pb-3">
-                            <P>Already have an account?
-                                <a href="login.php">Login</a>
-                            </P>
+
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label">Email Address*</label>
+                                <div class="col-sm-8">
+                                    <input type="email" class="form-control" placeholder="Enter your email address"
+                                        name="email" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label">Username*</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" placeholder="Enter your username"
+                                        name="username" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label">Password*</label>
+                                <div class="col-sm-8">
+                                    <input type="password" class="form-control" placeholder="Create password"
+                                        name="password" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label">Confirm Password*</label>
+                                <div class="col-sm-8">
+                                    <input type="password" class="form-control" placeholder="Confirm password"
+                                        name="confirmpassword" />
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </section>
+                    <!-- Step 2 -->
+                    <h5>Personal Information</h5> <br>
+                    <section>
+                        <div class="form-wrap max-width-600 mx-auto">
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label">First Name*</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" name="firstname"
+                                        placeholder="Enter your firstname" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label">Last Name*</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" name="lastname"
+                                        placeholder="Enter your lastname" />
+                                </div>
+                            </div>
+                            <div class="form-group row align-items-center">
+                                <label class="col-sm-4 col-form-label">Gender*</label>
+                                <div class="col-sm-8">
+                                    <div class="custom-control custom-radio custom-control-inline pb-0">
+                                        <input type="radio" id="male" name="gender" class="custom-control-input" />
+                                        <label class="custom-control-label" for="male">Male</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline pb-0">
+                                        <input type="radio" id="female" name="gender" class="custom-control-input" />
+                                        <label class="custom-control-label" for="female">Female</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label">Birthdate*</label>
+                                <div class="col-sm-8">
+                                    <input type="date" class="form-control" name="birthdate" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-4 col-form-label">Address*</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" name="address"
+                                        placeholder="Enter your address" />
+                                </div>
+                            </div>
+                            <div class="custom-control custom-checkbox mt-4">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1" />
+                                <label class="custom-control-label" for="customCheck1">I have read and
+                                    agreed to the terms of services and
+                                    privacy policy</label>
+                            </div>
 
-                </div>
+                        </div>
 
+                    </section>
+                    <div class="container">
+                        <button name=" register" type="submit" class=" btn btn-primary btn-lg btn-block text-white"
+                            style="border-radius: 50px; ">SUBMIT</button>
+                    </div> <br>
+                </form>
             </div>
         </div>
     </div>
+
+
 
     <!-- js -->
     <script src="app/vendors/scripts/core.js"></script>

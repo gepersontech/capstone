@@ -3,19 +3,6 @@
     session_start();
 
 
-// Check if the user is already logged in, if yes then redirect him to welcome page
-// if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true){
-//     if(isset($_SESSION["role_id"])){
-//       if( $_SESSION["role_id"] == "1"){
-//             header("location: index.php");
-//         }else if($_SESSION["role_id"] == "2"){
-//             header("location: ../app");
-//         }
-//     }
-// }
- 
-
- 
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = $login_err = $pending ="";

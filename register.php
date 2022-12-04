@@ -2,31 +2,15 @@
 
 // Include config file
 require_once "conf/config.php";
-// Define variables and initialize with empty values
-    $role = 
-    $email = 
-    $username = 
-    $password = 
-    $confirmpassword = 
-    $password =
-    $firstname = 
-    $lastname = 
-    $gender =
-    $address = 
-    $bdate = "";
-    $date = date('Y-m-d H:i:s');
+include('app/action/admin/add-student.php');
 
-$created_at = date('Y-m-d H:i:s');
-$email_err = $firstname_err = $lastname_err = $username_err = $password_err = $confirm_password_err = $role_error= $register_err  = "";
-
-// Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // role
     if(empty(trim($_POST["options"]))){
-        $usertype_err = "Please choose usertype.";
+        $role_err = "Please choose usertype.";
     }else{
-        $usertype = trim($_POST["usertype"]);
+        $role = trim($_POST["options"]);
     }
 
     // Email
@@ -45,9 +29,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $username_err = "Username can only contain letters, numbers, and underscores.";
     } else{
     // Prepare a select statement
-    $sql = "SELECT id FROM users WHERE username = ?";
+    $sql = "SELECT user_id FROM users WHERE username = ?";
     
-    if($stmt = mysqli_prepare($link, $sql)){
+    if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "s", $param_username);
             
@@ -114,8 +98,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
 
         // Gender
-        if(empty(trim($_POST["gender"]))){
-        $gender_err = "Please choose your gender";
+        if($_POST["gender"] == null){
+        $error = "Please choose your gender";
         } else{
             $gender = ucwords(trim($_POST["gender"]));
         }
@@ -176,7 +160,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   }
   
   // Close connection
-  mysqli_close($link);
+  mysqli_close($con);
 }
 
 ?>
@@ -187,7 +171,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <!-- Basic Page Info -->
     <meta charset="utf-8" />
-    <title>DeskApp - Bootstrap Admin Dashboard HTML Template</title>
+    <title>Create Account | GITS</title>
 
     <!-- Site favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="app/vendors/images/apple-touch-icon.png" />
@@ -223,24 +207,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <div class="register-page-wrap d-flex align-items-center flex-wrap justify-content-center">
         <div class="container">
             <div class="row align-items-top">
-                <div class="col-md-6">
+                <div class="col-md-6 col-lg-7">
                     <img src="app/vendors/images/register-page-img.png" alt="" />
                 </div>
-                <div class="col-md-6">
-                    <div class=" register-box bg-white box-shadow border-radius-10">
+                <div class="col-md-6 col-lg-5">
+                    <div class="register-box bg-white box-shadow border-radius-10"
+                        style=" height: 500px; overflow: auto;">
                         <div class="container">
-                            <div class="wizard-content">
-                                <form class="tab-wizard2 wizard-circle wizard"
-                                    action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST"> <br>
-                                    <h5>Basic Account Credentials</h5> <br>
+                            <form class="tab-wizard2 wizard-circle wizard" action="app/action/admin/add-student.php"
+                                method="POST"> <br>
+                                <h5>Basic Account Credentials</h5> <br>
 
 
-                                    <?php
-                                        $error="ss";
-                                        if($error!=null){
+                                <?php
+                                        
+                                        if($error != null){
                                             echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                        <strong>Holy guacamole!</strong> You should check in on some of those fields
-                                        below.
+                                        <strong>Error!</strong> .'.$error.'.
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -248,125 +231,124 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                         }
 
                                     ?>
-                                    <section>
-                                        <div class="form-wrap max-width-500 mx-auto">
-                                            <div class="select-role">
-                                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                                    <label class="btn active">
-                                                        <input type="radio" name="options" id="admin" value="4"
-                                                            disabled />
-                                                        <div class="icon">
-                                                            <img src="app/vendors/images/briefcase.svg" class="svg"
-                                                                alt="" />
-                                                        </div>
-                                                        <span>I'm</span>
-                                                        Teacher
-                                                    </label>
-                                                    <label class="btn">
-                                                        <input type="radio" name="options" id="user" value="3" />
-                                                        <div class="icon">
-                                                            <img src="app/vendors/images/person.svg" class="svg"
-                                                                alt="" />
-                                                        </div>
-                                                        <span>I'm</span>
-                                                        Student
-                                                    </label>
-                                                </div>
+                                <section>
+                                    <div class="form-wrap max-width-500 mx-auto">
+                                        <div class="select-role">
+                                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                <label class="btn active">
+                                                    <input type="radio" name="options" id="admin" value="4" disabled />
+                                                    <div class="icon">
+                                                        <img src="app/vendors/images/briefcase.svg" class="svg"
+                                                            alt="" />
+                                                    </div>
+                                                    <span>I'm</span>
+                                                    Teacher
+                                                </label>
+                                                <label class="btn">
+                                                    <input type="radio" name="options" id="user" value="3" />
+                                                    <div class="icon">
+                                                        <img src="app/vendors/images/person.svg" class="svg" alt="" />
+                                                    </div>
+                                                    <span>I'm</span>
+                                                    Student
+                                                </label>
                                             </div>
+                                        </div>
 
-                                            <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label">Email Address*</label>
-                                                <div class="col-sm-8">
-                                                    <input type="email" class="form-control"
-                                                        placeholder="Enter your email address" name="email" />
-                                                </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">Email Address*</label>
+                                            <div class="col-sm-8">
+                                                <input type="email" class="form-control"
+                                                    placeholder="Enter your email address" name="email" required />
                                             </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label">Username*</label>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control"
-                                                        placeholder="Enter your username" name="username" />
-                                                </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">Username*</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control"
+                                                    placeholder="Enter your username" name="username" required />
                                             </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label">Password*</label>
-                                                <div class="col-sm-8">
-                                                    <input type="password" class="form-control"
-                                                        placeholder="Create password" name="password" />
-                                                </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">Password*</label>
+                                            <div class="col-sm-8">
+                                                <input type="password" class="form-control"
+                                                    placeholder="Create password" name="password" required />
                                             </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label">Confirm Password*</label>
-                                                <div class="col-sm-8">
-                                                    <input type="password" class="form-control"
-                                                        placeholder="Confirm password" name="confirmpassword" />
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">Confirm Password*</label>
+                                            <div class="col-sm-8">
+                                                <input type="password" class="form-control"
+                                                    placeholder="Confirm password" name="confirmpassword" required />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- Step 2 -->
+                                <h5>Personal Information</h5> <br>
+                                <section>
+                                    <div class="form-wrap max-width-600 mx-auto">
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">First Name*</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" name="firstname"
+                                                    placeholder="Enter your firstname" required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">Last Name*</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" name="lastname"
+                                                    placeholder="Enter your lastname" required />
+                                            </div>
+                                        </div>
+                                        <div class="form-group row align-items-center">
+                                            <label class="col-sm-4 col-form-label">Gender*</label>
+                                            <div class="col-sm-8">
+                                                <div class="custom-control custom-radio custom-control-inline pb-0">
+                                                    <input type="radio" id="male" name="gender"
+                                                        class="custom-control-input" value="male" />
+                                                    <label class="custom-control-label" for="male">Male</label>
+                                                </div>
+                                                <div class="custom-control custom-radio custom-control-inline pb-0">
+                                                    <input type="radio" id="female" name="gender" value="female"
+                                                        class="custom-control-input" />
+                                                    <label class="custom-control-label" for="female">Female</label>
                                                 </div>
                                             </div>
                                         </div>
-                                    </section>
-                                    <!-- Step 2 -->
-                                    <h5>Personal Information</h5> <br>
-                                    <section>
-                                        <div class="form-wrap max-width-600 mx-auto">
-                                            <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label">First Name*</label>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control" name="firstname"
-                                                        placeholder="Enter your firstname" />
-                                                </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">Birthdate*</label>
+                                            <div class="col-sm-8">
+                                                <input type="date" class="form-control" name="birthdate" required />
                                             </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label">Last Name*</label>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control" name="lastname"
-                                                        placeholder="Enter your lastname" />
-                                                </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">Address*</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" name="address"
+                                                    placeholder="Enter your address" />
                                             </div>
-                                            <div class="form-group row align-items-center">
-                                                <label class="col-sm-4 col-form-label">Gender*</label>
-                                                <div class="col-sm-8">
-                                                    <div class="custom-control custom-radio custom-control-inline pb-0">
-                                                        <input type="radio" id="male" name="gender"
-                                                            class="custom-control-input" />
-                                                        <label class="custom-control-label" for="male">Male</label>
-                                                    </div>
-                                                    <div class="custom-control custom-radio custom-control-inline pb-0">
-                                                        <input type="radio" id="female" name="gender"
-                                                            class="custom-control-input" />
-                                                        <label class="custom-control-label" for="female">Female</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label">Birthdate*</label>
-                                                <div class="col-sm-8">
-                                                    <input type="date" class="form-control" name="birthdate" />
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label class="col-sm-4 col-form-label">Address*</label>
-                                                <div class="col-sm-8">
-                                                    <input type="text" class="form-control" name="address"
-                                                        placeholder="Enter your address" />
-                                                </div>
-                                            </div>
-                                            <div class="custom-control custom-checkbox mt-4">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck1" />
-                                                <label class="custom-control-label" for="customCheck1">I have read and
-                                                    agreed to the terms of services and
-                                                    privacy policy</label>
-                                            </div>
-
+                                        </div>
+                                        <div class="custom-control custom-checkbox mt-4">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1" />
+                                            <label class="custom-control-label" for="customCheck1">I have read and
+                                                agreed to the terms of services and
+                                                privacy policy</label>
                                         </div>
 
-                                    </section> <br>
-                                    <div class="container">
-                                        <button name=" register" type="submit"
-                                            class=" btn btn-primary btn-lg btn-block text-white"
-                                            style="border-radius: 50px; ">SUBMIT</button>
-                                    </div> <br>
-                                </form>
-                            </div>
+                                    </div>
+
+                                </section> <br>
+                                <div class="container">
+                                    <button name="register" type="submit"
+                                        class=" btn btn-primary btn-lg btn-block text-white"
+                                        style="border-radius: 50px; ">SUBMIT</button>
+                                </div> <br>
+                            </form>
+
+
                         </div> <br>
                         <div class="text-center pb-3">
                             <P>Already have an account?
