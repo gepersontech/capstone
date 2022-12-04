@@ -221,7 +221,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                                 <?php
                                         
-                                        if($error != null){
+                                        if($error_msg != null){
                                             echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
                                         <strong>Error!</strong> .'.$error.'.
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
