@@ -18,7 +18,7 @@
 </div>
 
 <?php
-$result = mysqli_query($con, "SELECT examitem_id, question,exam_ch1,exam_ch2,exam_ch3,exam_ch4
+$result = mysqli_query($con, "SELECT examitem_id, question,exam_ch1,exam_ch2,exam_ch3,exam_ch4,answerkey
     FROM `exam_items`;");
 $count = 1;
 $rowCount = mysqli_num_rows($result);
@@ -51,25 +51,33 @@ if ($rowCount > 0) {
                     </thead>
                     <tbody>
                         <tr>
-                            <td><a class="btn"><?php echo $row['exam_ch1']; ?></a></td>
-                            <td><a class="btn"><?php echo $row['exam_ch2']; ?></a></td>
-                            <td><a class="btn"><?php echo $row['exam_ch3']; ?></a></td>
-                            <td><a class="btn"><?php echo $row['exam_ch4']; ?></a></td>
-                            <!-- <td style="width: 400px;">
-                                <a data-toggle="modal" data-target="#verify" href="" class=" btn btn-sm btn-primary">
-                                    <span class="icon-copy ti-pencil-alt"></span> Take exam
-                                </a> -->
-
-                            <!-- <a href="index.php?page=exam-edit&& id=<?php echo $id; ?>" class=" btn btn-sm btn-primary">
-                            <span class="icon-copy ti-pencil-alt"></span> Take exam
-                        </a> -->
-
-                            <!-- <a onclick="delete_course('<?php echo $id; ?>')" class=" btn btn-sm btn-danger text-white">
-                            <span class="icon-copy ti-trash"></span>
-                            Delete</a> -->
-                            </td>
+                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                                <input type="text" id="anskey" name="answerkey" value="<?php echo $row['answerkey'];?>" hidden>
+                                <td>
+                                    <input type="radio" id="ch1" name="answer" value= "<?php echo $row['exam_ch1'];?>">
+                                    <label style="vertical-align: middle;" for="ch1"><?php echo $row['exam_ch1'];?></label>
+                                </td>
+                                <td>
+                                    <input type="radio" id="ch1" name="answer" value= "<?php echo $row['exam_ch2'];?>">
+                                    <label style="vertical-align: middle;" for="ch1"><?php echo $row['exam_ch2'];?></label>
+                                </td>
+                                <td>
+                                    <input type="radio" id="ch1" name="answer" value= "<?php echo $row['exam_ch3'];?>">
+                                    <label style="vertical-align: middle;" for="ch1"><?php echo $row['exam_ch3'];?></label>
+                                </td>
+                                <td>
+                                    <input type="radio" id="ch1" name="answer" value= "<?php echo $row['exam_ch4'];?>">
+                                    <label style="vertical-align: middle;" for="ch1"><?php echo $row['exam_ch4'];?></label>
+                                </td>
+                            <tr>
+                                <td  colspan="4" style=" text-align: center;border: none;">
+                                    <button type="submit" name="submit" class="btn btn-success">
+                                        <span class="icon-copy ti-help-alt"></span> Verify answer</button>
+                                </td>
+                            </tr>
 
                         </tr>
+                        </form>
                 <?php
                 $count++;
             }
@@ -84,7 +92,7 @@ if ($rowCount > 0) {
         </div>
 
         <!-- VERIFY TO TAKE EXAMS....-->
-        <div style="margin-top: 150px;" class="modal fade" id="verify" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div style="margin-top: 150px;" class="modal fade" id="answerverifier" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -101,3 +109,9 @@ if ($rowCount > 0) {
                 </div>
             </div>
         </div>
+<?php
+
+    if(isset($_POST['submit'])){
+
+    }
+?>
