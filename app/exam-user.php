@@ -144,7 +144,8 @@
 </div>
 
 <!-- VERIFY TO TAKE EXAMS....-->
-<div class="modal fade" id="verify" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+<div style="margin-top: 150px;" 
+    class="modal fade" id="verify" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
