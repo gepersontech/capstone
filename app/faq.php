@@ -160,18 +160,18 @@
                     </div>
                     <div id="faq5" class="collapse" data-parent="#accordion">
                         <div class="card-body">                        
-                            <center><p>Example1.1 Determine the type conic section that each general equation will produce.</p></center>
-                            <center><img src="images/6.png" width="700" height="500" /></center><br>
+                            <center><p style = "font-size:20px;">Example1.1 Determine the type conic section that each general equation will produce.</p></center>
+                            <center><img src="images/6.png" width="1000" height="500" /></center><br>
                             
 
-                            <p style = "text-indent:80px;"><b>Definition and Equation of a Circle</b><br></p>
-                            <center> <p style = "text-indent:50px;">
+                            <p style = "text-indent:80px; font-size:20px;"><b>Definition and Equation of a Circle</b><br></p>
+                            <center> <p style = "text-indent:50px; font-size:16px;">
                             A <b>circle</b> may also be considered a special kind of ellipse (for the special case 
                             when the tilted plane is horizontal). <br>As we get to know more about a circle, we will 
                             also be able to distinguish more between these two conics.
                             </p></center>
 
-                            <center><img src="images/7.png" width="700" height="500"/></center>
+                            <center><img src="images/7.png" width="800" height="500"/></center>
                             <center><img src="images/8.png" width="700" height="500"/></center>
                             <center><img src="images/9.png" width="700" height="500"/></center>
                             <center><img src="images/10.png" width="700" height="500"/></center>
@@ -183,36 +183,29 @@
                     <div class="card-header">
                         <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq6">
                         Example 1.2
-
                         </button>
                     </div>
                     <div id="faq6" class="collapse" data-parent="#accordion">
                         <div class="card-body">
                        
-                            <center><img src="images/11.png" width="700" height="500"/></center>
-                            <center><img src="images/13.png" width="700" height="500"/></center>
-                            <center><img src="images/14.png" width="700" height="500"/></center>
+                            <center><img src="images/12.png" width="800" height="500"/></center>
                             
-                            
-
-
-
                         </div>
                     </div>
                 </div>
+
                 <div class="card">
                     <div class="card-header">
-                        <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq6">
+                        <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq7">
                         Example 1.3
 
                         </button>
                     </div>
-                    <div id="faq6" class="collapse" data-parent="#accordion">
+                    <div id="faq7" class="collapse" data-parent="#accordion">
                         <div class="card-body">
                        
-                            <center><img src="images/11.png" width="700" height="500"/></center>
                             <center><img src="images/13.png" width="700" height="500"/></center>
-                            <center><img src="images/14.png" width="700" height="500"/></center>
+                       
                             
                             
 
