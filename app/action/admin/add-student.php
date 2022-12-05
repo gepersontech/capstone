@@ -54,13 +54,12 @@
         if(isset($address)){
             header("location: ../../../register.php?error=Invalid input.");
         }else{
-            $password = password_hash($confirmpassword, PASSWORD_DEFAULT);
+                
+        }
+        $password = password_hash($confirmpassword, PASSWORD_DEFAULT);
             $query=mysqli_query($con,"INSERT INTO `users`(`firstname`, `lastname`, `birthdate`, `age`,`gender`,`address`,`email_add`, `username`, `password`, `role_id`, `added_at`) 
                                   VALUES ('".$firstname."','".$lastname."','".$birthdate."',''".$age.",'".$gender."','".$address."','".$email."','".$username."','".$password."','".$role."','".$date."')" );
-            header("location: ../../../login");    
-        }
-        
-        header("location: ../../../register");
+            header("location: ../../../login");
     }
     
 ?>
