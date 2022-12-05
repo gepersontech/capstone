@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 08, 2022 at 05:10 PM
+-- Generation Time: Dec 05, 2022 at 06:51 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -79,6 +79,52 @@ CREATE TABLE `course` (
 INSERT INTO `course` (`course_id`, `course_name`, `course_created`) VALUES
 (3, 'GEOMETRY', '0000-00-00 00:00:00'),
 (5, 'BSCS', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `exam`
+--
+
+CREATE TABLE `exam` (
+  `exam_id` int(11) NOT NULL,
+  `exam_title` varchar(255) NOT NULL,
+  `exam_desc` varchar(500) NOT NULL,
+  `course_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `exam`
+--
+
+INSERT INTO `exam` (`exam_id`, `exam_title`, `exam_desc`, `course_id`) VALUES
+(1, 'Circle post test', 'Evaluate the student learning in circles', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `exam_items`
+--
+
+CREATE TABLE `exam_items` (
+  `examitem_id` int(11) NOT NULL,
+  `question` varchar(500) NOT NULL,
+  `exam_ch1` varchar(255) NOT NULL,
+  `exam_ch2` varchar(255) NOT NULL,
+  `exam_ch3` varchar(255) NOT NULL,
+  `exam_ch4` varchar(255) NOT NULL,
+  `answerkey` varchar(255) NOT NULL,
+  `points` int(11) NOT NULL,
+  `hint` varchar(255) NOT NULL,
+  `exam_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `exam_items`
+--
+
+INSERT INTO `exam_items` (`examitem_id`, `question`, `exam_ch1`, `exam_ch2`, `exam_ch3`, `exam_ch4`, `answerkey`, `points`, `hint`, `exam_id`) VALUES
+(1, ' It is the intersection of a plane and a double-napped cone.', 'a. locus', 'b. conic section', 'c. circle', 'd. radius', 'b. conic section', 0, '[value-9]', 1);
 
 -- --------------------------------------------------------
 
@@ -297,6 +343,18 @@ ALTER TABLE `course`
   ADD PRIMARY KEY (`course_id`);
 
 --
+-- Indexes for table `exam`
+--
+ALTER TABLE `exam`
+  ADD PRIMARY KEY (`exam_id`);
+
+--
+-- Indexes for table `exam_items`
+--
+ALTER TABLE `exam_items`
+  ADD PRIMARY KEY (`examitem_id`);
+
+--
 -- Indexes for table `items`
 --
 ALTER TABLE `items`
@@ -377,6 +435,18 @@ ALTER TABLE `users`
 --
 ALTER TABLE `course`
   MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `exam`
+--
+ALTER TABLE `exam`
+  MODIFY `exam_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `exam_items`
+--
+ALTER TABLE `exam_items`
+  MODIFY `examitem_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `lesson`
