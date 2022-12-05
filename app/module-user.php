@@ -35,7 +35,7 @@
                 </tr>
             </thead>
             <tbody>
-                
+
                 <?php
                 $result = mysqli_query($con,"SELECT * FROM `module`");
                 $count=1;
@@ -109,7 +109,7 @@
                     <td><?php echo $row['lesson_name']; ?></td>
                     <td><?php echo $row['lesson_desc']; ?></td>
                     <td style="width: 400px;">
-                        <a href="faq" class=" btn btn-sm btn-primary">
+                        <a href="lesson_1" class=" btn btn-sm btn-primary">
                             <span class="icon-copy ti-pencil-alt"></span> View
                         </a>
 
