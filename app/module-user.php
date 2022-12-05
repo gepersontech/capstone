@@ -109,7 +109,7 @@
                     <td><?php echo $row['lesson_name']; ?></td>
                     <td><?php echo $row['lesson_desc']; ?></td>
                     <td style="width: 400px;">
-                        <a href="lesson_1" class=" btn btn-sm btn-primary">
+                        <a href="lesson_<?php echo $count; ?>" class=" btn btn-sm btn-primary">
                             <span class="icon-copy ti-pencil-alt"></span> View
                         </a>
 
