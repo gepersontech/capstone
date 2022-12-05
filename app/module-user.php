@@ -35,7 +35,7 @@
                 </tr>
             </thead>
             <tbody>
-
+                
                 <?php
                 $result = mysqli_query($con,"SELECT * FROM `module`");
                 $count=1;

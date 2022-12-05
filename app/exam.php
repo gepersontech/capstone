@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-6 col-sm-12">
             <div class="title">
-                <h4>Manage Exams</h4>
+                <h4>Required Exams</h4>
             </div>
             <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
@@ -19,11 +19,11 @@
 <!-- Simple Datatable start -->
 <div class="card-box mb-30">
     <div class="pd-20">
-        <h4 class="text-blue h4">EXAM LIST</h4>
-        <button type="button" class="btn btn-primary float-right mb-10" data-toggle="modal" data-target="#addModal">
+        <h4 class="text-blue h4">AVAILABLE EXAMS</h4>
+        <!-- <button type="button" class="btn btn-primary float-right mb-10" data-toggle="modal" data-target="#addModal">
             <span class="icon-copy ti-plus"></span>
             Add Exam
-        </button>
+        </button> -->
     </div>
     <div class="pb-20">
         <table class="data-table table stripe hover nowrap">
@@ -36,7 +36,6 @@
                 </tr>
             </thead>
             <tbody>
-
                 <?php
                 $result = mysqli_query($con,"SELECT exam_id, exam_title, course.course_name, exam_desc FROM `exam` LEFT JOIN course ON exam.course_id = course.course_id;");
                 $count=1;
