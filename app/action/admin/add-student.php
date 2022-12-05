@@ -59,6 +59,7 @@
                                   VALUES ('".$firstname."','".$lastname."','".$birthdate."',''".$age.",'".$gender."','".$address."','".$email."','".$username."','".$password."','".$role."','".$date."')" );
             header("location: ../../../login");    
         }
+        
         header("location: ../../../register");
     }
     
