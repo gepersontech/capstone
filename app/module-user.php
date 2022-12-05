@@ -35,7 +35,7 @@
                 </tr>
             </thead>
             <tbody>
-                
+
                 <?php
                 $result = mysqli_query($con,"SELECT * FROM `module`");
                 $count=1;
@@ -109,14 +109,10 @@
                     <td><?php echo $row['lesson_name']; ?></td>
                     <td><?php echo $row['lesson_desc']; ?></td>
                     <td style="width: 400px;">
-                        <a href="faq" class=" btn btn-sm btn-primary">
+                        <a href="lesson_<?php echo $count; ?>" class=" btn btn-sm btn-primary">
                             <span class="icon-copy ti-pencil-alt"></span> View
                         </a>
 
-                        <!-- 
-                        <a onclick="delete_module('<?php //echo $id; ?>')" class=" btn btn-sm btn-danger text-white">
-                            <span class="icon-copy ti-trash"></span>
-                            Delete</a> -->
                     </td>
 
                 </tr>
