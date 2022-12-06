@@ -109,7 +109,7 @@
 <script>
 function delete_course(data_id) {
     // alert('ok');
-    //window.location = ("action/admin/delete-employee.php?id=" + data_id);
+    // window.location = ("action/admin/delete-employee.php?id=" + data_id);
     Swal.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this Data!",
@@ -126,7 +126,8 @@ function delete_course(data_id) {
         }
 
     })
-
-
 }
 </script>
+
+<!-- Sweet Alert -->
+<script src="vendors/sweetalert/sweetalert.min.js"></script>

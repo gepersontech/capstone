@@ -1,12 +1,13 @@
 <?php
-session_start();
-    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-        header('Location: ../index.php?session=expired');
-    }
+    
     include('../conf/config.php');
 	include('header.php');
 	include('pre-loader.php');
 	include('navbar.php');
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+        header('Location: ../index.php?session=expired');
+    }
+    
 ?>
 
 
@@ -49,6 +50,7 @@ session_start();
 
 
 <!-- js -->
-<?php include('script.php') ?>
+<?php include('script.php') ;
+?>
 
 </html>

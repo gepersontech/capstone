@@ -1,3 +1,5 @@
+<?php require_once "../conf/config.php"; ?>
+
 <div class="page-header">
     <div class="row">
         <div class="col-md-6 col-sm-12">
@@ -21,6 +23,8 @@
 $result = mysqli_query($con, "SELECT examitem_id, question,exam_ch1,exam_ch2,exam_ch3,exam_ch4,answerkey
     FROM `exam_items`;");
 $count = 1;
+$correctanswers = 0;
+$wronganswers = 0;
 $rowCount = mysqli_num_rows($result);
 if ($rowCount > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
@@ -51,67 +55,113 @@ if ($rowCount > 0) {
                     </thead>
                     <tbody>
                         <tr>
-                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-                                <input type="text" id="anskey" name="answerkey" value="<?php echo $row['answerkey'];?>" hidden>
+                            <form action="config/answerverifier.php" method="POST">
+                                <input type="text" id="anskey" name="answerkey" value="<?php echo $row['answerkey']; ?>" hidden>
                                 <td>
-                                    <input type="radio" id="ch1" name="answer" value= "<?php echo $row['exam_ch1'];?>">
-                                    <label style="vertical-align: middle;" for="ch1"><?php echo $row['exam_ch1'];?></label>
+                                    <button style="border: none; background-color: white;" type="submit" name="submit">
+                                        <input type="radio" id="ch1" name="answer" value="<?php echo $row['exam_ch1']; ?>">
+                                        <label style="vertical-align: middle;" for="ch1"><?php echo $row['exam_ch1']; ?></label>
+                                    </button>
                                 </td>
                                 <td>
-                                    <input type="radio" id="ch1" name="answer" value= "<?php echo $row['exam_ch2'];?>">
-                                    <label style="vertical-align: middle;" for="ch1"><?php echo $row['exam_ch2'];?></label>
+                                    <button style="border: none; background-color: white;" type="submit" name="submit"> 
+                                        <input type="radio" id="ch2" name="answer" value="<?php echo $row['exam_ch2']; ?>">
+                                        <label style="vertical-align: middle;" for="ch2"><?php echo $row['exam_ch2']; ?></label>
+                                    </button>
                                 </td>
                                 <td>
-                                    <input type="radio" id="ch1" name="answer" value= "<?php echo $row['exam_ch3'];?>">
-                                    <label style="vertical-align: middle;" for="ch1"><?php echo $row['exam_ch3'];?></label>
+                                    <button style="border: none; background-color: white;" type="submit" name="submit"> 
+                                        <input type="radio" id="ch3" name="answer" value="<?php echo $row['exam_ch3']; ?>">
+                                        <label style="vertical-align: middle;" for="ch3"><?php echo $row['exam_ch3']; ?></label>
+                                    </button>
                                 </td>
                                 <td>
-                                    <input type="radio" id="ch1" name="answer" value= "<?php echo $row['exam_ch4'];?>">
-                                    <label style="vertical-align: middle;" for="ch1"><?php echo $row['exam_ch4'];?></label>
+                                    <button style="border: none; background-color: white;" type="submit" name="submit"> 
+                                        <input type="radio" id="ch4" name="answer" value="<?php echo $row['exam_ch4']; ?>">
+                                        <label style="vertical-align: middle;" for="ch4"><?php echo $row['exam_ch4']; ?></label>
+                                    </button>
                                 </td>
-                            <tr>
+                                <!-- <tr>
                                 <td  colspan="4" style=" text-align: center;border: none;">
                                     <button type="submit" name="submit" class="btn btn-success">
                                         <span class="icon-copy ti-help-alt"></span> Verify answer</button>
                                 </td>
-                            </tr>
+                            </tr> -->
 
                         </tr>
                         </form>
-                <?php
-                $count++;
-            }
-        } else {
-        }
-                ?>
+
 
                     </tbody>
 
                 </table>
             </div>
         </div>
+<?php
+        $count++;
+    }
+} else {
+}
+?>
 
-        <!-- VERIFY TO TAKE EXAMS....-->
-        <div style="margin-top: 150px;" class="modal fade" id="answerverifier" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h3 class="modal-title" id="exampleModalLabel">Are you ready?</h3>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">Proceed to the exam now</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-danger" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="examcontent">Proceed</a>
-                    </div>
-                </div>
+<!-- VERIFY TO TAKE EXAMS....-->
+<div style="margin-top: 150px;" class="modal fade" id="result" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel"><?php isset($_SESSION['title']) ?></h3>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4><?php echo $_SESSION['text'] ?></h4>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-danger" type="button" data-dismiss="modal">OK</button>
+                <!-- <a class="btn btn-primary" href="examcontent">Proceed</a> -->
             </div>
         </div>
+    </div>
+</div>
+
+<!-- SHOW NOTIFICATION MODAL.... -->
 <?php
+if (isset($_SESSION["title"])) {
+?>
+    <script>
+        setTimeout(function() {
+            $("#result").modal('show');
+        }, 1000);
+    </script>
+<?php
+    unset($_SESSION["title"]);
+}
+?>
 
-    if(isset($_POST['submit'])){
+<script src="vendors/sweetalert/sweetalert.min.js"></script>
+<!-- <script src="src/plugins/sweetalert2/sweet-alert.init.js"></script> -->
+<script src="src/plugins/sweetalert2/jquery-3.6.1.min.js"></script>
 
-    }
+<!-- for sweet alert........... -->
+<?php
+if (isset($_SESSION['headertext'])) {
+    if (isset($_SESSION['bodytext'])) {
+        if (isset($_SESSION['status'])) {
+
+
+?>
+            <script>
+                swal({
+                    title: "<?php echo $_SESSION['headertext']?>",
+                    text: "<?php echo $_SESSION['bodytext']?>",
+                    icon: "<?php echo $_SESSION['statusIcon']?>",
+                    button: "OK",
+                });
+            </script>
+<?php
+        }
+    }  
+}
+unset($_SESSION['headertext']);
 ?>

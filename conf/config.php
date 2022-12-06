@@ -1,4 +1,5 @@
 <?php
+    session_start();
     // setting time zone
     // if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     //     header('Location: ../index.php?session=expired');

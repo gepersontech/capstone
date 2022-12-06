@@ -21,10 +21,9 @@
     <link rel="stylesheet" type="text/css" href="vendors/styles/core.css" />
     <link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css" />
     <link rel="stylesheet" type="text/css" href="src/plugins/jvectormap/jquery-jvectormap-2.0.3.css" />
-    <link rel="stylesheet" type="text/css" href="vendors/styles/style.css" />
-
+    <link rel="stylesheet" type="text/css" href="vendors/styles/style.css" /> 
     <!-- SweetAlert2 -->
-    <link rel="stylesheet" href="plugins/sweetalert2/sweetalert2.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="src/plugins/sweetalert2/sweetalert2.css"/> -->
 
 </head>
 
