@@ -54,6 +54,9 @@
                         <a href="index.php?page=module-edit&& id=<?php echo $id; ?>" class=" btn btn-sm btn-primary">
                             <span class="icon-copy ti-pencil-alt"></span> View
                         </a>
+                        <a href="index.php?page=module-edit&& id=<?php echo $id; ?>" class=" btn btn-sm btn-primary">
+                            <span class="icon-copy ti-pencil-alt"></span> View
+                        </a>
 
 
                         <!-- <a onclick="delete_module('<?php// echo $id; ?>')" class=" btn btn-sm btn-danger text-white">
