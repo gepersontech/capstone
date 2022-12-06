@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2022 at 06:51 PM
+-- Generation Time: Dec 06, 2022 at 06:52 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -69,7 +69,7 @@ CREATE TABLE `assignment` (
 CREATE TABLE `course` (
   `course_id` int(11) NOT NULL,
   `course_name` varchar(250) NOT NULL,
-  `course_created` datetime NOT NULL
+  `course_created` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -103,6 +103,35 @@ INSERT INTO `exam` (`exam_id`, `exam_title`, `exam_desc`, `course_id`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `exam_answers`
+--
+
+CREATE TABLE `exam_answers` (
+  `exans_id` int(11) NOT NULL,
+  `student_id` int(11) NOT NULL,
+  `course_id` int(11) NOT NULL,
+  `exam_id` int(11) NOT NULL,
+  `question_id` int(11) NOT NULL,
+  `num_wrong` int(11) NOT NULL,
+  `exans_created` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `exam_answers`
+--
+
+INSERT INTO `exam_answers` (`exans_id`, `student_id`, `course_id`, `exam_id`, `question_id`, `num_wrong`, `exans_created`) VALUES
+(1, 1, 1, 1, 1, 3, '2022-12-06 15:19:16'),
+(2, 1, 1, 1, 1, 1, '2022-12-06 17:19:39'),
+(3, 1, 1, 1, 1, 1, '2022-12-06 17:21:48'),
+(4, 1, 1, 1, 1, 1, '2022-12-06 17:23:28'),
+(5, 1, 1, 1, 1, 1, '2022-12-06 17:25:54'),
+(6, 1, 1, 1, 1, 1, '2022-12-06 17:26:03'),
+(7, 1, 1, 1, 1, 1, '2022-12-06 17:26:38');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `exam_items`
 --
 
@@ -124,7 +153,8 @@ CREATE TABLE `exam_items` (
 --
 
 INSERT INTO `exam_items` (`examitem_id`, `question`, `exam_ch1`, `exam_ch2`, `exam_ch3`, `exam_ch4`, `answerkey`, `points`, `hint`, `exam_id`) VALUES
-(1, ' It is the intersection of a plane and a double-napped cone.', 'a. locus', 'b. conic section', 'c. circle', 'd. radius', 'b. conic section', 0, '[value-9]', 1);
+(1, ' It is the intersection of a plane and a double-napped cone.', 'a. locus', 'b. conic section', 'c. circle', 'd. radius', 'b. conic section', 0, '[value-9]', 1),
+(2, 'A collection of points satisfying a geometric property can also be \r\nreferred to as a ______ of points.\r\n', 'locus', 'conic section', 'circle', 'radius', 'locus', 0, '', 1);
 
 -- --------------------------------------------------------
 
@@ -159,7 +189,9 @@ CREATE TABLE `lesson` (
 
 INSERT INTO `lesson` (`lesson_id`, `lesson_name`, `lesson_desc`, `lesson_added`) VALUES
 (1, 'Lesson 1', ' Introduction of Conic Sections and the Circle', '0000-00-00 00:00:00'),
-(2, 'Lesson 2', 'The Parabola', '2022-11-05 01:23:51');
+(2, 'Lesson 2', 'The Parabola', '2022-11-05 01:23:51'),
+(3, 'Lesson 3', 'The Ellipse', '2022-12-06 22:22:34'),
+(4, 'Lesson 4', 'The Hyperbola', '2022-12-06 22:24:31');
 
 -- --------------------------------------------------------
 
@@ -349,6 +381,12 @@ ALTER TABLE `exam`
   ADD PRIMARY KEY (`exam_id`);
 
 --
+-- Indexes for table `exam_answers`
+--
+ALTER TABLE `exam_answers`
+  ADD PRIMARY KEY (`exans_id`);
+
+--
 -- Indexes for table `exam_items`
 --
 ALTER TABLE `exam_items`
@@ -443,16 +481,22 @@ ALTER TABLE `exam`
   MODIFY `exam_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `exam_answers`
+--
+ALTER TABLE `exam_answers`
+  MODIFY `exans_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `exam_items`
 --
 ALTER TABLE `exam_items`
-  MODIFY `examitem_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `examitem_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `lesson`
 --
 ALTER TABLE `lesson`
-  MODIFY `lesson_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `lesson_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `logs`
