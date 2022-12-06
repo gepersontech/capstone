@@ -7,5 +7,5 @@
     $query=mysqli_query($con,"INSERT INTO `lesson`(`lesson_name`, `lesson_desc`, `lesson_added`) 
                                             VALUES ('".$lesson_name."','".$lesson_desc."','".$date."')" );
     
-    header("location: ../../module");
+    header("location: ../../modules");
 ?>
