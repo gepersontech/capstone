@@ -20,8 +20,15 @@
 </div>
 
 <?php
-$result = mysqli_query($con, "SELECT examitem_id, question,exam_ch1,exam_ch2,exam_ch3,exam_ch4,answerkey
-    FROM `exam_items`;");
+
+if(isset($_GET['q'])){
+    $result = mysqli_query($con, "SELECT examitem_id, question,exam_ch1,exam_ch2,exam_ch3,exam_ch4,answerkey
+    FROM `exam_items` WHERE examitem_id = '".$_GET['q']."'");
+}else{
+    $result = mysqli_query($con, "SELECT examitem_id, question,exam_ch1,exam_ch2,exam_ch3,exam_ch4,answerkey
+    FROM `exam_items` WHERE examitem_id = 1");
+}
+
 $count = 1;
 $correctanswers = 0;
 $wronganswers = 0;
@@ -34,7 +41,14 @@ if ($rowCount > 0) {
 <!-- QUESTION CARD-->
 <div class="card-box mb-30">
     <div class="pd-20">
-        <h4 class="text-blue h4">Question <?php echo $count; ?></h4>
+        <h4 class="text-blue h4">Question <?php  
+        if(isset($_GET['q'])){
+            $q = $_GET['q'];
+        }else{
+            $q = 1;
+        }
+        echo $q; 
+        ?></h4>
     </div>
     <div class="pb-20">
         <table class="data-table table  ">
