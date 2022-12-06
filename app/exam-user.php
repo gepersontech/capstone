@@ -44,25 +44,19 @@
                     while ($row = mysqli_fetch_assoc($result)) {
                         $id = $row['exam_id'];
                 ?>
-                        <tr>
-                            <td><?php echo $row['exam_title']; ?></td>
-                            <td><?php echo $row['course_name']; ?></td>
-                            <td><?php echo $row['exam_desc']; ?></td>
-                            <td style="width: 400px;">
-                                <a data-toggle="modal" data-target="#verify" href="" class=" btn btn-sm btn-primary">
-                                    <span class="icon-copy ti-pencil-alt"></span> Take exam
-                                </a>
-
-                                <!-- <a href="index.php?page=exam-edit&& id=<?php echo $id; ?>" class=" btn btn-sm btn-primary">
+                <tr>
+                    <td><?php echo $row['exam_title']; ?></td>
+                    <td><?php echo $row['course_name']; ?></td>
+                    <td><?php echo $row['exam_desc']; ?></td>
+                    <td style="width: 400px;">
+                        <a data-toggle="modal" data-target="#verify" href="" class=" btn btn-sm btn-primary">
                             <span class="icon-copy ti-pencil-alt"></span> Take exam
-                        </a> -->
+                        </a>
 
-                                <!-- <a onclick="delete_course('<?php echo $id; ?>')" class=" btn btn-sm btn-danger text-white">
-                            <span class="icon-copy ti-trash"></span>
-                            Delete</a> -->
-                            </td>
 
-                        </tr>
+                    </td>
+
+                </tr>
                 <?php
                         $count++;
                     }
@@ -94,7 +88,8 @@
                         <label for="exam" class="col-sm-3 col-form-label">Exam Title <span class="text-danger">
                                 *</span> </label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="exam" name="exam_title" placeholder="Exam Title" required>
+                            <input type="text" class="form-control" id="exam" name="exam_title" placeholder="Exam Title"
+                                required>
                         </div>
                     </div>
                     <!-- form -->
@@ -110,9 +105,9 @@
                                 $rowCount = mysqli_num_rows($result);
                                 if ($rowCount > 0) {
                                     while ($row = mysqli_fetch_assoc($result)) { ?>
-                                        <option value="<?php echo $row['course_id']; ?>">
-                                            <?php echo $row['course_name']; ?>
-                                        </option>
+                                <option value="<?php echo $row['course_id']; ?>">
+                                    <?php echo $row['course_name']; ?>
+                                </option>
 
                                 <?php   }
                                 }
@@ -124,7 +119,8 @@
                         <label for="Desc" class="col-sm-3 col-form-label">Exam Description <span class="text-danger">
                                 *</span> </label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="desc" name="desc" placeholder="Exam Description" required>
+                            <input type="text" class="form-control" id="desc" name="desc" placeholder="Exam Description"
+                                required>
                         </div>
                     </div>
 
@@ -144,8 +140,8 @@
 </div>
 
 <!-- VERIFY TO TAKE EXAMS....-->
-<div style="margin-top: 150px;" 
-    class="modal fade" id="verify" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+<div style="margin-top: 150px;" class="modal fade" id="verify" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -163,24 +159,24 @@
     </div>
 </div>
 <script>
-    function delete_course(data_id) {
-        // alert('ok');
-        //window.location = ("action/admin/delete-employee.php?id=" + data_id);
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this Data!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!',
-            closeOnConfirm: false,
-            closeOnCancel: false
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location = ("action/admin/delete-course.php?id=" + data_id);
-            }
+function delete_course(data_id) {
+    // alert('ok');
+    //window.location = ("action/admin/delete-employee.php?id=" + data_id);
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this Data!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!',
+        closeOnConfirm: false,
+        closeOnCancel: false
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location = ("action/admin/delete-course.php?id=" + data_id);
+        }
 
-        })
-    }
+    })
+}
 </script>
