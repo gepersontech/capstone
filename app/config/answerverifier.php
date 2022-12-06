@@ -9,7 +9,7 @@ require_once "../../conf/config.php";
 
         if($inputanswer == $anskey){
             $_SESSION['headertext'] = "Good job!👏";
-            $_SESSION['bodytext'] = "You got the correct answer";
+            $_SESSION['bodytext'] = "You got the correct answer.";
             $_SESSION['statusIcon'] = "success";
             header("location: ../examcontent");
         }else{

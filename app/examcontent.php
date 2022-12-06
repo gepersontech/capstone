@@ -81,17 +81,8 @@ if ($rowCount > 0) {
                                         <label style="vertical-align: middle;" for="ch4"><?php echo $row['exam_ch4']; ?></label>
                                     </button>
                                 </td>
-                                <!-- <tr>
-                                <td  colspan="4" style=" text-align: center;border: none;">
-                                    <button type="submit" name="submit" class="btn btn-success">
-                                        <span class="icon-copy ti-help-alt"></span> Verify answer</button>
-                                </td>
-                            </tr> -->
-
                         </tr>
                         </form>
-
-
                     </tbody>
 
                 </table>
@@ -104,64 +95,28 @@ if ($rowCount > 0) {
 }
 ?>
 
-<!-- VERIFY TO TAKE EXAMS....-->
-<div style="margin-top: 150px;" class="modal fade" id="result" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="exampleModalLabel"><?php isset($_SESSION['title']) ?></h3>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <h4><?php echo $_SESSION['text'] ?></h4>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-danger" type="button" data-dismiss="modal">OK</button>
-                <!-- <a class="btn btn-primary" href="examcontent">Proceed</a> -->
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- SHOW NOTIFICATION MODAL.... -->
-<?php
-if (isset($_SESSION["title"])) {
-?>
-    <script>
-        setTimeout(function() {
-            $("#result").modal('show');
-        }, 1000);
-    </script>
-<?php
-    unset($_SESSION["title"]);
-}
-?>
-
 <script src="vendors/sweetalert/sweetalert.min.js"></script>
-<!-- <script src="src/plugins/sweetalert2/sweet-alert.init.js"></script> -->
 <script src="src/plugins/sweetalert2/jquery-3.6.1.min.js"></script>
 
-<!-- for sweet alert........... -->
 <?php
-if (isset($_SESSION['headertext'])) {
-    if (isset($_SESSION['bodytext'])) {
-        if (isset($_SESSION['status'])) {
-
-
+    if(isset($_SESSION['headertext'])){
+        if(isset($_SESSION['bodytext'])){
+            if(isset($_SESSION['statusIcon'])){
 ?>
-            <script>
-                swal({
-                    title: "<?php echo $_SESSION['headertext']?>",
-                    text: "<?php echo $_SESSION['bodytext']?>",
-                    icon: "<?php echo $_SESSION['statusIcon']?>",
-                    button: "OK",
-                });
-            </script>
+
+<script>
+    swal({
+  title: "<?php echo $_SESSION['headertext']?>",
+  text: "<?php echo $_SESSION['bodytext']?>",
+  icon: "<?php echo $_SESSION['statusIcon']?>",
+  button: "OK",
+});
+</script>
 <?php
+            }
         }
-    }  
-}
-unset($_SESSION['headertext']);
+    }
+    unset($_SESSION['headertext']);
 ?>
+
+<!-- for sweet alert........... -->
