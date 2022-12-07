@@ -186,9 +186,9 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-sm-4 col-form-label">Birthdate*</label>
+                                            <label class="col-sm-4 col-form-label">Age*</label>
                                             <div class="col-sm-8">
-                                                <input type="date" class="form-control" name="birthdate" required />
+                                                <input type="number" class="form-control" name="birthdate" required />
                                             </div>
                                         </div>
                                         <div class="form-group row">

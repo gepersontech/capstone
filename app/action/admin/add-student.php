@@ -50,7 +50,7 @@
         if(empty($birthdate)){
             header("location: ../../../register.php?error=Invalid date.");
         }
-        if(isset($address)){
+        if(empty($address)){
             header("location: ../../../register.php?error=Invalid Address.");
         }
         $password = password_hash($confirmpassword, PASSWORD_DEFAULT);
