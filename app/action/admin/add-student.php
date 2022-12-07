@@ -4,7 +4,7 @@
     if($_SERVER["REQUEST_METHOD"] == "POST"){
               
         
-        $role = isset($_POST['options']);
+        $role = $_POST['options'];
         $email = trim($_POST['email']);
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -21,40 +21,37 @@
         
         if($role != null){
             header("location: ../../../register.php?error=Click the button student/teacher.");
-        }else{
-            if($role == 1){
-                $role = 3;
-            }
         }
+
         if(isset($email)){
             header("location: ../../../register.php?error=Invalid input.");
         }
         if(isset($username)){
             header("location: ../../../register.php?error=Invalid input.");
         }
-        if(isset($password) || isset($confirmpassword)){
-            header("location: ../../../register.php?error=Invalid input.");
-        }else{
-            if($password != $confirmpassword){
+        if(empty($password)){
+            header("location: ../../../register.php?error=No Password.");
+        }
+        if(empty($confirmpassword)){
+            header("location: ../../../register.php?error=Confirm Password.");
+        }
+        if($password != $confirmpassword){
                 header("location: ../../../register.php?error=Password not match");
             }
-        }
         if(isset($firstname)){
-            header("location: ../../../register.php?error=Invalid input.");
+            header("location: ../../../register.php?error=First Name is empty.");
         }
         if(isset($lastname)){
-            header("location: ../../../register.php?error=Invalid input.");
+            header("location: ../../../register.php?error=Last Name is empty.");
         }
         if(isset($gender)){
             header("location: ../../../register.php?error=Please select you gender.");
         }
-        if(isset($birthdate)){
-            header("location: ../../../register.php?error=Invalid input.");
+        if(empty($birthdate)){
+            header("location: ../../../register.php?error=Invalid date.");
         }
         if(isset($address)){
-            header("location: ../../../register.php?error=Invalid input.");
-        }else{
-                
+            header("location: ../../../register.php?error=Invalid Address.");
         }
         $password = password_hash($confirmpassword, PASSWORD_DEFAULT);
             $query=mysqli_query($con,"INSERT INTO `users`(`firstname`, `lastname`, `birthdate`, `age`,`gender`,`address`,`email_add`, `username`, `password`, `role_id`, `added_at`) 

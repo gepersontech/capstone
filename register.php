@@ -1,11 +1,11 @@
 <?php
 // Include config file
-require_once "conf/config.php";
+//require_once "conf/config.php";
 
     // Define variables and initialize with empty values
-    $role = $email = $username = $password = $confirmpassword = $firstname = $lastname = $gender = $birthdate = $address = "";
+    //$role = $email = $username = $password = $confirmpassword = $firstname = $lastname = $gender = $birthdate = $address = "";
 
-    $role_err = $email_err = $username_err = $password_err = $confirmpassword_err = $firstname_err = $lastname_err = $gender_err = $birthdate_err = $address_err = "";
+    //$role_err = $email_err = $username_err = $password_err = $confirmpassword_err = $firstname_err = $lastname_err = $gender_err = $birthdate_err = $address_err = "";
 
 
     // $role = isset($_POST['options']);
@@ -20,12 +20,12 @@ require_once "conf/config.php";
     // $birthdate = $_POST['birtdate'];
     // $address = $_POST['address'];
 
-    $date = date('Y-m-d H:i:s');
+    //$date = date('Y-m-d H:i:s');
 
     // Processing form data when form is submitted
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // if($_SERVER["REQUEST_METHOD"] == "POST"){
         
-    }
+    // }
 
 
 ?>
