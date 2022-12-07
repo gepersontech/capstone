@@ -124,9 +124,9 @@
                                             <label class="col-sm-4 col-form-label">Email Address*</label>
                                             <div class="col-sm-8">
                                                 <input type="email"
-                                                    class="form-control <?php echo (!empty($email)) ? 'form-control-danger' : ''; ?>"
+                                                    class="form-control <?php //echo (!empty($email)) ? 'form-control-danger' : ''; ?>"
                                                     placeholder="Enter your email address" name="email"
-                                                    value="<?php echo $email; ?>" />
+                                                    value="<?php //echo $email; ?>" />
                                             </div>
                                         </div>
                                         <div class="form-group row">
