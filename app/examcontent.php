@@ -69,30 +69,30 @@ if ($rowCount > 0) {
             </thead>
             <tbody>
                 <tr>
-                    <form action="config/answerverifier.php" method="POST">
+                    <form action="config/answerverify.php" method="POST">
                         <input type="text" id="anskey" name="answerkey" value="<?php echo $row['answerkey']; ?>" hidden>
                         <td>
                             <button style="border: none; background-color: white;" type="submit" name="submit">
                                 <input type="radio" id="ch1" name="answer" value="<?php echo $row['exam_ch1']; ?>">
-                                <label style="vertical-align: middle;" for="ch1"><?php echo $row['exam_ch1']; ?></label>
+                                <label style="vertical-align: middle;" for="ch1">a. <?php echo $row['exam_ch1']; ?></label>
                             </button>
                         </td>
                         <td>
                             <button style="border: none; background-color: white;" type="submit" name="submit">
                                 <input type="radio" id="ch2" name="answer" value="<?php echo $row['exam_ch2']; ?>">
-                                <label style="vertical-align: middle;" for="ch2"><?php echo $row['exam_ch2']; ?></label>
+                                <label style="vertical-align: middle;" for="ch2">b. <?php echo $row['exam_ch2']; ?></label>
                             </button>
                         </td>
                         <td>
                             <button style="border: none; background-color: white;" type="submit" name="submit">
                                 <input type="radio" id="ch3" name="answer" value="<?php echo $row['exam_ch3']; ?>">
-                                <label style="vertical-align: middle;" for="ch3"><?php echo $row['exam_ch3']; ?></label>
+                                <label style="vertical-align: middle;" for="ch3">c. <?php echo $row['exam_ch3']; ?></label>
                             </button>
                         </td>
                         <td>
                             <button style="border: none; background-color: white;" type="submit" name="submit">
                                 <input type="radio" id="ch4" name="answer" value="<?php echo $row['exam_ch4']; ?>">
-                                <label style="vertical-align: middle;" for="ch4"><?php echo $row['exam_ch4']; ?></label>
+                                <label style="vertical-align: middle;" for="ch4">d. <?php echo $row['exam_ch4']; ?></label>
                             </button>
                         </td>
                 </tr>
