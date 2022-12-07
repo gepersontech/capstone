@@ -41,11 +41,11 @@
             <div id="accordion">
                 <div class="card">
                     <div class="card-header">
-                        <button class="btn btn-block" data-toggle="collapse" data-target="#faq1">
+                        <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq1">
                             What I need to Know
                         </button>
                     </div>
-                    <div id="faq1" class="collapse show" data-parent="#accordion">
+                    <div id="faq1" class="collapse" data-parent="#accordion">
                         <div class="card-body">
                             > illustrate the different types of conic sections: parabola, ellipse, circle,
                             hyperbola, and degenerate cases;<br>
