@@ -32,83 +32,106 @@
                 </div>
             </div>
 
-            <div class="pd-20 card-box mb-30">
-                <div class="clearfix mb-20">
+            <div class="pd-20 card-box mb-20">
+                <div class="clearfix mb-10">
                     <div class="pull-left">
-                        <h4 class="text-blue h4">Plyr HTML5 Video</h4>
-                        <p class="font-14 ml-0">
-                            A simple, accessible HTML5 media player
-                            <a href="https://github.com/sampotts/plyr" target="_blank"
-                                class="weight-700 text-blue">Click Here</a>
+                        <h4 class="text-blue h3"> Conic Section 3D Animation</h4>
+                        <p class="font-15 ml-0">
+                           Kuya Gep
                         </p>
                     </div>
                 </div>
                 <div class="container">
-                    <video poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg?v1" controls
+                    <video poster="video/Conic Section 3D Animation.mp4" controls
                         crossorigin>
-                        <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.mp4"
+                        <source src="video/Conic Section 3D Animation.mp4"
                             type="video/mp4" />
-                        <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.webm"
+                        <source src="video/Conic Section 3D Animation.mp4"
+                            type="video/mp4" />
+                    </video>
+                </div>
+            </div>
+
+            <div class="pd-20 card-box mb-20">
+                <div class="clearfix mb-10">
+                    <div class="pull-left">
+                        <h4 class="text-blue h3">Determining What Type of Conic Section from General Form</h4>
+                        <p class="font-15 ml-0">
+                           Kuya Gep
+                        </p>
+                    </div>
+                </div>
+                <div class="container">
+                    <video poster="video/Determining What Type of Conic Section from General Form.mp4" controls
+                        crossorigin>
+                        <source src="video/Determining What Type of Conic Section from General Form.mp4"
+                            type="video/mp4" />
+                        <source src="video/Determining What Type of Conic Section from General Form.mp4"
+                            type="video/mp4" />
+                    </video>
+                </div>
+            </div>
+
+            <div class="pd-20 card-box mb-20">
+                <div class="clearfix mb-10">
+                    <div class="pull-left">
+                        <h4 class="text-blue h3">Graphing Conic Sections Part 1: Circles</h4>
+                        <p class="font-15 ml-0">
+                           Kuya Gep
+                        </p>
+                    </div>
+                </div>
+                <div class="container">
+                    <video poster="video/Graphing Conic Sections Part 1 Circles.mp4" controls
+                        crossorigin>
+                        <source src="video/Graphing Conic Sections Part 1 Circles.mp4"
+                            type="video/mp4" />
+                        <source src="video/Graphing Conic Sections Part 1 Circles.mp4"
+                            type="video/mp4" />
+                    </video>
+                </div>
+            </div>
+
+            <div class="pd-20 card-box mb-20">
+                <div class="clearfix mb-10">
+                    <div class="pull-left">
+                        <h4 class="text-blue h3">Parabola Focus and Directrix 1</h4>
+                        <p class="font-15 ml-0">
+                           Kuya Gep
+                        </p>
+                    </div>
+                </div>
+                <div class="container">
+                    <video poster="video/Parabola Focus and Directrix 1.mp4.webm" controls
+                        crossorigin>
+                        <source src="video/Parabola Focus and Directrix 1.mp4.webm"
+                            type="video/webm" />
+                        <source src="video/Parabola Focus and Directrix 1.mp4.webm"
                             type="video/webm" />
                     </video>
                 </div>
             </div>
 
-            <div class="pd-20 card-box mb-30">
-                <div class="clearfix mb-20">
+            <div class="pd-20 card-box mb-20">
+                <div class="clearfix mb-10">
                     <div class="pull-left">
-                        <h4 class="text-blue h4">Plyr HTML5 Audio</h4>
-                        <p class="font-14 ml-0">
-                            A simple, accessible HTML5 media player
-                            <a href="https://github.com/sampotts/plyr" target="_blank"
-                                class="weight-700 text-blue">Click Here</a>
+                        <h4 class="text-blue h3">Hyperbola (Part 1) | Conic Sections | Don't Memorise</h4>
+                        <p class="font-15 ml-0">
+                           Kuya Gep
                         </p>
                     </div>
                 </div>
                 <div class="container">
-                    <audio controls>
-                        <source src="https://cdn.plyr.io/static/demo/Kishi_Bashi_-_It_All_Began_With_a_Burst.mp3"
-                            type="audio/mp3" />
-                        <source src="https://cdn.plyr.io/static/demo/Kishi_Bashi_-_It_All_Began_With_a_Burst.ogg"
-                            type="audio/ogg" />
-                        Your browser does not support the audio element.
-                    </audio>
+                    <video poster="video/Hyperbola Part 1  Conic Sections  Dont Memorise.mp4" controls
+                        crossorigin>
+                        <source src="video/Hyperbola Part 1  Conic Sections  Dont Memorise.mp4"
+                            type="video/webm" />
+                        <source src="video/Hyperbola Part 1  Conic Sections  Dont Memorise.mp4"
+                            type="video/webm" />
+                    </video>
                 </div>
             </div>
 
-            <div class="pd-20 card-box mb-30">
-                <div class="clearfix mb-20">
-                    <div class="pull-left">
-                        <h4 class="text-blue h4">Plyr YouTube Video</h4>
-                        <p class="font-14 ml-0">
-                            A simple, accessible HTML5 media player
-                            <a href="https://github.com/sampotts/plyr" target="_blank"
-                                class="weight-700 text-blue">Click Here</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="container">
-                    <div data-type="youtube" data-video-id="bTqVqk7FSmY"></div>
-                </div>
-            </div>
-
-            <div class="pd-20 card-box mb-30">
-                <div class="clearfix mb-20">
-                    <div class="pull-left">
-                        <h4 class="text-blue h4">Plyr Vimeo Video</h4>
-                        <p class="font-14 ml-0">
-                            A simple, accessible HTML5 media player
-                            <a href="https://github.com/sampotts/plyr" target="_blank"
-                                class="weight-700 text-blue">Click Here</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="container">
-                    <div data-type="vimeo" data-video-id="143418951"></div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
     <!-- js -->
