@@ -37,7 +37,7 @@
             </div>
         </div> -->
         <div class="faq-wrap">
-            <h4 class="mb-20 h4 text-blue">Lesson 2</h4>
+            <h4 class="mb-20 h4 text-blue">Lesson 3</h4>
             <div id="accordion">
                 <div class="card">
                     <div class="card-header">
@@ -47,11 +47,11 @@
                     </div>
                     <div id="faq1" class="collapse show" data-parent="#accordion">
                         <div class="card-body">
-                            > define parabola;<br>
-                            > determine the standard form of equation of parabola;<br>
-                            > graph a parabola in a Cartesian coordinate system;<br>
-                            > describe and discuss the parts of parabola;<br>
-                            > convert the general equation of parabola to standard form and vice versa;<br>
+                            > define an ellipse;<br>
+                            > determine the standard form of equation of an ellipse;<br>
+                            > graph an ellipse in a Cartesian coordinate system;<br>
+                            > discuss the parts of an ellipse;<br>
+                            > convert the general equation of an ellipse to standard form and vice versa;<br>
                             
                         </div>
                     </div>
@@ -64,12 +64,19 @@
                     </div>
                     <div id="faq2" class="collapse" data-parent="#accordion">
                         <div class="card-body">
-                        <center> <p>Activity 2: Recall
-                            Let us recall previous lessons in quadratic function. Write the correct answer 
-                            of the following questions below.</p></center>
-
-                          <center>  <img src="images/picture1.png" width="700" height="500"  /></center>
-
+                        <center> <p>Activity 2.1: Recall
+                        Let us recall previous lessons in the graphs of quadratic equations. We will 
+                        prove that a given equation without graphing will result to a certain conic section. 
+                        Now, let us try circle.</p></center>
+                        
+                          <center>  <img src="images/picture24.png" width="700" height="500"  /></center><br>
+                            <img src="images/picture25.png" width="300" height="500"  />  <br>
+                            <img src="images/picture26.png" width="400" height="500"  /> <br>
+                            <img src="images/picture27.png" width="400" height="400"  /> <br>
+                            <p> 
+                                Note that B=0, A C. Thus, the conic section is not a circle but an ellipse. Comparing the three equations, 1 and 2 are both circles, while 3 is an ellipse. Although the values of B=0 for the three equations, only 1 and 2 have same values of A and C, while equation 3 has different values of A and C. For a circle, the values of A and C should be the same, while in ellipse should be different. Circles and ellipse are quite related in terms of their graphs, but do not be confused in determining the two by evaluating their A, B, and C values and solving in their standard form in order to bNote that B=0, A C. Thus, the conic section is not a circle but an ellipse. Comparing the three equations, 1 and 2 are both circles, while 3 is an ellipse. Although the values of B=0 for the three equations, only 1 and 2 have same values of A and C, while equation 3 has different values of A and C. For a circle, the values of A and C should be the same, while in ellipse should be different. Circles and ellipse are quite related in terms of their graphs, but do not be confused in determining the two by evaluating their A, B, and C values and solving in their standard form in order to be précised in sketching the graph. Let us show the graph of a circle to prove that A and C are of the same values.e précised in sketching the graph. Let us show the graph of a circle to prove that A and C are of the same values. 
+                            </p>
+                            <img src="images/picture29.png" width="600" height="500"  /> <br>
                             <br>
                         </div>
                     </div>
@@ -84,26 +91,23 @@
                     <div id="faq3" class="collapse" data-parent="#accordion">
                         <div class="card-body">
                             <p>
-                            A parabola is one of the conic sections. You have learned from the 
-                            previous lesson that it is formed when the plane intersects only one cone to 
-                            form an unbounded curve. The same thing with circle, you will learn more 
-                            about the opening of the graph, equation in standard form and general form.
-                            Let us discover some important parts of the graph of a parabola.
+                            Unlike circle and parabola, an ellipse is one of the conic sections that most 
+                            students have not encountered formally before. Its shape is a bounded curve which 
+                            looks like a flattened circle. The orbits of the planets in our solar system around the 
+                            sun happen to be elliptical in shape. Also, just like parabolas, ellipses have reflective 
+                            properties that have been used in the construction of certain structures. These 
+                            applications and more will be encountered in this lesson.<br>
 
+                            <center> <b>Name the parts of the two figures below using the terms found in the box. </center></b>
+  
                             </p>
-                            <center><img src="images/picture2.png" width="700" height="500" /></center>
+                            <center><img src="images/picture30.png" width="700" height="500" /></center>
 
                             <p>
-                            Follow-up Activity! Study figure 2.1 and fill in the blank to complete the statement.
-                            Knowing that the graph of quadratic function is a parabola and you already 
-                            had the idea on its part. But, there are new parts to be introduced in teaching 
-                            parabola as one of the conics. A parabola is the set of all points in a plane 
-                            equidistant from a fixed point and a fixed line. The fixed point is called ________ and 
-                            the fixed line is called the __________.The _______ of the parabola is the midpoint 
-                            of the perpendicular segment from the focus to the directrix, while the line that 
-                            passes through it and the focus is called the _______________. The line segment 
-                            through the focus perpendicular to the axis of symmetry is called the ____________ 
-                            whose length is 4ac.<br>
+                            Can you tell the difference between the graphs? Let us leave the question 
+                            unanswered and do some discussions and activities in order for you to understand 
+                            better the topic.
+                            <br>
 
                             </p>
 
@@ -119,38 +123,37 @@
                     </div>
                     <div id="faq4" class="collapse" data-parent="#accordion">
                         <div class="card-body">
-                            <p style="text-indent:50px;"> <b>Parabola</b> is the set of all points in a plane equidistant from a fixed point and 
-                                        a fixed line. This part presents how to convert general form of a parabola to its standard 
-                                        form and vice versa. Table 2.1 presents the general and standard equations of the 
-                                        parabola with vertex at origin and at (h,k).
-                                        
+                            <p style="text-indent:50px;"> An <b>Ellipse</b> is a set of all points in a plane, the sum whose distances from two 
+                                fixed points is constant. The fixed points are called foci. This section presents how to convert general form of ellipse to its standard 
+                                       
                                     <br>
                             
-                            <center><img src="images/picture3.png" width="700" height="500" /></center>
-
-                            <p>We can draw these conic sections on a rectangular coordinate plane and find
-                                their equations. To be able to do this, we will present equivalent definitions of these
-                                conic sections in subsequent sections, and use these to find the equations.
-                                There are other ways for a plane and the cones to intersect, to form what are
-                                referred to as degenerate conics: a point, one line, and two lines. See Figures 1.4,
-                                1.5, and 1.6.</p>
-                            <center><img src="images/lesson4.png" width="700" height="500" /></center>
-                            <center><img src="images/lesson5.png" width="700" height="500" /></center>
-                        </div>
-
+                    </div>
                     </div>
                 </div>
                 <h4 class="mb-30 h4 text-blue padding-top-30">Example</h4>
                 <div class="card">
                     <div class="card-header">
                         <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq5">
-                            Example 2.1
+                            Example 3.1
                         </button>
                     </div>
                     <div id="faq5" class="collapse" data-parent="#accordion">
                         <div class="card-body">
-                            <center><img src="images/picture4.png" width="1000" height="500" /></center><br>
-                       
+                            <center><img src="images/picture31.png" width="700" height="500" /></center><br>
+                            <center><img src="images/picture32.png" width="700" height="500" /></center><br>
+                            <center><img src="images/picture33.png" width="700" height="500" /></center><br>
+                            <center><img src="images/picture34.png" width="600" height="500" /></center><br>
+
+                          <p>  Consider the points F1(−3, 0) and F2(3, 0), as shown in Figure 1.22. What 
+                            is the sum of the distances of A(4, 2.4) from F1 and from F2? How about the sum of 
+                            the distances of B(and C(0, −4)) from F1 and from F2?
+                            AF1 + AF2 = 7.4 + 2.6 = 10
+                            BF1 + BF2 = 3.8 + 6.2 = 10
+                            CF1 + CF2 = 5 + 5 = 10
+                            There are other points P such that PF1 + PF2 = 10. The collection of all such points 
+                            forms a shape called an ellipse.</p> <br>
+                            <center><img src="images/picture35.png" width="600" height="500" /></center><br>
                         </div>
                     </div>
                 </div>
@@ -158,7 +161,7 @@
                 <div class="card">
                     <div class="card-header">
                         <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq6">
-                            Example 2.2
+                            Example 3.2
                         </button>
                     </div>
                     <div id="faq6" class="collapse" data-parent="#accordion">
@@ -178,7 +181,7 @@
                 <div class="card">
                     <div class="card-header">
                         <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq7">
-                            Example 2.3
+                            Example 3.3
 
                         </button>
                     </div>
@@ -197,7 +200,7 @@
                 <div class="card">
                     <div class="card-header">
                         <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq8">
-                            Example 2.4
+                            Example 3.4
 
                         </button>
                     </div>
@@ -212,7 +215,7 @@
                 <div class="card">
                     <div class="card-header">
                         <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq9">
-                            Example 2.5
+                            Example 3.5
 
                         </button>
                     </div>
