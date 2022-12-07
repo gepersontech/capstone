@@ -48,7 +48,7 @@
             header("location: ../../../register.php?error=Please select you gender.");
         }
         if(empty($birthdate)){
-            header("location: ../../../register.php?error=Invalid date.");
+            header("location: ../../../register.php?error=Invalid age.");
         }
         if(empty($address)){
             header("location: ../../../register.php?error=Invalid Address.");
