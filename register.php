@@ -1,11 +1,11 @@
 <?php
 // Include config file
-require_once "conf/config.php";
+//require_once "conf/config.php";
 
     // Define variables and initialize with empty values
-    $role = $email = $username = $password = $confirmpassword = $firstname = $lastname = $gender = $birthdate = $address = "";
+    //$role = $email = $username = $password = $confirmpassword = $firstname = $lastname = $gender = $birthdate = $address = "";
 
-    $role_err = $email_err = $username_err = $password_err = $confirmpassword_err = $firstname_err = $lastname_err = $gender_err = $birthdate_err = $address_err = "";
+    //$role_err = $email_err = $username_err = $password_err = $confirmpassword_err = $firstname_err = $lastname_err = $gender_err = $birthdate_err = $address_err = "";
 
 
     // $role = isset($_POST['options']);
@@ -20,12 +20,12 @@ require_once "conf/config.php";
     // $birthdate = $_POST['birtdate'];
     // $address = $_POST['address'];
 
-    $date = date('Y-m-d H:i:s');
+    //$date = date('Y-m-d H:i:s');
 
     // Processing form data when form is submitted
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
+    // if($_SERVER["REQUEST_METHOD"] == "POST"){
         
-    }
+    // }
 
 
 ?>
@@ -124,9 +124,9 @@ require_once "conf/config.php";
                                             <label class="col-sm-4 col-form-label">Email Address*</label>
                                             <div class="col-sm-8">
                                                 <input type="email"
-                                                    class="form-control <?php echo (!empty($email)) ? 'form-control-danger' : ''; ?>"
+                                                    class="form-control <?php //echo (!empty($email)) ? 'form-control-danger' : ''; ?>"
                                                     placeholder="Enter your email address" name="email"
-                                                    value="<?php echo $email; ?>" />
+                                                    value="<?php //echo $email; ?>" />
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -185,12 +185,12 @@ require_once "conf/config.php";
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-group row">
-                                            <label class="col-sm-4 col-form-label">Birthdate*</label>
+                                        <!-- <div class="form-group row">
+                                            <label class="col-sm-4 col-form-label">Age*</label>
                                             <div class="col-sm-8">
-                                                <input type="date" class="form-control" name="birthdate" required />
+                                                <input type="number" class="form-control" name="birthdate" required />
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class="form-group row">
                                             <label class="col-sm-4 col-form-label">Address*</label>
                                             <div class="col-sm-8">
