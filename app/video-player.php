@@ -36,19 +36,13 @@
                 <div class="clearfix mb-10">
                     <div class="pull-left">
                         <h4 class="text-blue h3"> Conic Section 3D Animation</h4>
-                        <p class="font-15 ml-0">
-                           Kuya Gep
-                        </p>
                     </div>
                 </div>
                 <div class="container">
                     <video poster="video/Conic Section 3D Animation.mp4" controls
                         crossorigin>
-                        <source src="video/Conic Section 3D Animation.mp4"
-                            type="video/mp4" />
-                        <source src="video/Conic Section 3D Animation.mp4"
-                            type="video/mp4" />
-                    </video>
+                        <source src="video/Conic Section 3D Animation.mp4"type="video/mp4" />
+                        </video>
                 </div>
             </div>
 
@@ -56,18 +50,13 @@
                 <div class="clearfix mb-10">
                     <div class="pull-left">
                         <h4 class="text-blue h3">Determining What Type of Conic Section from General Form</h4>
-                        <p class="font-15 ml-0">
-                           Kuya Gep
-                        </p>
                     </div>
                 </div>
                 <div class="container">
                     <video poster="video/Determining What Type of Conic Section from General Form.mp4" controls
                         crossorigin>
-                        <source src="video/Determining What Type of Conic Section from General Form.mp4"
-                            type="video/mp4" />
-                        <source src="video/Determining What Type of Conic Section from General Form.mp4"
-                            type="video/mp4" />
+                        <source src="video/Determining What Type of Conic Section from General Form.mp4"type="video/mp4" />
+                       
                     </video>
                 </div>
             </div>
@@ -76,16 +65,11 @@
                 <div class="clearfix mb-10">
                     <div class="pull-left">
                         <h4 class="text-blue h3">Graphing Conic Sections Part 1: Circles</h4>
-                        <p class="font-15 ml-0">
-                           Kuya Gep
-                        </p>
                     </div>
                 </div>
                 <div class="container">
                     <video poster="video/Graphing Conic Sections Part 1 Circles.mp4" controls
                         crossorigin>
-                        <source src="video/Graphing Conic Sections Part 1 Circles.mp4"
-                            type="video/mp4" />
                         <source src="video/Graphing Conic Sections Part 1 Circles.mp4"
                             type="video/mp4" />
                     </video>
@@ -96,18 +80,13 @@
                 <div class="clearfix mb-10">
                     <div class="pull-left">
                         <h4 class="text-blue h3">Parabola Focus and Directrix 1</h4>
-                        <p class="font-15 ml-0">
-                           Kuya Gep
-                        </p>
                     </div>
                 </div>
                 <div class="container">
                     <video poster="video/Parabola Focus and Directrix 1.mp4.webm" controls
                         crossorigin>
-                        <source src="video/Parabola Focus and Directrix 1.mp4.webm"
-                            type="video/webm" />
-                        <source src="video/Parabola Focus and Directrix 1.mp4.webm"
-                            type="video/webm" />
+                        <source src="video/Parabola Focus and Directrix 1.mp4.webm"type="video/webm" />
+                      
                     </video>
                 </div>
             </div>
@@ -116,22 +95,86 @@
                 <div class="clearfix mb-10">
                     <div class="pull-left">
                         <h4 class="text-blue h3">Hyperbola (Part 1) | Conic Sections | Don't Memorise</h4>
-                        <p class="font-15 ml-0">
-                           Kuya Gep
-                        </p>
                     </div>
                 </div>
                 <div class="container">
                     <video poster="video/Hyperbola Part 1  Conic Sections  Dont Memorise.mp4" controls
                         crossorigin>
-                        <source src="video/Hyperbola Part 1  Conic Sections  Dont Memorise.mp4"
-                            type="video/webm" />
-                        <source src="video/Hyperbola Part 1  Conic Sections  Dont Memorise.mp4"
-                            type="video/webm" />
+                        <source src="video/Hyperbola Part 1  Conic Sections  Dont Memorise.mp4" type="video/webm" />
+                        </video>
+                </div>
+            </div>
+
+            <div class="pd-20 card-box mb-20">
+                <div class="clearfix mb-10">
+                    <div class="pull-left">
+                        <h4 class="text-blue h3"> 8.6 Conic Section - Word Problems </h4>
+                    </div>
+                </div>
+                <div class="container">
+                    <video poster="video/86 Conic Sections  Word Problems.mp4" controls
+                        crossorigin>
+                        <source src="video/86 Conic Sections  Word Problems.mp4" type="video/mp4" />
                     </video>
                 </div>
             </div>
 
+            <div class="pd-20 card-box mb-20">
+                <div class="clearfix mb-10">
+                    <div class="pull-left">
+                        <h4 class="text-blue h3"> Solve A Word Problem Involving Parabolas</h4>
+                    </div>
+                </div>
+                <div class="container">
+                    <video poster="video/Solve a word problem involving parabolas.mp4" controls
+                        crossorigin>
+                        <source src="video/Solve a word problem involving parabolas.mp4" type="video/mp4" />
+                    </video>
+                </div>
+            </div>
+
+            <div class="pd-20 card-box mb-20">
+                <div class="clearfix mb-10">
+                    <div class="pull-left">
+                        <h4 class="text-blue h3"> How To Solve A Word Problem Involving Ellipsis</h4>
+                    </div>
+                </div>
+                <div class="container">
+                    <video poster="video/h" controls
+                        crossorigin>
+                        <source src="video/How to solve a word problem involving ellipsis.mp4" type="video/mp4" />
+                    </video>
+                </div>
+            </div>
+
+            <div class="pd-20 card-box mb-20">
+                <div class="clearfix mb-10">
+                    <div class="pull-left">
+                        <h4 class="text-blue h3"> How To Solve A Word Problem Involving Hyperbolas</h4>
+                    </div>
+                </div>
+                <div class="container">
+                    <video poster="video/h" controls
+                        crossorigin>
+                        <source src="video/Solving Applied Problems Involving Hyperbolas.mp4" type="video/mp4" />
+                    </video>
+                </div>
+            </div>
+
+
+            <div class="pd-20 card-box mb-20">
+                <div class="clearfix mb-10">
+                    <div class="pull-left">
+                        <h4 class="text-blue h3"> Conics - Making Hyperbola with Wax Paper</h4>
+                    </div>
+                </div>
+                <div class="container">
+                    <video poster="video/h" controls
+                        crossorigin>
+                        <source src="video/Conics  Making a Hyperbola with Wax Paper.mp4" type="video/mp4" />
+                    </video>
+                </div>
+            </div>
 
 
     <!-- js -->
