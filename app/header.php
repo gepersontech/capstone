@@ -22,6 +22,9 @@
     <link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css" />
     <link rel="stylesheet" type="text/css" href="src/plugins/jvectormap/jquery-jvectormap-2.0.3.css" />
     <link rel="stylesheet" type="text/css" href="vendors/styles/style.css" />
+
+    <!-- Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- SweetAlert2 -->
     <!-- <link rel="stylesheet" type="text/css" href="src/plugins/sweetalert2/sweetalert2.css"/> -->
 

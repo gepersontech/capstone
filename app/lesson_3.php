@@ -37,7 +37,7 @@
             </div>
         </div> -->
         <div class="faq-wrap">
-            <h4 class="mb-20 h4 text-blue">Lesson 2</h4>
+            <h4 class="mb-20 h4 text-blue">Lesson 3</h4>
             <div id="accordion">
                 <div class="card">
                     <div class="card-header">
@@ -47,11 +47,11 @@
                     </div>
                     <div id="faq1" class="collapse show" data-parent="#accordion">
                         <div class="card-body">
-                            > define parabola;<br>
-                            > determine the standard form of equation of parabola;<br>
-                            > graph a parabola in a Cartesian coordinate system;<br>
-                            > describe and discuss the parts of parabola;<br>
-                            > convert the general equation of parabola to standard form and vice versa;<br>
+                            > define an ellipse;<br>
+                            > determine the standard form of equation of an ellipse;<br>
+                            > graph an ellipse in a Cartesian coordinate system;<br>
+                            > discuss the parts of an ellipse;<br>
+                            > convert the general equation of an ellipse to standard form and vice versa;<br>
                             
                         </div>
                     </div>
@@ -64,12 +64,19 @@
                     </div>
                     <div id="faq2" class="collapse" data-parent="#accordion">
                         <div class="card-body">
-                        <center> <p>Activity 2: Recall
-                            Let us recall previous lessons in quadratic function. Write the correct answer 
-                            of the following questions below.</p></center>
-
-                          <center>  <img src="images/picture1.png" width="700" height="500"  /></center>
-
+                        <center> <p>Activity 3.1: Recall
+                        Let us recall previous lessons in the graphs of quadratic equations. We will 
+                        prove that a given equation without graphing will result to a certain conic section. 
+                        Now, let us try circle.</p></center>
+                        
+                          <center>  <img src="images/picture24.png" width="700" height="500"  /></center><br>
+                            <img src="images/picture25.png" width="300" height="500"  />  <br>
+                            <img src="images/picture26.png" width="400" height="500"  /> <br>
+                            <img src="images/picture27.png" width="400" height="400"  /> <br>
+                            <p> 
+                                Note that B=0, A C. Thus, the conic section is not a circle but an ellipse. Comparing the three equations, 1 and 2 are both circles, while 3 is an ellipse. Although the values of B=0 for the three equations, only 1 and 2 have same values of A and C, while equation 3 has different values of A and C. For a circle, the values of A and C should be the same, while in ellipse should be different. Circles and ellipse are quite related in terms of their graphs, but do not be confused in determining the two by evaluating their A, B, and C values and solving in their standard form in order to bNote that B=0, A C. Thus, the conic section is not a circle but an ellipse. Comparing the three equations, 1 and 2 are both circles, while 3 is an ellipse. Although the values of B=0 for the three equations, only 1 and 2 have same values of A and C, while equation 3 has different values of A and C. For a circle, the values of A and C should be the same, while in ellipse should be different. Circles and ellipse are quite related in terms of their graphs, but do not be confused in determining the two by evaluating their A, B, and C values and solving in their standard form in order to be précised in sketching the graph. Let us show the graph of a circle to prove that A and C are of the same values.e précised in sketching the graph. Let us show the graph of a circle to prove that A and C are of the same values. 
+                            </p>
+                            <img src="images/picture29.png" width="600" height="500"  /> <br>
                             <br>
                         </div>
                     </div>
@@ -84,26 +91,23 @@
                     <div id="faq3" class="collapse" data-parent="#accordion">
                         <div class="card-body">
                             <p>
-                            A parabola is one of the conic sections. You have learned from the 
-                            previous lesson that it is formed when the plane intersects only one cone to 
-                            form an unbounded curve. The same thing with circle, you will learn more 
-                            about the opening of the graph, equation in standard form and general form.
-                            Let us discover some important parts of the graph of a parabola.
+                            Unlike circle and parabola, an ellipse is one of the conic sections that most 
+                            students have not encountered formally before. Its shape is a bounded curve which 
+                            looks like a flattened circle. The orbits of the planets in our solar system around the 
+                            sun happen to be elliptical in shape. Also, just like parabolas, ellipses have reflective 
+                            properties that have been used in the construction of certain structures. These 
+                            applications and more will be encountered in this lesson.<br>
 
+                            <center> <b>Name the parts of the two figures below using the terms found in the box. </center></b>
+  
                             </p>
-                            <center><img src="images/picture2.png" width="700" height="500" /></center>
+                            <center><img src="images/picture30.png" width="700" height="500" /></center>
 
                             <p>
-                            Follow-up Activity! Study figure 2.1 and fill in the blank to complete the statement.
-                            Knowing that the graph of quadratic function is a parabola and you already 
-                            had the idea on its part. But, there are new parts to be introduced in teaching 
-                            parabola as one of the conics. A parabola is the set of all points in a plane 
-                            equidistant from a fixed point and a fixed line. The fixed point is called ________ and 
-                            the fixed line is called the __________.The _______ of the parabola is the midpoint 
-                            of the perpendicular segment from the focus to the directrix, while the line that 
-                            passes through it and the focus is called the _______________. The line segment 
-                            through the focus perpendicular to the axis of symmetry is called the ____________ 
-                            whose length is 4ac.<br>
+                            Can you tell the difference between the graphs? Let us leave the question 
+                            unanswered and do some discussions and activities in order for you to understand 
+                            better the topic.
+                            <br>
 
                             </p>
 
@@ -119,38 +123,29 @@
                     </div>
                     <div id="faq4" class="collapse" data-parent="#accordion">
                         <div class="card-body">
-                            <p style="text-indent:50px;"> <b>Parabola</b> is the set of all points in a plane equidistant from a fixed point and 
-                                        a fixed line. This part presents how to convert general form of a parabola to its standard 
-                                        form and vice versa. Table 2.1 presents the general and standard equations of the 
-                                        parabola with vertex at origin and at (h,k).
-                                        
+                            <p style="text-indent:50px;"> An <b>Ellipse</b> is a set of all points in a plane, the sum whose distances from two 
+                                fixed points is constant. The fixed points are called foci. This section presents how to convert general form of ellipse to its standard 
+                                form and vice versa.     
                                     <br>
                             
-                            <center><img src="images/picture3.png" width="700" height="500" /></center>
-
-                            <p>We can draw these conic sections on a rectangular coordinate plane and find
-                                their equations. To be able to do this, we will present equivalent definitions of these
-                                conic sections in subsequent sections, and use these to find the equations.
-                                There are other ways for a plane and the cones to intersect, to form what are
-                                referred to as degenerate conics: a point, one line, and two lines. See Figures 1.4,
-                                1.5, and 1.6.</p>
-                            <center><img src="images/lesson4.png" width="700" height="500" /></center>
-                            <center><img src="images/lesson5.png" width="700" height="500" /></center>
-                        </div>
-
+                    </div>
                     </div>
                 </div>
                 <h4 class="mb-30 h4 text-blue padding-top-30">Example</h4>
                 <div class="card">
                     <div class="card-header">
                         <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq5">
-                            Example 2.1
+                            Example 3.1
                         </button>
                     </div>
                     <div id="faq5" class="collapse" data-parent="#accordion">
                         <div class="card-body">
-                            <center><img src="images/picture4.png" width="1000" height="500" /></center><br>
-                       
+                            <center><img src="images/picture31.png" width="700" height="500" /></center><br>
+                            <center><img src="images/picture32.png" width="700" height="500" /></center><br>
+                           
+
+                          
+                            
                         </div>
                     </div>
                 </div>
@@ -158,18 +153,31 @@
                 <div class="card">
                     <div class="card-header">
                         <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq6">
-                            Example 2.2
+                            Example 3.2
                         </button>
                     </div>
                     <div id="faq6" class="collapse" data-parent="#accordion">
                         <div class="card-body">
                             
-                        <center><img src="images/picture5.1.png" width="800" height="500" /></center>
-                            <center><img src="images/picture5.png" width="800" height="500" /></center>
-                            <center><img src="images/picture6.png" width="800" height="500" /></center>
-                            <center><img src="images/picture6.1.png" width="800" height="500" /></center>
-                            <center><img src="images/picture7.png" width="800" height="500" /></center>
-                            <center><img src="images/picture7.1.png" width="800" height="500" /></center>
+                        <center><img src="images/picture44.png" width="600" height="500" /> </center>
+                        <center><img src="images/picture45.png" width="500" height="500" /> </center>
+
+                        <p> Consider the points F1(−3, 0) and F2(3, 0), as shown in Figure 1.22. What 
+                            is the sum of the distances of A(4, 2.4) from F1 and from F2? How about the sum of 
+                            the distances of B(and C(0, −4)) from F1 and from F2? </p>
+                            <center><img src="images/picture46.png" width="600" height="500" /> </center>
+                            <center><img src="images/picture47.png" width="600" height="500" /> </center>
+
+                        <p> Given are two points on the x-axis, F1( -c, 0) and F2(c, 0), the foci, both c 
+                            units away from their center (0, 0). See Figure 1.23. Let P(x, y) be a point on the 
+                            ellipse. Let the common sum of the distances be 2a (the coefficient 2 will make 
+                            computations simpler). Thus, we have PF1 + PF2 = 2a </p>
+                           <center><img src="images/picture48.png" width="600" height="500" /> </center>
+                           <center><img src="images/picture49.png" width="600" height="500" /> </center>
+                           <center><img src="images/picture50.png" width="500" height="500" /> </center>
+                           <center><img src="images/picture51.png" width="600" height="500" /> </center>
+
+                            
 
                         </div>
                     </div>
@@ -178,17 +186,14 @@
                 <div class="card">
                     <div class="card-header">
                         <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq7">
-                            Example 2.3
+                            Example 3.3
 
                         </button>
                     </div>
                     <div id="faq7" class="collapse" data-parent="#accordion">
                         <div class="card-body">
-                            <center><img src="images/picture8.png" width="700" height="500" /></center>
-                            <center><img src="images/picture8.1.png" width="700" height="500" /></center>
-                            <center><img src="images/picture9.png" width="700" height="500" /></center>
-                            <center><img src="images/picture9.1.png" width="700" height="500" /></center>
-                            <center><img src="images/picture10.png" width="700" height="500" /></center>
+                            <center><img src="images/picture52.png" width="700" height="500" /></center>
+                            
                             
                         </div>
                     </div>
@@ -197,14 +202,21 @@
                 <div class="card">
                     <div class="card-header">
                         <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq8">
-                            Example 2.4
+                            Example 3.4
 
                         </button>
                     </div>
                     <div id="faq8" class="collapse" data-parent="#accordion">
                         <div class="card-body">
-                            <center><img src="images/picture11.png" width="700" height="500" /></center>
-                            <center><img src="images/picture11.1.png" width="700" height="500" /></center>
+                            <center><img src="images/picture56.png" width="700" height="500" /></center>
+                            <p> The ellipses we have considered so far are “horizontal” and have the origin as 
+                            their centers. Some ellipses have their foci aligned vertically, and some have centers not at the origin. Their standard equations and properties are given in the box. The 
+                            derivations are more involved, but are similar to the one above, and so are not 
+                            shown anymore.  </p>
+                            <center><img src="images/picture55.png" width="700" height="500" /></center> <br> 
+                             <center><img src="images/picture54.png" width="700" height="500" /></center> <br>
+                             <p> In the standard equation, if the x-part has the bigger denominator, the ellipse is
+                            horizontal. If the y-part has the bigger denominator, the ellipse is vertical</p> 
                            
                         </div>
                     </div>
@@ -212,18 +224,45 @@
                 <div class="card">
                     <div class="card-header">
                         <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq9">
-                            Example 2.5
+                            Example 3.5
 
                         </button>
                     </div>
                     <div id="faq9" class="collapse" data-parent="#accordion">
                         <div class="card-body">
-                            <center><img src="images/picture12.png" width="700" height="500" /></center>
-                            <center><img src="images/picture12.1.png" width="700" height="500" /></center>
-                            <center><img src="images/picture13.png" width="700" height="500" /></center>
-                            <center><img src="images/picture13.1.png" width="700" height="500" /></center>
-                            <center><img src="images/picture14.png" width="700" height="500" /></center>
+                            <center><img src="images/picture57.png" width="700" height="500" /></center>
+                            <center><img src="images/picture58.png" width="700" height="500" /></center>
+                            <center><img src="images/picture59.png" width="700" height="500" /></center>
+                            
                           
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq10">
+                            Example 3.6
+
+                        </button>
+                    </div>
+                    <div id="faq10" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            <center><img src="images/picture60.png" width="700" height="500" /></center>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq11">
+                            Example 3.7
+
+                        </button>
+                    </div>
+                    <div id="faq11" class="collapse" data-parent="#accordion">
+                        <div class="card-body">
+                            <center><img src="images/picture61.png" width="700" height="500" /></center>
+                            
                         </div>
                     </div>
                 </div>
@@ -235,19 +274,20 @@
                     </div>
                     <div id="faq10" class="collapse" data-parent="#accordion">
                         <div class="card-body">
-                        <center> <p>Activity 2:  Let Me try! <br>
+                        <center> <p>Activity 3.1:  Let Me try! <br>
                         Let us find out if you really understood the discussed concept by answering 
                         these follow-up exercises. 
                         </p></center>
 
-                          <center>  <img src="images/picture15.png" width="700" height="500"  /></center>
-                          <center>  <img src="images/picture15.1.png" width="700" height="500"  /></center>
-                          <center>  <img src="images/picture16.1.png" width="700" height="500"  /></center>
-                          <center>  <img src="images/picture17.png" width="700" height="500"  /></center>
-                          <center>  <img src="images/picture18.1.png" width="700" height="500"  /></center>
-                          <center>  <img src="images/picture19.png" width="700" height="500"  /></center>
-                          <center>  <img src="images/picture19.1.png" width="700" height="500"  /></center>
-                          <center>  <img src="images/picture20.png" width="700" height="500"  /></center>
+                          <center>  <img src="images/picture62.png" width="700" height="500"  /></center>
+                          <center>  <img src="images/picture63.png" width="700" height="500"  /></center>
+                          <p> For numbers 3-6, give the coordinates of the center, foci, vertices, and covertices of 
+                            the ellipse with the given equation. Sketch the graph, and include these points</p>
+                            <center>  <img src="images/picture64.png" width="700" height="500"  /></center>
+                            <center>  <img src="images/picture65.png" width="700" height="500"  /></center>
+                            <center><p>For numbers 7-10, answer as directed.</p></center>
+                            <center>  <img src="images/picture66.png" width="700" height="500"  /></center>
+                            <center>  <img src="images/picture67.png" width="700" height="500"  /></center>
                             <br>
                         </div>
                     </div>
@@ -264,7 +304,7 @@
                                     or terms in order to complete the statement/s.
                         </p></center>
 
-                          <center>  <img src="images/picture21.png" width="700" height="500"  /></center>
+                          <center>  <img src="images/picture68.png" width="700" height="500"  /></center>
                         
                             <br>
                         </div>
@@ -278,37 +318,21 @@
                     </div>
                     <div id="faq12" class="collapse" data-parent="#accordion">
                         <div class="card-body">
-                        <center> <p> <b>Performance Task: Let’s do this!</b>
-                        </p></center>
-
-                          <center>  <img src="images/picture21.png" width="700" height="500"  /></center>
-                          <center>  <img src="images/picture22.png" width="700" height="500"  /></center>
-                        <p>
-                        1. In a basketball game, it is crucial to be able to execute a throw which creates a 
-                        parabola that can deliver the ball through a hoop with ease. Shooting at a 90 degree 
-                        is optimal yet impractical as in order to shoot to this degree, one must be directly 
-                        under the rim. This is where a parabola is used to complete the objective of shooting 
-                        the ball to acquire points.
-                        Go to the basketball court (if available or accessible, if not innovate) and perform the 
-                        following. 
-                        a. Standing and facing on one of the posts, move your feet backward 3 times and 
-                        then perform shooting the ball. Repeat the process of moving your feet 7 times, 10 
-                        times, 12, times 15 times and 20 times and then shoot the ball. <br>
-                        2. While doing the activity of shooting the ball in different distances, what can you 
-                        say on the following?
-                        a. Does shooting the ball create parabolic arc? Explain <br>
-                        b. Do you think the parabolic arcs formed are of the same measurement? Explain <br>
-                        c. Are the parabolic arcs formed in shooting the ball are dependent on the distance 
-                        of a person throwing the ball? Or are they related? Explain <br>
-                        d. Do you think that a player or famous player studied the shooting style in order to 
-                        get the perfect shoot? 
-                        </p>  
-                        <center>  <img src="images/picture22.1.png" width="700" height="500"  /></center>          
+                        <center> <p> <b>DISCOVERY DISCUSSION WRITING</b> <br>
+                        <center> <p>Materials: bond paper, cylindrical bottle, compass</p> </center>
+                                <p>1. A flashlight shines on a wall, as shown in the figure. What is the shape of the 
+                                boundary of the lighted area? Explain your answer.</p>
+                                <center>  <img src="images/picture69.png" width="700" height="500"  /></center>
+                                <p>2. Get a piece of bond paper and wrapped around a cylindrical bottle, and then use a 
+                                compass to draw a circle on the paper, as shown in the figure. When the paper is 
+                                laid flat, is the shape drawn on the paper an ellipse? Explain your findings</p>
+                                <center>  <img src="images/picture70.png" width="700" height="500"  /></center>
+                        
                             <br>
                             <p> <b>Online Connect! </b>
                             For additional knowledge and information about the topics please 
                             visit the links/url indicated below. 
-                            <center>  <img src="images/picture23.png" width="700" height="500"  /></center> 
+                            <center>  <img src="images/picture71.png" width="700" height="500"  /></center> 
                         </p>
                         </div>
                     </div>

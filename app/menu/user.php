@@ -27,12 +27,12 @@
             </a>
         </li>
         <li>
-            <a href="student" class="dropdown-toggle no-arrow">
+            <a href="taken-exam" class="dropdown-toggle no-arrow">
                 <span class="micon icon-copy ti-user"></span><span class="mtext">Taken Exam</span>
             </a>
         </li>
         <li>
-            <a href="result" class="dropdown-toggle no-arrow">
+            <a href="student-result" class="dropdown-toggle no-arrow">
                 <span class="micon icon-copy ti-cup"></span><span class="mtext">Student Result</span>
             </a>
         </li>
