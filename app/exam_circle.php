@@ -15,9 +15,9 @@
 </div>
 
 <style>
-    .swal-text{
-        text-align: center;
-    }
+.swal-text {
+    text-align: center;
+}
 </style>
 
 <?php
@@ -49,13 +49,13 @@
                 <h4 class="text-blue h4">Question 1 of 5</h4>
             </div>
             <div class="col-6">
-                <div class="float-right"><span class="heading">Rating</span>
+                <div class="float-right"><span class="heading" title="View Rating">Rating</span>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <p>4.1 average based on 254 difficulties.</p>
+                    <span class="fa fa-star"></span> <br>
+                    <span class="text-muted">4.1 average based on 254 difficulties.</span>
                 </div>
             </div>
         </div>
@@ -72,10 +72,10 @@
                     </th>
                     <!-- .............. -->
                     <th class="table-plus datatable-nosort" style="vertical-align: middle;width:200px">
-                        <a href="" class=" btn btn-sm btn-warning">
+                        <a href="" class=" btn btn-sm btn-warning" title="Hints">
                             <span class="icon-copy ti-light-bulb"></span> Hint
                         </a>
-                        <a href="" class=" btn btn-sm btn-primary">
+                        <a href="" class=" btn btn-sm btn-primary" title="Read">
                             <span class="icon-copy ti-file"></span> Read
                         </a>
                     </th>
@@ -101,7 +101,7 @@
                                         echo $record['exam_ch1'];
                                     }?>">
                                 <label style="vertical-align: middle;" for="ch1">
-                                    a. 
+                                    a.
                                     <?php 
                                     if($mistakes == 1){
                                         echo $record['exam_ch3'];
@@ -128,7 +128,7 @@
                                         echo $record['exam_ch2'];
                                     }?>">
                                 <label style="vertical-align: middle;" for="ch2">
-                                    b. 
+                                    b.
                                     <?php 
                                     if($mistakes == 1){
                                         echo $record['exam_ch1'];
@@ -155,7 +155,7 @@
                                         echo $record['exam_ch3'];
                                     }?>">
                                 <label style="vertical-align: middle;" for="ch3">
-                                    c. 
+                                    c.
                                     <?php 
                                     if($mistakes == 1){
                                         echo $record['exam_ch2'];
@@ -227,7 +227,7 @@
 
 <script>
 swal({
-    title:"<?php echo $_SESSION['headertext']?>",
+    title: "<?php echo $_SESSION['headertext']?>",
     text: "<?php echo $_SESSION['bodytext']?>",
     icon: "<?php echo $_SESSION['statusIcon']?>",
     button: "OK",
