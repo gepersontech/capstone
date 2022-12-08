@@ -75,17 +75,17 @@
                             Range Aid to Navigation (LORAN for short) system, of ship or aircraft utilizes 
                             hyperbolas.</p></center>
 
-                            <p>Definition and Equation of a Hyperbola</p>
-                            <p>Given two distinct points F1 and F2 in the plane and a fixed distance d, a 
-                                hyperbola is the set of all points (x,y) in the plane such that the absolute value of 
-                                the difference of each of the distances from F1 and F2 to (x,y) is d. The points F1 and 
+                            <b><p>Definition and Equation of a Hyperbola</p></b>
+                            <p>Given two distinct points F1 and F2 in the plane and a fixed distance <b>d</b>, a 
+                                <b>hyperbola</b> is the set of all points (x,y) in the plane such that the absolute value of 
+                                the difference of each of the distances from F1 and F2 to (x,y) is <b>d</b>. The points F1 and 
                                 F2 are called the foci of the hyperbola.</p>
 
                         
-                          <center>  <img src="images/picture72.png" width="700" height="500"  /></center><br>
+                          <center>  <img src="images/picture72.png" width="400" height="500"  /></center><br>
                           <center>  <img src="images/picture73.png" width="700" height="500"  /></center><br> 
-                        
-                            <img src="images/picture29.png" width="600" height="500"  /> <br>
+                          <center>  <img src="images/picture74.png" width="700" height="500"  /></center><br> 
+                          <center>  <img src="images/picture75.png" width="700" height="500"  /></center><br> 
                             <br>
                         </div>
                     </div>
@@ -99,26 +99,39 @@
                     </div>
                     <div id="faq3" class="collapse" data-parent="#accordion">
                         <div class="card-body">
-                            <p>
-                            Unlike circle and parabola, an ellipse is one of the conic sections that most 
-                            students have not encountered formally before. Its shape is a bounded curve which 
-                            looks like a flattened circle. The orbits of the planets in our solar system around the 
-                            sun happen to be elliptical in shape. Also, just like parabolas, ellipses have reflective 
-                            properties that have been used in the construction of certain structures. These 
-                            applications and more will be encountered in this lesson.<br>
 
-                            <center> <b>Name the parts of the two figures below using the terms found in the box. </center></b>
-  
-                            </p>
-                            <center><img src="images/picture30.png" width="700" height="500" /></center>
+                        <p> Activity 1 </p>
+                            <p> You’ll need: Patty paper Ruler Sharpie Compass Colored paper Tape or 
+                            glue stick As you do each of the following, be careful not to smudge your work. 
+                            For any step that includes the use of a Sharpie, wait about 30 seconds after 
+                            marking before you do any folding. <br></p>
 
-                            <p>
-                            Can you tell the difference between the graphs? Let us leave the question 
-                            unanswered and do some discussions and activities in order for you to understand 
-                            better the topic.
-                            <br>
-
-                            </p>
+                            <p> 1. Using a Sharpie, draw a point near the center of your wax paper. <br>
+                                2. Label this point 𝑂. <br>
+                                3. Using a pencil and a compass, draw a circle of radius 4 cm†, using the
+                                point you drew in step 1 as the center.<br> 
+                                4. Using a Sharpie, draw another point somewhere outside your circle. Where 
+                                    you put the point will affect the final result. Don’t put your point too close to the 
+                                    edge of the paper or too close to the circle, or it will be difficult to do the rest of the 
+                                    activity. Try to arrange it so that everyone in your group has their point at different 
+                                    distances and in different positions from their circle.<br>
+                                    5. Label this point . <br>
+                                    6. Fold the paper so that the point lands on the circle (or the circle lands on 
+                                    F).
+                                    7. Crease the paper. <br>
+                                    8. “Slide” the point along the circle just a little bit so that a different place on the 
+                                    circle is over the point . <br>
+                                    9. Crease again. <br>
+                                    10. Keep sliding, folding and creasing the paper so that different places on 
+                                    the circle land on the point. The closer together your creases are, the more 
+                                    refined your shape will be. <br>
+                                    11. Keep doing this until you have gone all the way around the circle.<br>
+                                    12. Unfold your paper. Do you see a definitive shape? <br>
+                                    13. Carefully darken the outline of your shape with a Sharpie. You’ve just 
+                                    drawn a hyperbola! <br>
+                                    14. Tape or glue the edges of your patty paper to a piece of colored paper. <br>
+                                    15. Write “The Hyperbola” and your name at the top of the colored paper.
+                                    </p>
 
 
                         </div>
@@ -132,10 +145,14 @@
                     </div>
                     <div id="faq4" class="collapse" data-parent="#accordion">
                         <div class="card-body">
-                            <p style="text-indent:50px;"> An <b>Ellipse</b> is a set of all points in a plane, the sum whose distances from two 
-                                fixed points is constant. The fixed points are called foci. This section presents how to convert general form of ellipse to its standard 
-                                form and vice versa.     
-                                    <br>
+                            <p style="text-indent:50px;">We collect here the features of the graph of a hyperbola with standard equation.
+                            <center>  <img src="images/picture76.png" width="700" height="500"  /></center><br>
+                            <center>  <img src="images/picture77.png" width="700" height="500"  /></center><br>
+                            <center>  <img src="images/picture78.png" width="700" height="500"  /></center><br> 
+                            <center>  <img src="images/picture79.png" width="700" height="500"  /></center><br>    
+                        <b><p>Activity 2 </p></b>
+                        <center>  <img src="images/picture80.png" width="700" height="500"  /></center><br> 
+                         
                             
                     </div>
                     </div>
@@ -144,13 +161,12 @@
                 <div class="card">
                     <div class="card-header">
                         <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq5">
-                            Example 3.1
+                            Example 1
                         </button>
                     </div>
                     <div id="faq5" class="collapse" data-parent="#accordion">
                         <div class="card-body">
-                            <center><img src="images/picture31.png" width="700" height="500" /></center><br>
-                            <center><img src="images/picture32.png" width="700" height="500" /></center><br>
+                        <center>  <img src="images/picture81.png" width="700" height="500"  /></center><br> 
                            
 
                           
@@ -162,32 +178,15 @@
                 <div class="card">
                     <div class="card-header">
                         <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq6">
-                            Example 3.2
+                            Example 2
                         </button>
                     </div>
                     <div id="faq6" class="collapse" data-parent="#accordion">
                         <div class="card-body">
                             
-                        <center><img src="images/picture44.png" width="600" height="500" /> </center>
-                        <center><img src="images/picture45.png" width="500" height="500" /> </center>
-
-                        <p> Consider the points F1(−3, 0) and F2(3, 0), as shown in Figure 1.22. What 
-                            is the sum of the distances of A(4, 2.4) from F1 and from F2? How about the sum of 
-                            the distances of B(and C(0, −4)) from F1 and from F2? </p>
-                            <center><img src="images/picture46.png" width="600" height="500" /> </center>
-                            <center><img src="images/picture47.png" width="600" height="500" /> </center>
-
-                        <p> Given are two points on the x-axis, F1( -c, 0) and F2(c, 0), the foci, both c 
-                            units away from their center (0, 0). See Figure 1.23. Let P(x, y) be a point on the 
-                            ellipse. Let the common sum of the distances be 2a (the coefficient 2 will make 
-                            computations simpler). Thus, we have PF1 + PF2 = 2a </p>
-                           <center><img src="images/picture48.png" width="600" height="500" /> </center>
-                           <center><img src="images/picture49.png" width="600" height="500" /> </center>
-                           <center><img src="images/picture50.png" width="500" height="500" /> </center>
-                           <center><img src="images/picture51.png" width="600" height="500" /> </center>
-
-                            
-
+                        <center><img src="images/picture82.png" width="600" height="500" /> </center>
+                        <center><img src="images/picture83.png" width="600" height="500" /> </center>
+                    
                         </div>
                     </div>
                 </div>
@@ -195,86 +194,30 @@
                 <div class="card">
                     <div class="card-header">
                         <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq7">
-                            Example 3.3
+                            Example 3
 
                         </button>
                     </div>
                     <div id="faq7" class="collapse" data-parent="#accordion">
                         <div class="card-body">
-                            <center><img src="images/picture52.png" width="700" height="500" /></center>
-                            
+                        <p> Give the coordinates of the center, foci, vertices, and asymptotes of the hyperbola
+                        with the given equation. Sketch the graph, and include these points and lines, the
+                        transverse and conjugate axes, and the auxiliary rectangle. </p>
+                            <center><img src="images/picture84.png" width="700" height="500" /></center>
+
+                            <p>The conjugate axis drawn has its endpoints b = 3 units to the left and right 
+                            of the center.</p>
+                            <center><img src="images/picture85.png" width="400" height="500" /></center>
+                            <center><img src="images/picture86.png" width="600" height="500" /></center>
+                            <p>The conjugate axis drawn has its endpoints b = 2 units above and below 
+                                he center</p>
+                            <center><img src="images/picture87.png" width="400" height="500" /></center>
+                                                        
                             
                         </div>
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="card-header">
-                        <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq8">
-                            Example 3.4
-
-                        </button>
-                    </div>
-                    <div id="faq8" class="collapse" data-parent="#accordion">
-                        <div class="card-body">
-                            <center><img src="images/picture56.png" width="700" height="500" /></center>
-                            <p> The ellipses we have considered so far are “horizontal” and have the origin as 
-                            their centers. Some ellipses have their foci aligned vertically, and some have centers not at the origin. Their standard equations and properties are given in the box. The 
-                            derivations are more involved, but are similar to the one above, and so are not 
-                            shown anymore.  </p>
-                            <center><img src="images/picture55.png" width="700" height="500" /></center> <br> 
-                             <center><img src="images/picture54.png" width="700" height="500" /></center> <br>
-                             <p> In the standard equation, if the x-part has the bigger denominator, the ellipse is
-                            horizontal. If the y-part has the bigger denominator, the ellipse is vertical</p> 
-                           
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header">
-                        <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq9">
-                            Example 3.5
-
-                        </button>
-                    </div>
-                    <div id="faq9" class="collapse" data-parent="#accordion">
-                        <div class="card-body">
-                            <center><img src="images/picture57.png" width="700" height="500" /></center>
-                            <center><img src="images/picture58.png" width="700" height="500" /></center>
-                            <center><img src="images/picture59.png" width="700" height="500" /></center>
-                            
-                          
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header">
-                        <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq10">
-                            Example 3.6
-
-                        </button>
-                    </div>
-                    <div id="faq10" class="collapse" data-parent="#accordion">
-                        <div class="card-body">
-                            <center><img src="images/picture60.png" width="700" height="500" /></center>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header">
-                        <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq11">
-                            Example 3.7
-
-                        </button>
-                    </div>
-                    <div id="faq11" class="collapse" data-parent="#accordion">
-                        <div class="card-body">
-                            <center><img src="images/picture61.png" width="700" height="500" /></center>
-                            
-                        </div>
-                    </div>
-                </div>
                 <div class="card">
                     <div class="card-header">
                         <button class="btn btn-block collapsed" data-toggle="collapse" data-target="#faq10">
@@ -283,20 +226,12 @@
                     </div>
                     <div id="faq10" class="collapse" data-parent="#accordion">
                         <div class="card-body">
-                        <center> <p>Activity 3.1:  Let Me try! <br>
-                        Let us find out if you really understood the discussed concept by answering 
-                        these follow-up exercises. 
+                        <center> <p>Let us find out if you really understood the concept about hyperbola by 
+                                        answering these exercises.
+ 
                         </p></center>
 
-                          <center>  <img src="images/picture62.png" width="700" height="500"  /></center>
-                          <center>  <img src="images/picture63.png" width="700" height="500"  /></center>
-                          <p> For numbers 3-6, give the coordinates of the center, foci, vertices, and covertices of 
-                            the ellipse with the given equation. Sketch the graph, and include these points</p>
-                            <center>  <img src="images/picture64.png" width="700" height="500"  /></center>
-                            <center>  <img src="images/picture65.png" width="700" height="500"  /></center>
-                            <center><p>For numbers 7-10, answer as directed.</p></center>
-                            <center>  <img src="images/picture66.png" width="700" height="500"  /></center>
-                            <center>  <img src="images/picture67.png" width="700" height="500"  /></center>
+                          <center>  <img src="images/picture88.png" width="700" height="500"  /></center>
                             <br>
                         </div>
                     </div>
@@ -313,7 +248,9 @@
                                     or terms in order to complete the statement/s.
                         </p></center>
 
-                          <center>  <img src="images/picture68.png" width="700" height="500"  /></center>
+                          <center>  <img src="images/picture89.png" width="600" height="500"  /></center>
+                          <center>  <img src="images/picture90.png" width="600" height="500"  /></center>
+                          <center>  <img src="images/picture91.png" width="600" height="500"  /></center>
                         
                             <br>
                         </div>
@@ -328,20 +265,16 @@
                     <div id="faq12" class="collapse" data-parent="#accordion">
                         <div class="card-body">
                         <center> <p> <b>DISCOVERY DISCUSSION WRITING</b> <br>
-                        <center> <p>Materials: bond paper, cylindrical bottle, compass</p> </center>
-                                <p>1. A flashlight shines on a wall, as shown in the figure. What is the shape of the 
-                                boundary of the lighted area? Explain your answer.</p>
-                                <center>  <img src="images/picture69.png" width="700" height="500"  /></center>
-                                <p>2. Get a piece of bond paper and wrapped around a cylindrical bottle, and then use a 
-                                compass to draw a circle on the paper, as shown in the figure. When the paper is 
-                                laid flat, is the shape drawn on the paper an ellipse? Explain your findings</p>
-                                <center>  <img src="images/picture70.png" width="700" height="500"  /></center>
-                        
+                                <p>1. Light from a Lamp. The light from a lamp forms a lighted area on a wall, as shown in 
+                                    the figure. Why is the boundary of this lighted area a hyperbola? How can one hold a 
+                                    flashlight so that its beam forms a hyperbola on the ground?
+                                    </p>
+                                <center>  <img src="images/picture92.png" width="500" height="500"  /></center>
                             <br>
                             <p> <b>Online Connect! </b>
                             For additional knowledge and information about the topics please 
                             visit the links/url indicated below. 
-                            <center>  <img src="images/picture71.png" width="700" height="500"  /></center> 
+                            <center>  <img src="images/picture93.png" width="700" height="500"  /></center> 
                         </p>
                         </div>
                     </div>
