@@ -71,13 +71,31 @@
                         <?php echo $question; ?>
                     </th>
                     <!-- .............. -->
+                    <!-- HINT BUTTON AND READ -->
                     <th class="table-plus datatable-nosort" style="vertical-align: middle;width:200px">
-                        <a href="" class=" btn btn-sm btn-warning">
-                            <span class="icon-copy ti-light-bulb"></span> Hint
-                        </a>
-                        <a href="" class=" btn btn-sm btn-primary">
-                            <span class="icon-copy ti-file"></span> Read
-                        </a>
+                        <?php
+                            if($mistakes == 3){
+                                ?>
+                                <a class="btn btn-sm btn-warning" data-toggle="modal" data-target="#hintConfirm">
+                                    <span class="icon-copy ti-light-bulb"></span> Hint
+                                </a>
+                                <a style="color: white;" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#readDocument">
+                                    <span class="icon-copy ti-file"></span> Read
+                                </a>
+                            <?php
+                        }else{
+                            ?>
+                            <a onclick="hintValidation()" class="btn btn-sm btn-warning" >
+                                <span class="icon-copy ti-light-bulb"></span> Hint
+                            </a>
+                            <a onclick="docValidation()" style="color: white;" class="btn btn-sm btn-primary">
+                                <span class="icon-copy ti-file"></span> Read
+                            </a>
+                            <?php
+                        }
+                        ?>
+                        
+                        <!-- HINT BUTTON AND READ.................. -->
                     </th>
                 </tr>
             </thead>
@@ -100,7 +118,7 @@
                                     }else{
                                         echo $record['exam_ch1'];
                                     }?>">
-                                <label style="vertical-align: middle;" for="ch1">
+                                <label style="vertical-align: middle;font-size: 15px;" for="ch1">
                                     a.
                                     <?php 
                                     if($mistakes == 1){
@@ -127,7 +145,7 @@
                                     }else{
                                         echo $record['exam_ch2'];
                                     }?>">
-                                <label style="vertical-align: middle;" for="ch2">
+                                <label style="vertical-align: middle;font-size: 15px;" for="ch2">
                                     b.
                                     <?php 
                                     if($mistakes == 1){
@@ -154,7 +172,7 @@
                                     }else{
                                         echo $record['exam_ch3'];
                                     }?>">
-                                <label style="vertical-align: middle;" for="ch3">
+                                <label style="vertical-align: middle; font-size: 15px;" for="ch3">
                                     c.
                                     <?php 
                                     if($mistakes == 1){
@@ -190,34 +208,70 @@
 
 }
 ?>
-<!-- Notification HINT modal -->
-<div class="modal fade" id="hintNotif" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+
+<!-- Notification HINT modal confirmation -->
+<div class="modal fade" id="hintConfirm" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 style="color:#ED1C24 ;" class="modal-title" id="exampleModalLabel">The product
-                    <?php echo "<b>".$_SESSION["titleText"]."</b>" ?></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p class="modal-body-title" id="modal-body-title">Product stock is low, restock now.</p>
-                <form action="productlist.php" method="POST">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Later</button>
-                <button type="submit" name="submit" class="btn btn-primary">Go to products</button>
+            <div class="modal-body text-center font-18">
+                <h4 class="padding-top-30 mb-30 weight-500">
+                    Do you want to use the hint now?
+                </h4>
+                <div class="padding-bottom-30 row" style="max-width: 170px; margin: 0 auto">
+                    <div class="col-6">
+                        <button style="color: red;" type="button"
+                            class="btn btn-light border-radius-100 btn-block confirmation-btn" data-dismiss="modal">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        NO
+                    </div>
+                    <div class="col-6">
+                        <button style="color: #00FA9A;" type="button"
+                            class="btn btn-light border-radius-100 btn-block confirmation-btn" data-dismiss="modal">
+                            <i class="fa fa-check"></i>
+                        </button>
+                        YES
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Notification HINT modal -->
 
+<!-- READ DOCUMENT MODAL -->
+<div class="modal fade" id="readDocument" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center font-18">
+                <h4 class="padding-top-30 mb-30 weight-500">
+                    Do you want to read related documents?
+                </h4>
+                <div class="padding-bottom-30 row" style="max-width: 170px; margin: 0 auto">
+                    <div class="col-6">
+                        <button style="color: red;" type="button"
+                            class="btn btn-light border-radius-100 btn-block confirmation-btn" data-dismiss="modal">
+                            <i class="fa fa-times"></i>
+                        </button>
+                        NO
+                    </div>
+                    <div class="col-6">
+                        <button style="color: #00FA9A;" type="button"
+                            class="btn btn-light border-radius-100 btn-block confirmation-btn" data-dismiss="modal">
+                            <i class="fa fa-check"></i>
+                        </button>
+                        YES
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- IMPORTANT SCRIPT -->
 <script src="vendors/sweetalert/sweetalert.min.js"></script>
+<!-- <script src="src/plugins/sweetalert2/sweetalert2.all.js"></script> -->
 <script src="src/plugins/sweetalert2/jquery-3.6.1.min.js"></script>
+
 <!-- for sweet alert........... -->
 <?php
     if(isset($_SESSION['headertext'])){
@@ -229,8 +283,7 @@
 swal({
     title: "<?php echo $_SESSION['headertext']?>",
     text: "<?php echo $_SESSION['bodytext']?>",
-    icon: "<?php echo $_SESSION['statusIcon']?>",
-    button: "OK",
+    icon: '<?php echo $_SESSION['statusIcon']?>',
 });
 </script>
 <?php
@@ -239,3 +292,25 @@ swal({
     }
     unset($_SESSION['headertext']);
 ?>
+
+<!-- SWEET ALERT FOR HINT VALIDATION -->
+<script>
+function hintValidation(){
+swal({
+    title: "Hint Validation",
+    text: "Sorry, You can't use hint now, please analyze the question more. You can do it ✍️",
+    icon: 'warning',
+});
+}
+</script>
+
+ <!-- DOCUMENT VALIDATION -->
+<script>
+function docValidation(){
+swal({
+    title: "Cannot Proceed",
+    text: "Sorry, You can't read documents now, analyze the question more. You can do it ✍️",
+    icon: 'warning',
+});
+}
+</script>
