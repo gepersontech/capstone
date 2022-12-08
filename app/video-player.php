@@ -83,9 +83,9 @@
                     </div>
                 </div>
                 <div class="container">
-                    <video poster="video/Parabola Focus and Directrix 1.mp4.webm" controls
+                    <video poster="video/Parabola Focus and Directrix 1.mp4" controls
                         crossorigin>
-                        <source src="video/Parabola Focus and Directrix 1.mp4.webm"type="video/webm" />
+                        <source src="video/Parabola Focus and Directrix 1.mp4"type="video/mp4" />
                       
                     </video>
                 </div>
