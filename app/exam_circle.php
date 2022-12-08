@@ -38,7 +38,23 @@
 <!-- Question card -->
 <div class="card-box mb-30">
     <div class="pd-20">
-        <h4 class="text-blue h4">Question 1 of 5</h4>
+        <div class="row">
+            <div class="col-6">
+                <h4 class="text-blue h4">Question 1 of 5</h4>
+            </div>
+            <div class="col-6">
+                <div class="float-right"><span class="heading">Rating</span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <p>4.1 average based on 254 difficulties.</p>
+                </div>
+            </div>
+        </div>
+
+
     </div>
     <div class="pb-20">
         <table class="data-table table">
@@ -53,7 +69,7 @@
                         <a href="" class=" btn btn-sm btn-warning">
                             <span class="icon-copy ti-light-bulb"></span> Hint
                         </a>
-                        <a href="" class=" btn btn-sm btn-light">
+                        <a href="" class=" btn btn-sm btn-primary">
                             <span class="icon-copy ti-file"></span> Read
                         </a>
                     </th>
@@ -79,7 +95,7 @@
                                         echo $record['exam_ch1'];
                                     }?>">
                                 <label style="vertical-align: middle;" for="ch1">
-                                    a. 
+                                    a.
                                     <?php 
                                     if($mistakes == 1){
                                         echo $record['exam_ch3'];
@@ -106,7 +122,7 @@
                                         echo $record['exam_ch2'];
                                     }?>">
                                 <label style="vertical-align: middle;" for="ch2">
-                                    b. 
+                                    b.
                                     <?php 
                                     if($mistakes == 1){
                                         echo $record['exam_ch1'];
@@ -133,7 +149,7 @@
                                         echo $record['exam_ch3'];
                                     }?>">
                                 <label style="vertical-align: middle;" for="ch3">
-                                    c. 
+                                    c.
                                     <?php 
                                     if($mistakes == 1){
                                         echo $record['exam_ch2'];
