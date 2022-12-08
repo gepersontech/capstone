@@ -14,6 +14,12 @@
     </div>
 </div>
 
+<style>
+    .swal-text{
+        text-align: center;
+    }
+</style>
+
 <?php
 
     $mistakes;
@@ -82,7 +88,7 @@
                             hidden>
                         <input type="text" id="anskey" name="answerkey" value="<?php echo $answerkey; ?>" hidden>
                         <!-- multiple choice a b c d....... -->
-                        <td>
+                        <td style="width: 150px;">
                             <button style="border: none; background-color: white;" type="submit" name="submit">
                                 <input type="radio" id="ch1" name="answer" value="<?php 
                                     if($mistakes == 1){
@@ -95,7 +101,7 @@
                                         echo $record['exam_ch1'];
                                     }?>">
                                 <label style="vertical-align: middle;" for="ch1">
-                                    a.
+                                    a. 
                                     <?php 
                                     if($mistakes == 1){
                                         echo $record['exam_ch3'];
@@ -109,7 +115,7 @@
                                 </label>
                             </button>
                         </td>
-                        <td>
+                        <td style="width: 150px;">
                             <button style="border: none; background-color: white;" type="submit" name="submit">
                                 <input type="radio" id="ch2" name="answer" value="<?php 
                                     if($mistakes == 1){
@@ -122,7 +128,7 @@
                                         echo $record['exam_ch2'];
                                     }?>">
                                 <label style="vertical-align: middle;" for="ch2">
-                                    b.
+                                    b. 
                                     <?php 
                                     if($mistakes == 1){
                                         echo $record['exam_ch1'];
@@ -136,7 +142,7 @@
                                 </label>
                             </button>
                         </td>
-                        <td>
+                        <td style="width: 150px;">
                             <button style="border: none; background-color: white;" type="submit" name="submit">
                                 <input type="radio" id="ch3" name="answer" value="<?php 
                                     if($mistakes == 1){
@@ -149,7 +155,7 @@
                                         echo $record['exam_ch3'];
                                     }?>">
                                 <label style="vertical-align: middle;" for="ch3">
-                                    c.
+                                    c. 
                                     <?php 
                                     if($mistakes == 1){
                                         echo $record['exam_ch2'];
@@ -163,10 +169,10 @@
                                 </label>
                             </button>
                         </td>
-                        <td>
+                        <td style="width: 150px;">
                             <button style="border: none; background-color: white;" type="submit" name="submit">
                                 <input type="radio" id="ch4" name="answer" value="<?php echo $record['exam_ch4']; ?>">
-                                <label style="vertical-align: middle;" for="ch4">
+                                <label style="vertical-align: middle;font-size: 15px;" for="ch4">
                                     d. <?php echo $record['exam_ch4']; ?>
                                 </label>
                             </button>
@@ -184,6 +190,29 @@
 
 }
 ?>
+<!-- Notification HINT modal -->
+<div class="modal fade" id="hintNotif" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 style="color:#ED1C24 ;" class="modal-title" id="exampleModalLabel">The product
+                    <?php echo "<b>".$_SESSION["titleText"]."</b>" ?></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="modal-body-title" id="modal-body-title">Product stock is low, restock now.</p>
+                <form action="productlist.php" method="POST">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Later</button>
+                <button type="submit" name="submit" class="btn btn-primary">Go to products</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Notification HINT modal -->
 
 
 <!-- IMPORTANT SCRIPT -->
@@ -198,7 +227,7 @@
 
 <script>
 swal({
-    title: "<?php echo $_SESSION['headertext']?>",
+    title:"<?php echo $_SESSION['headertext']?>",
     text: "<?php echo $_SESSION['bodytext']?>",
     icon: "<?php echo $_SESSION['statusIcon']?>",
     button: "OK",
