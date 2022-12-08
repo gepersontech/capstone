@@ -34,12 +34,15 @@ if(isset($_POST['submit'])){
 
     }else{
         
+        $studentID = $_SESSION['id'];
+        $examID = $_SESSION['exam_id'];
+
         $sqlquery = "INSERT INTO `exam_mistakes`(`student_id`, `examitem_id`, `exam_id`, `mistakes`) 
-        VALUES (1,$questionId,1,$attemptMistake)";
+        VALUES ($studentID,$questionId,$examID,$attemptMistake)";
         $result = mysqli_query($con, $sqlquery);
 
         // fetching mistakes from database........
-        $sqlquery1 = "SELECT SUM(mistakes) AS totalmistakes FROM `exam_mistakes` WHERE student_id=1 AND examitem_id='".$questionId."'";
+        $sqlquery1 = "SELECT SUM(mistakes) AS totalmistakes FROM `exam_mistakes` WHERE student_id='".$studentID."' AND examitem_id='".$questionId."'";
         $queryResult = mysqli_query($con, $sqlquery1);
         $rowCount = mysqli_num_rows($queryResult);
 

@@ -43,6 +43,7 @@
                 if ($rowCount > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         $id = $row['exam_id'];
+                        $_SESSION['exam_id'] = $id;
                 ?>
                 <tr>
                     <td><?php echo $row['exam_title']; ?></td>
@@ -52,8 +53,6 @@
                         <a data-toggle="modal" data-target="#verify" href="" class=" btn btn-sm btn-primary">
                             <span class="icon-copy ti-pencil-alt"></span> Take exam
                         </a>
-
-
                     </td>
 
                 </tr>
