@@ -132,6 +132,30 @@
         </table>
     </div>
 </div>
+
+
+<div class="card-box mb-30">
+    <div class="pd-20">
+        <h4 class="text-blue h4">VIDEO TOOL
+        <!-- <button type="button" class="btn btn-primary float-right mb-10" data-toggle="modal" data-target="#addLesson">
+            <span class="icon-copy ti-plus"></span>
+            Add Lesson
+        </button> -->
+        <tr>
+                   
+                    <td style="width: 400px;">
+                        <a href="index.php?page=video-player" class=" btn btn-sm btn-primary">
+                            <span class="fa fa-play"></span> Watch
+                        </a>
+
+                    </td>
+
+                </tr>
+                </h4>
+    </div>
+    
+</div>
+
 <!-- Simple Datatable End -->
 <!-- Add Modal -->
 <div class="modal fade" id="addModal">
