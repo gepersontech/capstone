@@ -49,7 +49,7 @@
                 <h4 class="text-blue h4">Question 1 of 5</h4>
             </div>
             <div class="col-6">
-                <div class="float-right"><span class="heading">Rating</span>
+                <div class="float-right"><span class="heading" title="View Rating">Rating</span>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
                     <span class="fa fa-star checked"></span>
@@ -72,10 +72,10 @@
                     </th>
                     <!-- .............. -->
                     <th class="table-plus datatable-nosort" style="vertical-align: middle;width:200px">
-                        <a href="" class=" btn btn-sm btn-warning">
+                        <a href="" class=" btn btn-sm btn-warning" title="Hints">
                             <span class="icon-copy ti-light-bulb"></span> Hint
                         </a>
-                        <a href="" class=" btn btn-sm btn-primary">
+                        <a href="" class=" btn btn-sm btn-primary" title="Read">
                             <span class="icon-copy ti-file"></span> Read
                         </a>
                     </th>
