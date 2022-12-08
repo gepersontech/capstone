@@ -29,7 +29,7 @@
         <table class="data-table table stripe hover nowrap">
             <thead>
                 <tr>
-                    <th class="table-plus datatable-nosort">Module Name</th>
+                    <th class="table-plus datatable-nosort">Title</th>
                     <th class="table-plus datatable-nosort">Description</th>
                     <th class="datatable-nosort">Action</th>
                 </tr>
@@ -83,32 +83,32 @@
                     <img src="vendors/images/success.png" />
                 </div> -->
 
-                <table class="table">
+                <table class="table table-stripped" ">
                     <tbody>
-                        <tr class="text-left">
-                            <td scope="row">Total Question</td>
-                            <td scope="row">12</td>
-                        </tr>
-                        <tr class="text-left">
-                            <td scope="row">Attempt</td>
-                            <td scope="row">2</td>
-                        </tr>
-                        <tr class="text-left">
-                            <td scope="row">Correct</td>
-                            <td scope="row">12</td>
-                        </tr>
-                        <tr class="text-left">
-                            <td scope="row">Wrong</td>
-                            <td scope="row">12</td>
-                        </tr>
-                        <tr class="text-left">
-                            <td scope="row">Percentage</td>
-                            <td scope="row">1%</td>
-                        </tr>
-                        <tr class="text-left">
-                            <td scope="row">Your Total Score</td>
-                            <td scope="row">13</td>
-                        </tr>
+                        <tr class=" text-left">
+                    <td scope="row">Total Question</td>
+                    <td scope="row">12</td>
+                    </tr>
+                    <tr class="text-left">
+                        <td scope="row">Attempt</td>
+                        <td scope="row">2</td>
+                    </tr>
+                    <tr class="text-left">
+                        <td scope="row">Correct</td>
+                        <td scope="row">12</td>
+                    </tr>
+                    <tr class="text-left">
+                        <td scope="row">Wrong</td>
+                        <td scope="row">12</td>
+                    </tr>
+                    <tr class="text-left">
+                        <td scope="row">Percentage</td>
+                        <td scope="row">1%</td>
+                    </tr>
+                    <tr class="text-left">
+                        <td scope="row">Your Total Score</td>
+                        <td scope="row">13</td>
+                    </tr>
                     </tbody>
                 </table>
 

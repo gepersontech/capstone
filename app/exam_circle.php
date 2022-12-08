@@ -49,12 +49,14 @@
                 <h4 class="text-blue h4">Question 1 of 5</h4>
             </div>
             <div class="col-6">
-                <div class="float-right"><span class="heading" title="View Rating">Rating</span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span> <br>
+                <div class="float-right "><span class="heading" title="View Rating">Rating</span>
+
+                    <i class="icon-copy fa fa-star text-warning" aria-hidden="true"></i>
+                    <i class="icon-copy fa fa-star text-warning" aria-hidden="true"></i>
+                    <i class="icon-copy fa fa-star text-warning" aria-hidden="true"></i>
+                    <i class="icon-copy fa fa-star-half-empty text-warning" aria-hidden="true"></i>
+                    <i class="icon-copy fa fa-star-o" aria-hidden="true"></i>
+                    <br>
                     <span class="text-muted">4.1 average based on 254 difficulties.</span>
                 </div>
             </div>
@@ -177,7 +179,7 @@
                                 </label>
                             </button>
                         </td>
-                        <!-- ..................... -->
+
                     </form>
                 </tr>
             </tbody>
