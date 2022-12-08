@@ -185,12 +185,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-group row">
+                                        <!-- <div class="form-group row">
                                             <label class="col-sm-4 col-form-label">Age*</label>
                                             <div class="col-sm-8">
                                                 <input type="number" class="form-control" name="birthdate" required />
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class="form-group row">
                                             <label class="col-sm-4 col-form-label">Address*</label>
                                             <div class="col-sm-8">

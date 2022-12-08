@@ -53,13 +53,14 @@ require_once "functions/dbconfig.php";
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="/capstone/#hero">Home</a></li>
-                    <li><a class="nav-link scrollto" href="/capstone/#courses">Courses</a></li>
-                    <li><a class="nav-link scrollto" href="/capstone/#resources">Resources</a></li>
-                    <li><a class="nav-link scrollto" href="/capstone/#about">About Us</a></li>
-                    <li><a class="nav-link scrollto" href="/capstone/#contact">Contact</a></li>
-                    <a href="login"><button class="btn btn-primary scrollto"
-                            style="border-radius: 50px; min-width: 80px; height: 40px; background-color: #57b846;">
+                    <li><a class="nav-link scrollto active" href="/capstone/#hero" title="Home">Home</a></li>
+                    <li><a class="nav-link scrollto" href="/capstone/#courses" title="Courses">Courses</a></li>
+                    <li><a class="nav-link scrollto" href="/capstone/#resources" title="Resources">Resources</a></li>
+                    <li><a class="nav-link scrollto" href="/capstone/#about" title="About us">About Us</a></li>
+                    <li><a class="nav-link scrollto" href="/capstone/#contact" title="Contact">Contact</a></li>
+                    <a href="register"><button class="btn btn-primary scrollto"
+                            style="border-radius: 50px; min-width: 80px; height: 40px; background-color: #1acc8d;"
+                            title="Create your Account">
                             Join us</button></a>
                 </ul>
 

@@ -21,9 +21,23 @@
     <link rel="stylesheet" type="text/css" href="vendors/styles/core.css" />
     <link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css" />
     <link rel="stylesheet" type="text/css" href="src/plugins/jvectormap/jquery-jvectormap-2.0.3.css" />
-    <link rel="stylesheet" type="text/css" href="vendors/styles/style.css" /> 
+    <link rel="stylesheet" type="text/css" href="vendors/styles/style.css" />
     <!-- SweetAlert2 -->
     <!-- <link rel="stylesheet" type="text/css" href="src/plugins/sweetalert2/sweetalert2.css"/> -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TH460Y41LE"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-TH460Y41LE');
+    </script>
+
 
 </head>
 

@@ -153,7 +153,7 @@
             <div class="modal-body">Proceed to the exam now</div>
             <div class="modal-footer">
                 <button class="btn btn-danger" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="examcontent">Proceed</a>
+                <a class="btn btn-primary" href="index.php?page=exam_circle">Proceed</a>
             </div>
         </div>
     </div>
