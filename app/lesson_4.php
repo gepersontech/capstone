@@ -37,21 +37,23 @@
             </div>
         </div> -->
         <div class="faq-wrap">
-            <h4 class="mb-20 h4 text-blue">Lesson 3</h4>
+            <h4 class="mb-20 h4 text-blue">Lesson 4</h4>
             <div id="accordion">
                 <div class="card">
                     <div class="card-header">
                         <button class="btn btn-block" data-toggle="collapse" data-target="#faq1">
-                            What I need to Know
+                            What I need to Know 
+                           
                         </button>
                     </div>
                     <div id="faq1" class="collapse show" data-parent="#accordion">
                         <div class="card-body">
-                            > define an ellipse;<br>
-                            > determine the standard form of equation of an ellipse;<br>
-                            > graph an ellipse in a Cartesian coordinate system;<br>
-                            > discuss the parts of an ellipse;<br>
-                            > convert the general equation of an ellipse to standard form and vice versa;<br>
+                            <p>Upon completion of this lesson, you should be able to:</p>
+                            > Determine hyperbola and its properties.<br>
+                            > determine the standard form of equation of hyperbola;<br>
+                            > determine the standard form of equation of hyperbola;<br>
+                            > discuss the parts of an hyperbola;<br>
+                           
                             
                         </div>
                     </div>
@@ -64,18 +66,25 @@
                     </div>
                     <div id="faq2" class="collapse" data-parent="#accordion">
                         <div class="card-body">
-                        <center> <p>Activity 3.1: Recall
-                        Let us recall previous lessons in the graphs of quadratic equations. We will 
-                        prove that a given equation without graphing will result to a certain conic section. 
-                        Now, let us try circle.</p></center>
+                        <center> <p>Just like ellipse, a hyperbola is one of the conic sections that most students 
+                            have not encountered formally before. Its graph consists of two unbounded branches 
+                            which extend in opposite directions. It is a misconception that each branch is a 
+                            parabola. This is not true, as parabolas and hyperbolas have very different features 
+                            Hyperbolas can be used in so-called “trilateration”, or positioning problems. It is 
+                            possible to locate the place from which a sound, such as gunfire, emanates. Long 
+                            Range Aid to Navigation (LORAN for short) system, of ship or aircraft utilizes 
+                            hyperbolas.</p></center>
+
+                            <p>Definition and Equation of a Hyperbola</p>
+                            <p>Given two distinct points F1 and F2 in the plane and a fixed distance d, a 
+                                hyperbola is the set of all points (x,y) in the plane such that the absolute value of 
+                                the difference of each of the distances from F1 and F2 to (x,y) is d. The points F1 and 
+                                F2 are called the foci of the hyperbola.</p>
+
                         
-                          <center>  <img src="images/picture24.png" width="700" height="500"  /></center><br>
-                            <img src="images/picture25.png" width="300" height="500"  />  <br>
-                            <img src="images/picture26.png" width="400" height="500"  /> <br>
-                            <img src="images/picture27.png" width="400" height="400"  /> <br>
-                            <p> 
-                                Note that B=0, A C. Thus, the conic section is not a circle but an ellipse. Comparing the three equations, 1 and 2 are both circles, while 3 is an ellipse. Although the values of B=0 for the three equations, only 1 and 2 have same values of A and C, while equation 3 has different values of A and C. For a circle, the values of A and C should be the same, while in ellipse should be different. Circles and ellipse are quite related in terms of their graphs, but do not be confused in determining the two by evaluating their A, B, and C values and solving in their standard form in order to bNote that B=0, A C. Thus, the conic section is not a circle but an ellipse. Comparing the three equations, 1 and 2 are both circles, while 3 is an ellipse. Although the values of B=0 for the three equations, only 1 and 2 have same values of A and C, while equation 3 has different values of A and C. For a circle, the values of A and C should be the same, while in ellipse should be different. Circles and ellipse are quite related in terms of their graphs, but do not be confused in determining the two by evaluating their A, B, and C values and solving in their standard form in order to be précised in sketching the graph. Let us show the graph of a circle to prove that A and C are of the same values.e précised in sketching the graph. Let us show the graph of a circle to prove that A and C are of the same values. 
-                            </p>
+                          <center>  <img src="images/picture72.png" width="700" height="500"  /></center><br>
+                          <center>  <img src="images/picture73.png" width="700" height="500"  /></center><br> 
+                        
                             <img src="images/picture29.png" width="600" height="500"  /> <br>
                             <br>
                         </div>
