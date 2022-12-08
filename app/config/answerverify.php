@@ -4,15 +4,6 @@
 <?php
 require_once "../../conf/config.php";
 
-// student id;
-$student_id;
-// exam id;
-$exam_id;
-// exam question id;
-$question_id;
-// records ;
-
-
 if(isset($_POST['submit'])){
         $inputanswer = $_POST['answer'];
         $anskey = $_POST['answerkey'];
