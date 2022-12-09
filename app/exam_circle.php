@@ -1,3 +1,8 @@
+
+    <!-- MATH JAX SCRIPT -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 <?php require_once "../conf/config.php"; ?>
 <div class="page-header">
     <div class="row">
@@ -5,6 +10,9 @@
             <div class="title">
                 <h3>Circle Post-test</h3>
                 <span>Analyze the question carefuly. Be inspired and Keep Learning 😁</span>
+                <!-- <p>
+                \(F_{1}\)
+                </p> -->
             </div>
             <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
@@ -314,9 +322,6 @@ if ($rowCount > 0) {
 </div>
 
 <!-- IMPORTANT SCRIPT -->
-<!-- MATH JAX SCRIPT -->
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <!-- SWEET ALERT SCRIPT -->
 <script src="vendors/sweetalert/sweetalert.min.js"></script>
 <!-- <script src="src/plugins/sweetalert2/sweetalert2.all.js"></script> -->

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2022 at 10:59 AM
+-- Generation Time: Dec 09, 2022 at 06:32 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -100,7 +100,7 @@ CREATE TABLE `exam` (
 --
 
 INSERT INTO `exam` (`exam_id`, `exam_title`, `exam_desc`, `totalPoints`, `totalQuestion`, `course_id`) VALUES
-(1, 'Circle post test', 'Evaluate the student learning in circles', 0, 0, 3);
+(1, 'Circle post test', 'Evaluate the student learning in circles', 110, 11, 3);
 
 -- --------------------------------------------------------
 
@@ -214,7 +214,15 @@ CREATE TABLE `exam_items` (
 INSERT INTO `exam_items` (`examitem_id`, `question`, `exam_ch1`, `exam_ch2`, `exam_ch3`, `exam_ch4`, `answerkey`, `hint`, `exam_id`) VALUES
 (1, ' It is the intersection of a plane and a double-napped cone.', 'locus', 'conic section', 'circle', 'radius', 'conic section', 'waiting', 1),
 (2, 'A collection of points satisfying a geometric property can also be \r\nreferred to as a ______ of points.\r\n', 'locus', 'conic section', 'circle', 'radius', 'locus', 'waiting', 1),
-(3, 'A ____________ is the set of all points (x, y) in a plane that are\r\nequidistant from a fixed point, called the center.', 'locus', 'conic section', 'circle', 'radius', 'circle', 'waiting', 1);
+(3, 'A ____________ is the set of all points (x, y) in a plane that are\r\nequidistant from a fixed point, called the center.', 'locus', 'conic section', 'circle', 'radius', 'circle', 'waiting', 1),
+(4, 'A/n ____________ is the set of all points in the plane that are equidistant from a fixed point F(called the focus) and a fixed line or (called the directrix).', 'circle', 'ellipse', 'parabola', 'hyperbola', 'parabola', 'waiting', 1),
+(5, 'A/n ___________ is the set of all points in the plane the sum of \r\nwhose distances from two fixed points \\(F_{1}\\) and \\(F_{2}\\) is a constant.', 'circle', 'ellipse', 'parabola', 'hyperbola\r\n', 'ellipse', 'waiting', 1),
+(6, 'A/n ____________ is the set of all points in the plane, the difference \r\nof whose distances from two fixed points \\(F_{1}\\) and \\(F_{2}\\) is a constant.\r\n', 'circle', 'ellipse', 'parabola ', 'hyperbola', 'hyperbola', 'waiting', 1),
+(7, '\\(6x^2+12x+6y^2-8y=100\\) is an example of a', 'Circle', 'parabola ', 'ellipse', 'hyperbola', 'Circle', 'waiting', 1),
+(8, '\\(4x^2+12x+y^2-8y=64\\) is an example of a', 'Circle', 'parabola', 'ellipse', 'hyperbola', 'ellipse', 'waiting', 1),
+(9, '\\(6y=3x^2−15\\) is an example of a', 'Circle', 'parabola', 'ellipse', 'hyperbola', 'parabola', 'waiting', 1),
+(10, '\\(2x^2+87x-25=y^2+4y\\) is an example of a', 'Circle', 'parabola', 'ellipse', 'hyperbola', 'hyperbola', 'waiting', 1),
+(11, '\\(6x^2-15x=3y^2+4y+13\\) is an example of a', 'Circle', 'parabola', 'ellipse', 'hyperbola', 'hyperbola', 'waiting', 1);
 
 -- --------------------------------------------------------
 
@@ -602,19 +610,19 @@ ALTER TABLE `exam_attempt`
 -- AUTO_INCREMENT for table `exam_correct`
 --
 ALTER TABLE `exam_correct`
-  MODIFY `examcorrect_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `examcorrect_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `exam_items`
 --
 ALTER TABLE `exam_items`
-  MODIFY `examitem_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `examitem_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `exam_mistakes`
 --
 ALTER TABLE `exam_mistakes`
-  MODIFY `mistake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=165;
+  MODIFY `mistake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=181;
 
 --
 -- AUTO_INCREMENT for table `lesson`
