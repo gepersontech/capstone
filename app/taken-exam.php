@@ -20,10 +20,10 @@
 <div class="card-box mb-30">
     <div class="pd-20">
         <h4 class="text-blue h4">AVAILABLE EXAMS</h4>
-        <button type="button" class="btn btn-primary float-right mb-10" data-toggle="modal" data-target="#addModal">
+        <!-- <button type="button" class="btn btn-primary float-right mb-10" data-toggle="modal" data-target="#addModal">
             <span class="icon-copy ti-plus"></span>
             Add Exam
-        </button>
+        </button> -->
     </div>
     <div class="pb-20">
         <table class="data-table table stripe hover nowrap">
@@ -74,14 +74,63 @@
 </div>
 <!-- Simple Datatable End -->
 
-<!-- <div class="row">
-    <div class="col-12">
-        <div class="card">
-            <input type="button" value="">
-        </div>
+<!-- Simple Datatable start -->
+<div class="card-box mb-30">
+    <div class="pd-20">
+        <h4 class="text-blue h4">AVAILABLE EXAMS</h4>
+        <!-- <button type="button" class="btn btn-primary float-right mb-10" data-toggle="modal" data-target="#addModal">
+            <span class="icon-copy ti-plus"></span>
+            Add Exam
+        </button> -->
     </div>
-</div> -->
+    <div class="pb-20">
+        <table class="data-table table stripe hover nowrap">
+            <thead>
+                <tr>
+                    <th class="table-plus datatable-nosort">Exam Title</th>
+                    <th class="table-plus datatable-nosort">Course</th>
+                    <th class="table-plus datatable-nosort">Description</th>
+                    <th class="datatable-nosort">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $result = mysqli_query($con,"SELECT exam_id, exam_title, course.course_name, exam_desc FROM `exam` LEFT JOIN course ON exam.course_id = course.course_id;");
+                $count=1;
+                $rowCount = mysqli_num_rows($result);
+                if($rowCount > 0){
+                    while($row = mysqli_fetch_assoc($result)){
+                            $id=$row['exam_id'];
+                                            ?>
+                <tr>
+                    <td><?php echo $row['exam_title']; ?></td>
+                    <td><?php echo $row['course_name']; ?></td>
+                    <td><?php echo $row['exam_desc']; ?></td>
+                    <td style="width: 400px;">
+                        <a href="index.php?page=exam-edit&& id=<?php echo $id; ?>" class=" btn btn-sm btn-primary">
+                            <span class="icon-copy ti-pencil-alt"></span> Manage
+                        </a>
 
+                        <a onclick="delete_course('<?php echo $id; ?>')" class=" btn btn-sm btn-danger text-white">
+                            <span class="icon-copy ti-trash"></span>
+                            Delete</a>
+                    </td>
+
+                </tr>
+                <?php
+                    $count++;
+                }
+                    
+                }else{
+                }
+            ?>
+
+            </tbody>
+
+        </table>
+    </div>
+</div>
+<!-- Simple Datatable End -->
 <!-- Add Modal -->
 <div class="modal fade" id="addModal">
     <div class="modal-dialog">
