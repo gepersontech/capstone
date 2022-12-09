@@ -41,7 +41,7 @@ if (isset($_POST['submit'])) {
         ++$itemIncrement;
 
         $_SESSION['headertext'] = "Good job!👏";
-        $_SESSION['bodytext']   = "You got the correct answer. The answer of that question is '" . $attemptMistake . "'";
+        $_SESSION['bodytext']   = "You got the correct answer. The answer of that question is " . $anskey . " and you've got ". $totalScore ." points";
         $_SESSION['statusIcon'] = "success";
         header("location: ../index.php?page=exam_circle&question=$itemIncrement");
         
