@@ -28,7 +28,7 @@
     }else{
         $mistakes = 0;
     }
-
+    $_SESSION['over'] = $mistakes;
     $start=1;
     $query = "SELECT * FROM exam_items WHERE examitem_id = '". $start ."'";
     $queryResult = mysqli_query($con, $query);
@@ -76,7 +76,7 @@
                     <!-- HINT BUTTON AND READ -->
                     <th class="table-plus datatable-nosort" style="vertical-align: middle;width:200px">
                         <?php
-                            if($mistakes == 3){
+                            if($mistakes >= 3){
                                 ?>
                                 <a class="btn btn-sm btn-warning" data-toggle="modal" data-target="#hintConfirm">
                                     <span class="icon-copy ti-light-bulb"></span> Hint
@@ -268,6 +268,11 @@
 </div>
 
 <!-- IMPORTANT SCRIPT -->
+
+<!-- MATH JAX SCRIPT -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!-- SWEET ALERT SCRIPT -->
 <script src="vendors/sweetalert/sweetalert.min.js"></script>
 <!-- <script src="src/plugins/sweetalert2/sweetalert2.all.js"></script> -->
 <script src="src/plugins/sweetalert2/jquery-3.6.1.min.js"></script>
