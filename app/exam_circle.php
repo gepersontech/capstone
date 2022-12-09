@@ -21,7 +21,7 @@
 </style>
 
 <?php
-
+    // GETTING THE TOTAL ATTEMPTS OR MISTAKES FROM BACK END............
     $mistakes;
     if(isset($_GET['attempt'])){
         $mistakes = $_GET['attempt'];
@@ -29,8 +29,16 @@
         $mistakes = 0;
     }
     $_SESSION['over'] = $mistakes;
-    $start=1;
-    $query = "SELECT * FROM exam_items WHERE examitem_id = '". $start ."'";
+    // GETTING THE NEXT Q ITEM .................
+    $item_num;
+    if(isset($_GET['question'])){
+        $item_num = $_GET['question'];
+    }else{
+        $item_num = 1;
+    }
+    $_SESSION['itemNum'] = $item_num;
+    //........................................
+    $query = "SELECT * FROM exam_items WHERE examitem_id = '". $item_num ."'";
     $queryResult = mysqli_query($con, $query);
     $rowCount = mysqli_num_rows($queryResult);
 
@@ -46,7 +54,7 @@
     <div class="pd-20">
         <div class="row">
             <div class="col-6">
-                <h4 class="text-blue h4">Question 1 of 5</h4>
+                <h4 class="text-blue h4">Question <?php echo $item_num; ?> of 5</h4>
             </div>
             <div class="col-6">
                 <div class="float-right "><span class="heading" title="View Rating">Rating</span>
