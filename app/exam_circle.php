@@ -285,10 +285,10 @@ if ($rowCount > 0) {
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
-                <h4 style="margin-left: 30px;" class="padding-top-30 mb-10 weight-600">
-                    Exam guide & Score criteria
+                <h4 style="margin-left: 30px;" class="padding-top-10 mb-10 weight-600">
+                👋 Exam guide & Score criteria
                 </h4>
-                <p style="margin-left: 30px;padding-bottom: 0;">
+                <p style="margin-left: 30px;margin-right: 30px;">
                 1. Student must provide correct answers to proceed to the next question and 
                 watch out for the <b>pop-up window</b> for some fun guide if having difficulty. 
                 <br>
@@ -304,8 +304,8 @@ if ($rowCount > 0) {
                 3 mistakes = 7 points <br>
                 4 mistakes = 6 points <br>
                 5 and higher mistakes = 5 points
-                <h5 style="margin-left: 30px;" class="padding-top-0 mb-10 weight-600 text-center">
-                Goodluck and have fun in Learning!
+                <h5 class="padding-top-0 mb-10 weight-600 text-center">
+                Goodluck and have fun in Learning!💯
                 </h5>
                 </p>
             </div>
