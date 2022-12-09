@@ -12,10 +12,9 @@
             </nav>
         </div>
         <div class="col-md-6">
-        <a href="" class="btn btn-light float-right" title="Guide"
-           style="padding: 4px;margin: 4px;margin-right: 10px;">
-            <i style="font-size: 26px;vertical-align: middle;" class="icon-copy dw dw-question-1"></i>
-        </a>
+            <a href="" class="btn btn-light float-right" title="Guide" data-toggle="modal" data-target="#examGuide" style="padding: 4px;margin: 4px;margin-right: 10px;">
+                <i style="font-size: 26px;vertical-align: middle;" class="icon-copy dw dw-question-1"></i>
+            </a>
         </div>
     </div>
 </div>
@@ -276,8 +275,43 @@ if ($rowCount > 0) {
     </div>
 </div>
 
-<!-- IMPORTANT SCRIPT -->
+<!-- GUIDE MODAL -->
+<div class="modal fade" id="examGuide" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                <h4 style="margin-left: 30px;" class="padding-top-30 mb-10 weight-600">
+                    Exam guide & Score criteria
+                </h4>
+                <p style="margin-left: 30px;padding-bottom: 0;">
+                1. Student must provide correct answers to proceed to the next question and 
+                watch out for the <b>pop-up window</b> for some fun guide if having difficulty. 
+                <br>
+                2. Student cannot go back to the previous question anymore.
+                <br><br>
+                <b>Scoring Criteria:</b>
+                <br>
+                This is true to all question of this exam.
+                <br>
+                0 mistakes = 10 points <br>
+                1 mistakes = 9 points <br>
+                2 mistakes = 8 points <br>
+                3 mistakes = 7 points <br>
+                4 mistakes = 6 points <br>
+                5 and higher mistakes = 5 points
+                <h5 style="margin-left: 30px;" class="padding-top-0 mb-10 weight-600 text-center">
+                Goodluck and have fun in Learning!
+                </h5>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- IMPORTANT SCRIPT -->
 <!-- MATH JAX SCRIPT -->
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
