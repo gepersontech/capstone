@@ -37,13 +37,19 @@
             </thead>
             <tbody>
                 <?php
-                $result = mysqli_query($con, "SELECT exam_id, exam_title, course.course_name, exam_desc FROM `exam` LEFT JOIN course ON exam.course_id = course.course_id;");
+                $result = mysqli_query($con, "SELECT exam_id, totalQuestion, totalPoints, exam_title, course.course_name, exam_desc FROM `exam` LEFT JOIN course ON exam.course_id = course.course_id;");
                 $count = 1;
                 $rowCount = mysqli_num_rows($result);
                 if ($rowCount > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         $id = $row['exam_id'];
+                        $totalitem = $row['totalQuestion'];
+                        $totalpoints = $row['totalPoints'];
+
+                        // SESSION VARIABLE FOR GLOBAL USE...........
                         $_SESSION['exam_id'] = $id;
+                        $_SESSION['totalItems'] = $totalitem;
+                        $_SESSION['examtotalPoints'] = $totalpoints;
                 ?>
                 <tr>
                     <td><?php echo $row['exam_title']; ?></td>

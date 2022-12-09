@@ -136,7 +136,7 @@
 
 <div class="card-box mb-30">
     <div class="pd-20">
-        <h4 class="text-blue h4">VIDEO TOOL 
+        <h4 class="text-blue h4">VIDEO MATERIAL
         <!-- <button type="button" class="btn btn-primary float-right mb-10" data-toggle="modal" data-target="#addLesson">
             <span class="icon-copy ti-plus"></span>
             Add Lesson

@@ -47,6 +47,8 @@ $query = "SELECT * FROM exam_items WHERE examitem_id = '" . $item_num . "'";
 $queryResult = mysqli_query($con, $query);
 $rowCount = mysqli_num_rows($queryResult);
 
+$questionEnd = $_SESSION['totalItems'];
+
 if ($rowCount > 0) {
     $record = mysqli_fetch_assoc($queryResult);
     while ($record) {
@@ -59,7 +61,7 @@ if ($rowCount > 0) {
             <div class="pd-20">
                 <div class="row">
                     <div class="col-6">
-                        <h4 class="text-blue h4">Question <?php echo $item_num; ?> of 5</h4>
+                        <h4 class="text-blue h4">Question <?php echo $item_num; ?> of <?php echo $questionEnd; ?></h4>
                     </div>
                     <div class="col-6">
                         <div class="float-right "><span class="heading" title="View Rating">Rating</span>
