@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
     // THE ANSWER IS CORRECT....................
     if ($inputanswer == $anskey) {
         $totalMistakes = $_SESSION['over'];
-        
+        $numberofItem = $_SESSION['totalItems'];
         //......SCORING CRITERIA............
         if($totalMistakes == 0){
             $score = 10;
@@ -38,15 +38,20 @@ if (isset($_POST['submit'])) {
         $result = mysqli_query($con,$scorequery);
 
         $itemIncrement = $_SESSION['itemNum'];
-        ++$itemIncrement;
+        
+        if($itemIncrement == $numberofItem){
+            $_SESSION['headertextlast'] = "Good job! Correct👏";
+            $_SESSION['bodytextlast']   = "You've reach the last question. The answer of that question is " . $anskey . " and you've got ". $totalScore ." points";
+            $_SESSION['statusIconlast'] = "success";
+            header("location: ../index.php?page=exam_circle&question=$numberofItem");
+        }else{
+            ++$itemIncrement;
+            $_SESSION['headertext'] = "Good job!👏";
+            $_SESSION['bodytext']   = "You got the correct answer. The answer of that question is " . $anskey . " and you've got ". $totalScore ." points";
+            $_SESSION['statusIcon'] = "success";
+            header("location: ../index.php?page=exam_circle&question=$itemIncrement");
+        }
 
-        $_SESSION['headertext'] = "Good job!👏";
-        $_SESSION['bodytext']   = "You got the correct answer. The answer of that question is " . $anskey . " and you've got ". $totalScore ." points";
-        $_SESSION['statusIcon'] = "success";
-        header("location: ../index.php?page=exam_circle&question=$itemIncrement");
-        
-        
-    
     // THE ANSWER IS WRONG..............
     } else {
         $sqlquery = "INSERT INTO `exam_mistakes`(`student_id`, `examitem_id`, `exam_id`, `mistakes`) 

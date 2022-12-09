@@ -369,3 +369,27 @@ unset($_SESSION['headertext']);
         });
     }
 </script>
+
+<!-- SWEET ALERT FOR LAST QUESTION -->
+<?php
+if (isset($_SESSION['headertextlast'])) {
+    if (isset($_SESSION['bodytextlast'])) {
+        if (isset($_SESSION['statusIconlast'])) {
+?>
+
+            <script>
+                swal({
+                    title: "<?php echo $_SESSION['headertextlast'] ?>",
+                    text: "<?php echo $_SESSION['bodytextlast'] ?>",
+                    icon: '<?php echo $_SESSION['statusIconlast'] ?>',
+                    button: 'See Result'
+                }).then(function(){
+                    window.location = "excircle_result";
+                });
+            </script>
+<?php
+        }
+    }
+}
+unset($_SESSION['headertextlast']);
+?>
