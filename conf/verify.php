@@ -64,6 +64,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                     $_SESSION["lastname"] = $lastname; 
                                     $_SESSION["role_id"] = $role_id; 
                                     $_SESSION["email"] = $email; 
+
+                                    $query=mysqli_query($con,"INSERT INTO `logs`(`user_id`, `log_name`) VALUES ('".$_SESSION["id"]."','login'" );
+
+                                    
                                     header("location: ../app/");
                                     // if( $_SESSION["role_id"] ==  "3"){
                                     //     header("location: ../app/");
