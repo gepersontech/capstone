@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="title">
-                <h3>Circle Post-test</h3>
+                <h3>Circle Quiz</h3>
                 <span>Analyze the question carefuly. Be inspired and Keep Learning 😁</span>
                 <!-- <p>
                 \(F_{1}\)
@@ -157,18 +157,13 @@ if ($rowCount > 0) {
                                     <a style="color: white;" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#readDocument">
                                         <span class="icon-copy ti-file"></span> Read
                                     </a>
-                                <?php
-                                } else {
-                                ?>
-                                    <a onclick="hintValidation()" class="btn btn-sm btn-warning">
+                                <?php }?>
+                                    <!-- <a onclick="hintValidation()" class="btn btn-sm btn-warning">
                                         <span class="icon-copy ti-light-bulb"></span> Hint
                                     </a>
                                     <a onclick="docValidation()" style="color: white;" class="btn btn-sm btn-primary">
                                         <span class="icon-copy ti-file"></span> Read
-                                    </a>
-                                <?php
-                                }
-                                ?>
+                                    </a> -->
                             </th>
                         </tr>
                     </thead>

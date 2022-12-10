@@ -71,7 +71,7 @@ if (isset($_POST['submit'])) {
                 $attemptMistake = $record['totalmistakes'];
                 if ($attemptMistake == 1) {
                     $_SESSION['headertext'] = "Wrong Answer!😔";
-                    $_SESSION['bodytext']   = "Analyse the question more";
+                    $_SESSION['bodytext']   = "You got the wrong answer.";
                     $_SESSION['statusIcon'] = "error";
                     header("location: ../index.php?page=exam_circle&attempt=1&question=$currentItem");
                 } else if ($attemptMistake == 2) {
