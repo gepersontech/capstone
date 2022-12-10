@@ -1,8 +1,5 @@
 <?php
     require_once "config.php";
-    session_start();
-
-
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = $login_err = $pending ="";
@@ -65,7 +62,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                     $_SESSION["role_id"] = $role_id; 
                                     $_SESSION["email"] = $email; 
 
-                                    $query=mysqli_query($con,"INSERT INTO `logs`(`user_id`, `log_name`) VALUES ('".$_SESSION["id"]."','login'" );
+                                    // $query=mysqli_query($con,"INSERT INTO `logs`(`user_id`, `log_name`) VALUES ('".$_SESSION["id"]."','login'" );
 
                                     
                                     header("location: ../app/");

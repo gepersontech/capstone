@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2022 at 06:32 PM
+-- Generation Time: Dec 10, 2022 at 02:00 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -212,17 +212,17 @@ CREATE TABLE `exam_items` (
 --
 
 INSERT INTO `exam_items` (`examitem_id`, `question`, `exam_ch1`, `exam_ch2`, `exam_ch3`, `exam_ch4`, `answerkey`, `hint`, `exam_id`) VALUES
-(1, ' It is the intersection of a plane and a double-napped cone.', 'locus', 'conic section', 'circle', 'radius', 'conic section', 'waiting', 1),
-(2, 'A collection of points satisfying a geometric property can also be \r\nreferred to as a ______ of points.\r\n', 'locus', 'conic section', 'circle', 'radius', 'locus', 'waiting', 1),
-(3, 'A ____________ is the set of all points (x, y) in a plane that are\r\nequidistant from a fixed point, called the center.', 'locus', 'conic section', 'circle', 'radius', 'circle', 'waiting', 1),
-(4, 'A/n ____________ is the set of all points in the plane that are equidistant from a fixed point F(called the focus) and a fixed line or (called the directrix).', 'circle', 'ellipse', 'parabola', 'hyperbola', 'parabola', 'waiting', 1),
-(5, 'A/n ___________ is the set of all points in the plane the sum of \r\nwhose distances from two fixed points \\(F_{1}\\) and \\(F_{2}\\) is a constant.', 'circle', 'ellipse', 'parabola', 'hyperbola\r\n', 'ellipse', 'waiting', 1),
-(6, 'A/n ____________ is the set of all points in the plane, the difference \r\nof whose distances from two fixed points \\(F_{1}\\) and \\(F_{2}\\) is a constant.\r\n', 'circle', 'ellipse', 'parabola ', 'hyperbola', 'hyperbola', 'waiting', 1),
-(7, '\\(6x^2+12x+6y^2-8y=100\\) is an example of a', 'Circle', 'parabola ', 'ellipse', 'hyperbola', 'Circle', 'waiting', 1),
-(8, '\\(4x^2+12x+y^2-8y=64\\) is an example of a', 'Circle', 'parabola', 'ellipse', 'hyperbola', 'ellipse', 'waiting', 1),
-(9, '\\(6y=3x^2−15\\) is an example of a', 'Circle', 'parabola', 'ellipse', 'hyperbola', 'parabola', 'waiting', 1),
-(10, '\\(2x^2+87x-25=y^2+4y\\) is an example of a', 'Circle', 'parabola', 'ellipse', 'hyperbola', 'hyperbola', 'waiting', 1),
-(11, '\\(6x^2-15x=3y^2+4y+13\\) is an example of a', 'Circle', 'parabola', 'ellipse', 'hyperbola', 'hyperbola', 'waiting', 1);
+(1, ' It is the intersection of a plane and a double-napped cone.', 'locus', 'conic section', 'circle', 'radius', 'conic section', 'Two connecting cones', 1),
+(2, 'A collection of points satisfying a geometric property can also be \r\nreferred to as a ______ of points.\r\n', 'locus', 'conic section', 'circle', 'radius', 'locus', 'Collection of points', 1),
+(3, 'A ____________ is the set of all points (x, y) in a plane that are\r\nequidistant from a fixed point, called the center.', 'locus', 'conic section', 'circle', 'radius', 'circle', 'A cone with fixed point and center', 1),
+(4, 'A/n ____________ is the set of all points in the plane that are equidistant from a fixed point F(called the focus) and a fixed line or (called the directrix).', 'circle', 'ellipse', 'parabola', 'hyperbola', 'parabola', 'A cone that contains vertex', 1),
+(5, 'A/n ___________ is the set of all points in the plane the sum of \r\nwhose distances from two fixed points \\(F_{1}\\) and \\(F_{2}\\) is a constant.', 'circle', 'ellipse', 'parabola', 'hyperbola\r\n', 'ellipse', 'It is an elongated circle', 1),
+(6, 'A/n ____________ is the set of all points in the plane, the difference \r\nof whose distances from two fixed points \\(F_{1}\\) and \\(F_{2}\\) is a constant.\r\n', 'circle', 'ellipse', 'parabola ', 'hyperbola', 'hyperbola', 'A cone with two opposite parabolas', 1),
+(7, '\\(6x^2+12x+6y^2-8y=100\\) is an example of a', 'Circle', 'parabola ', 'ellipse', 'hyperbola', 'Circle', 'x and y have squares and its coefficients are equal', 1),
+(8, '\\(4x^2+12x+y^2-8y=64\\) is an example of a', 'Circle', 'parabola', 'ellipse', 'hyperbola', 'ellipse', 'x and y have squares but its coefficients are equal and the sign between', 1),
+(9, '\\(6y=3x^2−15\\) is an example of a', 'Circle', 'parabola', 'ellipse', 'hyperbola', 'parabola', 'Only one variable (either x or y) has a square', 1),
+(10, '\\(2x^2+87x-25=y^2+4y\\) is an example of a', 'Circle', 'parabola', 'ellipse', 'hyperbola', 'hyperbola', 'x and y have squares, coefficients are different, the sign between them is subtraction', 1),
+(11, '\\(6x^2-15x=3y^2+4y+13\\) is an example of a', 'Circle', 'parabola', 'ellipse', 'hyperbola', 'hyperbola', 'x and y have squares, coefficients are different, the sign between them is subtraction.', 1);
 
 -- --------------------------------------------------------
 
@@ -427,7 +427,8 @@ INSERT INTO `users` (`user_id`, `profile_pic`, `firstname`, `lastname`, `age`, `
 (1, '', 'Admin', 'Admin', '25', 'Male', 'Digos City', 'admin@gmail.com', 'admin@gmail.com', '$2y$10$627KTYhahPQq9al9sbgQDuJaeRiROt.rDoWPV1nqwYjsxZNHNlr4W', 4, '2022-11-22 09:18:43'),
 (2, '', 'User', 'User', '25', 'Male', 'Digos City', 'user@gmail.com', 'user@gmail.com', '$2y$10$aoF3GO5Wyf6qLSG8MhbDaO4hjb8VID9A9NEnfqr6gvxaqJHA3jrwO', 3, '2022-11-22 09:20:09'),
 (3, '', 'Superadmin', 'Superadmin', '25', 'Male', 'Digos City', 'superadmin@gmail.com', 'superadmin@gmail.com', '$2y$10$9cKb.z/gAsSZwlK10oSX1OPQsNE1HtkJYouQouw0CaJ4pc6wL6WI.', 1, '2022-11-22 09:21:26'),
-(74, '', 'James', 'Gwapo', '', 'male', 'Digos City, Mainland China', 'james@gmail.com', 'james@gmail.com', '$2y$10$2oE6J6xNEPmHevsieecineKNW0NAzRr/P5RWb2X6CG2Bq354BmERW', 3, '2022-12-08 22:44:07');
+(74, '', 'James', 'Gwapo', '', 'male', 'Digos City, Mainland China', 'james@gmail.com', 'james@gmail.com', '$2y$10$2oE6J6xNEPmHevsieecineKNW0NAzRr/P5RWb2X6CG2Bq354BmERW', 3, '2022-12-08 22:44:07'),
+(75, '', 'Geperson', 'Mamalias', '', 'male', 'Digos City', 'geperson.ph@gmail.com', 'geperson.ph@gmail.com', '$2y$10$dfYHvQ.KZbIxIWWsOki5AuuGaVgoUbFWJ985Z0kL2ZxCRxWULT4u2', 3, '2022-12-10 14:34:08');
 
 --
 -- Indexes for dumped tables
@@ -610,7 +611,7 @@ ALTER TABLE `exam_attempt`
 -- AUTO_INCREMENT for table `exam_correct`
 --
 ALTER TABLE `exam_correct`
-  MODIFY `examcorrect_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `examcorrect_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `exam_items`
@@ -622,7 +623,7 @@ ALTER TABLE `exam_items`
 -- AUTO_INCREMENT for table `exam_mistakes`
 --
 ALTER TABLE `exam_mistakes`
-  MODIFY `mistake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=181;
+  MODIFY `mistake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=246;
 
 --
 -- AUTO_INCREMENT for table `lesson`
@@ -652,7 +653,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `user_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- Constraints for dumped tables
