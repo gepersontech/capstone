@@ -37,16 +37,16 @@
             <tbody>
 
                 <?php
-                $result = mysqli_query($con,"SELECT * FROM `module`");
+                $result = mysqli_query($con,"SELECT * FROM `exam`");
                 $count=1;
                 $rowCount = mysqli_num_rows($result);
                 if($rowCount > 0){
                     while($row = mysqli_fetch_assoc($result)){
-                            $id=$row['module_id'];
+                            $id=$row['exam_id'];
                                             ?>
                 <tr>
-                    <td style="width: 300px;"><?php echo $row['module_name']; ?></td>
-                    <td style="width: 300px;"><?php echo $row['module_desc']; ?></td>
+                    <td style="width: 300px;"><?php echo $row['exam_title']; ?></td>
+                    <td style="width: 300px;"><?php echo $row['exam_desc']; ?></td>
                     <td style="width: 300px;">
                         <a href="#" class=" btn btn-sm btn-primary" data-toggle="modal" data-target="#result-modal">
                             <span class="icon-copy ti-pencil-alt"></span> View Details

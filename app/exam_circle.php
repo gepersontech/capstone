@@ -72,15 +72,60 @@ if ($rowCount > 0) {
                 <h4 class="text-blue h4">Question <?php echo $item_num; ?> of <?php echo $questionEnd; ?></h4>
             </div>
             <div class="col-6">
-                <div class="float-right "><span class="heading" title="View Rating">Rating</span>
+                <?php
+                    $sql = "SELECT * from exam_mistakes WHERE exam_id = 1 AND examitem_id = '".$item_num."'" ;
+                    $mis = 0;
+                    if ($result = mysqli_query($con, $sql)) {
+                        // Return the number of rows in result set
+                        while($row = mysqli_fetch_assoc($result)){
+                            $mis= $mis + $row['mistakes'];
 
-                    <i class="icon-copy fa fa-star text-warning" aria-hidden="true"></i>
-                    <i class="icon-copy fa fa-star text-warning" aria-hidden="true"></i>
-                    <i class="icon-copy fa fa-star text-warning" aria-hidden="true"></i>
-                    <i class="icon-copy fa fa-star-half-empty text-warning" aria-hidden="true"></i>
+                        }
+                        $mis;
+                    }
+                    
+                    $sql = "SELECT COUNT(DISTINCT `student_id`) AS 'students' FROM `exam_mistakes` WHERE exam_id = 1 AND examitem_id = '".$item_num."'" ;
+                    $students = 0;
+                    if ($result = mysqli_query($con, $sql)) {
+                        // Return the number of rows in result set
+                        while($row = mysqli_fetch_assoc($result)){
+                            $students = $row['students'];
+
+                        }
+                        if($students != 0){
+                            $rate = ($mis / $students) * 1;
+                        }
+                        
+                    }
+                     
+               ?>
+
+                <div class="float-right "><span class="heading" title="View Rating">Rating</span>
+                    <?php
+                        $start =1;
+                    while($start <= 5 ){
+                    if($rate < $start){
+                        
+                        ?>
                     <i class="icon-copy fa fa-star-o" aria-hidden="true"></i>
+                    <?php
+
+                        }else{
+                            ?>
+                    <i class="icon-copy fa fa-star text-warning" aria-hidden="true"></i>
+                    <?php
+                        }
+                        $start++;
+                        }
+
+
+                        
+                    ?>
+
                     <br>
-                    <span class="text-muted">4.1 average based on 254 difficulties.</span>
+                    <span class="text-muted"> <?php if($rate != 0){
+                        echo $rate; }else{ echo "0"; } ?> average based on
+                        <?php if($mis != 0) {  echo $mis; }else{    echo "0";  } ?> difficulties.</span>
                 </div>
             </div>
         </div>
