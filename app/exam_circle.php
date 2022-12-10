@@ -94,6 +94,8 @@ if ($rowCount > 0) {
                         }
                         if($students != 0){
                             $rate = ($mis / $students) * 1;
+                        }else{
+                            $rate = 0;
                         }
                         
                     }
@@ -117,9 +119,6 @@ if ($rowCount > 0) {
                         }
                         $start++;
                         }
-
-
-                        
                     ?>
 
                     <br>
