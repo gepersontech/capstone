@@ -26,7 +26,12 @@
 				   
                     
                 }else{
-                    $page = 'dashboard.php';
+                    if($_SESSION["role_id"] == 3){
+                        $page = 'home.php';
+                    }else{
+                        $page = 'dashboard.php';
+                    }
+                   
                 }
 
                 if (file_exists($page)) {
