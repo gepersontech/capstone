@@ -31,7 +31,28 @@
                 <div class="dropdown-menu dropdown-menu-right">
                     <div class="notification-list mx-h-350 customscroll">
                         <ul>
-                            <li>
+
+                            <?php
+                            $result = mysqli_query($con,"SELECT * FROM logs WHERE user_id = '".$_SESSION['id']."'");
+                            if ($result) {
+                                // Return the number of rows in result set
+                                $rowcount = mysqli_num_rows( $result );
+                                if($rowcount != 0){
+                                    while($row = mysqli_fetch_assoc($result)){
+                                    if(isset($row['log_name'])){
+                                        echo '<li>
+                                        <a href="#">
+                                            <h3>'.$row['log_name'].'</h3>
+                                            <p>
+                                                '.$row['datetime'].'
+                                            </p>
+                                        </a>
+                                        </li>';
+                                    }
+
+                                }
+                                }else{
+                                    echo ' <li>
                                 <a href="#">
                                     <!-- <img src="vendors/images/img.jpg" alt="" /> -->
                                     <h3>Activity</h3>
@@ -39,57 +60,15 @@
                                         No recent activity
                                     </p>
                                 </a>
-                            </li>
-                            <!-- <li>
-                                <a href="#">
-                                    <img src="vendors/images/photo1.jpg" alt="" />
-                                    <h3>Lea R. Frith</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit, sed...
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="vendors/images/photo2.jpg" alt="" />
-                                    <h3>Erik L. Richards</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit, sed...
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="vendors/images/photo3.jpg" alt="" />
-                                    <h3>John Doe</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit, sed...
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="vendors/images/photo4.jpg" alt="" />
-                                    <h3>Renee I. Hansen</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit, sed...
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="vendors/images/img.jpg" alt="" />
-                                    <h3>Vicki M. Coleman</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        elit, sed...
-                                    </p>
-                                </a>
-                            </li> -->
+                            </li>';
+                                }
+
+
+                                
+                            }
+                        ?>
+
+
                         </ul>
                     </div>
                 </div>
@@ -110,7 +89,7 @@
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
                     <!-- <a class="dropdown-item" href="#"><i class="dw dw-user1"></i> Profile</a> -->
                     <!-- <a class="dropdown-item" href="#"><i class="dw dw-settings2"></i> Setting</a> -->
-                    <a class="dropdown-item" href="dashboard"><i class="dw dw-help"></i>My Dashboard</a>
+                    <a class="dropdown-item" href="home"><i class="dw dw-help"></i>My Dashboard</a>
                     <a class="dropdown-item" href="student-result"><i class="dw dw-help"></i>My Results</a>
                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"><i
                             class="dw dw-logout"></i> Log Out</a>
