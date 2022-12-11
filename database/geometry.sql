@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2022 at 02:00 PM
+-- Generation Time: Dec 11, 2022 at 04:28 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -77,8 +77,7 @@ CREATE TABLE `course` (
 --
 
 INSERT INTO `course` (`course_id`, `course_name`, `course_created`) VALUES
-(3, 'GEOMETRY', '0000-00-00 00:00:00'),
-(5, 'BSCS', '0000-00-00 00:00:00');
+(3, 'GEOMETRY', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -297,11 +296,21 @@ CREATE TABLE `lessons` (
 --
 
 CREATE TABLE `logs` (
-  `id` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `datetime` timestamp NOT NULL DEFAULT current_timestamp(),
-  `type` varchar(100) NOT NULL
+  `log_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `log_name` varchar(100) NOT NULL,
+  `datetime` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `logs`
+--
+
+INSERT INTO `logs` (`log_id`, `user_id`, `log_name`, `datetime`) VALUES
+(1, 2, 'login', '2022-12-11 03:21:41'),
+(2, 2, 'logout', '2022-12-11 03:25:23'),
+(3, 2, 'login', '2022-12-11 03:28:22'),
+(4, 2, 'logout', '2022-12-11 03:28:26');
 
 -- --------------------------------------------------------
 
@@ -526,7 +535,7 @@ ALTER TABLE `lessons`
 -- Indexes for table `logs`
 --
 ALTER TABLE `logs`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`log_id`);
 
 --
 -- Indexes for table `module`
@@ -635,7 +644,7 @@ ALTER TABLE `lesson`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `module`
