@@ -2,7 +2,6 @@
     include('../../../conf/config.php');
     
     if($_SERVER["REQUEST_METHOD"] == "POST"){
-              
         
         //$role = $_POST['options'];
         $role = 3;
@@ -10,8 +9,6 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
         $confirmpassword = $_POST['confirmpassword'];
-        
-
         $firstname = ucwords(trim($_POST['firstname']));
         $lastname = ucwords(trim($_POST['lastname']));
         $gender = $_POST['gender'];
