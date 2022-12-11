@@ -46,10 +46,17 @@
                 <div class="col-md-6 col-lg-5">
                     <div class="register-box bg-white box-shadow border-radius-10"
                         style=" height: 500px; overflow: auto;">
+                        <div class="register-title mt-4">
+                            <h2 class="text-center text-primary" style="font-family: 'Poppins', sans-serif;">Start here!
+                                👋
+                            </h2>
+                            <p class="text-center m-2 " style="font-family: 'Poppins', sans-serif;">Fill up the form
+                                carefully!</p>
+                        </div>
                         <div class="container">
                             <form class="tab-wizard2 wizard-circle wizard" action="app/action/admin/add-student.php"
                                 method="POST"> <br>
-                                <h5 style="font-family: 'Poppins', sans-serif;">Basic Account Credentials</h5> <br>
+                                <!-- <h5 style="font-family: 'Poppins', sans-serif;">Basic Account Credentials</h5> <br> -->
 
 
                                 <?php
