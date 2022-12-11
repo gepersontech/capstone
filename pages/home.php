@@ -4,11 +4,12 @@
             <div class="row justify-content-between">
                 <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
                     <div data-aos="zoom-out">
-                        <h1>Make Learning <span>Easy</span></h1>
-                        <h2>Highly Adaptive, Interactive, and Learner-Paced Learning Environments</h2>
+                        <h1 style="font-family: 'Poppins', sans-serif; ">Make Learning <span>Easy</span></h1>
+                        <h2 style="font-family: 'Poppins', sans-serif; ">Highly Adaptive, Interactive, and Learner-Paced
+                            Learning Environments</h2>
                         <div class="text-center text-lg-start">
                             <a href="register"><button class="btn btn-success scrollto" title="Create account"
-                                    style="border-radius: 50px; min-width: 80px; height: 40px; background-color: #1acc8d;">Get
+                                    style="border-radius: 50px; min-width: 80px; height: 40px; font-family: 'Poppins', sans-serif;  background-color: #1acc8d;color: blue; background-color: white;">Get
                                     Started</button></a>
                             <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
                         </div>
