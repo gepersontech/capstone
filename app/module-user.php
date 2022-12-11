@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-6 col-sm-12">
             <div class="title">
-                <h4>Available Modules</h4>
+                <h4>Current Modules</h4>
             </div>
             <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
@@ -19,7 +19,7 @@
 <!-- Simple Datatable start -->
 <div class="card-box mb-30">
     <div class="pd-20">
-        <h4 class="text-blue h4">MODULE LIST</h4>
+        <h4 class="text-blue h4">CURRENT MODULES</h4>
         <!-- <button type="button" class="btn btn-primary float-right mb-10" data-toggle="modal" data-target="#addModal">
             <span class="icon-copy ti-plus"></span>
             Add Module
@@ -73,7 +73,7 @@
 <!-- Simple Datatable start -->
 <div class="card-box mb-30">
     <div class="pd-20">
-        <h4 class="text-blue h4">LESSON</h4>
+        <h4 class="text-blue h4">CURRENT LESSONS</h4>
         <!-- <button type="button" class="btn btn-primary float-right mb-10" data-toggle="modal" data-target="#addLesson">
             <span class="icon-copy ti-plus"></span>
             Add Lesson
@@ -102,8 +102,8 @@
                     <td style="width: 300px;"><?php echo $row['lesson_name']; ?></td>
                     <td style="width: 300px;"><?php echo $row['lesson_desc']; ?></td>
                     <td style="width: 300px;">
-                        <a href="lesson_<?php echo $count; ?>" class=" btn btn-sm btn-primary">
-                            <span class="icon-copy ti-pencil-alt"></span> View
+                        <a href="lesson_<?php echo $count; ?>" class=" btn btn-md btn-primary">
+                            <span class="icon-copy ti-eye"></span> View
                         </a>
 
                     </td>

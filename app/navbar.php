@@ -108,9 +108,10 @@
                     </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                    <a class="dropdown-item" href="#"><i class="dw dw-user1"></i> Profile</a>
-                    <a class="dropdown-item" href="#"><i class="dw dw-settings2"></i> Setting</a>
-                    <a class="dropdown-item" href="#"><i class="dw dw-help"></i> Help</a>
+                    <!-- <a class="dropdown-item" href="#"><i class="dw dw-user1"></i> Profile</a> -->
+                    <!-- <a class="dropdown-item" href="#"><i class="dw dw-settings2"></i> Setting</a> -->
+                    <a class="dropdown-item" href="dashboard"><i class="dw dw-help"></i>My Dashboard</a>
+                    <a class="dropdown-item" href="student-result"><i class="dw dw-help"></i>My Results</a>
                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"><i
                             class="dw dw-logout"></i> Log Out</a>
 
