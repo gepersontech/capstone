@@ -82,7 +82,7 @@
                     </span>
                     <span class="user-name">
                         <?php 
-                    echo $_SESSION['firstname'];
+                    echo $_SESSION['firstname']." ".$_SESSION['lastname'];
              ?>
                     </span>
                 </a>
