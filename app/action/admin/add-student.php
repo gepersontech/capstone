@@ -57,7 +57,7 @@
             $query=mysqli_query($con,"INSERT INTO `users`(`firstname`, `lastname`, `gender`,`address`,`email_add`, `username`, `password`, `role_id`, `added_at`) 
                                   VALUES ('".$firstname."','".$lastname."','".$gender."','".$address."','".$email."','".$username."','".$password."','".$role."','".$date."')" );
         
-        $query=mysqli_query($con,"INSERT INTO `logs`(`user_id`, `log_name`) VALUES ('".$_SESSION["id"]."','add-user'" );
+        $sql=mysqli_query($con,"INSERT INTO `logs`(`user_id`, `log_name`) VALUES ('".$_SESSION["id"]."','add-user')" );
 
         header("location: ../../../login");
     }
