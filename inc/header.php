@@ -60,8 +60,8 @@ require_once "functions/dbconfig.php";
                     <li><a class="nav-link scrollto" href="/capstone/#contact" title="Contact">Contact</a></li>
                     <a href="login"><button class="btn btn-primary scrollto"
                             style="border-radius: 50px; min-width: 80px; height: 40px; color: blue; background-color: white;"
-                            title="Create your Account">
-                            Join us</button></a>
+                            title="Login your account">
+                            Login</button></a>
                 </ul>
 
                 <i class="bi bi-list mobile-nav-toggle"></i>

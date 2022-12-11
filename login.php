@@ -40,7 +40,7 @@
     <div class="login-header box-shadow">
         <div class="container-fluid align-items-center">
             <div class="brand-logo">
-                <a href="index.php">
+                <a href="index">
                     <img src="app/vendors/images/gits-logo.svg" alt="" class="light-logo" />
                 </a>
             </div>
