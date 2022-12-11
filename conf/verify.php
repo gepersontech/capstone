@@ -1,5 +1,5 @@
 <?php
-    require_once "config.php";
+require_once "config.php";
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = $login_err = $pending ="";
@@ -61,26 +61,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                     $_SESSION["role_id"] = $role_id; 
                                     $_SESSION["email"] = $email; 
 
-                                    // $query=mysqli_query($con,"INSERT INTO `logs`(`user_id`, `log_name`) VALUES ('".$_SESSION["id"]."','login'" );
+                                    $query=mysqli_query($con,"INSERT INTO `logs`(`user_id`, `log_name`) VALUES ('".$_SESSION["id"]."','login')" );
 
                                     
                                     header("location: ../app/");
-                                    // if( $_SESSION["role_id"] ==  "3"){
-                                    //     header("location: ../app/");
-                                    // }else if($_SESSION["role_id"] == "3"){
-                                    //     header("location: ../login.php");
-                                    // }
                             } else{
                                 header("location: ../login.php?error=Invalid username or not password.");
                                 // Password is not valid, display a generic error message
-                                //$login_err = "Invalid username or not password.";
-                                // $_SESSION['message']='Either email/password is incorrect';
                             }
                         }
                     } else{
                         header("location: ../login.php?error=Username not exist.");
                         // Username doesn't exist, display a generic error message
-                        //$login_err = "Invalid username or password.";
                     }
                 } else{
                     header("location: ../login.php?error=Connection Error.");
