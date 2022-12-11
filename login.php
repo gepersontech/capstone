@@ -67,6 +67,7 @@
                                 </button>
                                 </div>';
                             }
+                            
 
                                     ?>
                         <form action="conf/auth_login.php" method="post" autocomplete="off">
@@ -91,20 +92,46 @@
                                 </div>
                             </div>
                             <div class="input-group custom">
-                                <input type="text" name="username" class="form-control form-control-lg"
-                                    placeholder="Enter username" />
-                                <div class="input-group-append custom">
+                                <div class="input-group-prepend custom">
                                     <span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
                                 </div>
+                                <input type="text" name="username" class="form-control form-control-lg 
+                                <?php
+                                    if(isset($_GET['error']) && $_GET['error'] ===  "Username not Exist."){
+                                        echo 'form-control-danger';
+                                    }elseif (isset($_GET['error']) && $_GET['error'] ===  "Username is required") {
+                                         echo 'form-control-danger';
+                                    }elseif (isset($_GET['error']) && $_GET['error'] ===  "Username and Password is required") {
+                                         echo 'form-control-danger';
+                                    }elseif (isset($_GET['error']) && $_GET['error'] ===  "Incorrect username") {
+                                         echo 'form-control-danger';
+                                    }
+                                ?>
+                                
+                                " placeholder="Enter username" />
+
                             </div>
                             <div class="input-group custom">
-                                <input type="password" name="password" class="form-control form-control-lg"
-                                    placeholder="Enter password" />
-                                <div class="input-group-append custom">
+                                <div class="input-group-prepend custom">
                                     <span class="input-group-text"><i class="dw dw-padlock1"></i></span>
                                 </div>
+                                <input type="password" name="password" class="form-control form-control-lg
+                                <?php
+                                    if(isset($_GET['error']) && $_GET['error'] ===  "Password not matched"){
+                                        echo 'form-control-danger';
+                                    }elseif (isset($_GET['error']) && $_GET['error'] ===  "Password is required") {
+                                         echo 'form-control-danger';
+                                    }elseif (isset($_GET['error']) && $_GET['error'] ===  "Username and Password is required") {
+                                         echo 'form-control-danger';
+                                    }elseif (isset($_GET['error']) && $_GET['error'] ===  "Incorect password") {
+                                         echo 'form-control-danger';
+                                    }
+                                ?>
+                                
+                                " placeholder="Enter password" />
+
                             </div>
-                            <div class="row pb-30">
+                            <!-- <div class="row pb-30">
                                 <div class="col-6">
                                     <div class="custom-control custom-checkbox">
                                         <input type="checkbox" class="custom-control-input" id="customCheck1" />
@@ -116,7 +143,7 @@
                                         <a href="forgot-password.html">Forgot Password</a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="input-group mb-0">

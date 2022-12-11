@@ -13,7 +13,10 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 	$uname = validate($_POST['username']);
 	$pass = validate($_POST['password']);
-
+    if(empty($uname) && empty($pass)){
+        header("location: ../login.php?error=Username and Password is required");
+	    exit();
+    }
 	if (empty($uname)) {
         header("location: ../login.php?error=Username is required");
 	    exit();
@@ -27,7 +30,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 		if (mysqli_num_rows($result) === 1) {
 			$row = mysqli_fetch_assoc($result);
-            if ($row['username'] === $uname && password_verify($pass, $row['password']) ) {
+            if($row['username'] === $uname){
+                if (password_verify($pass, $row['password']) ) {
             	//$_SESSION['user_name'] = $row['user_name'];
             	$_SESSION["loggedin"] = true;
                 $_SESSION["id"] = $row['user_id'];
@@ -44,9 +48,14 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                  header("location: ../app/");
 		        exit();
             }else{
-				header("Location: ../login.php?error=Incorect Username or password");
+				header("Location: ../login.php?error=Incorect password");
 		        exit();
 			}
+            }else{
+                header("Location: ../login.php?error=Incorrect username");
+		        exit();
+            }
+            
 		}else{
 			header("Location: ../login.php?error=Username not Exist.");
 	        exit();
