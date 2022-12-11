@@ -56,7 +56,10 @@
                 <div class="col-md-6 col-lg-5">
                     <div class="login-box bg-white box-shadow border-radius-10">
                         <div class="login-title">
-                            <h2 class="text-center text-primary">LOGIN TO GITS</h2>
+                            <h2 class="text-center text-primary" style="font-family: 'Poppins', sans-serif;">Welcome
+                                Back! 👋 </h2>
+                            <p class="text-center m-2 " style="font-family: 'Poppins', sans-serif;">Login to begin your
+                                session</p>
                         </div>
                         <?php
                             if(isset($_GET['error']) != null){
@@ -149,23 +152,33 @@
                                     <div class="input-group mb-0">
                                         <button name="login" type="submit"
                                             class="btn btn-primary btn-lg btn-block text-white"
-                                            style="border-radius: 50px;">SIGN IN</button>
+                                            style="border-radius: 50px; height: 50px; font-family: 'Poppins', sans-serif;">SIGN
+                                            IN</button>
                                     </div>
-                                    <div class=" font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">
-                                        OR
+                                    <div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">
+                                        <!-- OR
                                     </div>
                                     <div class="input-group mb-0">
                                         <a class="btn btn-outline-primary btn-lg btn-block" href="register.php"
                                             style="border-radius: 50px;">CREATE
                                             ACCOUNT</a>
+                                    </div> -->
                                     </div>
                                 </div>
-                            </div>
                         </form>
                     </div>
+                    <div class="text-center mt-3" style="font-family: 'Poppins', sans-serif;">
+                        <P>Don't have an account?
+                            <a href="register"><b>Register here</b></a>
+                        </P>
+                    </div>
                 </div>
+
             </div>
+
         </div>
+
+
     </div>
 
 

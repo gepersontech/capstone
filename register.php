@@ -26,7 +26,7 @@
 </head>
 
 
-<body class="login-page">
+<body class="login-page" style="font-family: 'Poppins', sans-serif;">
     <div class="login-header box-shadow">
         <div class="container-fluid align-items-center">
             <div class="brand-logo">
@@ -49,7 +49,7 @@
                         <div class="container">
                             <form class="tab-wizard2 wizard-circle wizard" action="app/action/admin/add-student.php"
                                 method="POST"> <br>
-                                <h5>Basic Account Credentials</h5> <br>
+                                <h5 style="font-family: 'Poppins', sans-serif;">Basic Account Credentials</h5> <br>
 
 
                                 <?php
@@ -189,7 +189,7 @@
                     </div>
                     <div class="text-center mt-3">
                         <P>Already have an account?
-                            <a href="login.php">Login</a>
+                            <a href="login"><b>Login here</b></a>
                         </P>
                     </div>
 
