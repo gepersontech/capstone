@@ -4,13 +4,19 @@
             <div class="row justify-content-between">
                 <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
                     <div data-aos="zoom-out">
-                        <h1 style="font-family: 'Poppins', sans-serif; ">Make Learning <span>Easy</span></h1>
+                        <h1 style="font-family: 'Poppins', sans-serif; font-size: 40px;">Make Learning <a href=""
+                                class="typewrite" data-period="2000"  data-type='[ "Easy.", "Fun.", "Interactive.", "Intelligent." ]'>
+                                <span class="wrap"></span>
+                            </a></h1>
+
                         <h2 style="font-family: 'Poppins', sans-serif; ">Highly Adaptive, Interactive, and Learner-Paced
                             Learning Environments</h2>
                         <div class="text-center text-lg-start">
-                            <a href="register"><button class="btn btn-success scrollto" title="Create account"
-                                    style="border-radius: 50px; min-width: 80px; height: 40px; font-family: 'Poppins', sans-serif;  background-color: #1acc8d;color: blue; background-color: white;">Get
-                                    Started</button></a>
+                            <!-- <a href="register"><button class="btn-get-started btn btn-success scrollto"
+                                    title="Create account"
+                                    style="border-radius: 50px; width: 200px; height: 55px; font-family: 'Poppins', sans-serif;  background-color: #1acc8d;color: blue; background-color: white;">Get
+                                    Started</button></a> -->
+                            
                             <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
                         </div>
                     </div>
@@ -56,16 +62,10 @@
                             <div class="pic"><img src="assets/img/courses/course-1.png" class="img-fluid" alt=""></div>
                             <div class="member-info">
                                 <h4>GEOMETRY</h4>
-                                <!-- <span><button class="btn-get-started scrollto">Take this Course</button></span>
-                  <div class="social">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
-                  </div> -->
-                                <button class="btn btn-primary"
-                                    style="border-radius: 50px; min-width: 80px; height: 40px; font-family: 'Poppins', sans-serif;"
-                                    title="Available Course">Take
+
+                                <button class="btn btn-outline-primary"
+                                    style="border-radius: 50px; min-width: 80px; height: 50px; font-family: 'Poppins', sans-serif; "
+                                    title="Course Available">Take
                                     this
                                     Course</button>
                             </div>
@@ -77,15 +77,9 @@
                             <div class="pic"><img src="assets/img/courses/course-2.png" class="img-fluid" alt=""></div>
                             <div class="member-info">
                                 <h4>ALGEBRA</h4>
-                                <!-- <span>Product Manager</span>
-                  <div class="social">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
-                  </div> -->
-                                <button class="btn btn-primary"
-                                    style="border-radius: 50px; min-width: 80px; height: 40px; font-family: 'Poppins', sans-serif;"
+
+                                <button class="btn btn-outline-primary"
+                                    style="border-radius: 50px; min-width: 80px; height: 50px; font-family: 'Poppins', sans-serif; "
                                     title="Not Available">Take
                                     this
                                     Course</button>
@@ -98,15 +92,9 @@
                             <div class="pic"><img src="assets/img/courses/course-3.png" class="img-fluid" alt=""></div>
                             <div class="member-info">
                                 <h4>CONIC SECTION</h4>
-                                <!-- <span>CTO</span>
-                  <div class="social">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
-                  </div> -->
-                                <button class="btn btn-primary"
-                                    style="border-radius: 50px; min-width: 80px; height: 40px; font-family: 'Poppins', sans-serif; "
+
+                                <button class="btn btn-outline-primary"
+                                    style="border-radius: 50px; min-width: 80px; height: 50px; font-family: 'Poppins', sans-serif; "
                                     title="Not Available">Take
                                     this
                                     Course</button>
@@ -119,15 +107,9 @@
                             <div class="pic"><img src="assets/img/courses/course-4.png" class="img-fluid" alt=""></div>
                             <div class="member-info">
                                 <h4>PRE CALCULUS</h4>
-                                <!-- <span>Accountant</span>
-                  <div class="social">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
-                  </div> -->
-                                <button class="btn btn-primary"
-                                    style="border-radius: 50px; min-width: 80px; height: 40px; font-family: 'Poppins', sans-serif;"
+
+                                <button class="btn btn-outline-primary"
+                                    style="border-radius: 50px; min-width: 80px; height: 50px; font-family: 'Poppins', sans-serif; "
                                     title="Not Available">Take
                                     this
                                     Course</button>

@@ -48,8 +48,8 @@
                     <td style="width: 300px;"><?php echo $row['exam_title']; ?></td>
                     <td style="width: 300px;"><?php echo $row['exam_desc']; ?></td>
                     <td style="width: 300px;">
-                        <a href="#" class=" btn btn-sm btn-primary" data-toggle="modal" data-target="#result-modal">
-                            <span class="icon-copy ti-pencil-alt"></span> View Details
+                        <a href="#" class=" btn btn-md btn-primary" data-toggle="modal" data-target="#result-modal">
+                            <span class="icon-copy ti-eye"></span> View Details
                         </a>
 
 
@@ -78,7 +78,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-body text-center font-18">
-                <h3 class="mb-20">Details Results!</h3>
+                <h3 class="mb-20">Detailed Result!</h3>
                 <!-- <div class="mb-30 text-center">
                     <img src="vendors/images/success.png" />
                 </div> -->

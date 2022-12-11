@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-6 col-sm-12">
             <div class="title">
-                <h4>Required Exams</h4>
+                <h4>Take Quiz</h4>
             </div>
             <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
@@ -19,7 +19,7 @@
 <!-- Simple Datatable start -->
 <div class="card-box mb-30">
     <div class="pd-20">
-        <h4 class="text-blue h4">AVAILABLE EXAMS</h4>
+        <h4 class="text-blue h4">CURRENT QUIZ</h4>
         <!-- <button type="button" class="btn btn-primary float-right mb-10" data-toggle="modal" data-target="#addModal">
             <span class="icon-copy ti-plus"></span>
             Add Exam
@@ -56,8 +56,8 @@
                     <td><?php echo $row['course_name']; ?></td>
                     <td><?php echo $row['exam_desc']; ?></td>
                     <td style="width: 400px;">
-                        <a data-toggle="modal" data-target="#verify" href="" class=" btn btn-sm btn-primary">
-                            <span class="icon-copy ti-pencil-alt"></span> Take exam
+                        <a data-toggle="modal" data-target="#verify" href="" class=" btn btn-md btn-primary">
+                            <span class="icon-copy ti-check"></span> Take Quiz
                         </a>
                     </td>
 
@@ -75,74 +75,7 @@
     </div>
 </div>
 <!-- Simple Datatable End -->
-<!-- Add Modal -->
-<div class="modal fade" id="addModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form class="form-horizontal" action="action/admin/add-exam.php" method="POST">
-                <div class="modal-header">
-                    <h4 class="modal-title">Add Exam</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
 
-                    <!-- form -->
-                    <div class="form-group row">
-                        <label for="exam" class="col-sm-3 col-form-label">Exam Title <span class="text-danger">
-                                *</span> </label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="exam" name="exam_title" placeholder="Exam Title"
-                                required>
-                        </div>
-                    </div>
-                    <!-- form -->
-
-                    <div class="form-group row">
-                        <label for="position" class="col-sm-3 col-form-label">Course <span class="text-danger">
-                                *</span></label>
-                        <div class="col-sm-9">
-                            <select class="custom-select" id="position" name="course" required>
-                                <option value="" selected>Choose Course...</option>
-                                <?php
-                                $result = mysqli_query($con, "SELECT * FROM course;");
-                                $rowCount = mysqli_num_rows($result);
-                                if ($rowCount > 0) {
-                                    while ($row = mysqli_fetch_assoc($result)) { ?>
-                                <option value="<?php echo $row['course_id']; ?>">
-                                    <?php echo $row['course_name']; ?>
-                                </option>
-
-                                <?php   }
-                                }
-                                ?>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="Desc" class="col-sm-3 col-form-label">Exam Description <span class="text-danger">
-                                *</span> </label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="desc" name="desc" placeholder="Exam Description"
-                                required>
-                        </div>
-                    </div>
-
-
-                </div>
-                <div class="modal-footer justify-content-right">
-                    <button type="button" class="btn btn-danger " data-dismiss="modal">Cancel</button>
-                    <button type="submit" name="add-exam" class="btn btn-primary "> Add </button>
-                </div>
-
-            </form>
-
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
 
 <!-- VERIFY TO TAKE EXAMS....-->
 <div style="margin-top: 150px;" class="modal fade" id="verify" tabindex="-1" role="dialog"
@@ -155,7 +88,7 @@
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">Proceed to the exam now</div>
+            <div class="modal-body">Proceed to the Quiz Now</div>
             <div class="modal-footer">
                 <button class="btn btn-danger" type="button" data-dismiss="modal">Cancel</button>
                 <a class="btn btn-primary" href="index.php?page=exam_circle">Proceed</a>

@@ -37,6 +37,103 @@ require_once "functions/dbconfig.php";
     <!-- Custom fonts for this template-->
     <link href="assets\vendor\fontawesome-free\css\all.min.css" rel="stylesheet" type="text/css">
 </head>
+<script>
+var TxtType = function(el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 2000;
+    this.txt = '';
+    this.tick();
+    this.isDeleting = false;
+};
+
+TxtType.prototype.tick = function() {
+    var i = this.loopNum % this.toRotate.length;
+    var fullTxt = this.toRotate[i];
+
+    if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+    var that = this;
+    var delta = 200 - Math.random() * 100;
+
+    if (this.isDeleting) {
+        delta /= 2;
+    }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+    }
+
+    setTimeout(function() {
+        that.tick();
+    }, delta);
+};
+
+window.onload = function() {
+    var elements = document.getElementsByClassName('typewrite');
+    for (var i = 0; i < elements.length; i++) {
+        var toRotate = elements[i].getAttribute('data-type');
+        var period = elements[i].getAttribute('data-period');
+        if (toRotate) {
+            new TxtType(elements[i], JSON.parse(toRotate), period);
+        }
+    }
+    // INJECT CSS
+    var css = document.createElement("style");
+    css.type = "text/css";
+    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+    document.body.appendChild(css);
+};
+</script>
+<style>
+.get-started {
+    border: none;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.get-started span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.get-started span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.get-started:hover span {
+    padding-right: 25px;
+}
+
+.get-started:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+</style>
 
 <body>
 
@@ -45,7 +142,7 @@ require_once "functions/dbconfig.php";
         <div class="container d-flex align-items-center justify-content-between">
 
             <div class="logo">
-                <img src="assets/img/GITS_LOGO.png" alt="LOGO">
+                <a href="index"><img src="assets/img/GITS_LOGO.png" alt="LOGO" class="img-fluid"></a>
                 <!-- <h1><a href="index.php"><span>ITS Geometry and Learning App </span></a></h1> -->
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
@@ -60,8 +157,8 @@ require_once "functions/dbconfig.php";
                     <li><a class="nav-link scrollto" href="/capstone/#contact" title="Contact">Contact</a></li>
                     <a href="login"><button class="btn btn-primary scrollto"
                             style="border-radius: 50px; min-width: 80px; height: 40px; color: blue; background-color: white;"
-                            title="Create your Account">
-                            Join us</button></a>
+                            title="Login your account">
+                            Login</button></a>
                 </ul>
 
                 <i class="bi bi-list mobile-nav-toggle"></i>

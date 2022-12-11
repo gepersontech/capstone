@@ -41,7 +41,6 @@
     gtag('config', 'G-TH460Y41LE');
     </script>
 
-
 </head>
 
 <body>

@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-6 col-sm-12">
             <div class="title">
-                <h4>Available Modules</h4>
+                <h4>Current Modules</h4>
             </div>
             <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
@@ -19,7 +19,7 @@
 <!-- Simple Datatable start -->
 <div class="card-box mb-30">
     <div class="pd-20">
-        <h4 class="text-blue h4">MODULE LIST</h4>
+        <h4 class="text-blue h4">CURRENT MODULES</h4>
         <!-- <button type="button" class="btn btn-primary float-right mb-10" data-toggle="modal" data-target="#addModal">
             <span class="icon-copy ti-plus"></span>
             Add Module
@@ -31,7 +31,7 @@
                 <tr>
                     <th class="table-plus datatable-nosort">Module Name</th>
                     <th class="table-plus datatable-nosort">Description</th>
-                    <th class="datatable-nosort">Action</th>
+                    <!-- <th class="datatable-nosort">Action</th> -->
                 </tr>
             </thead>
             <tbody>
@@ -47,22 +47,12 @@
                 <tr>
                     <td style="width: 300px;"><?php echo $row['module_name']; ?></td>
                     <td style="width: 300px;"><?php echo $row['module_desc']; ?></td>
-                    <td style="width: 300px;">
-                        <!-- <a href="/uploads/media/default/0001/01/540cb75550adf33f281f29132dddd14fded85bfc.pdf" class=" btn btn-sm btn-primary">
-                            <span class="icon-copy ti-pencil-alt"></span> View
-                        </a> -->
-                        <a href="index.php?page=module-edit&& id=<?php echo $id; ?>" class=" btn btn-sm btn-primary">
+                    <!-- <td style="width: 300px;">
+                        
+                        <a href="index.php?page=module-edit&& id=<?php //echo $id; ?>" class=" btn btn-sm btn-primary">
                             <span class="icon-copy ti-pencil-alt"></span> View
                         </a>
-                        <!-- <a href="index.php?page=module-edit&& id=<?php echo $id; ?>" class=" btn btn-sm btn-primary">
-                            <span class="icon-copy ti-pencil-alt"></span> View
-                        </a> -->
-
-
-                        <!-- <a onclick="delete_module('')" class=" btn btn-sm btn-danger text-white">
-                            <span class="icon-copy ti-trash"></span>
-                            Delete</a> -->
-                    </td>
+                    </td> -->
 
                 </tr>
                 <?php
@@ -83,7 +73,7 @@
 <!-- Simple Datatable start -->
 <div class="card-box mb-30">
     <div class="pd-20">
-        <h4 class="text-blue h4">LESSON</h4>
+        <h4 class="text-blue h4">CURRENT LESSONS</h4>
         <!-- <button type="button" class="btn btn-primary float-right mb-10" data-toggle="modal" data-target="#addLesson">
             <span class="icon-copy ti-plus"></span>
             Add Lesson
@@ -112,8 +102,8 @@
                     <td style="width: 300px;"><?php echo $row['lesson_name']; ?></td>
                     <td style="width: 300px;"><?php echo $row['lesson_desc']; ?></td>
                     <td style="width: 300px;">
-                        <a href="lesson_<?php echo $count; ?>" class=" btn btn-sm btn-primary">
-                            <span class="icon-copy ti-pencil-alt"></span> View
+                        <a href="lesson_<?php echo $count; ?>" class=" btn btn-md btn-primary">
+                            <span class="icon-copy ti-eye"></span> View
                         </a>
 
                     </td>
@@ -134,117 +124,25 @@
 </div>
 
 
-<div class="card-box mb-30">
+<!-- <div class="card-box mb-30">
     <div class="pd-20">
         <h4 class="text-blue h4">VIDEO MATERIAL
-        <!-- <button type="button" class="btn btn-primary float-right mb-10" data-toggle="modal" data-target="#addLesson">
-            <span class="icon-copy ti-plus"></span>
-            Add Lesson
-        </button> -->
-                <tr>
-                   
-                    <td style="width: 400px;">
-                        <a href="index.php?page=video-player" class=" btn btn-sm btn-primary">
-                            <span class="fa fa-play"></span> Watch
-                        </a>
+            <tr>
 
-                    </td>
+                <td style="width: 400px;">
+                    <a href="index.php?page=video-player" class=" btn btn-sm btn-primary">
+                        <span class="fa fa-play"></span> Watch
+                    </a>
 
-                </tr>
-                </h4>
+                </td>
+
+            </tr>
+        </h4>
     </div>
-    
-</div>
+</div> -->
 
 <!-- Simple Datatable End -->
-<!-- Add Modal -->
-<div class="modal fade" id="addModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form class="form-horizontal" action="action/admin/add-module.php" method="POST">
-                <div class="modal-header">
-                    <h4 class="modal-title">Add Course</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
 
-                    <!-- form -->
-                    <div class="form-group row">
-                        <label for="course" class="col-sm-3 col-form-label">Course <span class="text-danger">
-                                *</span> </label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="module_name" name="module_name"
-                                placeholder="Module" required>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="module_desc" class="col-sm-3 col-form-label">Description <span class="text-danger">
-                                *</span> </label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="module_desc" name="module_desc"
-                                placeholder="Description" required>
-                        </div>
-                    </div>
-
-
-                </div>
-                <div class="modal-footer justify-content-right">
-                    <button type="button" class="btn btn-danger " data-dismiss="modal">Cancel</button>
-                    <button type="submit" name="add-module" class="btn btn-primary "> Add </button>
-                </div>
-
-            </form>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-<!-- Add Modal -->
-<div class="modal fade" id="addLesson">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form class="form-horizontal" action="action/admin/add-lesson.php" method="POST">
-                <div class="modal-header">
-                    <h4 class="modal-title">Add Lesson</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <!-- form -->
-                    <div class="form-group row">
-                        <label for="lesson_name" class="col-sm-3 col-form-label">Lesson <span class="text-danger">
-                                *</span> </label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="lesson_name" name="lesson_name"
-                                placeholder="Lesson No." required>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="lesson_desc" class="col-sm-3 col-form-label">Description <span class="text-danger">
-                                *</span> </label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="lesson_desc" name="lesson_desc"
-                                placeholder="Description" required>
-                        </div>
-                    </div>
-
-
-                </div>
-                <div class="modal-footer justify-content-right">
-                    <button type="button" class="btn btn-danger " data-dismiss="modal">Cancel</button>
-                    <button type="submit" name="add-module" class="btn btn-primary "> Add </button>
-                </div>
-
-            </form>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
 
 <script>
 function delete_module(data_id) {

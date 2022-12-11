@@ -2,6 +2,7 @@
     include('../../../conf/config.php');
     
     if($_SERVER["REQUEST_METHOD"] == "POST"){
+              
         
         //$role = $_POST['options'];
         $role = 3;
@@ -9,6 +10,8 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
         $confirmpassword = $_POST['confirmpassword'];
+        
+
         $firstname = ucwords(trim($_POST['firstname']));
         $lastname = ucwords(trim($_POST['lastname']));
         $gender = $_POST['gender'];
@@ -16,6 +19,16 @@
         $address = $_POST['address'];
         
         $date = date('Y-m-d H:i:s');
+
+        for($i=$roll_number_start; $i<=$roll_number_end; $i++)
+                {
+                    $roll_number = $roll_number_format.$i;
+                    $username = generatePassword();
+                    $password = generatePassword();
+                  
+                }
+
+                $insert_sql = "INSERT INTO student (roll_number, student_class, class_section, batch_year, p_username, p_password) VALUES".$roll_array;
         
         if(!isset($role)){
             header("location: ../../../register.php?error=Click the button student/teacher.");

@@ -4,7 +4,7 @@
             <div class="sidebar-small-cap">Home</div>
         </li>
         <li>
-            <a href="dashboard" class="dropdown-toggle no-arrow">
+            <a href="home" class="dropdown-toggle no-arrow">
                 <span class="micon icon-copy ti-dashboard"></span><span class="mtext">Dashboard</span>
             </a>
         </li>

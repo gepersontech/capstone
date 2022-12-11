@@ -4,6 +4,7 @@ RewriteCond %{REQUEST_FILENAME}\.php -f
 #RewriteRule ^index/?$ index.php [NC,L]
 #admin
 RewriteRule ^login/?$ login.php [NC,L]
+RewriteRule ^index/?$ index.php [NC,L]
 RewriteRule ^register/?$ register.php [NC,L]
 #users
 #RewriteRule ^([^\.]+)$ $1.php [NC,L]
