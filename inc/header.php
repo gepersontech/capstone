@@ -37,6 +37,43 @@ require_once "functions/dbconfig.php";
     <!-- Custom fonts for this template-->
     <link href="assets\vendor\fontawesome-free\css\all.min.css" rel="stylesheet" type="text/css">
 </head>
+<style>
+.get-started {
+    border: none;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.get-started span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.get-started span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.get-started:hover span {
+    padding-right: 25px;
+}
+
+.get-started:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+</style>
 
 <body>
 
