@@ -280,15 +280,17 @@
                     </div>
                 </div>
                 
-
                 <a href="module-user">
                     <button type="button" class="btn btn-primary float-right ">
                         <span class="icon-copy ti-plus"></span>
                         MARK AS DONE
-                    </button>   
+                    </button> 
+                      
                 </a> <br> <br> <br> <br> <br> <br>
-            </div>
 
+            </div>
         </div>
+        
     </div>
 </div>
+
