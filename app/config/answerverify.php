@@ -56,9 +56,9 @@ if (isset($_POST['submit'])) {
 
         // THE ANSWER IS WRONG..............
     } else {
-        $sqlquery = "INSERT INTO `exam_mistakes`(`student_id`, `examitem_id`, `exam_id`, `mistakes`) 
-        VALUES ($studentID,$questionId,$examID,$attemptMistake)";
-        $result = mysqli_query($con, $sqlquery);
+        $sqlquery = "INSERT INTO `exam_mistakes`(`student_id`, `examitem_id`, `exam_id`,`answer_input`, `mistakes`) 
+        VALUES ($studentID,$questionId,$examID,'".$inputanswer."',$attemptMistake)";
+        $insertResult = mysqli_query($con, $sqlquery);
 
         // fetching mistakes from database........
         $sqlquery1 = "SELECT SUM(mistakes) AS totalmistakes FROM `exam_mistakes` WHERE student_id='" . $studentID . "' AND examitem_id='" . $questionId . "'";
