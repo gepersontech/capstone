@@ -74,6 +74,7 @@
                             type="video/mp4" />
                     </video>
                 </div>
+                
             </div>
 
             <div class="pd-20 card-box mb-20">
