@@ -292,6 +292,19 @@
                 </div>
                 
             </div>
+            <div class="pd-20 card-box mb-20">
+                <div class="clearfix mb-10">
+                    <div class="pull-left">
+                        <h4 class="text-blue h3"> 8.6 Conic Section - Word Problems </h4>
+                    </div>
+                </div>
+                <div class="container">
+                    <video poster="video/86 Conic Sections  Word Problems.mp4" controls
+                        crossorigin>
+                        <source src="video/86 Conic Sections  Word Problems.mp4" type="video/mp4" />
+                    </video>
+                </div>
+            </div>
         
 
 

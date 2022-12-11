@@ -337,7 +337,45 @@
                         </div>
                     </div>
                 </div>
+
+         <head>
+         <link rel="stylesheet" type="text/css" href="src/plugins/plyr/dist/plyr.css" />
+        </head>
+        <div class="pd-ltr-20 customscroll-10-p height-100-p xs-pd-20-10">
+    <div class="min-height-200px">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="title">
+                        <h4>Video Player</h4>
+                    </div>
+                    <nav aria-label="breadcrumb" role="navigation">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                Video Player
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
                 
+                <div class="pd-20 card-box mb-20">
+                <div class="clearfix mb-10">
+                    <div class="pull-left">
+                        <h4 class="text-blue h3"> How To Solve A Word Problem Involving Ellipsis</h4>
+                    </div>
+                </div>
+                <div class="container">
+                    <video poster="video/h" controls
+                        crossorigin>
+                        <source src="video/How to solve a word problem involving ellipsis.mp4" type="video/mp4" />
+                    </video>
+                </div>
+            </div>
 
                 <a href="module-user">
                     <button type="button" class="btn btn-primary float-right ">
