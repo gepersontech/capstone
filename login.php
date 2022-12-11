@@ -69,7 +69,7 @@
                             }
 
                                     ?>
-                        <form action="conf/verify.php" method="post" autocomplete="off">
+                        <form action="conf/auth_login.php" method="post" autocomplete="off">
                             <div class="select-role">
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                     <label class="btn active">
