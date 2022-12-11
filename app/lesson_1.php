@@ -210,7 +210,7 @@
                                          <a href="module-user">
                                              <button type="button" class="btn btn-primary float-right ">
                                                  <span class="icon-copy ti-check mr-2"></span>
-                                                 DONE READING
+                                                 NEXT PAGE
                                              </button>
                                          </a> <br> <br> <br> <br> <br> <br>
                                      </div>
