@@ -23,7 +23,7 @@
         </li>
         <li>
             <a href="exam-user" class="dropdown-toggle no-arrow">
-                <span class="micon icon-copy ti-view-list-alt"></span><span class="mtext">Take Exam</span>
+                <span class="micon icon-copy ti-view-list-alt"></span><span class="mtext">Take Quiz</span>
             </a>
         </li>
         <!-- <li>
