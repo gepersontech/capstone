@@ -67,9 +67,19 @@
         <div class="card-box height-100-p widget-style3">
             <div class="d-flex flex-wrap">
                 <div class="widget-data">
-                    <div class="weight-700 font-24 text-dark">10</div>
+                    <div class="weight-700 font-24 text-dark">
+                        <?php
+                            // $sql = "SELECT * from exam";
+                            //                 if ($result = mysqli_query($con, $sql)) {
+                            //                     // Return the number of rows in result set
+                            //                     $rowcount = mysqli_num_rows( $result );
+                            //                     echo $rowcount;
+                            //                 }
+                            echo 4;
+                        ?>
+                    </div>
                     <div class="font-14 text-secondary weight-500">
-                        Exam
+                        Lessons
                     </div>
                 </div>
                 <div class="widget-icon">
@@ -84,8 +94,17 @@
         <div class="card-box height-100-p widget-style3">
             <div class="d-flex flex-wrap">
                 <div class="widget-data">
-                    <div class="weight-700 font-24 text-dark">23</div>
-                    <div class="font-14 text-secondary weight-500">Students</div>
+                    <div class="weight-700 font-24 text-dark">
+                        <?php
+                            $sql = "SELECT * from users WHERE role_id = 3";
+                                            if ($result = mysqli_query($con, $sql)) {
+                                                // Return the number of rows in result set
+                                                $rowcount = mysqli_num_rows( $result );
+                                                echo $rowcount;
+                                            }
+                        ?>
+                    </div>
+                    <div class="font-14 text-secondary weight-500">Exams</div>
                 </div>
                 <div class="widget-icon">
                     <div class="icon" data-color="#09cc06">

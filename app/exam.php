@@ -20,10 +20,10 @@
 <div class="card-box mb-30">
     <div class="pd-20">
         <h4 class="text-blue h4">AVAILABLE EXAMS</h4>
-        <!-- <button type="button" class="btn btn-primary float-right mb-10" data-toggle="modal" data-target="#addModal">
+        <button type="button" class="btn btn-primary float-right mb-10" data-toggle="modal" data-target="#addModal">
             <span class="icon-copy ti-plus"></span>
             Add Exam
-        </button> -->
+        </button>
     </div>
     <div class="pb-20">
         <table class="data-table table stripe hover nowrap">
@@ -73,6 +73,15 @@
     </div>
 </div>
 <!-- Simple Datatable End -->
+
+<!-- <div class="row">
+    <div class="col-12">
+        <div class="card">
+            <input type="button" value="">
+        </div>
+    </div>
+</div> -->
+
 <!-- Add Modal -->
 <div class="modal fade" id="addModal">
     <div class="modal-dialog">

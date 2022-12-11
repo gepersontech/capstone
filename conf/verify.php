@@ -1,8 +1,5 @@
 <?php
-    require_once "config.php";
-    session_start();
-
-
+require_once "config.php";
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = $login_err = $pending ="";
@@ -11,9 +8,8 @@ $username_err = $password_err = $login_err = $pending ="";
 if($_SERVER["REQUEST_METHOD"] == "POST"){
    
     // Check if username is empty
-        if(empty(trim($_POST["username"]))){
-            $_SESSION['loginError'] = "Please enter username.";
-            header("location: ../login.php?error=1");
+        if(isset($_POST["username"])){
+            header("location: ../login.php?error=Please enter username.");
             
         } else{
             $username = trim($_POST["username"]);
@@ -21,8 +17,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         
         // Check if password is empty
         if(empty(trim($_POST["password"]))){
-            $_SESSION['loginError'] = "Please enter password.";
-            header("location: ../login.php?error=2");
+            header("location: ../login.php?error=Please enter password.");
+            
         } else{
             $password = trim($_POST["password"]);
         }
@@ -64,28 +60,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                     $_SESSION["lastname"] = $lastname; 
                                     $_SESSION["role_id"] = $role_id; 
                                     $_SESSION["email"] = $email; 
+
+                                    $query=mysqli_query($con,"INSERT INTO `logs`(`user_id`, `log_name`) VALUES ('".$_SESSION["id"]."','login')" );
+
+                                    
                                     header("location: ../app/");
-                                    // if( $_SESSION["role_id"] ==  "3"){
-                                    //     header("location: ../app/");
-                                    // }else if($_SESSION["role_id"] == "3"){
-                                    //     header("location: ../login.php");
-                                    // }
                             } else{
-                                header("location: ../login.php?error=4");
+                                header("location: ../login.php?error=Invalid username or not password.");
                                 // Password is not valid, display a generic error message
-                                //$login_err = "Invalid username or not password.";
-                                // $_SESSION['message']='Either email/password is incorrect';
                             }
                         }
                     } else{
-                        $_SESSION['loginError'] = "Username not exist.";
-                        header("location: ../login.php?error=3");
+                        header("location: ../login.php?error=Username not exist.");
                         // Username doesn't exist, display a generic error message
-                        //$login_err = "Invalid username or password.";
                     }
                 } else{
-                    $_SESSION['loginError'] = "Connection Error.";
-                    header("location: ../login.php?error=1");
+                    header("location: ../login.php?error=Connection Error.");
                     //echo "Oops! Something went wrong. Please try again later.";
                 }
 

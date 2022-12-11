@@ -1,13 +1,12 @@
 <?php
 
     include('../conf/config.php');
-	include('header.php');
-	include('pre-loader.php');
-	include('navbar.php');
     if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         header('Location: ../index.php?session=expired');
     }
-    
+	include('header.php');
+	include('pre-loader.php');
+	include('navbar.php');
 ?>
 
 
@@ -26,7 +25,12 @@
 				   
                     
                 }else{
-                    $page = 'dashboard.php';
+                    if($_SESSION["role_id"] == 3){
+                        $page = 'home.php';
+                    }else{
+                        $page = 'dashboard.php';
+                    }
+                   
                 }
 
                 if (file_exists($page)) {

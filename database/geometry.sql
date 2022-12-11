@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2022 at 06:52 PM
+-- Generation Time: Dec 11, 2022 at 04:28 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -77,8 +77,7 @@ CREATE TABLE `course` (
 --
 
 INSERT INTO `course` (`course_id`, `course_name`, `course_created`) VALUES
-(3, 'GEOMETRY', '0000-00-00 00:00:00'),
-(5, 'BSCS', '0000-00-00 00:00:00');
+(3, 'GEOMETRY', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -90,6 +89,8 @@ CREATE TABLE `exam` (
   `exam_id` int(11) NOT NULL,
   `exam_title` varchar(255) NOT NULL,
   `exam_desc` varchar(500) NOT NULL,
+  `totalPoints` int(100) NOT NULL,
+  `totalQuestion` int(100) NOT NULL,
   `course_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -97,8 +98,23 @@ CREATE TABLE `exam` (
 -- Dumping data for table `exam`
 --
 
-INSERT INTO `exam` (`exam_id`, `exam_title`, `exam_desc`, `course_id`) VALUES
-(1, 'Circle post test', 'Evaluate the student learning in circles', 3);
+INSERT INTO `exam` (`exam_id`, `exam_title`, `exam_desc`, `totalPoints`, `totalQuestion`, `course_id`) VALUES
+(1, 'Circle post test', 'Evaluate the student learning in circles', 110, 11, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `examquestion_attempt`
+--
+
+CREATE TABLE `examquestion_attempt` (
+  `eqa_id` int(11) NOT NULL,
+  `studen_id` int(11) NOT NULL,
+  `exam_id` int(11) NOT NULL,
+  `examitem_id` int(11) NOT NULL,
+  `status` int(255) NOT NULL,
+  `eqa_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -127,7 +143,50 @@ INSERT INTO `exam_answers` (`exans_id`, `student_id`, `course_id`, `exam_id`, `q
 (4, 1, 1, 1, 1, 1, '2022-12-06 17:23:28'),
 (5, 1, 1, 1, 1, 1, '2022-12-06 17:25:54'),
 (6, 1, 1, 1, 1, 1, '2022-12-06 17:26:03'),
-(7, 1, 1, 1, 1, 1, '2022-12-06 17:26:38');
+(7, 1, 1, 1, 1, 1, '2022-12-06 17:26:38'),
+(8, 1, 1, 1, 1, 1, '2022-12-06 17:56:47'),
+(9, 1, 1, 1, 1, 1, '2022-12-06 17:57:00'),
+(10, 1, 1, 1, 1, 1, '2022-12-06 17:57:08'),
+(11, 1, 1, 1, 1, 1, '2022-12-06 17:57:13'),
+(12, 1, 1, 1, 1, 1, '2022-12-06 17:58:24'),
+(13, 1, 1, 1, 1, 1, '2022-12-06 18:13:39'),
+(14, 1, 1, 1, 1, 1, '2022-12-07 05:30:04'),
+(15, 1, 1, 1, 1, 1, '2022-12-07 10:47:55'),
+(16, 1, 1, 1, 1, 1, '2022-12-07 10:48:44'),
+(17, 1, 1, 1, 1, 1, '2022-12-07 10:48:52'),
+(18, 1, 1, 1, 1, 1, '2022-12-07 13:30:30'),
+(19, 1, 1, 1, 1, 1, '2022-12-07 13:50:53'),
+(20, 1, 1, 1, 1, 1, '2022-12-07 14:23:27'),
+(21, 1, 1, 1, 1, 1, '2022-12-07 14:23:30');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `exam_attempt`
+--
+
+CREATE TABLE `exam_attempt` (
+  `examAttempt_id` int(11) NOT NULL,
+  `student_id` int(11) NOT NULL,
+  `exam_id` int(11) NOT NULL,
+  `status` int(255) NOT NULL,
+  `exattempt_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `exam_correct`
+--
+
+CREATE TABLE `exam_correct` (
+  `examcorrect_id` int(11) NOT NULL,
+  `student_id` int(11) NOT NULL,
+  `exam_id` int(11) NOT NULL,
+  `examitem_id` int(11) NOT NULL,
+  `points` int(255) NOT NULL,
+  `excorrect_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -143,7 +202,6 @@ CREATE TABLE `exam_items` (
   `exam_ch3` varchar(255) NOT NULL,
   `exam_ch4` varchar(255) NOT NULL,
   `answerkey` varchar(255) NOT NULL,
-  `points` int(11) NOT NULL,
   `hint` varchar(255) NOT NULL,
   `exam_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -152,9 +210,33 @@ CREATE TABLE `exam_items` (
 -- Dumping data for table `exam_items`
 --
 
-INSERT INTO `exam_items` (`examitem_id`, `question`, `exam_ch1`, `exam_ch2`, `exam_ch3`, `exam_ch4`, `answerkey`, `points`, `hint`, `exam_id`) VALUES
-(1, ' It is the intersection of a plane and a double-napped cone.', 'a. locus', 'b. conic section', 'c. circle', 'd. radius', 'b. conic section', 0, '[value-9]', 1),
-(2, 'A collection of points satisfying a geometric property can also be \r\nreferred to as a ______ of points.\r\n', 'locus', 'conic section', 'circle', 'radius', 'locus', 0, '', 1);
+INSERT INTO `exam_items` (`examitem_id`, `question`, `exam_ch1`, `exam_ch2`, `exam_ch3`, `exam_ch4`, `answerkey`, `hint`, `exam_id`) VALUES
+(1, ' It is the intersection of a plane and a double-napped cone.', 'locus', 'conic section', 'circle', 'radius', 'conic section', 'Two connecting cones', 1),
+(2, 'A collection of points satisfying a geometric property can also be \r\nreferred to as a ______ of points.\r\n', 'locus', 'conic section', 'circle', 'radius', 'locus', 'Collection of points', 1),
+(3, 'A ____________ is the set of all points (x, y) in a plane that are\r\nequidistant from a fixed point, called the center.', 'locus', 'conic section', 'circle', 'radius', 'circle', 'A cone with fixed point and center', 1),
+(4, 'A/n ____________ is the set of all points in the plane that are equidistant from a fixed point F(called the focus) and a fixed line or (called the directrix).', 'circle', 'ellipse', 'parabola', 'hyperbola', 'parabola', 'A cone that contains vertex', 1),
+(5, 'A/n ___________ is the set of all points in the plane the sum of \r\nwhose distances from two fixed points \\(F_{1}\\) and \\(F_{2}\\) is a constant.', 'circle', 'ellipse', 'parabola', 'hyperbola\r\n', 'ellipse', 'It is an elongated circle', 1),
+(6, 'A/n ____________ is the set of all points in the plane, the difference \r\nof whose distances from two fixed points \\(F_{1}\\) and \\(F_{2}\\) is a constant.\r\n', 'circle', 'ellipse', 'parabola ', 'hyperbola', 'hyperbola', 'A cone with two opposite parabolas', 1),
+(7, '\\(6x^2+12x+6y^2-8y=100\\) is an example of a', 'Circle', 'parabola ', 'ellipse', 'hyperbola', 'Circle', 'x and y have squares and its coefficients are equal', 1),
+(8, '\\(4x^2+12x+y^2-8y=64\\) is an example of a', 'Circle', 'parabola', 'ellipse', 'hyperbola', 'ellipse', 'x and y have squares but its coefficients are equal and the sign between', 1),
+(9, '\\(6y=3x^2−15\\) is an example of a', 'Circle', 'parabola', 'ellipse', 'hyperbola', 'parabola', 'Only one variable (either x or y) has a square', 1),
+(10, '\\(2x^2+87x-25=y^2+4y\\) is an example of a', 'Circle', 'parabola', 'ellipse', 'hyperbola', 'hyperbola', 'x and y have squares, coefficients are different, the sign between them is subtraction', 1),
+(11, '\\(6x^2-15x=3y^2+4y+13\\) is an example of a', 'Circle', 'parabola', 'ellipse', 'hyperbola', 'hyperbola', 'x and y have squares, coefficients are different, the sign between them is subtraction.', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `exam_mistakes`
+--
+
+CREATE TABLE `exam_mistakes` (
+  `mistake_id` int(11) NOT NULL,
+  `student_id` int(11) NOT NULL,
+  `examitem_id` int(11) NOT NULL,
+  `exam_id` int(11) NOT NULL,
+  `mistakes` int(11) NOT NULL,
+  `examistakes_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -214,11 +296,21 @@ CREATE TABLE `lessons` (
 --
 
 CREATE TABLE `logs` (
-  `id` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `datetime` datetime NOT NULL,
-  `type` varchar(100) NOT NULL
+  `log_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `log_name` varchar(100) NOT NULL,
+  `datetime` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `logs`
+--
+
+INSERT INTO `logs` (`log_id`, `user_id`, `log_name`, `datetime`) VALUES
+(1, 2, 'login', '2022-12-11 03:21:41'),
+(2, 2, 'logout', '2022-12-11 03:25:23'),
+(3, 2, 'login', '2022-12-11 03:28:22'),
+(4, 2, 'logout', '2022-12-11 03:28:26');
 
 -- --------------------------------------------------------
 
@@ -343,7 +435,9 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`user_id`, `profile_pic`, `firstname`, `lastname`, `age`, `gender`, `address`, `email_add`, `username`, `password`, `role_id`, `added_at`) VALUES
 (1, '', 'Admin', 'Admin', '25', 'Male', 'Digos City', 'admin@gmail.com', 'admin@gmail.com', '$2y$10$627KTYhahPQq9al9sbgQDuJaeRiROt.rDoWPV1nqwYjsxZNHNlr4W', 4, '2022-11-22 09:18:43'),
 (2, '', 'User', 'User', '25', 'Male', 'Digos City', 'user@gmail.com', 'user@gmail.com', '$2y$10$aoF3GO5Wyf6qLSG8MhbDaO4hjb8VID9A9NEnfqr6gvxaqJHA3jrwO', 3, '2022-11-22 09:20:09'),
-(3, '', 'Superadmin', 'Superadmin', '25', 'Male', 'Digos City', 'superadmin@gmail.com', 'superadmin@gmail.com', '$2y$10$9cKb.z/gAsSZwlK10oSX1OPQsNE1HtkJYouQouw0CaJ4pc6wL6WI.', 1, '2022-11-22 09:21:26');
+(3, '', 'Superadmin', 'Superadmin', '25', 'Male', 'Digos City', 'superadmin@gmail.com', 'superadmin@gmail.com', '$2y$10$9cKb.z/gAsSZwlK10oSX1OPQsNE1HtkJYouQouw0CaJ4pc6wL6WI.', 1, '2022-11-22 09:21:26'),
+(74, '', 'James', 'Gwapo', '', 'male', 'Digos City, Mainland China', 'james@gmail.com', 'james@gmail.com', '$2y$10$2oE6J6xNEPmHevsieecineKNW0NAzRr/P5RWb2X6CG2Bq354BmERW', 3, '2022-12-08 22:44:07'),
+(75, '', 'Geperson', 'Mamalias', '', 'male', 'Digos City', 'geperson.ph@gmail.com', 'geperson.ph@gmail.com', '$2y$10$dfYHvQ.KZbIxIWWsOki5AuuGaVgoUbFWJ985Z0kL2ZxCRxWULT4u2', 3, '2022-12-10 14:34:08');
 
 --
 -- Indexes for dumped tables
@@ -381,16 +475,40 @@ ALTER TABLE `exam`
   ADD PRIMARY KEY (`exam_id`);
 
 --
+-- Indexes for table `examquestion_attempt`
+--
+ALTER TABLE `examquestion_attempt`
+  ADD PRIMARY KEY (`eqa_id`);
+
+--
 -- Indexes for table `exam_answers`
 --
 ALTER TABLE `exam_answers`
   ADD PRIMARY KEY (`exans_id`);
 
 --
+-- Indexes for table `exam_attempt`
+--
+ALTER TABLE `exam_attempt`
+  ADD PRIMARY KEY (`examAttempt_id`);
+
+--
+-- Indexes for table `exam_correct`
+--
+ALTER TABLE `exam_correct`
+  ADD PRIMARY KEY (`examcorrect_id`);
+
+--
 -- Indexes for table `exam_items`
 --
 ALTER TABLE `exam_items`
   ADD PRIMARY KEY (`examitem_id`);
+
+--
+-- Indexes for table `exam_mistakes`
+--
+ALTER TABLE `exam_mistakes`
+  ADD PRIMARY KEY (`mistake_id`);
 
 --
 -- Indexes for table `items`
@@ -417,7 +535,7 @@ ALTER TABLE `lessons`
 -- Indexes for table `logs`
 --
 ALTER TABLE `logs`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`log_id`);
 
 --
 -- Indexes for table `module`
@@ -481,16 +599,40 @@ ALTER TABLE `exam`
   MODIFY `exam_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `examquestion_attempt`
+--
+ALTER TABLE `examquestion_attempt`
+  MODIFY `eqa_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `exam_answers`
 --
 ALTER TABLE `exam_answers`
-  MODIFY `exans_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `exans_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `exam_attempt`
+--
+ALTER TABLE `exam_attempt`
+  MODIFY `examAttempt_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `exam_correct`
+--
+ALTER TABLE `exam_correct`
+  MODIFY `examcorrect_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `exam_items`
 --
 ALTER TABLE `exam_items`
-  MODIFY `examitem_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `examitem_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `exam_mistakes`
+--
+ALTER TABLE `exam_mistakes`
+  MODIFY `mistake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=246;
 
 --
 -- AUTO_INCREMENT for table `lesson`
@@ -502,7 +644,7 @@ ALTER TABLE `lesson`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `module`
@@ -520,7 +662,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `user_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- Constraints for dumped tables

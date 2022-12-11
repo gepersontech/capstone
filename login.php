@@ -58,7 +58,18 @@
                         <div class="login-title">
                             <h2 class="text-center text-primary">LOGIN TO GITS</h2>
                         </div>
-                        <form action="conf/verify.php" method="post" autocomplete="off">
+                        <?php
+                            if(isset($_GET['error']) != null){
+                                echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>'.$_GET['error'].'</strong> 
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>';
+                            }
+
+                                    ?>
+                        <form action="conf/auth_login.php" method="post" autocomplete="off">
                             <div class="select-role">
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                     <label class="btn active">
