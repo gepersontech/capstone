@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2022 at 04:28 AM
+-- Generation Time: Dec 11, 2022 at 05:09 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -99,7 +99,7 @@ CREATE TABLE `exam` (
 --
 
 INSERT INTO `exam` (`exam_id`, `exam_title`, `exam_desc`, `totalPoints`, `totalQuestion`, `course_id`) VALUES
-(1, 'Circle post test', 'Evaluate the student learning in circles', 110, 11, 3);
+(1, 'Lesson 1 - Circle Quiz', 'Evaluate the student learning in circles', 110, 11, 3);
 
 -- --------------------------------------------------------
 
@@ -262,6 +262,8 @@ CREATE TABLE `lesson` (
   `lesson_id` int(11) NOT NULL,
   `lesson_name` varchar(250) NOT NULL,
   `lesson_desc` varchar(250) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `isView` varchar(55) NOT NULL,
   `lesson_added` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -269,11 +271,11 @@ CREATE TABLE `lesson` (
 -- Dumping data for table `lesson`
 --
 
-INSERT INTO `lesson` (`lesson_id`, `lesson_name`, `lesson_desc`, `lesson_added`) VALUES
-(1, 'Lesson 1', ' Introduction of Conic Sections and the Circle', '0000-00-00 00:00:00'),
-(2, 'Lesson 2', 'The Parabola', '2022-11-05 01:23:51'),
-(3, 'Lesson 3', 'The Ellipse', '2022-12-06 22:22:34'),
-(4, 'Lesson 4', 'The Hyperbola', '2022-12-06 22:24:31');
+INSERT INTO `lesson` (`lesson_id`, `lesson_name`, `lesson_desc`, `user_id`, `isView`, `lesson_added`) VALUES
+(1, 'Lesson 1', ' Introduction of Conic Sections and the Circle', 0, '', '0000-00-00 00:00:00'),
+(2, 'Lesson 2', 'The Parabola', 0, '', '2022-11-05 01:23:51'),
+(3, 'Lesson 3', 'The Ellipse', 0, '', '2022-12-06 22:22:34'),
+(4, 'Lesson 4', 'The Hyperbola', 0, '', '2022-12-06 22:24:31');
 
 -- --------------------------------------------------------
 
@@ -307,10 +309,15 @@ CREATE TABLE `logs` (
 --
 
 INSERT INTO `logs` (`log_id`, `user_id`, `log_name`, `datetime`) VALUES
-(1, 2, 'login', '2022-12-11 03:21:41'),
-(2, 2, 'logout', '2022-12-11 03:25:23'),
-(3, 2, 'login', '2022-12-11 03:28:22'),
-(4, 2, 'logout', '2022-12-11 03:28:26');
+(15, 2, 'logout', '2022-12-11 06:08:36'),
+(16, 2, 'login', '2022-12-11 06:08:49'),
+(17, 2, 'logout', '2022-12-11 06:12:56'),
+(18, 2, 'login', '2022-12-11 06:13:10'),
+(19, 2, 'logout', '2022-12-11 06:45:48'),
+(20, 2, 'login', '2022-12-11 07:54:44'),
+(21, 2, 'login', '2022-12-11 12:13:54'),
+(22, 2, 'login', '2022-12-11 13:25:47'),
+(23, 277, 'login', '2022-12-11 14:33:48');
 
 -- --------------------------------------------------------
 
@@ -437,7 +444,57 @@ INSERT INTO `users` (`user_id`, `profile_pic`, `firstname`, `lastname`, `age`, `
 (2, '', 'User', 'User', '25', 'Male', 'Digos City', 'user@gmail.com', 'user@gmail.com', '$2y$10$aoF3GO5Wyf6qLSG8MhbDaO4hjb8VID9A9NEnfqr6gvxaqJHA3jrwO', 3, '2022-11-22 09:20:09'),
 (3, '', 'Superadmin', 'Superadmin', '25', 'Male', 'Digos City', 'superadmin@gmail.com', 'superadmin@gmail.com', '$2y$10$9cKb.z/gAsSZwlK10oSX1OPQsNE1HtkJYouQouw0CaJ4pc6wL6WI.', 1, '2022-11-22 09:21:26'),
 (74, '', 'James', 'Gwapo', '', 'male', 'Digos City, Mainland China', 'james@gmail.com', 'james@gmail.com', '$2y$10$2oE6J6xNEPmHevsieecineKNW0NAzRr/P5RWb2X6CG2Bq354BmERW', 3, '2022-12-08 22:44:07'),
-(75, '', 'Geperson', 'Mamalias', '', 'male', 'Digos City', 'geperson.ph@gmail.com', 'geperson.ph@gmail.com', '$2y$10$dfYHvQ.KZbIxIWWsOki5AuuGaVgoUbFWJ985Z0kL2ZxCRxWULT4u2', 3, '2022-12-10 14:34:08');
+(75, '', 'Geperson', 'Mamalias', '', 'male', 'Digos City', 'geperson.ph@gmail.com', 'geperson.ph@gmail.com', '$2y$10$dfYHvQ.KZbIxIWWsOki5AuuGaVgoUbFWJ985Z0kL2ZxCRxWULT4u2', 3, '2022-12-10 14:34:08'),
+(228, '', 'Student1', 'Student1', '', '', '', 'student1@gmail.com', 'student1@gmail.com', '$2y$10$olgNpbBRnpCB/B8.20jfOeVmgCacA50gns5sS0aFeB7OrUSMNDSrC', 3, '0000-00-00 00:00:00'),
+(229, '', 'Student2', 'Student2', '', '', '', 'student2@gmail.com', 'student2@gmail.com', '$2y$10$CNDzlgIpbHH.j2U.trUx3uFM0oyUswHwpMbAx.5bJBxSfz7weNnUe', 3, '0000-00-00 00:00:00'),
+(230, '', 'Student3', 'Student3', '', '', '', 'student3@gmail.com', 'student3@gmail.com', '$2y$10$kiyhk2POoazjZGWYFDGVA.v1Rr1RAwQN1A5lGJ7cQaOZQPC80kdtS', 3, '0000-00-00 00:00:00'),
+(231, '', 'Student4', 'Student4', '', '', '', 'student4@gmail.com', 'student4@gmail.com', '$2y$10$dZkth4GY2N/vZMJHplEhbuLj1xEXsOxeHb7pVOMjmf/FOyq5djcWO', 3, '0000-00-00 00:00:00'),
+(232, '', 'Student5', 'Student5', '', '', '', 'student5@gmail.com', 'student5@gmail.com', '$2y$10$deo9briomDFSlT0RVcmn3.4kNGYk9unUX99mW53euQROwgR.WGLZy', 3, '0000-00-00 00:00:00'),
+(233, '', 'Student6', 'Student6', '', '', '', 'student6@gmail.com', 'student6@gmail.com', '$2y$10$dS1EbKgSj5V3x8xjZs.qEO.l0LPtG.0cyLxKrTyetAFhtOFxdoCBO', 3, '0000-00-00 00:00:00'),
+(234, '', 'Student7', 'Student7', '', '', '', 'student7@gmail.com', 'student7@gmail.com', '$2y$10$IyaiLlrrzhEX/sit32H3V.15sfjJATH2Nu0fwDSjCQzfZghPKnVSG', 3, '0000-00-00 00:00:00'),
+(235, '', 'Student8', 'Student8', '', '', '', 'student8@gmail.com', 'student8@gmail.com', '$2y$10$GxoG1gHrVbkAep7Vg24cYeTbjh46W/z0Fj1sE4hTOcRZl3AVnsj6a', 3, '0000-00-00 00:00:00'),
+(236, '', 'Student9', 'Student9', '', '', '', 'student9@gmail.com', 'student9@gmail.com', '$2y$10$eGkagDXJWHD51j1fOqD7Led1OmT8sRhmMAopgdk/FtNH1MrK/vxvq', 3, '0000-00-00 00:00:00'),
+(237, '', 'Student10', 'Student10', '', '', '', 'student10@gmail.com', 'student10@gmail.com', '$2y$10$ICQCcFDCvDGhCdzHYMnT6uPbJUtm5dUNculxfESxFSvwBHFI8uLzO', 3, '0000-00-00 00:00:00'),
+(238, '', 'Student11', 'Student11', '', '', '', 'student11@gmail.com', 'student11@gmail.com', '$2y$10$vpxEN7Mv941aws1Msb/GBubLnZgO60Gy/Hs9le4m2/urZ0bkaLVam', 3, '0000-00-00 00:00:00'),
+(239, '', 'Student12', 'Student12', '', '', '', 'student12@gmail.com', 'student12@gmail.com', '$2y$10$DZ4hK5cYcmSchUUnJEoWX.kx56WaYUoyip/hllZoociipp79QdMKW', 3, '0000-00-00 00:00:00'),
+(240, '', 'Student13', 'Student13', '', '', '', 'student13@gmail.com', 'student13@gmail.com', '$2y$10$lVxqYNrHnoUQS01COaynsOl/o9Bs8Rzr4.augrc.NLAa/xv0iizXy', 3, '0000-00-00 00:00:00'),
+(241, '', 'Student14', 'Student14', '', '', '', 'student14@gmail.com', 'student14@gmail.com', '$2y$10$OUNCZewAL0QyjSOIAhKVn.701HNh7cDsH6fFbE7DZSJafns2V1oia', 3, '0000-00-00 00:00:00'),
+(242, '', 'Student15', 'Student15', '', '', '', 'student15@gmail.com', 'student15@gmail.com', '$2y$10$vaseD3NKkBNVXVzp6yEhAOiXA9fAEHC.ID3M6HTIoIu32X6TTiB7e', 3, '0000-00-00 00:00:00'),
+(243, '', 'Student16', 'Student16', '', '', '', 'student16@gmail.com', 'student16@gmail.com', '$2y$10$BHHt8x08jap35NNo/wYbG.5VavXBeUKp3PT3Rtb7Eta7ZJwLLoMqe', 3, '0000-00-00 00:00:00'),
+(244, '', 'Student17', 'Student17', '', '', '', 'student17@gmail.com', 'student17@gmail.com', '$2y$10$hHoR9ew7AkcCrVRuswAgL.SgwxM36IASJvJlo7pK1o3mJQMEezkEW', 3, '0000-00-00 00:00:00'),
+(245, '', 'Student18', 'Student18', '', '', '', 'student18@gmail.com', 'student18@gmail.com', '$2y$10$a.xzONMmUjBTP31iJGGptORunuXo6HzPV4eIxGgUHIWn3pIH8Mmxi', 3, '0000-00-00 00:00:00'),
+(246, '', 'Student19', 'Student19', '', '', '', 'student19@gmail.com', 'student19@gmail.com', '$2y$10$Z6LkqFGzRtoUgj01Ho86SOLm1q5A3FTdIvs/NTnhCZMN.mNHvPGmW', 3, '0000-00-00 00:00:00'),
+(247, '', 'Student20', 'Student20', '', '', '', 'student20@gmail.com', 'student20@gmail.com', '$2y$10$kKdUbyqiKHh7tkQl.n8B5.xrf4Wuw0Xr8JsiwsDlnKYYzzIk9TH8.', 3, '0000-00-00 00:00:00'),
+(248, '', 'Student21', 'Student21', '', '', '', 'student21@gmail.com', 'student21@gmail.com', '$2y$10$ke1lcv1PX/cqkuKCPzrsNetzNVy1vDKysEIYu7KV5FaHFXN5vI.UG', 3, '0000-00-00 00:00:00'),
+(249, '', 'Student22', 'Student22', '', '', '', 'student22@gmail.com', 'student22@gmail.com', '$2y$10$GqSPxboyhz5R3hblwPkB9OaubOVuAEy6NC5x75LxrHieSnkUDYgvS', 3, '0000-00-00 00:00:00'),
+(250, '', 'Student23', 'Student23', '', '', '', 'student23@gmail.com', 'student23@gmail.com', '$2y$10$U7LAeXvE2AIrqtXyLohriu8eiGDcZ/OOhvUpM5eC2rvBNcuQSN/jG', 3, '0000-00-00 00:00:00'),
+(251, '', 'Student24', 'Student24', '', '', '', 'student24@gmail.com', 'student24@gmail.com', '$2y$10$MmnSb80YQOwux2ZBbStRNOfQ3KgesFxWQsSgOTKl2uS.6P5ROrJlu', 3, '0000-00-00 00:00:00'),
+(252, '', 'Student25', 'Student25', '', '', '', 'student25@gmail.com', 'student25@gmail.com', '$2y$10$R9ZhlItpz5wo7F6Q2V/gEOjCu3H8hnJOfOpKatp5TnRY/8E2YBt9C', 3, '0000-00-00 00:00:00'),
+(253, '', 'Student26', 'Student26', '', '', '', 'student26@gmail.com', 'student26@gmail.com', '$2y$10$XptUzBPhMfrTc9zQA76dtul4WTui6FaedN4ahR4KNx0clUOFB1W/O', 3, '0000-00-00 00:00:00'),
+(254, '', 'Student27', 'Student27', '', '', '', 'student27@gmail.com', 'student27@gmail.com', '$2y$10$l1.fGpNTjHhKuRp55Vzf.OPGRmW5jRIvhMd79upu7v4FspatQE.lu', 3, '0000-00-00 00:00:00'),
+(255, '', 'Student28', 'Student28', '', '', '', 'student28@gmail.com', 'student28@gmail.com', '$2y$10$rPKy2Ukn44QQwC49THGkMerzjVqlO6/.vgHjswdEwDSh1zxQySGkS', 3, '0000-00-00 00:00:00'),
+(256, '', 'Student29', 'Student29', '', '', '', 'student29@gmail.com', 'student29@gmail.com', '$2y$10$582NaS.KpQnnkniXPYW1CelIFLClc8zPTz4l20roOvHQ4fH9fs2VG', 3, '0000-00-00 00:00:00'),
+(257, '', 'Student30', 'Student30', '', '', '', 'student30@gmail.com', 'student30@gmail.com', '$2y$10$nX63nLY7.//t/YRpoSyAou83q0eoqMY7/u/hf51TB1DitkF3A9Yam', 3, '0000-00-00 00:00:00'),
+(258, '', 'Student31', 'Student31', '', '', '', 'student31@gmail.com', 'student31@gmail.com', '$2y$10$yJLbQc.vf.t2qACnnAp9heEZ1e9kqeh/teAyImKqKUFVm3klwP0pi', 3, '0000-00-00 00:00:00'),
+(259, '', 'Student32', 'Student32', '', '', '', 'student32@gmail.com', 'student32@gmail.com', '$2y$10$B4pVAH7/M9XAQDu/0sFjBuLZI06W7cd9iT3/jsaX8.eFpyJPW7FSm', 3, '0000-00-00 00:00:00'),
+(260, '', 'Student33', 'Student33', '', '', '', 'student33@gmail.com', 'student33@gmail.com', '$2y$10$3zzNbNP/r9HWCc/nOeQ45uhGPBnbyviqNJAa7q.9O1qRR3PjxQFDa', 3, '0000-00-00 00:00:00'),
+(261, '', 'Student34', 'Student34', '', '', '', 'student34@gmail.com', 'student34@gmail.com', '$2y$10$53kstSyS8FJpDyvQy20JgOu3lcc9UmZqMAL6.kFKTmKj9Y9w3uAli', 3, '0000-00-00 00:00:00'),
+(262, '', 'Student35', 'Student35', '', '', '', 'student35@gmail.com', 'student35@gmail.com', '$2y$10$aiBSWccIQrZ6LY16f8.jsuQKKESrvc/mn67PtNCmGYHBR.1S1Eoa6', 3, '0000-00-00 00:00:00'),
+(263, '', 'Student36', 'Student36', '', '', '', 'student36@gmail.com', 'student36@gmail.com', '$2y$10$by3DUQulB/KEBELSPXvf3ugCYOyoLOnyFG3qr3T3r3AoI40oI1O0q', 3, '0000-00-00 00:00:00'),
+(264, '', 'Student37', 'Student37', '', '', '', 'student37@gmail.com', 'student37@gmail.com', '$2y$10$BWmMhA9qRa5s1HtnwGV5sOHfgOFAcJEKSaaqIsjkqbFHedkRfR5ti', 3, '0000-00-00 00:00:00'),
+(265, '', 'Student38', 'Student38', '', '', '', 'student38@gmail.com', 'student38@gmail.com', '$2y$10$YbCqTlu83ew4C6EjQI8bterRuRsfcoBthctEEv9XkkkZYNnTxRBpq', 3, '0000-00-00 00:00:00'),
+(266, '', 'Student39', 'Student39', '', '', '', 'student39@gmail.com', 'student39@gmail.com', '$2y$10$ErPE3j/3.58OOCnHtVXrSu5vN0gTVvySi8epbx85TEv/T.us2vQLu', 3, '0000-00-00 00:00:00'),
+(267, '', 'Student40', 'Student40', '', '', '', 'student40@gmail.com', 'student40@gmail.com', '$2y$10$6MOZtekpM0dVfgQeJXnHmOJ8NKnq9gVyD6jiP.MiToW5QGdqEOj26', 3, '0000-00-00 00:00:00'),
+(268, '', 'Student41', 'Student41', '', '', '', 'student41@gmail.com', 'student41@gmail.com', '$2y$10$JJDlXJn8fFm6j/B4wcHdAuxAnmk.nmMSG1o421/nnF4Fzi2tAM7QW', 3, '0000-00-00 00:00:00'),
+(269, '', 'Student42', 'Student42', '', '', '', 'student42@gmail.com', 'student42@gmail.com', '$2y$10$65VNUfxCvr9viuggZjNtd.MFkphzzIc.E8NM90i0kNu3j9h5rwove', 3, '0000-00-00 00:00:00'),
+(270, '', 'Student43', 'Student43', '', '', '', 'student43@gmail.com', 'student43@gmail.com', '$2y$10$u1OmQSw0ceNl0tI2M05ZpOg7rRjefOacrvIw8sW9hFr1K1LzcsagG', 3, '0000-00-00 00:00:00'),
+(271, '', 'Student44', 'Student44', '', '', '', 'student44@gmail.com', 'student44@gmail.com', '$2y$10$jR/uO7XVSmuTU9s1X.0gKumERP.2q8ddgMKdkqcflSh71qxjZoXJ.', 3, '0000-00-00 00:00:00'),
+(272, '', 'Student45', 'Student45', '', '', '', 'student45@gmail.com', 'student45@gmail.com', '$2y$10$qdKNhaMhGH5liFFBAcnMfuTBHbkUygkco6ggtt.KxFeSV5fVOABaS', 3, '0000-00-00 00:00:00'),
+(273, '', 'Student46', 'Student46', '', '', '', 'student46@gmail.com', 'student46@gmail.com', '$2y$10$cdPConK97DGP5fpPveTcBuwMPACzEzAMYAfDyXk2mdLPM/JNbFHiq', 3, '0000-00-00 00:00:00'),
+(274, '', 'Student47', 'Student47', '', '', '', 'student47@gmail.com', 'student47@gmail.com', '$2y$10$JgcXStyc1HIirTVLFiYQVOp6Tn1UTszCLUu3YftURNtz0O4JgXpXi', 3, '0000-00-00 00:00:00'),
+(275, '', 'Student48', 'Student48', '', '', '', 'student48@gmail.com', 'student48@gmail.com', '$2y$10$20bbLQMUX3v87rUOctOMNOHnkfA2t6109lRW7EZrYiK4ZgEYqkPIO', 3, '0000-00-00 00:00:00'),
+(276, '', 'Student49', 'Student49', '', '', '', 'student49@gmail.com', 'student49@gmail.com', '$2y$10$miCes7a9waqLfG.8VHG.S.u6GfxykGxge62j4.9OyZvUVFP31mbU.', 3, '0000-00-00 00:00:00'),
+(277, '', 'Student50', 'Student50', '', '', '', 'student50@gmail.com', 'student50@gmail.com', '$2y$10$4oxaxBlFXAnF8G4PF4J9LONhFC517ltE1SpYeNS7Q6vlHEUtSwiI2', 3, '0000-00-00 00:00:00');
 
 --
 -- Indexes for dumped tables
@@ -644,7 +701,7 @@ ALTER TABLE `lesson`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `module`
@@ -662,7 +719,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `user_id` int(55) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=278;
 
 --
 -- Constraints for dumped tables
