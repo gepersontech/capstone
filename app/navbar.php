@@ -43,7 +43,7 @@
                                         echo '<li>
                                         <a href="#">
                                             <h3>'.$row['log_name'].'</h3>
-                                            <p>
+                                            <p><span class="icon-copy ti-time"></span>
                                                 '.$row['datetime'].'
                                             </p>
                                         </a>

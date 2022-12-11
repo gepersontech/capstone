@@ -57,7 +57,8 @@
                     <div class="login-box bg-white box-shadow border-radius-10">
                         <div class="login-title">
                             <h2 class="text-center text-primary" style="font-family: 'Poppins', sans-serif;">Welcome
-                                Back! 👋 </h2>
+                                Back! 👋
+                            </h2>
                             <p class="text-center m-2 " style="font-family: 'Poppins', sans-serif;">Login to begin your
                                 session</p>
                         </div>

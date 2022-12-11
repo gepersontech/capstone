@@ -21,7 +21,7 @@ RewriteRule ^503/?$ index.php?page=503 [NC,L]
 #users
 RewriteRule ^user-dashboard/?$ index.php?page=user-dashboard [NC,L]
 RewriteRule ^profile/?$ index.php?page=profile [NC,L]
-RewriteRule ^user-dashboard/?$ index.php?page=user-dashboard [NC,L]
+RewriteRule ^home/?$ index.php?page=home [NC,L]
 RewriteRule ^student-result/?$ index.php?page=student-result [NC,L]
 #RewriteRule ^([^\.]+)$ $1.php [NC,L]
 RewriteRule ^exam-user/?$ index.php?page=exam-user [NC,L]

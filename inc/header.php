@@ -142,7 +142,7 @@ window.onload = function() {
         <div class="container d-flex align-items-center justify-content-between">
 
             <div class="logo">
-                <img src="assets/img/GITS_LOGO.png" alt="LOGO">
+                <a href="index"><img src="assets/img/GITS_LOGO.png" alt="LOGO" class="img-fluid"></a>
                 <!-- <h1><a href="index.php"><span>ITS Geometry and Learning App </span></a></h1> -->
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
