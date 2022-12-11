@@ -185,14 +185,16 @@
 
 
                         </div> <br>
-                        <div class="text-center pb-3">
-                            <P>Already have an account?
-                                <a href="login.php">Login</a>
-                            </P>
-                        </div>
+
+                    </div>
+                    <div class="text-center mt-3">
+                        <P>Already have an account?
+                            <a href="login.php">Login</a>
+                        </P>
                     </div>
 
                 </div>
+
 
             </div>
         </div>
