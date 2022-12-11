@@ -49,6 +49,8 @@ if (isset($_GET['question'])) {
     $item_num = 1;
 }
 $_SESSION['itemNum'] = $item_num;
+
+
 //........................................
 $query = "SELECT * FROM exam_items WHERE examitem_id = '" . $item_num . "'";
 $queryResult = mysqli_query($con, $query);
@@ -448,4 +450,40 @@ unset($_SESSION['headertextlast']);
         });
     }
 </script>
+
+<!-- ITEM NUMBER INCREMENTER MODAL -->
+<div class="modal fade" id="questionCleared" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body text-center font-18">
+                <div class="mb-30 text-center">
+                    <img src="../app/images/check-gif.gif" 
+                    style="width: 100px; height: 100px;"/>
+                </div>
+                <h3 class="mb-20"><?php echo $_SESSION['headertextitem']; ?></h3>
+                <?php echo $_SESSION['bodytext']; ?>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <a style="background-color: #87CEFA;border: none;" type="button" href="index.php?page=exam_circle&question=<?php echo $_SESSION['nextitem'];?>" class="btn btn-primary">
+                    Next
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SHOW NOTIFICATION MODAL.... -->
+<?php
+if (isset($_SESSION["headertextitem"])) {
+?>
+    <script>
+        setTimeout(function() {
+            $("#questionCleared").modal('show');
+        }, 100);
+    </script>
+<?php
+    unset($_SESSION["headertextitem"]);
+}
+?>
+<!-- ITEM NUMBER INCREMENTER MODAL END -->
 

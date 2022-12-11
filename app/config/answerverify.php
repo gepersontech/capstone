@@ -11,50 +11,50 @@ if (isset($_POST['submit'])) {
     $studentID = $_SESSION['id'];
     $examID = $_SESSION['exam_id'];
     $attemptMistake = 1;
-    
+
     // VALIDATION OF ANSWER IF CORRECT.............................
     // THE ANSWER IS CORRECT....................
     if ($inputanswer == $anskey) {
         $totalMistakes = $_SESSION['over'];
         $numberofItem = $_SESSION['totalItems'];
         //......SCORING CRITERIA............
-        if($totalMistakes == 0){
+        if ($totalMistakes == 0) {
             $score = 10;
-        }else if($totalMistakes == 1){
+        } else if ($totalMistakes == 1) {
             $score = 9;
-        }else if($totalMistakes == 2){
+        } else if ($totalMistakes == 2) {
             $score = 8;
-        }else if($totalMistakes == 3){
+        } else if ($totalMistakes == 3) {
             $score = 7;
-        }else if($totalMistakes == 4){
+        } else if ($totalMistakes == 4) {
             $score = 6;
-        }else{
+        } else {
             $score = 5;
         }
         $totalScore = $score;
         // query for inserting score to exam_correct table database.............
         $scorequery = "INSERT INTO `exam_correct`(`student_id`, `exam_id`, `examitem_id`, `points`) 
         VALUES ($studentID,$examID,$questionId,$totalScore)";
-        $result = mysqli_query($con,$scorequery);
+        $result = mysqli_query($con, $scorequery);
 
         $itemIncrement = $_SESSION['itemNum'];
-        
+
         // reach the last question............
-        if($itemIncrement == $numberofItem){
+        if ($itemIncrement == $numberofItem) {
             $_SESSION['headertextlast'] = "Good job! Correct👏";
-            $_SESSION['bodytextlast']   = "You've reach the last question. The answer of that question is " . $anskey . " and you've got ". $totalScore ." points";
+            $_SESSION['bodytextlast']   = "You've reach the last question. The answer of that question is " . $anskey . " and you've got " . $totalScore . " points";
             $_SESSION['statusIconlast'] = "success";
             header("location: ../index.php?page=exam_circle&question=$numberofItem");
-        // Correct answer result........................
-        }else{
+            // Correct answer result........................
+        } else {
             ++$itemIncrement;
-            $_SESSION['headertext'] = "Good job!👏";
-            $_SESSION['bodytext']   = "You got the correct answer. The answer of that question is " . $anskey . " and you've got ". $totalScore ." points";
-            $_SESSION['statusIcon'] = "success";
-            header("location: ../index.php?page=exam_circle&question=$itemIncrement");
+            $_SESSION['nextitem'] = $itemIncrement;
+            $_SESSION['headertextitem'] = "Good job!👏";
+            $_SESSION['bodytext']   = "You got the correct answer. The answer of that question is " . $anskey . " and you've got " . $totalScore . " points";
+            header("location: ../index.php?page=exam_circle");
         }
 
-    // THE ANSWER IS WRONG..............
+        // THE ANSWER IS WRONG..............
     } else {
         $sqlquery = "INSERT INTO `exam_mistakes`(`student_id`, `examitem_id`, `exam_id`, `mistakes`) 
         VALUES ($studentID,$questionId,$examID,$attemptMistake)";
