@@ -4,7 +4,12 @@
             <div class="row justify-content-between">
                 <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
                     <div data-aos="zoom-out">
-                        <h1 style="font-family: 'Poppins', sans-serif; ">Make Learning <span>Easy</span></h1>
+                        <h1 style="font-family: 'Poppins', sans-serif; font-size: 40px;">Make Learning <a href=""
+                                class="typewrite" data-period="2000"
+                                data-type='[ "Easy.", "Fun.", "Interactive.", "Intelligent." ]'>
+                                <span class="wrap"></span>
+                            </a></h1>
+
                         <h2 style="font-family: 'Poppins', sans-serif; ">Highly Adaptive, Interactive, and Learner-Paced
                             Learning Environments</h2>
                         <div class="text-center text-lg-start">
