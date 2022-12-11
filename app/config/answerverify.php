@@ -39,11 +39,13 @@ if (isset($_POST['submit'])) {
 
         $itemIncrement = $_SESSION['itemNum'];
         
+        // reach the last question............
         if($itemIncrement == $numberofItem){
             $_SESSION['headertextlast'] = "Good job! Correct👏";
             $_SESSION['bodytextlast']   = "You've reach the last question. The answer of that question is " . $anskey . " and you've got ". $totalScore ." points";
             $_SESSION['statusIconlast'] = "success";
             header("location: ../index.php?page=exam_circle&question=$numberofItem");
+        // Correct answer result........................
         }else{
             ++$itemIncrement;
             $_SESSION['headertext'] = "Good job!👏";
