@@ -53,21 +53,17 @@
                                 }
                                 }else{
                                     echo ' <li>
-                                <a href="#">
-                                    <!-- <img src="vendors/images/img.jpg" alt="" /> -->
-                                    <h3>Activity</h3>
-                                    <p>
-                                        No recent activity
-                                    </p>
-                                </a>
-                            </li>';
-                                }
-
-
-                                
+                                                <a href="#">
+                                                    <!-- <img src="vendors/images/img.jpg" alt="" /> -->
+                                                    <h3>Activity</h3>
+                                                    <p>
+                                                        No recent activity
+                                                    </p>
+                                                </a>
+                                            </li>';
+                                }                                
                             }
                         ?>
-
 
                         </ul>
                     </div>
@@ -82,13 +78,11 @@
                     </span>
                     <span class="user-name">
                         <?php 
-                    echo $_SESSION['firstname']." ".$_SESSION['lastname'];
+                    echo $_SESSION['email'];
              ?>
                     </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-                    <!-- <a class="dropdown-item" href="#"><i class="dw dw-user1"></i> Profile</a> -->
-                    <!-- <a class="dropdown-item" href="#"><i class="dw dw-settings2"></i> Setting</a> -->
                     <a class="dropdown-item" href="home"><i class="dw dw-help"></i>My Dashboard</a>
                     <a class="dropdown-item" href="student-result"><i class="dw dw-help"></i>My Results</a>
                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"><i

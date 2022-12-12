@@ -17,9 +17,11 @@
                                     title="Create account"
                                     style="border-radius: 50px; width: 200px; height: 55px; font-family: 'Poppins', sans-serif;  background-color: #1acc8d;color: blue; background-color: white;">Get
                                     Started</button></a> -->
-                            <button class="get-started"
-                                style="border-radius: 50px; font-family: 'Poppins', sans-serif;  background-color: #1acc8d; color: blue; background-color: white;"><span>Get
-                                    Started </span></button>
+                            <a href="register">
+                                <button class="get-started"
+                                    style="border-radius: 50px; font-family: 'Poppins', sans-serif;  background-color: #1acc8d; color: blue; background-color: white;"><span>Get
+                                        Started </span></button>
+                            </a>
                             <!-- <a href="#about" class="btn-get-started scrollto">Get Started</a> -->
                         </div>
                     </div>
@@ -67,7 +69,7 @@
                                 <h4>GEOMETRY</h4>
 
                                 <button class="btn btn-outline-primary"
-                                    style="border-radius: 50px; min-width: 80px; height: 50px; font-family: 'Poppins', sans-serif; "
+                                    style="border-radius: 50px; min-width: 80px; height: 50px; font-family: 'Poppins', sans-serif;"
                                     title="Course Available">Take
                                     this
                                     Course</button>
