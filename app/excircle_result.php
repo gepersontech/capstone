@@ -16,7 +16,7 @@
             <table class="table">
                 <tbody>
                     <tr>
-                        <th style="font-weight: bold;font-size: 15px;">Number of attempt: </th>
+                        <th style="font-weight: bold;font-size: 15px;">Number of Exam attempt: </th>
                         <td>Mark</td>
                     </tr>
                     <tr>
@@ -63,7 +63,7 @@
                     <div class="col ">
                         <button class="btn btn-success float-right">Review</button>
                     </div>
-                    <div class="col float-right">
+                    <div class="col" style="margin-left: -20px;">
                         <a href="home" class="btn btn-success">Dashboard</a>
                     </div>
                 </div>
