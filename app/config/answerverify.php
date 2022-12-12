@@ -40,6 +40,7 @@ if (isset($_POST['submit'])) {
 
         $itemIncrement = $_SESSION['itemNum'];
         $itemstay = $_SESSION['itemNum'];
+        $_SESSION['stay'] = $itemstay;
         // reach the last question............
         if ($itemIncrement == $numberofItem) {
             $_SESSION['headertextlast'] = "Good job! Correct👏";

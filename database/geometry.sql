@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2022 at 05:12 AM
+-- Generation Time: Dec 12, 2022 at 09:13 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -90,6 +90,7 @@ CREATE TABLE `exam` (
   `exam_title` varchar(255) NOT NULL,
   `exam_desc` varchar(500) NOT NULL,
   `totalPoints` int(100) NOT NULL,
+  `passing_score` int(255) NOT NULL,
   `totalQuestion` int(100) NOT NULL,
   `course_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -98,8 +99,8 @@ CREATE TABLE `exam` (
 -- Dumping data for table `exam`
 --
 
-INSERT INTO `exam` (`exam_id`, `exam_title`, `exam_desc`, `totalPoints`, `totalQuestion`, `course_id`) VALUES
-(1, 'Lesson 1 - Circle Quiz', 'Evaluate the student learning in circles', 110, 11, 3);
+INSERT INTO `exam` (`exam_id`, `exam_title`, `exam_desc`, `totalPoints`, `passing_score`, `totalQuestion`, `course_id`) VALUES
+(1, 'Lesson 1 - Circle Quiz', 'Evaluate the student learning in circles', 110, 80, 11, 3);
 
 -- --------------------------------------------------------
 
@@ -115,49 +116,6 @@ CREATE TABLE `examquestion_attempt` (
   `status` int(255) NOT NULL,
   `eqa_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `exam_answers`
---
-
-CREATE TABLE `exam_answers` (
-  `exans_id` int(11) NOT NULL,
-  `student_id` int(11) NOT NULL,
-  `course_id` int(11) NOT NULL,
-  `exam_id` int(11) NOT NULL,
-  `question_id` int(11) NOT NULL,
-  `num_wrong` int(11) NOT NULL,
-  `exans_created` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `exam_answers`
---
-
-INSERT INTO `exam_answers` (`exans_id`, `student_id`, `course_id`, `exam_id`, `question_id`, `num_wrong`, `exans_created`) VALUES
-(1, 1, 1, 1, 1, 3, '2022-12-06 15:19:16'),
-(2, 1, 1, 1, 1, 1, '2022-12-06 17:19:39'),
-(3, 1, 1, 1, 1, 1, '2022-12-06 17:21:48'),
-(4, 1, 1, 1, 1, 1, '2022-12-06 17:23:28'),
-(5, 1, 1, 1, 1, 1, '2022-12-06 17:25:54'),
-(6, 1, 1, 1, 1, 1, '2022-12-06 17:26:03'),
-(7, 1, 1, 1, 1, 1, '2022-12-06 17:26:38'),
-(8, 1, 1, 1, 1, 1, '2022-12-06 17:56:47'),
-(9, 1, 1, 1, 1, 1, '2022-12-06 17:57:00'),
-(10, 1, 1, 1, 1, 1, '2022-12-06 17:57:08'),
-(11, 1, 1, 1, 1, 1, '2022-12-06 17:57:13'),
-(12, 1, 1, 1, 1, 1, '2022-12-06 17:58:24'),
-(13, 1, 1, 1, 1, 1, '2022-12-06 18:13:39'),
-(14, 1, 1, 1, 1, 1, '2022-12-07 05:30:04'),
-(15, 1, 1, 1, 1, 1, '2022-12-07 10:47:55'),
-(16, 1, 1, 1, 1, 1, '2022-12-07 10:48:44'),
-(17, 1, 1, 1, 1, 1, '2022-12-07 10:48:52'),
-(18, 1, 1, 1, 1, 1, '2022-12-07 13:30:30'),
-(19, 1, 1, 1, 1, 1, '2022-12-07 13:50:53'),
-(20, 1, 1, 1, 1, 1, '2022-12-07 14:23:27'),
-(21, 1, 1, 1, 1, 1, '2022-12-07 14:23:30');
 
 -- --------------------------------------------------------
 
@@ -243,6 +201,23 @@ CREATE TABLE `exam_mistakes` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `exam_results`
+--
+
+CREATE TABLE `exam_results` (
+  `examresult_id` int(11) NOT NULL,
+  `student_id` int(11) NOT NULL,
+  `exam_id` int(11) NOT NULL,
+  `total_mistakes` int(255) NOT NULL,
+  `total_hintUsed` int(255) NOT NULL,
+  `Student_Score` int(255) NOT NULL,
+  `status` int(100) NOT NULL,
+  `result_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `items`
 --
 
@@ -322,7 +297,16 @@ INSERT INTO `logs` (`log_id`, `user_id`, `log_name`, `datetime`) VALUES
 (23, 277, 'login', '2022-12-11 14:33:48'),
 (24, 74, 'logout', '2022-12-11 17:50:09'),
 (25, 74, 'login', '2022-12-11 17:50:27'),
-(26, 74, 'login', '2022-12-12 04:11:10');
+(26, 74, 'login', '2022-12-12 04:11:10'),
+(27, 74, 'logout', '2022-12-12 08:31:23'),
+(28, 74, 'login', '2022-12-12 08:31:38'),
+(29, 74, 'logout', '2022-12-12 10:05:44'),
+(30, 74, 'login', '2022-12-12 10:06:51'),
+(31, 74, 'login', '2022-12-12 12:01:53'),
+(32, 74, 'logout', '2022-12-12 13:00:38'),
+(33, 74, 'login', '2022-12-12 13:00:53'),
+(34, 74, 'logout', '2022-12-12 14:07:38'),
+(35, 74, 'login', '2022-12-12 14:16:15');
 
 -- --------------------------------------------------------
 
@@ -543,12 +527,6 @@ ALTER TABLE `examquestion_attempt`
   ADD PRIMARY KEY (`eqa_id`);
 
 --
--- Indexes for table `exam_answers`
---
-ALTER TABLE `exam_answers`
-  ADD PRIMARY KEY (`exans_id`);
-
---
 -- Indexes for table `exam_attempt`
 --
 ALTER TABLE `exam_attempt`
@@ -571,6 +549,12 @@ ALTER TABLE `exam_items`
 --
 ALTER TABLE `exam_mistakes`
   ADD PRIMARY KEY (`mistake_id`);
+
+--
+-- Indexes for table `exam_results`
+--
+ALTER TABLE `exam_results`
+  ADD PRIMARY KEY (`examresult_id`);
 
 --
 -- Indexes for table `items`
@@ -667,22 +651,16 @@ ALTER TABLE `examquestion_attempt`
   MODIFY `eqa_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `exam_answers`
---
-ALTER TABLE `exam_answers`
-  MODIFY `exans_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
-
---
 -- AUTO_INCREMENT for table `exam_attempt`
 --
 ALTER TABLE `exam_attempt`
-  MODIFY `examAttempt_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `examAttempt_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `exam_correct`
 --
 ALTER TABLE `exam_correct`
-  MODIFY `examcorrect_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `examcorrect_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=273;
 
 --
 -- AUTO_INCREMENT for table `exam_items`
@@ -694,7 +672,13 @@ ALTER TABLE `exam_items`
 -- AUTO_INCREMENT for table `exam_mistakes`
 --
 ALTER TABLE `exam_mistakes`
-  MODIFY `mistake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=255;
+  MODIFY `mistake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=601;
+
+--
+-- AUTO_INCREMENT for table `exam_results`
+--
+ALTER TABLE `exam_results`
+  MODIFY `examresult_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `lesson`
@@ -706,7 +690,7 @@ ALTER TABLE `lesson`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `module`

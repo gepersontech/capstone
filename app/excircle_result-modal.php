@@ -1,7 +1,3 @@
-<!-- SWEET ALERT SCRIPT -->
-<script src="vendors/sweetalert/sweetalert.min.js"></script>
-<script src="src/plugins/sweetalert2/jquery-3.6.1.min.js"></script>
-
 <div class="page-header">
     <div class="row">
         <div class="col-md-6">
@@ -141,14 +137,14 @@ $exa_id = $_SESSION['exam_id'];
                     </div>
 
                     <!-- buttons -->
-                    <div class="row" style="justify-content: center;margin-top: 30px;">
+                    <!-- <div class="row" style="justify-content: center;margin-top: 30px;">
                         <div class="col ">
                             <button class="btn btn-success float-right">Review</button>
                         </div>
                         <div class="col" style="margin-left: -20px;">
                             <a href="home" class="btn btn-success">Dashboard</a>
                         </div>
-                    </div>
+                    </div> -->
                 <?php
                 } else {
                     $student_status = 0;
@@ -164,14 +160,14 @@ $exa_id = $_SESSION['exam_id'];
                     </div>
 
                     <!-- buttons -->
-                    <div class="row" style="justify-content: center;margin-top: 30px;">
+                    <!-- <div class="row" style="justify-content: center;margin-top: 30px;">
                         <div class="col ">
                             <a href="exam-user" class="btn btn-warning float-right">Try Again</a>
                         </div>
                         <div class="col" style="margin-left: -20px;">
                             <a href="" class="btn btn-warning">Review</a>
                         </div>
-                    </div>
+                    </div> -->
                 <?php
                 }
                 ?>

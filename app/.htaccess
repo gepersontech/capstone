@@ -32,6 +32,7 @@ RewriteRule ^lesson_2/?$ index.php?page=lesson_2 [NC,L]
 RewriteRule ^lesson_3/?$ index.php?page=lesson_3 [NC,L]
 RewriteRule ^lesson_4/?$ index.php?page=lesson_4 [NC,L]
 RewriteRule ^lesson1_read/?$ index.php?page=lesson1_read [NC,L]
+RewriteRule ^excircle_result-modal/?$ index.php?page=excircle_result-modal [NC,L]
 
 #RewriteRule ^index/([0-9]+)/([0-9a-zA-Z_-]+) index.php?page=$1 [NC]
 RewriteRule ^index/([0-9a-zA-Z_-]+) index.php?page=$1 [NC]

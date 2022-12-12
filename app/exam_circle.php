@@ -381,8 +381,8 @@ if ($rowCount > 0) {
 
 <!-- MODULE READ MODAL -->
 <div class="modal fade bs-example-modal-lg" id="moduleOpen" role="dialog">
-    <div class="modal-dialog modal-lg modal-dialog-centered" >
-        <div class="modal-content" >
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">
                     Related Documents
@@ -392,7 +392,7 @@ if ($rowCount > 0) {
                 </button>
             </div>
             <div class="modal-body" style="overflow: auto;height: 450px;">
-                <?php include "../app/lesson1_read.php"?>
+                <?php include "../app/lesson1_read.php" ?>
             </div>
         </div>
     </div>
@@ -461,7 +461,7 @@ if (isset($_SESSION['headertextlast'])) {
                     icon: '<?php echo $_SESSION['statusIconlast'] ?>',
                     button: 'See Result'
                 }).then(function() {
-                    window.location = "excircle_result";
+                    window.location = "index.php?page=excircle_result&saveResult=1";
                 });
             </script>
 <?php
@@ -482,7 +482,7 @@ unset($_SESSION['headertextlast']);
             <?php
             $clicked = 1;
             ?>
-            window.location = "index.php?page=exam_circle&attempt=<?php echo $mistakes; ?>&question=<?php echo $_SESSION['nextitem']; ?>&usehint=<?php echo $clicked; ?>";
+            window.location = "index.php?page=exam_circle&attempt=<?php echo $mistakes; ?>&question=<?php echo $item_num; ?>&usehint=<?php echo $clicked; ?>";
         });
     }
 </script>
@@ -512,3 +512,18 @@ if (isset($_GET['checkpoint'])) {
 unset($_SESSION['headertextitem']);
 ?>
 <!-- ITEM NUMBER INCREMENTER MODAL END -->
+
+<!-- INPUT EXAM ATTEMPT TO DATABASE...... -->
+<?php
+$examAttempt;
+if (isset($_GET['status'])) {
+    $examAttempt = $_GET['status'];
+    $ex_id = $_SESSION['exam_id'];
+    $stu_id = $_SESSION['id'];
+
+    $examattemptquery = "INSERT INTO `exam_attempt`( `student_id`, `exam_id`, `status`)
+        VALUES ($stu_id,$ex_id,$examAttempt)";
+    $result = mysqli_query($con, $examattemptquery);
+}
+?>
+<!-- INPUT EXAM ATTEMPT TO DATABASE...... END........ -->

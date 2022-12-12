@@ -37,7 +37,7 @@
             </thead>
             <tbody>
                 <?php
-                $result = mysqli_query($con, "SELECT exam_id, totalQuestion, totalPoints, exam_title, course.course_name, exam_desc FROM `exam` LEFT JOIN course ON exam.course_id = course.course_id;");
+                $result = mysqli_query($con, "SELECT exam_id, totalQuestion, passing_score , totalPoints, exam_title, course.course_name, exam_desc FROM `exam` LEFT JOIN course ON exam.course_id = course.course_id;");
                 $count = 1;
                 $rowCount = mysqli_num_rows($result);
                 if ($rowCount > 0) {
@@ -45,11 +45,13 @@
                         $id = $row['exam_id'];
                         $totalitem = $row['totalQuestion'];
                         $totalpoints = $row['totalPoints'];
+                        $passingscore = $row['passing_score'];
 
                         // SESSION VARIABLE FOR GLOBAL USE...........
                         $_SESSION['exam_id'] = $id;
                         $_SESSION['totalItems'] = $totalitem;
                         $_SESSION['examtotalPoints'] = $totalpoints;
+                        $_SESSION['passing'] = $passingscore;
                 ?>
                 <tr>
                     <td><?php echo $row['exam_title']; ?></td>
@@ -91,7 +93,7 @@
             <div class="modal-body">Proceed to the Quiz Now</div>
             <div class="modal-footer">
                 <button class="btn btn-danger" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="index.php?page=exam_circle">Proceed</a>
+                <a class="btn btn-primary" href="index.php?page=exam_circle&status=1">Proceed</a>
             </div>
         </div>
     </div>
