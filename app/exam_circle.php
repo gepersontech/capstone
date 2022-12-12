@@ -1,6 +1,7 @@
 <!-- MATH JAX SCRIPT -->
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
 
 <?php require_once "../conf/config.php"; ?>
 <div class="page-header">
@@ -19,7 +20,8 @@
             </nav>
         </div>
         <div class="col-md-6">
-            <a href="" class="btn btn-light float-right" title="Guide" data-toggle="modal" data-target="#examGuide" style="padding: 4px;margin: 4px;margin-right: 10px;">
+            <a href="" class="btn btn-light float-right" title="Guide" data-toggle="modal" data-target="#examGuide"
+                style="padding: 4px;margin: 4px;margin-right: 10px;">
                 <i style="font-size: 26px;vertical-align: middle;" class="icon-copy dw dw-question-1"></i>
             </a>
         </div>
@@ -27,9 +29,9 @@
 </div>
 
 <style>
-    .swal-text {
-        text-align: center;
-    }
+.swal-text {
+    text-align: center;
+}
 </style>
 
 <?php
@@ -68,15 +70,15 @@ if ($rowCount > 0) {
 
         $_SESSION['displayHint'] = $availHint;
 ?>
-        <!-- Question card -->
-        <div class="card-box mb-30">
-            <div class="pd-20">
-                <div class="row">
-                    <div class="col-6">
-                        <h4 class="text-blue h4">Question <?php echo $item_num; ?> of <?php echo $questionEnd; ?></h4>
-                    </div>
-                    <div class="col-6">
-                        <?php
+<!-- Question card -->
+<div class="card-box mb-30">
+    <div class="pd-20">
+        <div class="row">
+            <div class="col-6">
+                <h4 class="text-blue h4">Question <?php echo $item_num; ?> of <?php echo $questionEnd; ?></h4>
+            </div>
+            <div class="col-6">
+                <?php
                         $sql = "SELECT * from exam_mistakes WHERE exam_id = 1 AND examitem_id = '" . $item_num . "'";
                         $mis = 0;
                         if ($result = mysqli_query($con, $sql)) {
@@ -103,81 +105,84 @@ if ($rowCount > 0) {
 
                         ?>
 
-                        <div class="float-right "><span class="heading" title="View Rating">Rating</span>
-                            <?php
+                <div class="float-right "><span class="heading" title="View Rating">Rating</span>
+                    <?php
                             $start = 1;
                             while ($start <= 5) {
                                 if ($rate < $start) {
 
                             ?>
-                                    <i class="icon-copy fa fa-star-o" aria-hidden="true"></i>
-                                <?php
+                    <i class="icon-copy fa fa-star-o" aria-hidden="true"></i>
+                    <?php
 
                                 } else {
                                 ?>
-                                    <i class="icon-copy fa fa-star text-warning" aria-hidden="true"></i>
-                            <?php
+                    <i class="icon-copy fa fa-star text-warning" aria-hidden="true"></i>
+                    <?php
                                 }
                                 $start++;
                             }
                             ?>
 
-                            <br>
-                            <span class="text-muted"> <?php if ($rate != 0) {
+                    <br>
+                    <span class="text-muted"> <?php if ($rate != 0) {
                                                             echo $rate;
                                                         } else {
                                                             echo "0";
                                                         } ?> average based on
-                                <?php if ($mis != 0) {
+                        <?php if ($mis != 0) {
                                     echo $mis;
                                 } else {
                                     echo "0";
                                 } ?> difficulties.</span>
-                        </div>
-                    </div>
                 </div>
-
-
             </div>
-            <div class="pb-20">
-                <table class="data-table table">
-                    <thead>
-                        <tr>
-                            <!-- question here....... -->
-                            <th style="vertical-align: middle;width: 300px;" colspan="3" class="table-plus datatable-nosort">
-                                <?php echo $question; ?>
-                            </th>
-                            <!-- .............. -->
-                            <!-- HINT BUTTON AND READ -->
-                            <th class="table-plus datatable-nosort" style="vertical-align: middle;width:200px">
-                                <?php
+        </div>
+
+
+    </div>
+    <div class="pb-20">
+        <table class="data-table table">
+            <thead>
+                <tr>
+                    <!-- question here....... -->
+                    <th style="vertical-align: middle;width: 300px;" colspan="3"
+                        class="table-plus datatable-nosort user-select-none">
+                        <?php echo $question; ?>
+                    </th>
+                    <!-- .............. -->
+                    <!-- HINT BUTTON AND READ -->
+                    <th class="table-plus datatable-nosort" style="vertical-align: middle;width:200px">
+                        <?php
                                 if ($mistakes >= 3) {
                                 ?>
-                                    <a class="btn btn-sm btn-warning" data-toggle="modal" data-target="#hintConfirm">
-                                        <span class="icon-copy ti-light-bulb"></span> Hint
-                                    </a>
-                                    <a style="color: white;" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#readDocument">
-                                        <span class="icon-copy ti-file"></span> Read
-                                    </a>
-                                <?php }?>
-                                    <!-- <a onclick="hintValidation()" class="btn btn-sm btn-warning">
+                        <a class="btn btn-sm btn-warning" data-toggle="modal" data-target="#hintConfirm">
+                            <span class="icon-copy ti-light-bulb"></span> Hint
+                        </a>
+                        <a style="color: white;" class="btn btn-sm btn-primary" data-toggle="modal"
+                            data-target="#readDocument">
+                            <span class="icon-copy ti-file"></span> Read
+                        </a>
+                        <?php }?>
+                        <!-- <a onclick="hintValidation()" class="btn btn-sm btn-warning">
                                         <span class="icon-copy ti-light-bulb"></span> Hint
                                     </a>
                                     <a onclick="docValidation()" style="color: white;" class="btn btn-sm btn-primary">
                                         <span class="icon-copy ti-file"></span> Read
                                     </a> -->
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <form action="config/answerverify.php" method="POST">
-                                <input type="text" id="questionID" name="question_id" value="<?php echo $question_id; ?>" hidden>
-                                <input type="text" id="anskey" name="answerkey" value="<?php echo $answerkey; ?>" hidden>
-                                <!-- multiple choice a b c d....... -->
-                                <td style="width: 150px;">
-                                    <button style="border: none; background-color: white;" type="submit" name="submit">
-                                        <input type="radio" id="ch1" name="answer" value="<?php
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <form action="config/answerverify.php" method="POST">
+                        <input type="text" id="questionID" name="question_id" value="<?php echo $question_id; ?>"
+                            hidden>
+                        <input type="text" id="anskey" name="answerkey" value="<?php echo $answerkey; ?>" hidden>
+                        <!-- multiple choice a b c d....... -->
+                        <td style="width: 150px;">
+                            <button style="border: none; background-color: white;" type="submit" name="submit">
+                                <input type="radio" id="ch1" name="answer" value="<?php
                                                                                             if ($mistakes == 1) {
                                                                                                 echo $record['exam_ch3'];
                                                                                             } else if ($mistakes == 2) {
@@ -187,9 +192,9 @@ if ($rowCount > 0) {
                                                                                             } else {
                                                                                                 echo $record['exam_ch1'];
                                                                                             } ?>">
-                                        <label style="vertical-align: middle;font-size: 15px;" for="ch1">
-                                            a.
-                                            <?php
+                                <label style="vertical-align: middle;font-size: 15px;" for="ch1">
+                                    a.
+                                    <?php
                                             if ($mistakes == 1) {
                                                 echo $record['exam_ch3'];
                                             } else if ($mistakes == 2) {
@@ -199,12 +204,12 @@ if ($rowCount > 0) {
                                             } else {
                                                 echo $record['exam_ch1'];
                                             } ?>
-                                        </label>
-                                    </button>
-                                </td>
-                                <td style="width: 150px;">
-                                    <button style="border: none; background-color: white;" type="submit" name="submit">
-                                        <input type="radio" id="ch2" name="answer" value="<?php
+                                </label>
+                            </button>
+                        </td>
+                        <td style="width: 150px;">
+                            <button style="border: none; background-color: white;" type="submit" name="submit">
+                                <input type="radio" id="ch2" name="answer" value="<?php
                                                                                             if ($mistakes == 1) {
                                                                                                 echo $record['exam_ch1'];
                                                                                             } else if ($mistakes == 2) {
@@ -214,9 +219,9 @@ if ($rowCount > 0) {
                                                                                             } else {
                                                                                                 echo $record['exam_ch2'];
                                                                                             } ?>">
-                                        <label style="vertical-align: middle;font-size: 15px;" for="ch2">
-                                            b.
-                                            <?php
+                                <label style="vertical-align: middle;font-size: 15px;" for="ch2">
+                                    b.
+                                    <?php
                                             if ($mistakes == 1) {
                                                 echo $record['exam_ch1'];
                                             } else if ($mistakes == 2) {
@@ -226,12 +231,12 @@ if ($rowCount > 0) {
                                             } else {
                                                 echo $record['exam_ch2'];
                                             } ?>
-                                        </label>
-                                    </button>
-                                </td>
-                                <td style="width: 150px;">
-                                    <button style="border: none; background-color: white;" type="submit" name="submit">
-                                        <input type="radio" id="ch3" name="answer" value="<?php
+                                </label>
+                            </button>
+                        </td>
+                        <td style="width: 150px;">
+                            <button style="border: none; background-color: white;" type="submit" name="submit">
+                                <input type="radio" id="ch3" name="answer" value="<?php
                                                                                             if ($mistakes == 1) {
                                                                                                 echo $record['exam_ch2'];
                                                                                             } else if ($mistakes == 2) {
@@ -241,9 +246,9 @@ if ($rowCount > 0) {
                                                                                             } else {
                                                                                                 echo $record['exam_ch3'];
                                                                                             } ?>">
-                                        <label style="vertical-align: middle; font-size: 15px;" for="ch3">
-                                            c.
-                                            <?php
+                                <label style="vertical-align: middle; font-size: 15px;" for="ch3">
+                                    c.
+                                    <?php
                                             if ($mistakes == 1) {
                                                 echo $record['exam_ch2'];
                                             } else if ($mistakes == 2) {
@@ -253,24 +258,24 @@ if ($rowCount > 0) {
                                             } else {
                                                 echo $record['exam_ch3'];
                                             } ?>
-                                        </label>
-                                    </button>
-                                </td>
-                                <td style="width: 150px;">
-                                    <button style="border: none; background-color: white;" type="submit" name="submit">
-                                        <input type="radio" id="ch4" name="answer" value="<?php echo $record['exam_ch4']; ?>">
-                                        <label style="vertical-align: middle;font-size: 15px;" for="ch4">
-                                            d. <?php echo $record['exam_ch4']; ?>
-                                        </label>
-                                    </button>
-                                </td>
+                                </label>
+                            </button>
+                        </td>
+                        <td style="width: 150px;">
+                            <button style="border: none; background-color: white;" type="submit" name="submit">
+                                <input type="radio" id="ch4" name="answer" value="<?php echo $record['exam_ch4']; ?>">
+                                <label style="vertical-align: middle;font-size: 15px;" for="ch4">
+                                    d. <?php echo $record['exam_ch4']; ?>
+                                </label>
+                            </button>
+                        </td>
 
-                            </form>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+                    </form>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 <?php
         break;
     }
@@ -288,13 +293,15 @@ if ($rowCount > 0) {
                 </h4>
                 <div class="padding-bottom-30 row" style="max-width: 170px; margin: 0 auto">
                     <div class="col-6">
-                        <button style="color: red;" type="button" class="btn btn-light border-radius-100 btn-block confirmation-btn" data-dismiss="modal">
+                        <button style="color: red;" type="button"
+                            class="btn btn-light border-radius-100 btn-block confirmation-btn" data-dismiss="modal">
                             <i class="fa fa-times"></i>
                         </button>
                         NO
                     </div>
                     <div class="col-6">
-                        <button onclick="hintDetails()" style="color: #00FA9A;" type="button" class="btn btn-light border-radius-100 btn-block confirmation-btn" data-dismiss="modal">
+                        <button onclick="hintDetails()" style="color: #00FA9A;" type="button"
+                            class="btn btn-light border-radius-100 btn-block confirmation-btn" data-dismiss="modal">
                             <i class="fa fa-check"></i>
                         </button>
                         YES
@@ -315,13 +322,15 @@ if ($rowCount > 0) {
                 </h4>
                 <div class="padding-bottom-30 row" style="max-width: 170px; margin: 0 auto">
                     <div class="col-6">
-                        <button style="color: red;" type="button" class="btn btn-light border-radius-100 btn-block confirmation-btn" data-dismiss="modal">
+                        <button style="color: red;" type="button"
+                            class="btn btn-light border-radius-100 btn-block confirmation-btn" data-dismiss="modal">
                             <i class="fa fa-times"></i>
                         </button>
                         NO
                     </div>
                     <div class="col-6">
-                        <button style="color: #00FA9A;" type="button" class="btn btn-light border-radius-100 btn-block confirmation-btn" data-dismiss="modal">
+                        <button style="color: #00FA9A;" type="button"
+                            class="btn btn-light border-radius-100 btn-block confirmation-btn" data-dismiss="modal">
                             <i class="fa fa-check"></i>
                         </button>
                         YES
@@ -381,13 +390,13 @@ if (isset($_SESSION['headertext'])) {
         if (isset($_SESSION['statusIcon'])) {
 ?>
 
-            <script>
-                swal({
-                    title: "<?php echo $_SESSION['headertext'] ?>",
-                    text: "<?php echo $_SESSION['bodytext'] ?>",
-                    icon: '<?php echo $_SESSION['statusIcon'] ?>',
-                });
-            </script>
+<script>
+swal({
+    title: "<?php echo $_SESSION['headertext'] ?>",
+    text: "<?php echo $_SESSION['bodytext'] ?>",
+    icon: '<?php echo $_SESSION['statusIcon'] ?>',
+});
+</script>
 <?php
         }
     }
@@ -397,24 +406,24 @@ unset($_SESSION['headertext']);
 
 <!-- SWEET ALERT FOR HINT VALIDATION -->
 <script>
-    function hintValidation() {
-        swal({
-            title: "Hint Validation",
-            text: "Sorry, You can't use hint now, please analyze the question more. You can do it ✍️",
-            icon: 'warning',
-        });
-    }
+function hintValidation() {
+    swal({
+        title: "Hint Validation",
+        text: "Sorry, You can't use hint now, please analyze the question more. You can do it ✍️",
+        icon: 'warning',
+    });
+}
 </script>
 
 <!-- DOCUMENT VALIDATION -->
 <script>
-    function docValidation() {
-        swal({
-            title: "Cannot Proceed",
-            text: "Sorry, You can't read documents now, analyze the question more. You can do it ✍️",
-            icon: 'warning',
-        });
-    }
+function docValidation() {
+    swal({
+        title: "Cannot Proceed",
+        text: "Sorry, You can't read documents now, analyze the question more. You can do it ✍️",
+        icon: 'warning',
+    });
+}
 </script>
 
 <!-- SWEET ALERT FOR LAST QUESTION -->
@@ -424,16 +433,16 @@ if (isset($_SESSION['headertextlast'])) {
         if (isset($_SESSION['statusIconlast'])) {
 ?>
 
-            <script>
-                swal({
-                    title: "<?php echo $_SESSION['headertextlast'] ?>",
-                    text: "<?php echo $_SESSION['bodytextlast'] ?>",
-                    icon: '<?php echo $_SESSION['statusIconlast'] ?>',
-                    button: 'See Result'
-                }).then(function() {
-                    window.location = "excircle_result";
-                });
-            </script>
+<script>
+swal({
+    title: "<?php echo $_SESSION['headertextlast'] ?>",
+    text: "<?php echo $_SESSION['bodytextlast'] ?>",
+    icon: '<?php echo $_SESSION['statusIconlast'] ?>',
+    button: 'See Result'
+}).then(function() {
+    window.location = "excircle_result";
+});
+</script>
 <?php
         }
     }
@@ -443,28 +452,30 @@ unset($_SESSION['headertextlast']);
 
 <!-- hint details -->
 <script>
-    function hintDetails() {
-        swal({
-            title: '"<?php echo $_SESSION['displayHint']; ?>"',
-            icon: 'info',
-        });
-    }
+function hintDetails() {
+    swal({
+        title: '"<?php echo $_SESSION['displayHint']; ?>"',
+        icon: 'info',
+    });
+}
 </script>
 
 <!-- ITEM NUMBER INCREMENTER MODAL -->
-<div class="modal fade" id="questionCleared" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="questionCleared" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-body text-center font-18">
                 <div class="mb-30 text-center">
-                    <img src="../app/images/check-gif.gif" 
-                    style="width: 100px; height: 100px;"/>
+                    <img src="../app/images/check-gif.gif" style="width: 100px; height: 100px;" />
                 </div>
                 <h3 class="mb-20"><?php echo $_SESSION['headertextitem']; ?></h3>
                 <?php echo $_SESSION['bodytext']; ?>
             </div>
             <div class="modal-footer justify-content-center">
-                <a style="background-color: #87CEFA;border: none;" type="button" href="index.php?page=exam_circle&question=<?php echo $_SESSION['nextitem'];?>" class="btn btn-primary">
+                <a style="background-color: #87CEFA;border: none;" type="button"
+                    href="index.php?page=exam_circle&question=<?php echo $_SESSION['nextitem'];?>"
+                    class="btn btn-primary">
                     Next
                 </a>
             </div>
@@ -476,14 +487,13 @@ unset($_SESSION['headertextlast']);
 <?php
 if (isset($_SESSION["headertextitem"])) {
 ?>
-    <script>
-        setTimeout(function() {
-            $("#questionCleared").modal('show');
-        }, 100);
-    </script>
+<script>
+setTimeout(function() {
+    $("#questionCleared").modal('show');
+}, 100);
+</script>
 <?php
     unset($_SESSION["headertextitem"]);
 }
 ?>
 <!-- ITEM NUMBER INCREMENTER MODAL END -->
-
