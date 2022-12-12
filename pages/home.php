@@ -69,7 +69,7 @@
                                 <h4>GEOMETRY</h4>
 
                                 <button class="btn btn-outline-primary"
-                                    style="border-radius: 50px; min-width: 80px; height: 50px; font-family: 'Poppins', sans-serif; "
+                                    style="border-radius: 50px; min-width: 80px; height: 50px; font-family: 'Poppins', sans-serif;"
                                     title="Course Available">Take
                                     this
                                     Course</button>
