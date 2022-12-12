@@ -58,13 +58,13 @@
                 <div class="widget-data">
                     <div class="weight-700 font-24 text-dark">
                         <?php
-                            // $sql = "SELECT * from exam";
-                            //                 if ($result = mysqli_query($con, $sql)) {
-                            //                     // Return the number of rows in result set
-                            //                     $rowcount = mysqli_num_rows( $result );
-                            //                     echo $rowcount;
-                            //                 }
-                            echo 4;
+                            $sql = "SELECT * from lesson";
+                                            if ($result = mysqli_query($con, $sql)) {
+                                                // Return the number of rows in result set
+                                                $rowcount = mysqli_num_rows( $result );
+                                                echo $rowcount;
+                                            }
+                            //echo 4;
                         ?>
                     </div>
                     <div class="font-14 text-secondary weight-500">
@@ -85,7 +85,7 @@
                 <div class="widget-data">
                     <div class="weight-700 font-24 text-dark">
                         <?php
-                            $sql = "SELECT * from users WHERE role_id = 3";
+                            $sql = "SELECT * from exam";
                                             if ($result = mysqli_query($con, $sql)) {
                                                 // Return the number of rows in result set
                                                 $rowcount = mysqli_num_rows( $result );

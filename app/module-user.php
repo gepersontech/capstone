@@ -85,6 +85,7 @@
                 <tr>
                     <th class="table-plus datatable-nosort">Lesson No.</th>
                     <th class="table-plus datatable-nosort">Description</th>
+                    <th class="table-plus datatable-nosort">Status</th>
                     <th class="datatable-nosort">Action</th>
                 </tr>
             </thead>
@@ -101,6 +102,9 @@
                 <tr>
                     <td style="width: 300px;"><?php echo $row['lesson_name']; ?></td>
                     <td style="width: 300px;"><?php echo $row['lesson_desc']; ?></td>
+                    <td style="width: 300px;"><?php //echo $row['lesson_desc'];
+                        echo '<span class="badge badge-warning badge-pill">Done</span>';
+                    ?></td>
                     <td style="width: 300px;">
                         <a href="lesson_<?php echo $count; ?>" class=" btn btn-md btn-primary">
                             <span class="icon-copy ti-eye"></span> View

@@ -78,7 +78,7 @@
                     </span>
                     <span class="user-name">
                         <?php 
-                    echo $_SESSION['email_add'];
+                    echo $_SESSION['email'];
              ?>
                     </span>
                 </a>
