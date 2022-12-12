@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2022 at 05:09 PM
+-- Generation Time: Dec 12, 2022 at 05:12 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -185,6 +185,7 @@ CREATE TABLE `exam_correct` (
   `exam_id` int(11) NOT NULL,
   `examitem_id` int(11) NOT NULL,
   `points` int(255) NOT NULL,
+  `hint_attempt` int(100) NOT NULL,
   `excorrect_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -234,6 +235,7 @@ CREATE TABLE `exam_mistakes` (
   `student_id` int(11) NOT NULL,
   `examitem_id` int(11) NOT NULL,
   `exam_id` int(11) NOT NULL,
+  `answer_input` varchar(100) NOT NULL,
   `mistakes` int(11) NOT NULL,
   `examistakes_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -317,7 +319,10 @@ INSERT INTO `logs` (`log_id`, `user_id`, `log_name`, `datetime`) VALUES
 (20, 2, 'login', '2022-12-11 07:54:44'),
 (21, 2, 'login', '2022-12-11 12:13:54'),
 (22, 2, 'login', '2022-12-11 13:25:47'),
-(23, 277, 'login', '2022-12-11 14:33:48');
+(23, 277, 'login', '2022-12-11 14:33:48'),
+(24, 74, 'logout', '2022-12-11 17:50:09'),
+(25, 74, 'login', '2022-12-11 17:50:27'),
+(26, 74, 'login', '2022-12-12 04:11:10');
 
 -- --------------------------------------------------------
 
@@ -677,7 +682,7 @@ ALTER TABLE `exam_attempt`
 -- AUTO_INCREMENT for table `exam_correct`
 --
 ALTER TABLE `exam_correct`
-  MODIFY `examcorrect_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `examcorrect_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
 -- AUTO_INCREMENT for table `exam_items`
@@ -689,7 +694,7 @@ ALTER TABLE `exam_items`
 -- AUTO_INCREMENT for table `exam_mistakes`
 --
 ALTER TABLE `exam_mistakes`
-  MODIFY `mistake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=246;
+  MODIFY `mistake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=255;
 
 --
 -- AUTO_INCREMENT for table `lesson`
@@ -701,7 +706,7 @@ ALTER TABLE `lesson`
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `module`
