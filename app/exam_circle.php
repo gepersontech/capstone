@@ -166,7 +166,6 @@ if ($rowCount > 0) {
                         <?php
                                 if ($mistakes >= 3) {
                                 ?>
-<<<<<<< HEAD
                                     <a class="btn btn-sm btn-warning" data-toggle="modal" data-target="#hintConfirm">
                                         <span class="icon-copy ti-light-bulb"></span> Hint
                                     </a>
@@ -175,23 +174,11 @@ if ($rowCount > 0) {
                                     </a>
                                 <?php } ?>
                                 <!-- <a onclick="hintValidation()" class="btn btn-sm btn-warning">
-=======
-                        <a class="btn btn-sm btn-warning" data-toggle="modal" data-target="#hintConfirm">
-                            <span class="icon-copy ti-light-bulb"></span> Hint
-                        </a>
-                        <a style="color: white;" class="btn btn-sm btn-primary" data-toggle="modal"
-                            data-target="#readDocument">
-                            <span class="icon-copy ti-file"></span> Read
-                        </a>
-                        <?php }?>
-                        <!-- <a onclick="hintValidation()" class="btn btn-sm btn-warning">
->>>>>>> ad23e16ff6852c3aebdf5cf56daf10efd71b3088
                                         <span class="icon-copy ti-light-bulb"></span> Hint
                                     </a>
                                     <a onclick="docValidation()" style="color: white;" class="btn btn-sm btn-primary">
                                         <span class="icon-copy ti-file"></span> Read
                                     </a> -->
-<<<<<<< HEAD
                             </th>
                         </tr>
                     </thead>
@@ -206,21 +193,6 @@ if ($rowCount > 0) {
                                 <td style="width: 150px;">
                                     <button style="border: none; background-color: white;" type="submit" name="submit">
                                         <input type="radio" id="ch1" name="answer" value="<?php
-=======
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <form action="config/answerverify.php" method="POST">
-                        <input type="text" id="questionID" name="question_id" value="<?php echo $question_id; ?>"
-                            hidden>
-                        <input type="text" id="anskey" name="answerkey" value="<?php echo $answerkey; ?>" hidden>
-                        <!-- multiple choice a b c d....... -->
-                        <td style="width: 150px;">
-                            <button style="border: none; background-color: white;" type="submit" name="submit">
-                                <input type="radio" id="ch1" name="answer" value="<?php
->>>>>>> ad23e16ff6852c3aebdf5cf56daf10efd71b3088
                                                                                             if ($mistakes == 1) {
                                                                                                 echo $record['exam_ch3'];
                                                                                             } else if ($mistakes == 2) {
@@ -490,7 +462,6 @@ unset($_SESSION['headertextlast']);
 
 <!-- hint details -->
 <script>
-<<<<<<< HEAD
     function hintDetails() {
         swal({
             title: '"<?php echo $_SESSION['displayHint']; ?>"',
@@ -503,14 +474,6 @@ unset($_SESSION['headertextlast']);
             window.location = "index.php?page=exam_circle&attempt=<?php echo $mistakes; ?>&question=<?php echo $_SESSION['nextitem']; ?>&usehint=<?php echo $clicked; ?>";
         });
     }
-=======
-function hintDetails() {
-    swal({
-        title: '"<?php echo $_SESSION['displayHint']; ?>"',
-        icon: 'info',
-    });
-}
->>>>>>> ad23e16ff6852c3aebdf5cf56daf10efd71b3088
 </script>
 
 <!-- ITEM NUMBER INCREMENTER MODAL -->
@@ -526,13 +489,7 @@ function hintDetails() {
                 <?php echo $_SESSION['bodytext']; ?>
             </div>
             <div class="modal-footer justify-content-center">
-<<<<<<< HEAD
                 <a style="background-color: #87CEFA;border: none;" type="button" href="index.php?page=exam_circle&question=<?php echo $_SESSION['nextitem']; ?>" class="btn btn-primary">
-=======
-                <a style="background-color: #87CEFA;border: none;" type="button"
-                    href="index.php?page=exam_circle&question=<?php echo $_SESSION['nextitem'];?>"
-                    class="btn btn-primary">
->>>>>>> ad23e16ff6852c3aebdf5cf56daf10efd71b3088
                     Next
                 </a>
             </div>
@@ -542,7 +499,6 @@ function hintDetails() {
 
 <!-- ITEM INCREMENTER NUMBER.... -->
 <?php
-<<<<<<< HEAD
 if (isset($_GET['checkpoint'])) {
 
     if (isset($_SESSION['headertextitem'])) {
@@ -566,17 +522,5 @@ if (isset($_GET['checkpoint'])) {
     }
 }
 unset($_SESSION['headertextitem']);
-=======
-if (isset($_SESSION["headertextitem"])) {
-?>
-<script>
-setTimeout(function() {
-    $("#questionCleared").modal('show');
-}, 100);
-</script>
-<?php
-    unset($_SESSION["headertextitem"]);
-}
->>>>>>> ad23e16ff6852c3aebdf5cf56daf10efd71b3088
 ?>
 <!-- ITEM NUMBER INCREMENTER MODAL END -->
