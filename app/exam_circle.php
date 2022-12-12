@@ -32,7 +32,17 @@
     }
 </style>
 
+
+
 <?php
+
+$hintValue;
+if (isset($_GET['usehint'])) {
+    $hintValue = $_GET['usehint'];
+} else {
+    $hintValue = 0;
+}
+
 // GETTING THE TOTAL ATTEMPTS OR MISTAKES FROM BACK END............
 $mistakes;
 if (isset($_GET['attempt'])) {
@@ -159,8 +169,8 @@ if ($rowCount > 0) {
                                     <a style="color: white;" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#readDocument">
                                         <span class="icon-copy ti-file"></span> Read
                                     </a>
-                                <?php }?>
-                                    <!-- <a onclick="hintValidation()" class="btn btn-sm btn-warning">
+                                <?php } ?>
+                                <!-- <a onclick="hintValidation()" class="btn btn-sm btn-warning">
                                         <span class="icon-copy ti-light-bulb"></span> Hint
                                     </a>
                                     <a onclick="docValidation()" style="color: white;" class="btn btn-sm btn-primary">
@@ -172,8 +182,10 @@ if ($rowCount > 0) {
                     <tbody>
                         <tr>
                             <form action="config/answerverify.php" method="POST">
+
                                 <input type="text" id="questionID" name="question_id" value="<?php echo $question_id; ?>" hidden>
                                 <input type="text" id="anskey" name="answerkey" value="<?php echo $answerkey; ?>" hidden>
+                                <input type="text" id="hintattempt" name="hintusage" value="<?php echo $hintValue; ?>" hidden>
                                 <!-- multiple choice a b c d....... -->
                                 <td style="width: 150px;">
                                     <button style="border: none; background-color: white;" type="submit" name="submit">
@@ -447,6 +459,12 @@ unset($_SESSION['headertextlast']);
         swal({
             title: '"<?php echo $_SESSION['displayHint']; ?>"',
             icon: 'info',
+            button: 'Close',
+        }).then(function() {
+            <?php
+            $clicked = 1;
+            ?>
+            window.location = "index.php?page=exam_circle&attempt=<?php echo $mistakes; ?>&question=<?php echo $_SESSION['nextitem']; ?>&usehint=<?php echo $clicked; ?>";
         });
     }
 </script>
@@ -457,14 +475,13 @@ unset($_SESSION['headertextlast']);
         <div class="modal-content">
             <div class="modal-body text-center font-18">
                 <div class="mb-30 text-center">
-                    <img src="../app/images/check-gif.gif" 
-                    style="width: 100px; height: 100px;"/>
+                    <img src="../app/images/check-gif.gif" style="width: 100px; height: 100px;" />
                 </div>
                 <h3 class="mb-20"><?php echo $_SESSION['headertextitem']; ?></h3>
                 <?php echo $_SESSION['bodytext']; ?>
             </div>
             <div class="modal-footer justify-content-center">
-                <a style="background-color: #87CEFA;border: none;" type="button" href="index.php?page=exam_circle&question=<?php echo $_SESSION['nextitem'];?>" class="btn btn-primary">
+                <a style="background-color: #87CEFA;border: none;" type="button" href="index.php?page=exam_circle&question=<?php echo $_SESSION['nextitem']; ?>" class="btn btn-primary">
                     Next
                 </a>
             </div>
@@ -472,18 +489,30 @@ unset($_SESSION['headertextlast']);
     </div>
 </div>
 
-<!-- SHOW NOTIFICATION MODAL.... -->
+<!-- ITEM INCREMENTER NUMBER.... -->
 <?php
-if (isset($_SESSION["headertextitem"])) {
+if (isset($_GET['checkpoint'])) {
+
+    if (isset($_SESSION['headertextitem'])) {
+        if (isset($_SESSION['bodytextitem'])) {
+            if (isset($_SESSION['ItemStatus'])) {
 ?>
-    <script>
-        setTimeout(function() {
-            $("#questionCleared").modal('show');
-        }, 100);
-    </script>
+
+                <script>
+                    swal({
+                        title: "<?php echo $_SESSION['headertextitem'] ?>",
+                        text: "<?php echo $_SESSION['bodytextitem'] ?>",
+                        icon: '<?php echo $_SESSION['ItemStatus'] ?>',
+                        button: 'Next'
+                    }).then(function() {
+                        window.location = "index.php?page=exam_circle&question=<?php echo $_SESSION['nextitem']; ?>";
+                    });
+                </script>
 <?php
-    unset($_SESSION["headertextitem"]);
+            }
+        }
+    }
 }
+unset($_SESSION['headertextitem']);
 ?>
 <!-- ITEM NUMBER INCREMENTER MODAL END -->
-

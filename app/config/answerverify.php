@@ -7,6 +7,7 @@ require_once "../../conf/config.php";
 if (isset($_POST['submit'])) {
     $inputanswer = $_POST['answer'];
     $anskey = $_POST['answerkey'];
+    $hintUseValue = $_POST['hintusage'];
     $questionId = $_POST['question_id'];
     $studentID = $_SESSION['id'];
     $examID = $_SESSION['exam_id'];
@@ -33,12 +34,12 @@ if (isset($_POST['submit'])) {
         }
         $totalScore = $score;
         // query for inserting score to exam_correct table database.............
-        $scorequery = "INSERT INTO `exam_correct`(`student_id`, `exam_id`, `examitem_id`, `points`) 
-        VALUES ($studentID,$examID,$questionId,$totalScore)";
+        $scorequery = "INSERT INTO `exam_correct`(`student_id`, `exam_id`, `examitem_id`, `points`,`hint_attempt`) 
+        VALUES ($studentID,$examID,$questionId,$totalScore,$hintUseValue)";
         $result = mysqli_query($con, $scorequery);
 
         $itemIncrement = $_SESSION['itemNum'];
-
+        $itemstay = $_SESSION['itemNum'];
         // reach the last question............
         if ($itemIncrement == $numberofItem) {
             $_SESSION['headertextlast'] = "Good job! Correct👏";
@@ -50,8 +51,9 @@ if (isset($_POST['submit'])) {
             ++$itemIncrement;
             $_SESSION['nextitem'] = $itemIncrement;
             $_SESSION['headertextitem'] = "Good job!👏";
-            $_SESSION['bodytext']   = "You got the correct answer. The answer of that question is " . $anskey . " and you've got " . $totalScore . " points";
-            header("location: ../index.php?page=exam_circle");
+            $_SESSION['bodytextitem']   = "You got the correct answer. The answer of that question is " . $anskey . " and you've got " . $totalScore . " points";
+            $_SESSION['ItemStatus'] = 'success';
+            header("location: ../index.php?page=exam_circle&checkpoint=1&question=$itemstay");
         }
 
         // THE ANSWER IS WRONG..............
@@ -90,14 +92,14 @@ if (isset($_POST['submit'])) {
                     $_SESSION['headertext'] = "Still Wrong Answer!😔";
                     $_SESSION['bodytext']   = "GITS suggest that you can use the hint now, or you can go to lesson and read again.";
                     $_SESSION['statusIcon'] = "warning";
-                    header("location: ../index.php?page=exam_circle&attempt=4&question=$currentItem");
+                    header("location: ../index.php?page=exam_circle&attempt=4&question=$currentItem&usehint=$hintUseValue");
                 } else {
                     $over = $_SESSION['over'];
                     ++$over;
                     $_SESSION['headertext'] = "Still Wrong Answer!😔";
                     $_SESSION['bodytext']   = "GITS suggest that you can use the hint now, or you can go to lesson and read again.";
                     $_SESSION['statusIcon'] = "error";
-                    header("location: ../index.php?page=exam_circle&attempt=$over&question=$currentItem");
+                    header("location: ../index.php?page=exam_circle&attempt=$over&question=$currentItem&usehint=$hintUseValue");
                 }
                 break;
             }
