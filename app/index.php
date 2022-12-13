@@ -11,7 +11,12 @@
 
 
 <div class="left-side-bar">
-    <?php include('sidebar.php') ?>
+    <?php 
+    
+        # code...
+        include('sidebar.php');
+  
+     ?>
 </div>
 <div class="mobile-menu-overlay"></div>
 

@@ -93,7 +93,7 @@
             <div class="modal-body">Proceed to the Quiz Now</div>
             <div class="modal-footer">
                 <button class="btn btn-danger" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="index.php?page=exam_circle&status=1">Proceed</a>
+                <a class="btn btn-primary" href="exam_circle1.php?status=1">Proceed</a>
             </div>
         </div>
     </div>
