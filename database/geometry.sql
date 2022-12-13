@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2022 at 09:13 PM
+-- Generation Time: Dec 13, 2022 at 01:32 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -239,20 +239,18 @@ CREATE TABLE `lesson` (
   `lesson_id` int(11) NOT NULL,
   `lesson_name` varchar(250) NOT NULL,
   `lesson_desc` varchar(250) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `isView` varchar(55) NOT NULL,
-  `lesson_added` datetime NOT NULL
+  `lesson_added` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `lesson`
 --
 
-INSERT INTO `lesson` (`lesson_id`, `lesson_name`, `lesson_desc`, `user_id`, `isView`, `lesson_added`) VALUES
-(1, 'Lesson 1', ' Introduction of Conic Sections and the Circle', 0, '', '0000-00-00 00:00:00'),
-(2, 'Lesson 2', 'The Parabola', 0, '', '2022-11-05 01:23:51'),
-(3, 'Lesson 3', 'The Ellipse', 0, '', '2022-12-06 22:22:34'),
-(4, 'Lesson 4', 'The Hyperbola', 0, '', '2022-12-06 22:24:31');
+INSERT INTO `lesson` (`lesson_id`, `lesson_name`, `lesson_desc`, `lesson_added`) VALUES
+(1, 'Lesson 1', ' Introduction of Conic Sections and the Circle', '0000-00-00 00:00:00'),
+(2, 'Lesson 2', 'The Parabola', '2022-11-04 17:23:51'),
+(3, 'Lesson 3', 'The Ellipse', '2022-12-06 14:22:34'),
+(4, 'Lesson 4', 'The Hyperbola', '2022-12-06 14:24:31');
 
 -- --------------------------------------------------------
 
@@ -271,6 +269,20 @@ CREATE TABLE `lessons` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `lesson_view`
+--
+
+CREATE TABLE `lesson_view` (
+  `lesson_view_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `lesson_id` int(11) NOT NULL,
+  `isView` int(11) NOT NULL,
+  `log_time` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `logs`
 --
 
@@ -280,33 +292,6 @@ CREATE TABLE `logs` (
   `log_name` varchar(100) NOT NULL,
   `datetime` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `logs`
---
-
-INSERT INTO `logs` (`log_id`, `user_id`, `log_name`, `datetime`) VALUES
-(15, 2, 'logout', '2022-12-11 06:08:36'),
-(16, 2, 'login', '2022-12-11 06:08:49'),
-(17, 2, 'logout', '2022-12-11 06:12:56'),
-(18, 2, 'login', '2022-12-11 06:13:10'),
-(19, 2, 'logout', '2022-12-11 06:45:48'),
-(20, 2, 'login', '2022-12-11 07:54:44'),
-(21, 2, 'login', '2022-12-11 12:13:54'),
-(22, 2, 'login', '2022-12-11 13:25:47'),
-(23, 277, 'login', '2022-12-11 14:33:48'),
-(24, 74, 'logout', '2022-12-11 17:50:09'),
-(25, 74, 'login', '2022-12-11 17:50:27'),
-(26, 74, 'login', '2022-12-12 04:11:10'),
-(27, 74, 'logout', '2022-12-12 08:31:23'),
-(28, 74, 'login', '2022-12-12 08:31:38'),
-(29, 74, 'logout', '2022-12-12 10:05:44'),
-(30, 74, 'login', '2022-12-12 10:06:51'),
-(31, 74, 'login', '2022-12-12 12:01:53'),
-(32, 74, 'logout', '2022-12-12 13:00:38'),
-(33, 74, 'login', '2022-12-12 13:00:53'),
-(34, 74, 'logout', '2022-12-12 14:07:38'),
-(35, 74, 'login', '2022-12-12 14:16:15');
 
 -- --------------------------------------------------------
 
@@ -578,6 +563,12 @@ ALTER TABLE `lessons`
   ADD KEY `fk_lessons_modules1_idx` (`moduleID`);
 
 --
+-- Indexes for table `lesson_view`
+--
+ALTER TABLE `lesson_view`
+  ADD PRIMARY KEY (`lesson_view_id`);
+
+--
 -- Indexes for table `logs`
 --
 ALTER TABLE `logs`
@@ -687,10 +678,16 @@ ALTER TABLE `lesson`
   MODIFY `lesson_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `lesson_view`
+--
+ALTER TABLE `lesson_view`
+  MODIFY `lesson_view_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `module`
