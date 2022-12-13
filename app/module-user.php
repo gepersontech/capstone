@@ -103,15 +103,24 @@
                     <td style="width: 300px;"><?php echo $row['lesson_name']; ?></td>
                     <td style="width: 300px;"><?php echo $row['lesson_desc']; ?></td>
                     <td style="width: 300px;"><?php //echo $row['lesson_desc'];
-                        echo '<span class="badge badge-warning badge-pill">Done</span>';
+
+                            $results = mysqli_query($con,"SELECT * FROM `lesson_view` WHERE `user_id` = '".$_SESSION['id']."' AND `lesson_id`= '".$id."'");
+                            $rows = mysqli_num_rows($results) ;
+                            if($rows > 0){
+                                echo '<span class="badge badge-success badge-pill">Done: View</span>';
+                            }else{
+                                echo '<span class="badge badge-danger badge-pill">Todo: View</span>';
+                            }
+                       
                     ?></td>
                     <td style="width: 300px;">
-                        <a href="lesson_<?php echo $count; ?>" class=" btn btn-md btn-primary">
-                            <span class="icon-copy ti-eye"></span> View
+
+                        <a href="index.php?page=module-viewer&l=<?php echo $count; ?>">
+                            <button class=" btn btn-md btn-primary">
+                                <span class="icon-copy ti-eye"></span>
+                                View</button>
                         </a>
-
                     </td>
-
                 </tr>
                 <?php
                     $count++;
