@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2022 at 07:34 PM
+-- Generation Time: Dec 14, 2022 at 09:37 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -880,7 +880,16 @@ INSERT INTO `logs` (`log_id`, `user_id`, `log_name`, `datetime`) VALUES
 (134, 74, 'login', '2022-12-14 17:04:37'),
 (135, 74, 'login', '2022-12-14 17:04:59'),
 (136, 0, 'logout', '2022-12-14 18:33:46'),
-(137, 74, 'login', '2022-12-14 18:33:49');
+(137, 74, 'login', '2022-12-14 18:33:49'),
+(138, 74, 'logout', '2022-12-14 18:36:27'),
+(139, 74, 'login', '2022-12-14 18:36:35'),
+(140, 74, 'logout', '2022-12-14 18:45:52'),
+(141, 74, 'login', '2022-12-14 18:45:55'),
+(142, 74, 'logout', '2022-12-14 19:48:02'),
+(143, 74, 'login', '2022-12-14 19:48:13'),
+(144, 74, 'logout', '2022-12-14 20:30:17'),
+(145, 74, 'login', '2022-12-14 20:30:49'),
+(146, 74, 'logout', '2022-12-14 20:36:45');
 
 -- --------------------------------------------------------
 
@@ -1234,13 +1243,13 @@ ALTER TABLE `examquestion_attempt`
 -- AUTO_INCREMENT for table `exam_attempt`
 --
 ALTER TABLE `exam_attempt`
-  MODIFY `examAttempt_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `examAttempt_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `exam_correct`
 --
 ALTER TABLE `exam_correct`
-  MODIFY `examcorrect_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=463;
+  MODIFY `examcorrect_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=485;
 
 --
 -- AUTO_INCREMENT for table `exam_items`
@@ -1252,13 +1261,13 @@ ALTER TABLE `exam_items`
 -- AUTO_INCREMENT for table `exam_mistakes`
 --
 ALTER TABLE `exam_mistakes`
-  MODIFY `mistake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1067;
+  MODIFY `mistake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1113;
 
 --
 -- AUTO_INCREMENT for table `exam_results`
 --
 ALTER TABLE `exam_results`
-  MODIFY `examresult_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `examresult_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `lesson`
@@ -1270,13 +1279,13 @@ ALTER TABLE `lesson`
 -- AUTO_INCREMENT for table `lesson_view`
 --
 ALTER TABLE `lesson_view`
-  MODIFY `lesson_view_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `lesson_view_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=138;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
 
 --
 -- AUTO_INCREMENT for table `module`
