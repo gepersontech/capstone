@@ -28,7 +28,7 @@ $exa_id = $_SESSION['exam_id'];
                     <tr>
                         <th style="font-weight: bold;font-size: 15px;">Number of Exam attempt: </th>
                         <?php
-                        $attemptquery = "SELECT SUM(status)AS totalattempt FROM exam_attempt WHERE student_id = $stud_id AND exam_id = $exa_id";
+                        $attemptquery = "SELECT MAX(status)AS totalattempt FROM exam_attempt WHERE student_id = $stud_id AND exam_id = $exa_id";
                         $queryResult = mysqli_query($con, $attemptquery);
                         $rowCount = mysqli_num_rows($queryResult);
                         if ($rowCount > 0) {
@@ -51,15 +51,14 @@ $exa_id = $_SESSION['exam_id'];
                     <tr style="color: #8B0000;">
                         <th style="font-weight: bold;font-size: 15px;">Total incorrect of all question: </th>
                         <?php
-                        $totalmis_query = "SELECT COUNT(mistakes)as totalmistake FROM exam_mistakes
-                        JOIN exam_attempt ON exam_mistakes.student_id=exam_attempt.student_id
-                        WHERE exam_mistakes.student_id=$stud_id AND status=$exam_attempts AND exam_mistakes.exam_id=$exa_id";
+                        $totalmis_query = "SELECT COUNT(mistakes)AS totalmistakes FROM `exam_mistakes` 
+                        WHERE student_id=$stud_id AND exam_id=$exa_id AND exam_attempt=$exam_attempts";
                         $queryResult = mysqli_query($con, $totalmis_query);
                         $rowCount = mysqli_num_rows($queryResult);
                         if ($rowCount > 0) {
                             $record = mysqli_fetch_assoc($queryResult);
                             while ($record) {
-                                $studtotalmistake = $record['totalmistake'];
+                                $studtotalmistake = $record['totalmistakes'];
                                 break;
                             }
                         }
@@ -71,6 +70,9 @@ $exa_id = $_SESSION['exam_id'];
                         <?php
                         $totalhint_query = "SELECT COUNT(hint_attempt)AS totalhintused FROM exam_correct
                         WHERE student_id=$stud_id AND hint_attempt=1 AND exam_id=$exa_id";
+
+                        $totalhint_query = "SELECT SUM(hint_attempt)AS totalhintused FROM exam_correct
+                        WHERE student_id=$stud_id AND exam_id=$exa_id AND exam_attempt=$exam_attempts";
                         $queryResult = mysqli_query($con, $totalhint_query);
                         $rowCount = mysqli_num_rows($queryResult);
                         if ($rowCount > 0) {
@@ -92,7 +94,10 @@ $exa_id = $_SESSION['exam_id'];
                         <th style="font-weight: bold;font-size: 20px;">Your Score: </th>
                         <?php
                         $yourscorequery = "SELECT SUM(points)AS stud_totalpoints, status FROM exam_attempt JOIN exam_correct ON exam_attempt.student_id=exam_correct.student_id 
-                        WHERE exam_correct.student_id=$stud_id AND status=$exam_attempts AND exam_correct.exam_id=$exa_id;";
+                        WHERE exam_correct.student_id=$stud_id AND status=$exam_attempts AND exam_correct.exam_id=$exa_id";
+                        
+                        $yourscorequery = "SELECT SUM(points)AS stud_totalpoints FROM exam_correct
+                        WHERE student_id=$stud_id AND exam_attempt=$exam_attempts AND exam_id=$exa_id";
                         $queryResult = mysqli_query($con, $yourscorequery);
                         $rowCount = mysqli_num_rows($queryResult);
                         if ($rowCount > 0) {
@@ -184,12 +189,12 @@ $exa_id = $_SESSION['exam_id'];
     <!-- INPUT RESULT RECORD TO DATABASE -->
     <?php
     if (isset($_GET['saveResult'])) {
-        $insertResultquery = "INSERT INTO `exam_results`(`student_id`, `exam_id`, `total_mistakes`, `total_hintUsed`, `Student_Score`, `status`) 
-            VALUES ($stud_id,$exa_id,$studtotalmistake,$studtotalhint,$studtotalScore,$student_status)";
+        $insertResultquery = "INSERT INTO `exam_results`(`student_id`, `exam_id`, `total_mistakes`, `total_hintUsed`, `Student_Score`, `is_passed`,`exam_attempt`) 
+            VALUES ($stud_id,$exa_id,$studtotalmistake,$studtotalhint,$studtotalScore,$student_status,$exam_attempts)";
         $insertResult = mysqli_query($con, $insertResultquery);
     }
     ?>
-<?php
+    <?php
     if (isset($_GET['saveResult'])) {
     ?>
         <script>

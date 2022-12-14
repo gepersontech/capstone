@@ -10,6 +10,7 @@ if (isset($_POST['submit'])) {
     $hintUseValue = $_POST['hintusage'];
     $questionId = $_POST['question_id'];
     $studentID = $_SESSION['id'];
+    $examAttempt = $_SESSION['exam-attempt'];
     $examID = $_SESSION['exam_id'];
     $attemptMistake = 1;
 
@@ -34,8 +35,8 @@ if (isset($_POST['submit'])) {
         }
         $totalScore = $score;
         // query for inserting score to exam_correct table database.............
-        $scorequery = "INSERT INTO `exam_correct`(`student_id`, `exam_id`, `examitem_id`, `points`,`hint_attempt`) 
-        VALUES ($studentID,$examID,$questionId,$totalScore,$hintUseValue)";
+        $scorequery = "INSERT INTO `exam_correct`(`student_id`, `exam_id`, `examitem_id`, `points`,`hint_attempt`,`exam_attempt`) 
+        VALUES ($studentID,$examID,$questionId,$totalScore,$hintUseValue,$examAttempt)";
         $result = mysqli_query($con, $scorequery);
 
         $itemIncrement = $_SESSION['itemNum'];
@@ -59,12 +60,13 @@ if (isset($_POST['submit'])) {
 
         // THE ANSWER IS WRONG..............
     } else {
-        $sqlquery = "INSERT INTO `exam_mistakes`(`student_id`, `examitem_id`, `exam_id`,`answer_input`, `mistakes`) 
-        VALUES ($studentID,$questionId,$examID,'".$inputanswer."',$attemptMistake)";
+        $sqlquery = "INSERT INTO `exam_mistakes`(`student_id`, `examitem_id`, `exam_id`,`answer_input`, `mistakes`,`exam_attempt`) 
+        VALUES ($studentID,$questionId,$examID,'".$inputanswer."',$attemptMistake,$examAttempt)";
         $insertResult = mysqli_query($con, $sqlquery);
 
         // fetching mistakes from database........
-        $sqlquery1 = "SELECT SUM(mistakes) AS totalmistakes FROM `exam_mistakes` WHERE student_id='" . $studentID . "' AND examitem_id='" . $questionId . "'";
+        $sqlquery1 = "SELECT SUM(mistakes) AS totalmistakes FROM `exam_mistakes` 
+        WHERE student_id='" . $studentID . "' AND examitem_id='" . $questionId . "' AND exam_attempt='". $examAttempt ."'";
         $queryResult = mysqli_query($con, $sqlquery1);
         $rowCount = mysqli_num_rows($queryResult);
 

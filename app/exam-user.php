@@ -78,6 +78,29 @@
 </div>
 <!-- Simple Datatable End -->
 
+<?php
+$StudentExamAttempt;
+if(isset($_SESSION['totalexamAttempt'])){
+    $StudentExamAttempt = $_SESSION['totalexamAttempt'];
+}else{
+    $stu_id = $_SESSION['id'];
+    $getAttempt = "SELECT MAX(status)AS getAttempt FROM exam_attempt
+        WHERE student_id=$stu_id AND exam_id=$id";
+    $queryResult = mysqli_query($con, $getAttempt);
+    $rowCount = mysqli_num_rows($queryResult);
+    if ($rowCount > 0) {
+        $record = mysqli_fetch_assoc($queryResult);
+        while ($record) {
+            if($record['getAttempt'] == 0){
+                $StudentExamAttempt = 1;
+            }else{
+                $StudentExamAttempt = ++$record['getAttempt'];
+            }
+            break;
+        }
+    }
+}
+?>
 
 <!-- VERIFY TO TAKE EXAMS....-->
 <div style="margin-top: 150px;" class="modal fade" id="verify" tabindex="-1" role="dialog"
@@ -93,7 +116,7 @@
             <div class="modal-body">Proceed to the Quiz Now</div>
             <div class="modal-footer">
                 <button class="btn btn-danger" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="exam_circle1.php?status=1">Proceed</a>
+                <a class="btn btn-primary" href="exam_circle1.php?status=<?php echo $StudentExamAttempt; ?>">Proceed</a>
             </div>
         </div>
     </div>

@@ -20,25 +20,6 @@
     </div>
 </div>
 
-
-
-<?php
-
-$stud_id = $_SESSION['id'];
-$exa_id = $_SESSION['exam_id'];
-
-$attemptquery = "SELECT SUM(status)AS totalattempt FROM exam_attempt WHERE student_id = $stud_id AND exam_id = $exa_id";
-$queryResult = mysqli_query($con, $attemptquery);
-$rowCount = mysqli_num_rows($queryResult);
-if ($rowCount > 0) {
-    $record = mysqli_fetch_assoc($queryResult);
-    while ($record) {
-        $exam_attempts = $record['totalattempt'];
-        break;
-    }
-}
-?>
-
 <!-- Simple Datatable start -->
 <div class="card-box mb-30">
     <div class="pd-20">
@@ -66,29 +47,40 @@ if ($rowCount > 0) {
                 if ($rowCount > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         $id = $row['exam_id'];
+                        $stud_id = $_SESSION['id'];
+
+                        $attemptquery = "SELECT SUM(status)AS totalattempt FROM exam_attempt WHERE student_id = $stud_id AND exam_id = $id";
+                        $queryResult = mysqli_query($con, $attemptquery);
+                        $rowCount = mysqli_num_rows($queryResult);
+                        if ($rowCount > 0) {
+                            $record = mysqli_fetch_assoc($queryResult);
+                            while ($record) {
+                                $exam_attempts = $record['totalattempt'];
+                                break;
+                            }
+                        }
                 ?>
                         <tr>
                             <td style="width: 300px;"><?php echo $row['exam_title']; ?></td>
                             <td style="width: 300px;"><?php echo $row['exam_desc']; ?></td>
                             <td style="width: 300px;">
-                            <?php
-                            if($exam_attempts > 0){
-                                ?>
-                                <a href="#" class=" btn btn-md btn-primary" data-toggle="modal" data-target="#result-modal">
-                                    <span class="icon-copy ti-eye"></span> View Details
-                                </a>
                                 <?php
-                            }else{
+                                if (isset($exam_attempts)) {
+                                    if ($exam_attempts > 0) {
                                 ?>
-                                <button onclick="notifier()" class="btn btn-primary">
-                                    <span class="icon-copy ti-eye"></span> View Details
-                                </button>
+                                        <a href="#" class=" btn btn-md btn-primary" data-toggle="modal" data-target="#result-modal">
+                                            <span class="icon-copy ti-eye"></span> View Details
+                                        </a>
+                                    <?php
+                                    }
+                                } else {
+                                    ?>
+                                    <button onclick="notifier()" class="btn btn-primary">
+                                        <span class="icon-copy ti-eye"></span> View Details
+                                    </button>
                                 <?php
-                            }
-                            ?>
-                                
-
-
+                                }
+                                ?>
                             </td>
 
                         </tr>
@@ -137,4 +129,3 @@ if ($rowCount > 0) {
         </div>
     </div>
 </div>
-
