@@ -75,7 +75,7 @@
 
                                     ?>
                         <form action="conf/auth_login.php" method="post" autocomplete="off">
-                            <div class="select-role">
+                            <!-- <div class="select-role">
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                     <label class="btn active">
                                         <input type="radio" name="options" id="admin" disabled />
@@ -94,7 +94,7 @@
                                         Student
                                     </label>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="input-group custom">
                                 <div class="input-group-prepend custom">
                                     <span class="input-group-text"><i class="icon-copy dw dw-user1"></i></span>
