@@ -147,10 +147,10 @@ $exa_id = $_SESSION['exam_id'];
 
                     <!-- buttons -->
                     <div class="row" style="justify-content: center;margin-top: 30px;">
-                        <div class="col ">
-                            <button class="btn btn-success float-right">Review</button>
-                        </div>
-                        <div class="col" style="margin-left: -20px;">
+                        <!-- <div class="col ">
+                            <a href="student-result" class="btn btn-success float-right">Student Result</a>
+                        </div> -->
+                        <div class="button-link">
                             <a href="home" class="btn btn-success">Dashboard</a>
                         </div>
                     </div>

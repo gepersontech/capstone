@@ -53,17 +53,47 @@
                         $_SESSION['examtotalPoints'] = $totalpoints;
                         $_SESSION['passing'] = $passingscore;
                 ?>
-                <tr>
-                    <td><?php echo $row['exam_title']; ?></td>
-                    <td><?php echo $row['course_name']; ?></td>
-                    <td><?php echo $row['exam_desc']; ?></td>
-                    <td style="width: 400px;">
-                        <a data-toggle="modal" data-target="#verify" href="" class=" btn btn-md btn-primary">
-                            <span class="icon-copy ti-check"></span> Take Quiz
-                        </a>
-                    </td>
+                        <tr>
+                            <td><?php echo $row['exam_title']; ?></td>
+                            <td><?php echo $row['course_name']; ?></td>
+                            <td><?php echo $row['exam_desc']; ?></td>
+                            <td style="width: 400px;">
+                                <?php
+                                $userid = $_SESSION['id'];
+                                $lessonview;
+                                $isViewquery = "SELECT isView FROM lesson_view WHERE user_id=$userid and lesson_id=1;";
+                                $queryResult = mysqli_query($con, $isViewquery);
+                                $rowCount = mysqli_num_rows($queryResult);
+                                if ($rowCount > 0) {
+                                    $record = mysqli_fetch_assoc($queryResult);
+                                    while ($record) {
+                                        $lessonview = $record['isView'];
+                                        break;
+                                    }
+                                }
+                                ?>
+                                <?php
+                                if (isset($lessonview)) {
+                                    if ($lessonview != 0) {
+                                ?>
+                                        <a data-toggle="modal" data-target="#verify" href="" class=" btn btn-md btn-primary">
+                                            <span class="icon-copy ti-check"></span> Take Quiz
+                                        </a>
+                                    <?php
+                                    }
+                                } else {
+                                    ?>
+                                        <a onclick="notValid()" style="color: white;" class=" btn btn-md btn-warning">
+                                            <i class="icon-copy fa fa-lock" aria-hidden="true"></i> Take Quiz
+                                        </a>
+                                <?php
+                                    }
+                                
+                                ?>
 
-                </tr>
+                            </td>
+
+                        </tr>
                 <?php
                         $count++;
                     }
@@ -80,9 +110,9 @@
 
 <?php
 $StudentExamAttempt;
-if(isset($_SESSION['totalexamAttempt'])){
+if (isset($_SESSION['totalexamAttempt'])) {
     $StudentExamAttempt = $_SESSION['totalexamAttempt'];
-}else{
+} else {
     $stu_id = $_SESSION['id'];
     $getAttempt = "SELECT MAX(status)AS getAttempt FROM exam_attempt
         WHERE student_id=$stu_id AND exam_id=$id";
@@ -91,9 +121,9 @@ if(isset($_SESSION['totalexamAttempt'])){
     if ($rowCount > 0) {
         $record = mysqli_fetch_assoc($queryResult);
         while ($record) {
-            if($record['getAttempt'] == 0){
+            if ($record['getAttempt'] == 0) {
                 $StudentExamAttempt = 1;
-            }else{
+            } else {
                 $StudentExamAttempt = ++$record['getAttempt'];
             }
             break;
@@ -103,8 +133,7 @@ if(isset($_SESSION['totalexamAttempt'])){
 ?>
 
 <!-- VERIFY TO TAKE EXAMS....-->
-<div style="margin-top: 150px;" class="modal fade" id="verify" tabindex="-1" role="dialog"
-    aria-labelledby="exampleModalLabel">
+<div style="margin-top: 150px;" class="modal fade" id="verify" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -122,24 +151,38 @@ if(isset($_SESSION['totalexamAttempt'])){
     </div>
 </div>
 <script>
-function delete_course(data_id) {
-    // alert('ok');
-    //window.location = ("action/admin/delete-employee.php?id=" + data_id);
-    Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this Data!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!',
-        closeOnConfirm: false,
-        closeOnCancel: false
-    }).then((result) => {
-        if (result.isConfirmed) {
-            window.location = ("action/admin/delete-course.php?id=" + data_id);
-        }
+    function delete_course(data_id) {
+        // alert('ok');
+        //window.location = ("action/admin/delete-employee.php?id=" + data_id);
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this Data!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!',
+            closeOnConfirm: false,
+            closeOnCancel: false
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location = ("action/admin/delete-course.php?id=" + data_id);
+            }
 
-    })
-}
+        })
+    }
+</script>
+
+<!-- SWEET ALERT SCRIPT -->
+<script src="vendors/sweetalert/sweetalert.min.js"></script>
+<script src="src/plugins/sweetalert2/jquery-3.6.1.min.js"></script>
+
+<script>
+    function notValid() {
+        swal({
+            title: "Oopsss! 🫣",
+            text: "Looks like you haven't Read the Lessons yet",
+            icon: 'warning',
+        });
+    }
 </script>
