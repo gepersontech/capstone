@@ -146,7 +146,7 @@ include('pre-loader.php');
 
                                 <br>
                                 <span class="text-muted"> <?php if ($rate != 0) {
-                                                                echo $rate;
+                                                                echo number_format((float)$rate, 3, '.', '');
                                                             } else {
                                                                 echo "0";
                                                             } ?> average based on
@@ -532,6 +532,7 @@ unset($_SESSION['headertextitem']);
 $examAttempt;
 if (isset($_GET['status'])) {
     $examAttempt = $_GET['status'];
+    $_SESSION['exam-attempt'] = $examAttempt;
     $ex_id = $_SESSION['exam_id'];
     $stu_id = $_SESSION['id'];
 
