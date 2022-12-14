@@ -76,7 +76,7 @@
                                     }
                                 } else {
                                     ?>
-                                    <button onclick="notifier()" class="btn btn-primary">
+                                    <button onclick="notifier()" class="btn btn-warning">
                                         <span class="icon-copy ti-eye"></span> View Details
                                     </button>
                                 <?php

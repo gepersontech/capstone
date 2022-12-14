@@ -32,7 +32,7 @@
                          <a class="nav-link" data-toggle="tab" href="#example" role="tab">Examples</a>
                      </li>
                      <li class="nav-item">
-                         <a class="nav-link" data-toggle="tab" href="#video" role="tab">Video</a>
+                         <a class="nav-link" data-toggle="tab" href="#video" role="tab">Video Lectures</a>
                      </li>
                  </ul>
                  <div class="tab-content">
@@ -208,12 +208,12 @@
                                              </div>
                                          </div>
 
-                                         <a href="module-user">
+                                         <!-- <a href="module-user">
                                              <button type="button" class="btn btn-primary float-right ">
                                                  <span class="icon-copy ti-check mr-2"></span>
                                                  NEXT PAGE
                                              </button>
-                                         </a> <br> <br> <br> <br> <br> <br>
+                                         </a> <br> <br> <br> <br> <br> <br> -->
                                      </div>
                                  </div>
                              </div>
@@ -307,12 +307,12 @@
                                      </div>
                                      <div class="mobile-menu-overlay"></div>
 
-                                     <a href="module-user">
+                                     <!-- <a href="module-user">
                                          <button type="button" class="btn btn-primary float-right ">
                                              <span class="icon-copy ti-check mr-2"></span>
                                              DONE READING
                                          </button>
-                                     </a> <br> <br> <br> <br> <br> <br>
+                                     </a> <br> <br> <br> <br> <br> <br> -->
                                  </div>
                              </div>
                          </div>
@@ -418,12 +418,12 @@
                                          </div>
                                      </div>
 
-                                     <a href="module-user">
+                                     <!-- <a href="module-user">
                                          <button type="button" class="btn btn-primary float-right ">
                                              <span class="icon-copy ti-check mr-2"></span>
                                              DONE READING
                                          </button>
-                                     </a> <br> <br> <br> <br> <br> <br>
+                                     </a> <br> <br> <br> <br> <br> <br> -->
                                  </div>
                              </div>
                          </div>
