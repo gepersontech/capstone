@@ -47,6 +47,7 @@
                 if ($rowCount > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         $id = $row['exam_id'];
+                        $_SESSION['examAYDI'] = $id;
                         $stud_id = $_SESSION['id'];
 
                         $attemptquery = "SELECT SUM(status)AS totalattempt FROM exam_attempt WHERE student_id = $stud_id AND exam_id = $id";

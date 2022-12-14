@@ -174,7 +174,7 @@ $exa_id = $_SESSION['exam_id'];
                             <a href="exam-user" class="btn btn-warning float-right">Try Again</a>
                         </div>
                         <div class="col" style="margin-left: -20px;">
-                            <a href="" class="btn btn-warning">Review</a>
+                            <a href="home" class="btn btn-warning">Dashboard</a>
                         </div>
                     </div>
                 <?php
