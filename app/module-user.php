@@ -71,7 +71,7 @@
 <!-- Simple Datatable End -->
 
 <!-- Simple Datatable start -->
-<div class="card-box mb-30">
+<div id="lessonbox" class="card-box mb-30">
     <div class="pd-20">
         <h4 class="text-blue h4">CURRENT LESSONS</h4>
         <!-- <button type="button" class="btn btn-primary float-right mb-10" data-toggle="modal" data-target="#addLesson">
