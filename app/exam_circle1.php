@@ -199,8 +199,8 @@ include('pre-loader.php');
                                     <input type="text" id="hintattempt" name="hintusage" value="<?php echo $hintValue; ?>" hidden>
                                     <!-- multiple choice a b c d....... -->
                                     <td style="width: 150px;">
-                                        <button style="border: none; background-color: white;" type="submit" name="submit">
-                                            <input type="radio" id="ch1" name="answer" value="<?php
+                                        <button style="border: none;background-color: white;padding: 0px;cursor: default;" type="submit" name="submit">
+                                            <input style="cursor: pointer;" type="radio" id="ch1" name="answer" value="<?php
                                                                                                 if ($mistakes == 1) {
                                                                                                     echo $record['exam_ch3'];
                                                                                                 } else if ($mistakes == 2) {
@@ -210,7 +210,7 @@ include('pre-loader.php');
                                                                                                 } else {
                                                                                                     echo $record['exam_ch1'];
                                                                                                 } ?>">
-                                            <label style="vertical-align: middle;font-size: 15px;" for="ch1">
+                                            <label style="vertical-align: middle;font-size: 15px;cursor: pointer;" for="ch1">
                                                 a.
                                                 <?php
                                                 if ($mistakes == 1) {
@@ -226,8 +226,8 @@ include('pre-loader.php');
                                         </button>
                                     </td>
                                     <td style="width: 150px;">
-                                        <button style="border: none; background-color: white;" type="submit" name="submit">
-                                            <input type="radio" id="ch2" name="answer" value="<?php
+                                        <button style="border: none; background-color: white;cursor: default;" type="submit" name="submit">
+                                            <input style="cursor: pointer;" type="radio" id="ch2" name="answer" value="<?php
                                                                                                 if ($mistakes == 1) {
                                                                                                     echo $record['exam_ch1'];
                                                                                                 } else if ($mistakes == 2) {
@@ -237,7 +237,7 @@ include('pre-loader.php');
                                                                                                 } else {
                                                                                                     echo $record['exam_ch2'];
                                                                                                 } ?>">
-                                            <label style="vertical-align: middle;font-size: 15px;" for="ch2">
+                                            <label style="vertical-align: middle;font-size: 15px;cursor: pointer;" for="ch2">
                                                 b.
                                                 <?php
                                                 if ($mistakes == 1) {
@@ -253,8 +253,8 @@ include('pre-loader.php');
                                         </button>
                                     </td>
                                     <td style="width: 150px;">
-                                        <button style="border: none; background-color: white;" type="submit" name="submit">
-                                            <input type="radio" id="ch3" name="answer" value="<?php
+                                        <button style="border: none; background-color: white;cursor: default;" type="submit" name="submit">
+                                            <input style="cursor: pointer;" type="radio" id="ch3" name="answer" value="<?php
                                                                                                 if ($mistakes == 1) {
                                                                                                     echo $record['exam_ch2'];
                                                                                                 } else if ($mistakes == 2) {
@@ -264,7 +264,7 @@ include('pre-loader.php');
                                                                                                 } else {
                                                                                                     echo $record['exam_ch3'];
                                                                                                 } ?>">
-                                            <label style="vertical-align: middle; font-size: 15px;" for="ch3">
+                                            <label style="vertical-align: middle; font-size: 15px;cursor: pointer;" for="ch3">
                                                 c.
                                                 <?php
                                                 if ($mistakes == 1) {
@@ -280,9 +280,9 @@ include('pre-loader.php');
                                         </button>
                                     </td>
                                     <td style="width: 150px;">
-                                        <button style="border: none; background-color: white;" type="submit" name="submit">
-                                            <input type="radio" id="ch4" name="answer" value="<?php echo $record['exam_ch4']; ?>">
-                                            <label style="vertical-align: middle;font-size: 15px;" for="ch4">
+                                        <button style="border: none; background-color: white;cursor: default;" type="submit" name="submit">
+                                            <input style="cursor: pointer;" type="radio" id="ch4" name="answer" value="<?php echo $record['exam_ch4']; ?>">
+                                            <label style="vertical-align: middle;font-size: 15px;cursor: pointer;" for="ch4">
                                                 d. <?php echo $record['exam_ch4']; ?>
                                             </label>
                                         </button>
@@ -560,4 +560,25 @@ if (isset($_GET['status'])) {
     </script>
 <?php
 }
+?>
+ <!-- DISPLAY IF SUBMIT ANSWER IS EMPTY -->
+<?php
+    if(isset($_SESSION['headertext_empty'])){
+        if(isset($_SESSION['bodytext_empty'])){
+            if(isset($_SESSION['statusIcon_empty'])){
+
+                ?>
+                <script>
+                    swal({
+                        title: "<?php echo $_SESSION['headertext_empty']; ?>",
+                        text: "<?php echo $_SESSION['bodytext_empty']; ?>",
+                        icon: '<?php echo $_SESSION['statusIcon_empty']; ?>',
+                    });
+                </script>
+                <?php
+
+            }
+        }
+    }
+    unset($_SESSION['headertext_empty']);
 ?>
