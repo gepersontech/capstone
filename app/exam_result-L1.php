@@ -7,12 +7,11 @@
         <div class="col-md-6">
             <div class="title">
                 <h3>📝 Your Lesson 1 Quiz Results</h3>
-
             </div>
             <nav aria-label="breadcrumb" role="navigation">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-                    <li class="breadcrumb-item"><a href="student-result">Student result</a></li>
+                    <li class="breadcrumb-item"><a href="student_result">Student result</a></li>
                     <li class="breadcrumb-item active" aria-current="page">
                         Quiz attempts
                     </li>
@@ -40,6 +39,7 @@
             </tr>
         </thead>
         <tbody>
+            <form action="config/quiz-results.php" method="POST">
             <?php
             $studentID = $_SESSION['id'];
             $exam_aydi = $_SESSION['exam_id'];
@@ -61,17 +61,22 @@
                         <td><?php echo $attempt; ?></td>
                         <td><?php echo $dateAttempt; ?></td>
                         <td>
-                            <a href="" class="btn btn-md btn-primary" data-toggle="modal" data-target="#result-modal" style="padding: 8px;">
+                            <button class="btn btn-primary" type="submit" id="viewresult" name="viewResult">
+                            <span class="icon-copy ti-eye"></span> View Details
+                            </button>
+                            <!-- <a href="" class="btn btn-md btn-primary" data-whatever=""
+                             data-toggle="modal" data-target="#result-modal" style="padding: 8px;">
                                 <span class="icon-copy ti-eye"></span> View Details
-                            </a>
+                            </a> -->
+                </form>
                         </td>
                     </tr>
+
             <?php
                     break;
                 }
             }
             ?>
-
         </tbody>
     </table>
 </div>
@@ -91,8 +96,9 @@
                 </button>
             </div>
             <div class="modal-body" style="overflow: auto;height: 450px;">
-                <?php include "../app/excircle_result-modal.php" ?>
+                <input type="text" id="attempt-num" name="id">
             </div>
         </div>
     </div>
 </div>
+

@@ -86,22 +86,22 @@ if (isset($_POST['submit'])) {
                 while ($record) {
                     $attemptMistake = $record['totalmistakes'];
                     if ($attemptMistake == 1) {
-                        $_SESSION['headertext'] = "Wrong Answer!😔";
+                        $_SESSION['headertext'] = "Try again 😔";
                         $_SESSION['bodytext']   = "You got the wrong answer.";
                         $_SESSION['statusIcon'] = "error";
                         header("location: ../exam_circle1.php?attempt=1&question=$currentItem");
                     } else if ($attemptMistake == 2) {
-                        $_SESSION['headertext'] = "Still Wrong Answer!😔";
+                        $_SESSION['headertext'] = "Try again 😔";
                         $_SESSION['bodytext']   = "Keep analyzing the question,  You got this.";
                         $_SESSION['statusIcon'] = "error";
                         header("location: ../exam_circle1.php?attempt=2&question=$currentItem");
                     } else if ($attemptMistake == 3) {
-                        $_SESSION['headertext'] = "Still Wrong Answer!😔";
+                        $_SESSION['headertext'] = "Still Wrong Answer 😔";
                         $_SESSION['bodytext']   = "GITS suggest that you can use the hint now";
                         $_SESSION['statusIcon'] = "warning";
                         header("location: ../exam_circle1.php?attempt=3&question=$currentItem");
                     } else if ($attemptMistake == 4) {
-                        $_SESSION['headertext'] = "Still Wrong Answer!😔";
+                        $_SESSION['headertext'] = "Still Wrong Answer 😔";
                         $_SESSION['bodytext']   = "GITS suggest that you can use the hint now, or you can go to lesson and read again.";
                         $_SESSION['statusIcon'] = "warning";
                         header("location: ../exam_circle1.php?attempt=4&question=$currentItem&usehint=$hintUseValue");
