@@ -34,7 +34,6 @@
                                  id="tableList">
                                  <?php 
                     	$selQuest = $conn->query("SELECT * FROM exam_question_tbl eqt INNER JOIN exam_answers ea ON eqt.eqt_id = ea.quest_id WHERE eqt.exam_id='$examId' AND ea.axmne_id='$exmneId' AND ea.exans_status='new' ");
-                    	  = 1;
                     	while ($selQuestRow = $selQuest->fetch(PDO::FETCH_ASSOC)) { ?>
                                  <tr>
                                      <td>
