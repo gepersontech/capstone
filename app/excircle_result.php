@@ -68,9 +68,6 @@ $exa_id = $_SESSION['exam_id'];
                     <tr style="color: #FF8C00;">
                         <th style="font-weight: bold;font-size: 15px;">Total Hint used: </th>
                         <?php
-                        $totalhint_query = "SELECT COUNT(hint_attempt)AS totalhintused FROM exam_correct
-                        WHERE student_id=$stud_id AND hint_attempt=1 AND exam_id=$exa_id";
-
                         $totalhint_query = "SELECT SUM(hint_attempt)AS totalhintused FROM exam_correct
                         WHERE student_id=$stud_id AND exam_id=$exa_id AND exam_attempt=$exam_attempts";
                         $queryResult = mysqli_query($con, $totalhint_query);
@@ -92,10 +89,7 @@ $exa_id = $_SESSION['exam_id'];
                     </tr>
                     <tr>
                         <th style="font-weight: bold;font-size: 20px;">Your Score: </th>
-                        <?php
-                        $yourscorequery = "SELECT SUM(points)AS stud_totalpoints, status FROM exam_attempt JOIN exam_correct ON exam_attempt.student_id=exam_correct.student_id 
-                        WHERE exam_correct.student_id=$stud_id AND status=$exam_attempts AND exam_correct.exam_id=$exa_id";
-                        
+                        <?php                
                         $yourscorequery = "SELECT SUM(points)AS stud_totalpoints FROM exam_correct
                         WHERE student_id=$stud_id AND exam_attempt=$exam_attempts AND exam_id=$exa_id";
                         $queryResult = mysqli_query($con, $yourscorequery);

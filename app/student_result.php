@@ -46,10 +46,24 @@
                             <td style="width: 300px;"><?php echo $row['exam_desc']; ?></td>
                             <td style="width: 300px;">
                                 <?php
+                                $user_id = $_SESSION['id'];
+                                $isattemptQuery = "SELECT * FROM `exam_attempt` WHERE `student_id` = $user_id AND exam_id = $id";
+                                $queryResult = mysqli_query($con, $isattemptQuery);
+                                $rowCount = mysqli_num_rows($queryResult);
+                                if ($rowCount > 0) {
+                                    $record = mysqli_fetch_assoc($queryResult);
+                                    while ($record) {
+                                        $exam_attempts = $record['status'];
+                                        break;
+                                    }
+                                }
                                 if (isset($exam_attempts)) {
                                     if ($exam_attempts > 0) {
                                 ?>
-                                        <a href="exam_result-L1" class="btn btn-md btn-primary">
+                                        <!-- <a href="exam_result-L1" class="btn btn-md btn-primary">
+                                            <span class="icon-copy ti-eye"></span> View Details
+                                        </a> -->
+                                        <a href="#" class=" btn btn-md btn-primary" data-toggle="modal" data-target="#result-modal">
                                             <span class="icon-copy ti-eye"></span> View Details
                                         </a>
                                     <?php
@@ -86,3 +100,22 @@
         });
     }
 </script>
+
+<!-- MODULE READ MODAL -->
+<div class="modal fade bs-example-modal-lg" id="result-modal" role="dialog">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Detailed Result
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    ×
+                </button>
+            </div>
+            <div class="modal-body" style="overflow: auto;height: 450px;">
+                <?php include "../app/excircle_result-modal.php" ?>
+            </div>
+        </div>
+    </div>
+</div>
