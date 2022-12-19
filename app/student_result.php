@@ -60,12 +60,12 @@
                                 if (isset($exam_attempts)) {
                                     if ($exam_attempts > 0) {
                                 ?>
-                                        <!-- <a href="exam_result-L1" class="btn btn-md btn-primary">
-                                            <span class="icon-copy ti-eye"></span> View Details
-                                        </a> -->
-                                        <a href="#" class=" btn btn-md btn-primary" data-toggle="modal" data-target="#result-modal">
+                                        <a href="exam_result-L1" class="btn btn-md btn-primary">
                                             <span class="icon-copy ti-eye"></span> View Details
                                         </a>
+                                        <!-- <a href="#" class=" btn btn-md btn-primary" data-toggle="modal" data-target="#result-modal">
+                                            <span class="icon-copy ti-eye"></span> View Details
+                                        </a> -->
                                     <?php
                                     }
                                 } else {
@@ -80,7 +80,7 @@
 
                         </tr>
                         <?php
-                    break;
+                    $record = mysqli_fetch_assoc($queryResult);
                     }
                 }else{
 

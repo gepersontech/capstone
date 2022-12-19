@@ -1,6 +1,8 @@
+<?php require_once "../conf/config.php"; ?>
 <!-- SWEET ALERT SCRIPT -->
 <script src="vendors/sweetalert/sweetalert.min.js"></script>
 <script src="src/plugins/sweetalert2/jquery-3.6.1.min.js"></script>
+
 <div class="page-header">
     <div class="row">
         <div class="col-md-6">
@@ -34,6 +36,7 @@
                 <th scope="col">No.</th>
                 <th scope="col">Exam Attempt</th>
                 <th scope="col">Date</th>
+                <th scope="col">Status</th></th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -42,24 +45,31 @@
             <?php
             $studentID;
             $exam_aydi;
-            if(isset($_SESSION['id'])){
-                if(isset($_SESSION['exam_id'])){
+            if (isset($_SESSION['id'])) {
+                if (isset($_SESSION['exam_id'])) {
                     $studentID = $_SESSION['id'];
                     $exam_aydi = $_SESSION['exam_id'];
                 }
             }
             $number = 0;
 
-            $viewAttempt = "SELECT * FROM exam_attempt WHERE student_id=$studentID AND exam_id=$exam_aydi;";
+            $viewAttempt = "SELECT * FROM `exam_results` WHERE student_id = $studentID AND exam_id = $exam_aydi";
             $queryResult = mysqli_query($con, $viewAttempt);
             $rowCount1 = mysqli_num_rows($queryResult);
             if ($rowCount1 > 0) {
                 $record1 = mysqli_fetch_assoc($queryResult);
                 while ($record1) {
+                    // storing data to the variables......
                     $number++;
-                    $attempt = $record1['status'];
-                    $_SESSION['quizAttempt'] = $attempt;
-                    $dateAttempt = $record1['exattempt_date'];
+                    $attempt = $record1['exam_attempt'];
+                    $dateAttempt = $record1['result_date'];
+                    $ispassed;
+                    if($record1['is_passed']){
+                        $ispassed = "Passed";
+                    }else{
+                        $ispassed = "Failed";
+                    }
+
             ?>
                     <form action="config/quiz-results.php" method="POST">
                         <input type="text" name="quizAttempt" id="num_attempt" value="<?php echo $attempt; ?>" aria-hidden hidden>
@@ -67,6 +77,17 @@
                             <th scope="row"><?php echo $number; ?></th>
                             <td><?php echo $attempt; ?></td>
                             <td><?php echo $dateAttempt; ?></td>
+                            <?php
+                                if($ispassed == "Passed"){
+                                    ?>
+                                    <td style="color: #32CD32;"><i class="icon-copy bi bi-check-circle-fill"></i> <?php echo $ispassed; ?></td>
+                                    <?php
+                                }else{
+                                    ?>
+                                    <td style="color: #8B0000;"><i class="icon-copy bi bi-exclamation-circle-fill"></i> <?php echo $ispassed; ?></td>
+                                    <?php
+                                }
+                            ?>
                             <td>
                                 <button class="btn btn-primary" type="submit" id="viewresult" name="submit">
                                     <span class="icon-copy ti-eye"></span> View Details
@@ -88,21 +109,8 @@
 </div>
 <!--table  End -->
 
-<!-- SHOW EXAM RESULT ..... -->
-<?php
-if (isset($_GET['result'])) {
-?>
-    <script>
-        setTimeout(function() {
-            $("#result-modal").modal('show');
-        }, 1);
-    </script>
-<?php
-}
-?>
-
 <!-- MODULE READ MODAL -->
-<div class="modal fade bs-example-modal-lg" id="result-modal" role="dialog">
+<div class="modal fade bs-example-modal-lg" id="resultmodal" role="dialog">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
@@ -223,3 +231,18 @@ if (isset($_GET['result'])) {
         </div>
     </div>
 </div>
+
+<!-- SHOW EXAM RESULT ..... -->
+
+<?php
+if (isset($_GET['attemptResult'])) {
+?>
+    <script>
+        setTimeout(function() {
+            $("#resultmodal").modal('show');
+        }, 1);
+    </script>
+<?php
+}
+unset($_GET['attemptResult']);
+?>

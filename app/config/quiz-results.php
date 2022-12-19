@@ -7,25 +7,10 @@ $exam = $_SESSION['exam_id'];
 
 if (isset($_POST['submit'])) {
     $attempt = $_POST['quizAttempt'];
-
     //Sessionss.......
     $_SESSION['qattempt'] = $number_attempt;
 
-    // Total mistakes of all questions..........
-    $totalmis_query = "SELECT COUNT(mistakes)AS totalmistakes FROM `exam_mistakes` 
-    WHERE student_id=$student AND exam_id=$exam AND exam_attempt=$attempt";
-    $queryResult = mysqli_query($con, $totalmis_query);
-    $rowCount = mysqli_num_rows($queryResult);
-    if ($rowCount > 0) {
-        $record = mysqli_fetch_assoc($queryResult);
-        while ($record) {
-            $studtotalmistake = $record['totalmistakes'];
-            //Session.......
-            $_SESSION['totalMistakes'] = $studtotalmistake;
 
-            $record = mysqli_fetch_assoc($queryResult);
-        }
-    }
 
     // Total hint Used...........
     $totalhint_query = "SELECT SUM(hint_attempt)AS totalhintused FROM exam_correct
@@ -57,6 +42,6 @@ if (isset($_POST['submit'])) {
         }
     }
 
-    header("location: ../exam_result-L1.php?result=$attempt");
+    header("location: ../exam_result-L1?attemptResult=$attempt");
 }
 ?>
