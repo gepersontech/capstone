@@ -13,6 +13,7 @@ if (isset($_POST['submit'])) {
     $examAttempt = $_SESSION['exam-attempt'];
     $examID = $_SESSION['exam_id'];
     $attemptMistake = 1;
+    $over = $_SESSION['over'];
 
     $currentItem = $_SESSION['itemNum'];
 
@@ -21,7 +22,7 @@ if (isset($_POST['submit'])) {
         $_SESSION['headertext_empty'] = "No answer recieved";
         $_SESSION['bodytext_empty']   = "Make sure to point the text to submit your answer.";
         $_SESSION['statusIcon_empty'] = "warning";
-        header("location: ../exam_circle1.php?question=$currentItem");
+        header("location: ../exam_circle1.php?attempt=$over&question=$currentItem");
     // all good........
     } else {
         // VALIDATION OF ANSWER IF CORRECT.............................
@@ -105,8 +106,7 @@ if (isset($_POST['submit'])) {
                         $_SESSION['bodytext']   = "GITS suggest that you can use the hint now, or you can go to lesson and read again.";
                         $_SESSION['statusIcon'] = "warning";
                         header("location: ../exam_circle1.php?attempt=4&question=$currentItem&usehint=$hintUseValue");
-                    } else {
-                        $over = $_SESSION['over'];
+                    } else {          
                         ++$over;
                         $_SESSION['headertext'] = "Still Wrong Answer!😔";
                         $_SESSION['bodytext']   = "GITS suggest that you can use the hint now, or you can go to lesson and read again.";

@@ -36,7 +36,8 @@
                 <th scope="col">No.</th>
                 <th scope="col">Exam Attempt</th>
                 <th scope="col">Date</th>
-                <th scope="col">Status</th></th>
+                <th scope="col">Status</th>
+                </th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -64,39 +65,39 @@
                     $attempt = $record1['exam_attempt'];
                     $dateAttempt = $record1['result_date'];
                     $ispassed;
-                    if($record1['is_passed']){
+                    if ($record1['is_passed']) {
                         $ispassed = "Passed";
-                    }else{
+                    } else {
                         $ispassed = "Failed";
                     }
 
             ?>
-                    <form action="config/quiz-results.php" method="POST">
-                        <input type="text" name="quizAttempt" id="num_attempt" value="<?php echo $attempt; ?>" aria-hidden hidden>
-                        <tr>
-                            <th scope="row"><?php echo $number; ?></th>
-                            <td><?php echo $attempt; ?></td>
-                            <td><?php echo $dateAttempt; ?></td>
-                            <?php
-                                if($ispassed == "Passed"){
-                                    ?>
-                                    <td style="color: #32CD32;"><i class="icon-copy bi bi-check-circle-fill"></i> <?php echo $ispassed; ?></td>
-                                    <?php
-                                }else{
-                                    ?>
-                                    <td style="color: #8B0000;"><i class="icon-copy bi bi-exclamation-circle-fill"></i> <?php echo $ispassed; ?></td>
-                                    <?php
-                                }
-                            ?>
-                            <td>
-                                <button class="btn btn-primary" type="submit" id="viewresult" name="submit">
+                    <!-- <form action="config/quiz-results.php" method="POST"> -->
+                    <input type="text" name="quizAttempt" id="num_attempt" value="<?php echo $attempt; ?>" aria-hidden hidden>
+                    <tr>
+                        <th scope="row"><?php echo $number; ?></th>
+                        <td><?php echo $attempt; ?></td>
+                        <td><?php echo $dateAttempt; ?></td>
+                        <?php
+                        if ($ispassed == "Passed") {
+                        ?>
+                            <td style="color: #32CD32;"><i class="icon-copy bi bi-check-circle-fill"></i> <?php echo $ispassed; ?></td>
+                        <?php
+                        } else {
+                        ?>
+                            <td style="color: #8B0000;"><i class="icon-copy bi bi-exclamation-circle-fill"></i> <?php echo $ispassed; ?></td>
+                        <?php
+                        }
+                        ?>
+                        <td>
+                            <!-- <button class="btn btn-primary" type="submit" id="viewresult" name="submit">
                                     <span class="icon-copy ti-eye"></span> View Details
-                                </button>
-                                <!-- <a href="" class="btn btn-md btn-primary" data-whatever="" data-toggle="modal" data-target="#result-modal" style="padding: 8px;">
+                                </button> -->
+                            <a href="" class="btn btn-md btn-primary" data-whatever="" data-toggle="modal" data-target="#resultmodal" style="padding: 8px;">
                                 <span class="icon-copy ti-eye"></span> View Details
-                            </a> -->
-                            </td>
-                    </form>
+                            </a>
+                        </td>
+                        <!-- </form> -->
                     </tr>
 
             <?php
@@ -110,8 +111,8 @@
 <!--table  End -->
 
 <!-- MODULE READ MODAL -->
-<div class="modal fade bs-example-modal-lg" id="resultmodal" role="dialog">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
+<div class="modal fade" id="resultmodal" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">
@@ -190,41 +191,6 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
-                    <div class="col-md-6 col-sm-12">
-                        <div class="content" style="height: 370px;">
-                            <?php
-                            $student_status;
-                            if ($studtotalScore >= $passingscore) {
-                                $student_status = 1
-                            ?>
-
-                                <div class="row" style="justify-content: center;">
-                                    <img style="width: 150px;margin-top: 30px;" src="../app/images/check-gif.gif" alt="clipart">
-                                </div>
-                                <div class="row" style="justify-content: center;">
-                                    <h2>Congratulations</h2>
-                                </div>
-                                <div class="row" style="justify-content: center;margin-top: 10px;">
-                                    <h5>You have passed the quiz</h5>
-                                </div>
-                            <?php
-                            } else {
-                                $student_status = 0;
-                            ?>
-                                <div class="row" style="justify-content: center;">
-                                    <img style="width: 150px;margin-top: 30px;" src="../app/images/failed-gif.gif" alt="clipart">
-                                </div>
-                                <div class="row" style="justify-content: center;">
-                                    <h2>Quiz Failed</h2>
-                                </div>
-                                <div class="row" style="justify-content: center;margin-top: 10px;">
-                                    <h5 style="text-align: center;">I'm sorry, you have failed the quiz</h5>
-                                </div>
-                            <?php
-                            }
-                            ?>
-                        </div>
                     </div>
                 </div>
             </div>

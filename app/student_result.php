@@ -47,13 +47,13 @@
                             <td style="width: 300px;">
                                 <?php
                                 $user_id = $_SESSION['id'];
-                                $isattemptQuery = "SELECT * FROM `exam_attempt` WHERE `student_id` = $user_id AND exam_id = $id";
+                                $isattemptQuery = "SELECT * FROM `exam_results` WHERE `student_id` = $user_id AND exam_id = $id";
                                 $queryResult = mysqli_query($con, $isattemptQuery);
                                 $rowCount = mysqli_num_rows($queryResult);
                                 if ($rowCount > 0) {
                                     $record = mysqli_fetch_assoc($queryResult);
                                     while ($record) {
-                                        $exam_attempts = $record['status'];
+                                        $exam_attempts = $record['exam_attempt'];
                                         break;
                                     }
                                 }
@@ -70,7 +70,7 @@
                                     }
                                 } else {
                                     ?>
-                                    <button onclick="notifier()" class="btn btn-warning">
+                                    <button  onclick="notifier()" class="btn btn-warning" style="color: white;">
                                     <i class="icon-copy fa fa-lock" aria-hidden="true"></i> View Details
                                     </button>
                                 <?php
