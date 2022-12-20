@@ -77,7 +77,7 @@
                     <tr>
                         <th scope="row"><?php echo $number; ?></th>
                         <td><?php echo $attempt; ?></td>
-                        <td><?php echo $dateAttempt; ?></td>
+                        <td><?php echo date('F d Y, h:i:s A', strtotime($dateAttempt)); ?></td>
                         <?php
                         if ($ispassed == "Passed") {
                         ?>
