@@ -1,10 +1,10 @@
 <?php require_once "../conf/config.php"; ?>
 <!-- SWEET ALERT SCRIPT -->
 <script src="vendors/sweetalert/sweetalert.min.js"></script>
-<script src="src/plugins/sweetalert2/jquery-3.6.1.min.js"></script>
+<!-- <script src="src/plugins/sweetalert2/jquery-3.6.1.min.js"></script> -->
 
 <!-- <script src="config/js/result.js"></script> -->
-<script src="vendors/jquery/jquery.min.js"></script>
+<!-- <script src="vendors/jquery/jquery.min.js"></script> -->
 <script src="vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="vendors/jquery-easing/jquery.easing.min.js"></script>
 
@@ -76,21 +76,23 @@
                         $ispassed = "Failed";
                     }
             ?>
-                    <!-- <form action="config/quiz-results.php" method="POST"> -->
-                    <input type="text" name="quizAttempt" id="num_attempt" value="<?php echo $attempt; ?>" aria-hidden hidden>
-                    <tr>
-                        <th scope="row"><?php echo $number; ?></th>
-                        <td><?php echo $attempt; ?></td>
-                        <td><?php echo date('F d Y, h:i:s A', strtotime($dateAttempt)); ?></td>
-                        <?php
+            <!-- <form action="config/quiz-results.php" method="POST"> -->
+            <input type="text" name="quizAttempt" id="num_attempt" value="<?php echo $attempt; ?>" aria-hidden hidden>
+            <tr>
+                <th scope="row"><?php echo $number; ?></th>
+                <td><?php echo $attempt; ?></td>
+                <td><?php echo date('F d Y, h:i:s A', strtotime($dateAttempt)); ?></td>
+                <?php
                         if ($ispassed == "Passed") {
                         ?>
-                            <td style="color: #32CD32;"><i class="icon-copy bi bi-check-circle-fill"></i> <?php echo $ispassed; ?></td>
-                        <?php
+                <td style="color: #32CD32;"><i class="icon-copy bi bi-check-circle-fill"></i> <?php echo $ispassed; ?>
+                </td>
+                <?php
                         } else {
                         ?>
-                            <td style="color: #8B0000;"><i class="icon-copy bi bi-exclamation-circle-fill"></i> <?php echo $ispassed; ?></td>
-                        <?php
+                <td style="color: #8B0000;"><i class="icon-copy bi bi-exclamation-circle-fill"></i>
+                    <?php echo $ispassed; ?></td>
+                <?php
                         }
 
                         echo "<td>";
@@ -101,7 +103,7 @@
                     echo "</tr>";
                     ?>
 
-            <?php
+                <?php
                     $record1 = mysqli_fetch_assoc($queryResult);
                 }
             }else{
@@ -114,7 +116,8 @@
 <!--table  End -->
 
 <!-- MODULE READ MODAL -->
-<div class="modal fade" id="resultmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="resultmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -170,7 +173,7 @@
 </div>
 
 <script>
-    $('#resultmodal').on('show.bs.modal', function (event) {
+$('#resultmodal').on('show.bs.modal', function(event) {
     var button = $(event.relatedTarget);
     var attmpt = button.data('attempt')
     var mstake = button.data('mistake')
