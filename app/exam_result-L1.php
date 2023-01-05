@@ -3,6 +3,11 @@
 <script src="vendors/sweetalert/sweetalert.min.js"></script>
 <script src="src/plugins/sweetalert2/jquery-3.6.1.min.js"></script>
 
+<!-- <script src="config/js/result.js"></script> -->
+<script src="vendors/jquery/jquery.min.js"></script>
+<script src="vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="vendors/jquery-easing/jquery.easing.min.js"></script>
+
 <div class="page-header">
     <div class="row">
         <div class="col-md-6">
@@ -70,7 +75,6 @@
                     } else {
                         $ispassed = "Failed";
                     }
-
             ?>
                     <!-- <form action="config/quiz-results.php" method="POST"> -->
                     <input type="text" name="quizAttempt" id="num_attempt" value="<?php echo $attempt; ?>" aria-hidden hidden>
@@ -88,21 +92,20 @@
                             <td style="color: #8B0000;"><i class="icon-copy bi bi-exclamation-circle-fill"></i> <?php echo $ispassed; ?></td>
                         <?php
                         }
-                        ?>
-                        <td>
-                            <!-- <button class="btn btn-primary" type="submit" id="viewresult" name="submit">
-                                    <span class="icon-copy ti-eye"></span> View Details
-                                </button> -->
-                            <a href="" class="btn btn-md btn-primary" data-whatever="" data-toggle="modal" data-target="#resultmodal" style="padding: 8px;">
+
+                        echo "<td>";
+                           echo  '<a type="button" class="btn btn-primary" data-attempt="'.$attempt.'" data-mistake="'.$record1['total_mistakes'].'" data-hint="'.$record1['total_hintUsed'].'" data-score="'.$record1['Student_Score'].'" data-toggle="modal" data-target="#resultmodal" style="padding: 8px;color: white;">
                                 <span class="icon-copy ti-eye"></span> View Details
-                            </a>
-                        </td>
-                        <!-- </form> -->
-                    </tr>
+                            </a>';
+                        echo "</td>";
+                    echo "</tr>";
+                    ?>
 
             <?php
                     $record1 = mysqli_fetch_assoc($queryResult);
                 }
+            }else{
+                echo "no data";
             }
             ?>
         </tbody>
@@ -111,8 +114,8 @@
 <!--table  End -->
 
 <!-- MODULE READ MODAL -->
-<div class="modal fade" id="resultmodal" role="dialog">
-    <div class="modal-dialog modal-dialog-centered">
+<div class="modal fade" id="resultmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">
@@ -123,92 +126,61 @@
                 </button>
             </div>
             <div class="modal-body" style="overflow: auto;height: 450px;">
-                <div class="row">
-                    <div class="col-md-6 col-sm-12">
-                        <table class="table">
-                            <tbody>
-                                <tr>
-                                    <th style="font-weight: bold;font-size: 15px;">Attempt: </th>
-                                    <?php
-                                    $attempt1;
-                                    if (isset($_SESSION['qattempt'])) {
-                                        $attempt1 = $_SESSION['qattempt'];
-                                    } ?>
-                                    <td><?php echo $attempt1; ?></td>
-                                </tr>
-                                <tr>
-                                    <th style="font-weight: bold;font-size: 15px;">Total Question</th>
-                                    <?php
-                                    $totalquestion = $_SESSION['totalItems'];
-                                    ?>
-                                    <td><?php echo $totalquestion; ?></td>
-                                </tr>
-                                <tr style="color: #8B0000;">
-                                    <th style="font-weight: bold;font-size: 15px;">Total incorrect of all question: </th>
-                                    <?php
-                                    $studtotalmistake;
-                                    if (isset($_SESSION['totalMistakes'])) {
-                                        $studtotalmistake = $_SESSION['totalMistakes'];
-                                    } ?>
-                                    <td><?php echo $studtotalmistake; ?></td>
-                                </tr>
-                                <tr style="color: #FF8C00;">
-                                    <th style="font-weight: bold;font-size: 15px;">Total Hint used: </th>
-                                    <?php
-                                    $studtotalhint;
-                                    if (isset($_SESSION['totalhint'])) {
-                                        $studtotalhint = $_SESSION['totalhint'];
-                                    } ?>
-                                    <td><?php echo $studtotalhint; ?></td>
-                                </tr>
-                                <tr>
-                                    <th style="font-weight: bold;font-size: 15px;">Passing Score: </th>
-                                    <?php $passingscore = $_SESSION['passing']; ?>
-                                    <td><?php echo $passingscore; ?></td>
-                                </tr>
-                                <tr>
-                                    <th style="font-weight: bold;font-size: 20px;">Your Score: </th>
-                                    <?php
-                                    $studtotalScore;
-                                    if (isset($_SESSION['totalScore'])) {
-                                        $studtotalScore = $_SESSION['totalScore'];
-                                    }
-                                    if ($studtotalScore >= $passingscore) {
-                                    ?>
-                                        <td style="font-size: 20px;font-weight: bolder;color: #32CD32;"><?php echo $studtotalScore; ?></td>
-                                    <?php
-                                    } else {
-                                    ?>
-                                        <td style="font-size: 20px;font-weight: bolder;color: #FF0000;"><?php echo $studtotalScore; ?></td>
-                                    <?php
-                                    }
-                                    ?>
-                                </tr>
-                                <tr>
-                                    <th style="font-weight: bold;font-size: 15px;">Over total score: </th>
-                                    <?php $etotalpoints = $_SESSION['examtotalPoints']; ?>
-                                    <td><?php echo $etotalpoints; ?></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th style="font-weight: bold;font-size: 15px;">Attempt: </th>
+                            <td><span id="attemptholder"></span></td>
+                        </tr>
+                        <tr>
+                            <th style="font-weight: bold;font-size: 15px;">Total Question</th>
+                            <?php
+                            $totalquestion = $_SESSION['totalItems'];
+                            ?>
+                            <td><?php echo $totalquestion; ?></td>
+                        </tr>
+                        <tr>
+                            <th style="font-weight: bold;font-size: 15px;">Total incorrect of all question: </th>
+                            <td><span id="mistakesholder"></span></td>
+                        </tr>
+                        <tr>
+                            <th style="font-weight: bold;font-size: 15px;">Total Hint used: </th>
+                            <td><span id="hintholder"></span></td>
+                        </tr>
+                        <tr>
+                            <th style="font-weight: bold;font-size: 15px;">Passing Score: </th>
+                            <?php $passingscore = $_SESSION['passing']; ?>
+                            <td><?php echo $passingscore; ?></td>
+                        </tr>
+                        <tr>
+                            <th style="font-weight: bold;font-size: 20px;">Your Score: </th>
+                            <td style="font-size: 20px;font-weight: bolder;"><span id="scoreholder"></span></td>
+
+                        </tr>
+                        <tr>
+                            <th style="font-weight: bold;font-size: 15px;">Over total score: </th>
+                            <?php $etotalpoints = $_SESSION['examtotalPoints']; ?>
+                            <td><?php echo $etotalpoints; ?></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 </div>
 
-<!-- SHOW EXAM RESULT ..... -->
+<script>
+    $('#resultmodal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget);
+    var attmpt = button.data('attempt')
+    var mstake = button.data('mistake')
+    var hnt = button.data('hint')
+    var scre = button.data('score')
 
-<?php
-if (isset($_GET['attemptResult'])) {
-?>
-    <script>
-        setTimeout(function() {
-            $("#resultmodal").modal('show');
-        }, 1);
-    </script>
-<?php
-}
-unset($_GET['attemptResult']);
-?>
+    var modal = $(this)
+    modal.find('#attemptholder').html(attmpt)
+    modal.find('#mistakesholder').html(mstake)
+    modal.find('#hintholder').html(hnt)
+    modal.find('#scoreholder').html(scre)
+});
+</script>
