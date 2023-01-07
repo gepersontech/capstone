@@ -80,7 +80,7 @@
         </button> -->
     </div>
     <div class="pb-20">
-        <table class="data-table table stripe hover nowrap">
+        <table class="data-table table table-responsive stripe hover nowrap">
             <thead>
                 <tr>
                     <th class="table-plus datatable-nosort">Lesson No.</th>
@@ -118,7 +118,7 @@
                         <a href="index.php?page=module-viewer&l=<?php echo $count; ?>">
                             <button class=" btn btn-md btn-primary">
                                 <span class="icon-copy ti-eye"></span>
-                                View</button>
+                                Read</button>
                         </a>
                     </td>
                 </tr>
