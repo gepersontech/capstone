@@ -33,7 +33,7 @@
                         <ul>
 
                             <?php
-                            $result = mysqli_query($con,"SELECT * FROM logs WHERE user_id = '".$_SESSION['id']."'");
+                            $result = mysqli_query($con,"SELECT * FROM logs WHERE user_id = '".$_SESSION['id']."' ORDER BY datetime DESC ");
                             if ($result) {
                                 // Return the number of rows in result set
                                 $rowcount = mysqli_num_rows( $result );
@@ -78,13 +78,16 @@
                     </span>
                     <span class="user-name">
                         <?php 
-                    echo $_SESSION['email'];
+                    echo $_SESSION['firstname']." ".$_SESSION['lastname'];
              ?>
                     </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+
                     <a class="dropdown-item" href="home"><i class="dw dw-help"></i>My Dashboard</a>
+                    hr>
                     <a class="dropdown-item" href="student-result"><i class="dw dw-help"></i>My Results</a>
+
                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"><i
                             class="dw dw-logout"></i> Log Out</a>
 
