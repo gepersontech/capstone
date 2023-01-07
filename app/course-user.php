@@ -30,7 +30,7 @@
             <thead>
                 <tr>
                     <th class="table-plus datatable-nosort">Course Name</th>
-                    <!-- <th class="datatable-nosort">Action</th> -->
+
                 </tr>
             </thead>
             <tbody>
@@ -45,15 +45,6 @@
                                             ?>
                 <tr>
                     <td><?php echo $row['course_name']; ?></td>
-                    <!-- <td style="width: 400px;">
-                        <a href="index.php?page=course-edit&& id=<?php //echo $id; ?>" class=" btn btn-sm btn-primary">
-                            <span class="icon-copy ti-pencil-alt"></span> Update
-                        </a>
-
-                        <a onclick="delete_course('<?php //echo $id; ?>')" class=" btn btn-sm btn-danger text-white">
-                            <span class="icon-copy ti-trash"></span>
-                            Delete</a>
-                    </td> -->
 
                 </tr>
                 <?php
@@ -67,8 +58,11 @@
             </tbody>
 
         </table>
+
     </div>
 </div>
+
+
 <!-- Simple Datatable End -->
 <!-- Add Modal -->
 <div class="modal fade" id="addModal">
