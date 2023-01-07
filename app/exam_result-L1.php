@@ -4,7 +4,7 @@
 <!-- <script src="src/plugins/sweetalert2/jquery-3.6.1.min.js"></script> -->
 
 <!-- <script src="config/js/result.js"></script> -->
-<!-- <script src="vendors/jquery/jquery.min.js"></script> -->
+<script src="vendors/jquery/jquery.min.js"></script>
 <script src="vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="vendors/jquery-easing/jquery.easing.min.js"></script>
 
@@ -35,7 +35,7 @@
         </div>
     </div> -->
     <h6>List of how many attempts you made.</h6><br>
-    <table class="table table-responsive">
+    <table class="table">
         <thead>
             <tr style="font-weight: bolder;">
                 <th scope="col">No.</th>

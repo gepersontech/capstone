@@ -9,7 +9,6 @@
 <script src="src/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
 <script src="vendors/scripts/dashboard2.js"></script>
 
-
 <script src="src/plugins/plyr/dist/plyr.js"></script>
 <script src="https://cdn.shr.one/1.0.1/shr.js"></script>
 <script>
