@@ -22,7 +22,7 @@
 
 <!-- TABLE START -->
 <div class="card-box mb-30">
-    <table class="data-table table stripe hover nowrap">
+    <table class="data-table table table-responsive stripe hover nowrap">
         <thead>
             <tr>
                 <th class="table-plus datatable-nosort">Title</th>
@@ -41,11 +41,11 @@
                         $_SESSION['examAYDI'] = $id;
                         $stud_id = $_SESSION['id'];
                         ?>
-                        <tr>
-                            <td style="width: 300px;"><?php echo $row['exam_title']; ?></td>
-                            <td style="width: 300px;"><?php echo $row['exam_desc']; ?></td>
-                            <td style="width: 300px;">
-                                <?php
+            <tr>
+                <td style="width: 300px;"><?php echo $row['exam_title']; ?></td>
+                <td style="width: 300px;"><?php echo $row['exam_desc']; ?></td>
+                <td style="width: 300px;">
+                    <?php
                                 $user_id = $_SESSION['id'];
                                 $isattemptQuery = "SELECT * FROM `exam_results` WHERE `student_id` = $user_id AND exam_id = $id";
                                 $queryResult = mysqli_query($con, $isattemptQuery);
@@ -60,26 +60,26 @@
                                 if (isset($exam_attempts)) {
                                     if ($exam_attempts > 0) {
                                 ?>
-                                        <a href="exam_result-L1" class="btn btn-md btn-primary">
-                                            <span class="icon-copy ti-eye"></span> View Details
-                                        </a>
-                                        <!-- <a href="#" class=" btn btn-md btn-primary" data-toggle="modal" data-target="#result-modal">
+                    <a href="exam_result-L1" class="btn btn-md btn-primary">
+                        <span class="icon-copy ti-eye"></span> View Details
+                    </a>
+                    <!-- <a href="#" class=" btn btn-md btn-primary" data-toggle="modal" data-target="#result-modal">
                                             <span class="icon-copy ti-eye"></span> View Details
                                         </a> -->
-                                    <?php
+                    <?php
                                     }
                                 } else {
                                     ?>
-                                    <button  onclick="notifier()" class="btn btn-warning" style="color: white;">
-                                    <i class="icon-copy fa fa-lock" aria-hidden="true"></i> View Details
-                                    </button>
-                                <?php
+                    <button onclick="notifier()" class="btn btn-warning" style="color: white;">
+                        <i class="icon-copy fa fa-lock" aria-hidden="true"></i> View Details
+                    </button>
+                    <?php
                                 }
                                 ?>
-                            </td>
+                </td>
 
-                        </tr>
-                        <?php
+            </tr>
+            <?php
                     $record = mysqli_fetch_assoc($queryResult);
                     }
                 }else{
@@ -92,13 +92,13 @@
 
 <!-- SWEET ALERT FOR button  -->
 <script>
-    function notifier() {
-        swal({
-            title: "Oopsss! 🫣",
-            text: "Looks like you haven't take quiz yet",
-            icon: 'warning',
-        });
-    }
+function notifier() {
+    swal({
+        title: "Oopsss! 🫣",
+        text: "Looks like you haven't take quiz yet",
+        icon: 'warning',
+    });
+}
 </script>
 
 <!-- MODULE READ MODAL -->

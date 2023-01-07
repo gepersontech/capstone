@@ -20,7 +20,7 @@
             <h4 class="text-blue h4">Basic Table</h4>
         </div>
     </div> -->
-    <table class="table">
+    <table class="table table-responsive">
         <thead>
             <tr style="font-weight: bolder;">
                 <th scope="col">Questions</th>
@@ -29,7 +29,7 @@
             </tr>
         </thead>
         <tbody>
-            
+
             <tr>
                 <th scope="row">1</th>
                 <td>Mark</td>

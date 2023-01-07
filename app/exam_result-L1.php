@@ -35,7 +35,7 @@
         </div>
     </div> -->
     <h6>List of how many attempts you made.</h6><br>
-    <table class="table">
+    <table class="table table-responsive">
         <thead>
             <tr style="font-weight: bolder;">
                 <th scope="col">No.</th>

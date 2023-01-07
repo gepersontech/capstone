@@ -26,7 +26,7 @@
         </button>
     </div>
     <div class="pb-20">
-        <table class="data-table table stripe hover nowrap">
+        <table class="data-table table table-responsive stripe hover nowrap">
             <thead>
                 <tr>
                     <th class="table-plus datatable-nosort">Student Name</th>

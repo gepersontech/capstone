@@ -30,7 +30,7 @@
         </button> -->
     </div>
     <div class="pb-20">
-        <table class="data-table table stripe hover nowrap">
+        <table class="data-table table table-responsive stripe hover nowrap">
             <thead>
                 <tr>
                     <th class="table-plus datatable-nosort">Title</th>
@@ -61,30 +61,30 @@
                             }
                         }
                 ?>
-                        <tr>
-                            <td style="width: 300px;"><?php echo $row['exam_title']; ?></td>
-                            <td style="width: 300px;"><?php echo $row['exam_desc']; ?></td>
-                            <td style="width: 300px;">
-                                <?php
+                <tr>
+                    <td style="width: 300px;"><?php echo $row['exam_title']; ?></td>
+                    <td style="width: 300px;"><?php echo $row['exam_desc']; ?></td>
+                    <td style="width: 300px;">
+                        <?php
                                 if (isset($exam_attempts)) {
                                     if ($exam_attempts > 0) {
                                 ?>
-                                        <a href="#" class=" btn btn-md btn-primary" data-toggle="modal" data-target="#result-modal">
-                                            <span class="icon-copy ti-eye"></span> View Details
-                                        </a>
-                                    <?php
+                        <a href="#" class=" btn btn-md btn-primary" data-toggle="modal" data-target="#result-modal">
+                            <span class="icon-copy ti-eye"></span> View Details
+                        </a>
+                        <?php
                                     }
                                 } else {
                                     ?>
-                                    <button onclick="notifier()" class="btn btn-warning">
-                                        <span class="icon-copy ti-eye"></span> View Details
-                                    </button>
-                                <?php
+                        <button onclick="notifier()" class="btn btn-warning">
+                            <span class="icon-copy ti-eye"></span> View Details
+                        </button>
+                        <?php
                                 }
                                 ?>
-                            </td>
+                    </td>
 
-                        </tr>
+                </tr>
                 <?php
                         $count++;
                     }
@@ -101,13 +101,13 @@
 
 <!-- SWEET ALERT FOR button  -->
 <script>
-    function notifier() {
-        swal({
-            title: "Oopsss! 🫣",
-            text: "Looks like you haven't take quiz yet",
-            icon: 'warning',
-        });
-    }
+function notifier() {
+    swal({
+        title: "Oopsss! 🫣",
+        text: "Looks like you haven't take quiz yet",
+        icon: 'warning',
+    });
+}
 </script>
 
 <!-- Result modal -->
