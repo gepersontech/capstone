@@ -1,11 +1,8 @@
 <?php require_once "../conf/config.php"; ?>
-<!-- SWEET ALERT SCRIPT -->
-<script src="vendors/sweetalert/sweetalert.min.js"></script>
-<!-- <script src="src/plugins/sweetalert2/jquery-3.6.1.min.js"></script> -->
-<script src="vendors/jquery/jquery.min.js"></script>
+ <!-- BOOTSTRAP MODAL SCRIPTS -->
+ <script src="vendors/jquery/jquery.min.js"></script>
 <script src="vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="vendors/jquery-easing/jquery.easing.min.js"></script>
-
 <div class="page-header">
     <div class="row">
         <div class="col-md-6">
@@ -185,3 +182,5 @@ $('#resultmodal').on('show.bs.modal', function(event) {
     modal.find('#scoreholder').html(scre)
 });
 </script>
+
+

@@ -74,7 +74,7 @@
             <div class="dropdown">
                 <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
                     <span class="user-icon">
-                        <img src="src/images/default_avatar.png" alt="" style="with: 72px;" />
+                        <img src="src/images/default_avatar.png" alt="" style="width: 72px;" />
                     </span>
                     <span class="user-name">
                         <?php 

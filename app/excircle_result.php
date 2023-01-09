@@ -126,7 +126,7 @@ $exa_id = $_SESSION['exam_id'];
                 <?php
                 $student_status;
                 if ($studtotalScore >= $passingscore) {
-                    $student_status = 1
+                    $student_status = 1;
                 ?>
 
                     <div class="row" style="justify-content: center;">
