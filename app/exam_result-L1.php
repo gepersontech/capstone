@@ -2,8 +2,6 @@
 <!-- SWEET ALERT SCRIPT -->
 <script src="vendors/sweetalert/sweetalert.min.js"></script>
 <!-- <script src="src/plugins/sweetalert2/jquery-3.6.1.min.js"></script> -->
-
-<!-- <script src="config/js/result.js"></script> -->
 <script src="vendors/jquery/jquery.min.js"></script>
 <script src="vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="vendors/jquery-easing/jquery.easing.min.js"></script>
