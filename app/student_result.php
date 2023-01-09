@@ -37,9 +37,18 @@
                 $rowCount = mysqli_num_rows($result);
                 if ($rowCount > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
-                        $id = $row['exam_id'];
-                        $_SESSION['examAYDI'] = $id;
+                        $id = $row['exam_id'];     
                         $stud_id = $_SESSION['id'];
+                        $totalitems = $row['totalQuestion'];
+                        $passgrade = $row['passing_score'];
+                        $totalpoints = $row['totalPoints'];
+
+                        // session..
+                        $_SESSION['examAYDI'] = $id;
+                        $_SESSION['stud_id'] = $stud_id;
+                        $_SESSION['totalquestion'] = $totalitems;
+                        $_SESSION['passing'] = $passgrade;
+                        $_SESSION['totalpoint'] = $totalpoints;
                         ?>
             <tr>
                 <td style="width: 300px;"><?php echo $row['exam_title']; ?></td>
@@ -47,6 +56,7 @@
                 <td style="width: 300px;">
                     <?php
                                 $user_id = $_SESSION['id'];
+                                
                                 $isattemptQuery = "SELECT * FROM `exam_results` WHERE `student_id` = $user_id AND exam_id = $id";
                                 $queryResult = mysqli_query($con, $isattemptQuery);
                                 $rowCount = mysqli_num_rows($queryResult);

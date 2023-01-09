@@ -49,10 +49,10 @@
             <?php
             $studentID;
             $exam_aydi;
-            if (isset($_SESSION['id'])) {
-                if (isset($_SESSION['exam_id'])) {
-                    $studentID = $_SESSION['id'];
-                    $exam_aydi = $_SESSION['exam_id'];
+            if (isset($_SESSION['stud_id'])) {
+                if (isset($_SESSION['examAYDI'])) {
+                    $studentID = $_SESSION['stud_id'];
+                    $exam_aydi = $_SESSION['examAYDI'];
                 }
             }
             $number = 0;
@@ -136,7 +136,7 @@
                         <tr>
                             <th style="font-weight: bold;font-size: 15px;">Total Question</th>
                             <?php
-                            $totalquestion = $_SESSION['totalItems'];
+                            $totalquestion = $_SESSION['totalquestion'];
                             ?>
                             <td><?php echo $totalquestion; ?></td>
                         </tr>
@@ -160,7 +160,7 @@
                         </tr>
                         <tr>
                             <th style="font-weight: bold;font-size: 15px;">Over total score: </th>
-                            <?php $etotalpoints = $_SESSION['examtotalPoints']; ?>
+                            <?php $etotalpoints = $_SESSION['totalpoint']; ?>
                             <td><?php echo $etotalpoints; ?></td>
                         </tr>
                     </tbody>
