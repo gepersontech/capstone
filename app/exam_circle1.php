@@ -47,6 +47,12 @@ include('../conf/config.php');
     gtag('config', 'G-TH460Y41LE');
     </script>
 
+    <style>
+        .choicebutton :hover{
+            color: #1E90FF;
+        }
+    </style>
+
 </head>
 
 <body onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload="">
@@ -275,7 +281,7 @@ include('pre-loader.php');
                                     hidden>
                                 <!-- multiple choice a b c d....... -->
                                 <td style="width: 150px;">
-                                    <button style="border: none;background-color: white;padding: 0px;cursor: default;"
+                                    <button class="choicebutton" style="border: none;background-color: white;padding: 0px;cursor: default;"
                                         type="submit" name="submit">
                                         <input style="cursor: pointer;" type="radio" id="ch1" name="answer" value="<?php
                                                                                                 if ($mistakes == 1) {
@@ -286,7 +292,7 @@ include('pre-loader.php');
                                                                                                     echo $record['exam_ch1'];
                                                                                                 } else {
                                                                                                     echo $record['exam_ch1'];
-                                                                                                } ?>">
+                                                                                                } ?>" hidden>
                                         <label style="vertical-align: middle;font-size: 15px;cursor: pointer;"
                                             for="ch1">
                                             a.
@@ -304,7 +310,7 @@ include('pre-loader.php');
                                     </button>
                                 </td>
                                 <td style="width: 150px;">
-                                    <button style="border: none; background-color: white;cursor: default;" type="submit"
+                                    <button class="choicebutton" style="border: none; background-color: white;cursor: default;" type="submit"
                                         name="submit">
                                         <input style="cursor: pointer;" type="radio" id="ch2" name="answer" value="<?php
                                                                                                 if ($mistakes == 1) {
@@ -315,7 +321,7 @@ include('pre-loader.php');
                                                                                                     echo $record['exam_ch2'];
                                                                                                 } else {
                                                                                                     echo $record['exam_ch2'];
-                                                                                                } ?>">
+                                                                                                } ?>" hidden>
                                         <label style="vertical-align: middle;font-size: 15px;cursor: pointer;"
                                             for="ch2">
                                             b.
@@ -333,7 +339,7 @@ include('pre-loader.php');
                                     </button>
                                 </td>
                                 <td style="width: 150px;">
-                                    <button style="border: none; background-color: white;cursor: default;" type="submit"
+                                    <button class="choicebutton" style="border: none; background-color: white;cursor: default;" type="submit"
                                         name="submit">
                                         <input style="cursor: pointer;" type="radio" id="ch3" name="answer" value="<?php
                                                                                                 if ($mistakes == 1) {
@@ -344,7 +350,7 @@ include('pre-loader.php');
                                                                                                     echo $record['exam_ch3'];
                                                                                                 } else {
                                                                                                     echo $record['exam_ch3'];
-                                                                                                } ?>">
+                                                                                                } ?>" hidden>
                                         <label style="vertical-align: middle; font-size: 15px;cursor: pointer;"
                                             for="ch3">
                                             c.
@@ -362,10 +368,10 @@ include('pre-loader.php');
                                     </button>
                                 </td>
                                 <td style="width: 150px;">
-                                    <button style="border: none; background-color: white;cursor: default;" type="submit"
+                                    <button class="choicebutton" style="border: none; background-color: white;cursor: default;" type="submit"
                                         name="submit">
                                         <input style="cursor: pointer;" type="radio" id="ch4" name="answer"
-                                            value="<?php echo $record['exam_ch4']; ?>">
+                                            value="<?php echo $record['exam_ch4']; ?>" hidden>
                                         <label style="vertical-align: middle;font-size: 15px;cursor: pointer;"
                                             for="ch4">
                                             d. <?php echo $record['exam_ch4']; ?>
