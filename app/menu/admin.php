@@ -32,7 +32,7 @@
             </a>
         </li>
         <li>
-            <!-- <div class="sidebar-small-cap">Rank</div>
+            <div class="sidebar-small-cap">Rank</div>
         </li>
         <li>
             <a href="ranking" class="dropdown-toggle no-arrow">
@@ -46,7 +46,7 @@
             <a href="result" class="dropdown-toggle no-arrow">
                 <span class="micon icon-copy ti-cup"></span><span class="mtext">Student Result</span>
             </a>
-        </li> -->
+        </li>
         <!-- <li class="dropdown">
             <a href="javascript:;" class="dropdown-toggle">
                 <span class="micon bi bi-house"></span><span class="mtext">Home</span>
